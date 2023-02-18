@@ -1,0 +1,13 @@
+[data-theme="dark"] .header {
+    background-color: hsl(var(--b3));
+    --text-color: inherit;
+}
+
+[data-theme="autumn"] .header {
+    background-color: hsl(var(--bc));
+    --text-color: hsl(var(--pc));
+}
+
+.header span, .header label {
+    color: var(--text-color);
+}
