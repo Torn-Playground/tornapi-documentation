@@ -1,3 +1,5 @@
+import { ReactNode } from "react";
+
 export type Section = {
     selections: Array<Selection>;
     defaultSelection: string | null;
@@ -52,7 +54,7 @@ export function isFieldStructure(object: SchemaField | FieldStructure): object i
 
 export interface Param {
     name: string;
-    description: string;
+    description: ReactNode;
 }
 
 export type Structure = {
