@@ -1,6 +1,7 @@
 import DocumentationTitle from "@/components/documentation/DocumentationTitle";
 import ErrorCodes from "@/components/documentation/ErrorCodes";
 import CommonQueryParams from "@/components/documentation/CommonQueryParams";
+import Limits from "@/components/documentation/Limits";
 
 // FIXME 2023/02/12 - Implement documentation page.
 
@@ -29,11 +30,7 @@ export default function Home() {
             <section>
                 <DocumentationTitle id="limits">Automatic Limits</DocumentationTitle>
 
-                <ul>
-                    <li>TODO: Key limit</li>
-                    <li>TODO: Cloud limit</li>
-                    <li>TODO: IP limit</li>
-                </ul>
+                <Limits />
             </section>
             <section>
                 <DocumentationTitle id="access-levels">Access Levels</DocumentationTitle>
