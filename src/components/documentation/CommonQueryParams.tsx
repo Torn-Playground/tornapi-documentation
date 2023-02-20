@@ -31,6 +31,14 @@ export default function CommonQueryParams() {
             },
             everywhere: true,
         },
+        {
+            param: {
+                name: "selections",
+                description:
+                    "Select what selections to pull data from. Providing no value will fall back to the default selection, if there is one. Supports multiple values, comma separated.",
+            },
+            everywhere: true,
+        },
         { param: TIME_FROM },
         { param: TIME_TO },
         { param: LIMIT },
