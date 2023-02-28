@@ -2,6 +2,7 @@ import DocumentationTitle from "@/components/documentation/DocumentationTitle";
 import ErrorCodes from "@/components/documentation/ErrorCodes";
 import CommonQueryParams from "@/components/documentation/CommonQueryParams";
 import Limits from "@/components/documentation/Limits";
+import AccessLevels from "@/components/documentation/AccessLevels";
 
 // FIXME 2023/02/12 - Implement documentation page.
 
@@ -35,10 +36,7 @@ export default function Home() {
             <section>
                 <DocumentationTitle id="access-levels">Access Levels</DocumentationTitle>
 
-                <ul>
-                    <li>TODO: Key Levels</li>
-                    <li>TODO: Selection table</li>
-                </ul>
+                <AccessLevels />
             </section>
             <section>
                 <DocumentationTitle id="errors">Error Codes</DocumentationTitle>
