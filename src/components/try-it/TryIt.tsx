@@ -10,12 +10,13 @@ export default function TryIt() {
             <h2 className="text-3xl font-bold capitalize mt-1 mb-2">Try It</h2>
 
             <KeyInput />
-
+            <div className="divider" />
             <span>URL selector</span>
-
+            <div className="divider" />
             <button className="btn" disabled>
                 Try It
             </button>
+            <div className="divider" />
             <span>OUTPUT</span>
         </CallProvider>
     );
