@@ -1,5 +1,7 @@
-export type TryResponse = {
+export type CallResponse = {
     url: string;
+    data: any;
+    timestamp: number;
 };
 
 type ErrorResponse = {

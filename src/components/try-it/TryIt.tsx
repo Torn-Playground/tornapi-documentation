@@ -3,6 +3,7 @@
 import KeyInput from "@/components/try-it/key-input/KeyInput";
 import { CallProvider } from "@/components/try-it/CallContext";
 import UrlSelector from "@/components/try-it/url-selector/UrlSelector";
+import TryItButton from "@/components/try-it/TryItButton";
 
 // FIXME 2023/02/17 - Implement try it page.
 export default function TryIt() {
@@ -14,9 +15,7 @@ export default function TryIt() {
             <div className="divider" />
             <UrlSelector />
             <div className="divider" />
-            <button className="btn" disabled>
-                Try It
-            </button>
+            <TryItButton />
             <div className="divider" />
             <span>OUTPUT</span>
         </CallProvider>
