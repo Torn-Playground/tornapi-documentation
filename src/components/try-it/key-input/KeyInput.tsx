@@ -23,11 +23,11 @@ export default function KeyInput() {
     };
 
     return (
-        <section className="flex gap-2">
+        <section className="flex gap-2 flex-col sm:flex-row">
             <div className="form-control">
                 <label className="input-group">
                     <span>API Key</span>
-                    <input type="text" className="input input-bordered" value={key} onChange={onChange} />
+                    <input type="text" className="input input-bordered flex-grow sm:flex-grow-0" value={key} onChange={onChange} />
                 </label>
             </div>
 
