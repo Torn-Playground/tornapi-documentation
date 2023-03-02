@@ -4,6 +4,7 @@ import KeyInput from "@/components/try-it/key-input/KeyInput";
 import { CallProvider } from "@/components/try-it/CallContext";
 import UrlSelector from "@/components/try-it/url-selector/UrlSelector";
 import TryItButton from "@/components/try-it/TryItButton";
+import CallResponse from "@/components/try-it/call-response/CallResponse";
 
 // FIXME 2023/02/17 - Implement try it page.
 export default function TryIt() {
@@ -17,7 +18,7 @@ export default function TryIt() {
             <div className="divider" />
             <TryItButton />
             <div className="divider" />
-            <span>OUTPUT</span>
+            <CallResponse />
         </CallProvider>
     );
 }
