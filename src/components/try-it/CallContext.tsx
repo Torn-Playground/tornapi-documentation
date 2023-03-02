@@ -2,10 +2,12 @@ import { createContext, Dispatch, PropsWithChildren, useContext, useEffect, useR
 
 type CallState = {
     key: string;
+    url: string;
 };
 
 const defaultState: CallState = {
     key: "",
+    url: "",
 };
 
 const CallContext = createContext<CallState>(defaultState);
@@ -13,9 +15,10 @@ const CallDispatchContext = createContext<Dispatch<CallAction>>(() => {});
 
 export enum CallActionType {
     SET_KEY = "SET_KEY",
+    SET_URL = "SET_URL",
 }
 
-type CallAction = { type: CallActionType.SET_KEY; key: string };
+type CallAction = { type: CallActionType.SET_KEY; key: string } | { type: CallActionType.SET_URL; url: string };
 
 function callsReducer(state: CallState, action: CallAction): CallState {
     switch (action.type) {
@@ -25,8 +28,14 @@ function callsReducer(state: CallState, action: CallAction): CallState {
                 key: action.key,
             };
         }
+        case CallActionType.SET_URL: {
+            return {
+                ...state,
+                url: action.url,
+            };
+        }
         default: {
-            throw Error(`Unknown action: ${action.type}`);
+            throw Error(`Unknown action.`, action);
         }
     }
 }
