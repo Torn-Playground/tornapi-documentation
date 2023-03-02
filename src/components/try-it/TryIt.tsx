@@ -10,15 +10,17 @@ import CallResponse from "@/components/try-it/call-response/CallResponse";
 export default function TryIt() {
     return (
         <CallProvider>
-            <h2 className="text-3xl font-bold capitalize mt-1 mb-2">Try It</h2>
+            <div className="mb-10">
+                <h2 className="text-3xl font-bold capitalize mt-1 mb-2">Try It</h2>
 
-            <KeyInput />
-            <div className="divider" />
-            <UrlSelector />
-            <div className="divider" />
-            <TryItButton />
-            <div className="divider" />
-            <CallResponse />
+                <KeyInput />
+                <div className="divider" />
+                <UrlSelector />
+                <div className="divider" />
+                <TryItButton />
+                <div className="divider" />
+                <CallResponse />
+            </div>
         </CallProvider>
     );
 }
