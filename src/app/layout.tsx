@@ -4,21 +4,27 @@ import Navigation from "@/components/global/navigation/Navigation";
 import Footer from "@/components/global/footer/Footer";
 import Header from "@/components/global/header/Header";
 import { Metadata } from "next/dist/lib/metadata/types/metadata-interface";
+import { ServerThemeProvider, ThemeProvider } from "next-themes";
+import { ALL_THEMES, DEFAULT_THEME, STORAGE_KEY } from "@/components/global/theme-selector/theme-utilities";
 
 // noinspection JSUnusedGlobalSymbols
 export default function RootLayout({ children }: PropsWithChildren) {
     return (
-        <html lang="en" data-theme="dark">
-            <body>
-                <Navigation>
-                    <Header />
+        <ServerThemeProvider defaultTheme={DEFAULT_THEME} themes={ALL_THEMES} storageKey={STORAGE_KEY}>
+            <html lang="en">
+                <body>
+                    <ThemeProvider defaultTheme={DEFAULT_THEME} themes={ALL_THEMES} storageKey={STORAGE_KEY}>
+                        <Navigation>
+                            <Header />
 
-                    <main className="px-2 py-1">{children}</main>
+                            <main className="px-2 py-1">{children}</main>
 
-                    <Footer />
-                </Navigation>
-            </body>
-        </html>
+                            <Footer />
+                        </Navigation>
+                    </ThemeProvider>
+                </body>
+            </html>
+        </ServerThemeProvider>
     );
 }
 
