@@ -4,7 +4,7 @@ import SunIcon from "@/components/global/icons/SunIcon";
 import MoonIcon from "@/components/global/icons/MoonIcon";
 import { ChangeEvent } from "react";
 import { THEME_DARK, THEME_LIGHT } from "@/components/global/theme-selector/theme-utilities";
-import useTheme from "@/components/global/theme-selector/use-theme.hook";
+import { useTheme } from "next-themes";
 
 export default function ThemeSelector() {
     const { theme, setTheme } = useTheme();
