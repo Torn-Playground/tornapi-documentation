@@ -11,8 +11,8 @@ const Menu = () => {
             <li>
                 <Link href="/try-it">Try It</Link>
             </li>
-            <li>
-                <div className="divider p-0">Sections</div>
+            <li className="menu-title">
+                <div className="divider m-0">Sections</div>
             </li>
             <li>
                 <Link href="/user">User</Link>
