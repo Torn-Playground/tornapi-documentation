@@ -33,11 +33,11 @@ export default function SelectionSelector(props: SelectionSelectorProps) {
     };
 
     return (
-        <div className="mt-2 space-x-1 cursor-pointer">
+        <div className="mt-2 space-x-1">
             {possibleSelections.map((selection) => (
                 <span
                     key={selection}
-                    className={`badge badge-lg ${selectedSelections.includes(selection) ? "badge-primary" : ""}`}
+                    className={`badge badge-lg ${selectedSelections.includes(selection) ? "badge-primary" : ""} cursor-pointer`}
                     data-selection={selection}
                     onClick={selectSelection}
                 >
