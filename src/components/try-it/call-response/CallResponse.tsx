@@ -14,13 +14,15 @@ export default function CallResponse() {
                     {calls.responses
                         .sort((a, b) => b.timestamp - a.timestamp)
                         .map((response) => (
-                            <label key={response.timestamp} className="collapse collapse-arrow odd:bg-base-300 even:bg-base-200">
-                                <input type="checkbox" />
-                                <div className="collapse-title text-xl font-medium">{response.url}</div>
+                            <div key={response.timestamp} className="collapse collapse-arrow odd:bg-base-300 even:bg-base-200">
+                                <input type="checkbox" id={`response-${response.timestamp}`} />
+                                <label className="collapse-title text-xl font-medium" htmlFor={`response-${response.timestamp}`}>
+                                    {response.url}
+                                </label>
                                 <div className="collapse-content prose max-w-none">
                                     <pre>{JSON.stringify(response.data, null, 4)}</pre>
                                 </div>
-                            </label>
+                            </div>
                         ))}
                 </div>
             ) : (
