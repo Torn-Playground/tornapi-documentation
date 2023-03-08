@@ -7,7 +7,6 @@ export type Section = {
 };
 
 export interface Selection {
-    section: SectionType;
     name: string;
     description: string;
     access: KeyAccess;

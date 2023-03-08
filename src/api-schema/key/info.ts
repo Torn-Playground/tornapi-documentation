@@ -35,7 +35,6 @@ const schema: Schema = {
 };
 
 const InfoSelection: Selection = {
-    section: "key",
     name: "info",
     description: "Get information about the used api key.",
     access: "public",

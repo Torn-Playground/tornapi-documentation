@@ -66,7 +66,6 @@ const schema: Schema = {
 };
 
 const AttacksSelection: Selection = {
-    section: "user",
     name: "attacks",
     description: "Retrieves the last 100 attacks.",
     access: "limited",
