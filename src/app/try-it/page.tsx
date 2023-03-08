@@ -1,6 +1,6 @@
-// FIXME 2023/02/17 - Implement try it page.
+import TryIt from "@/components/try-it/TryIt";
 
 // noinspection JSUnusedGlobalSymbols
-export default function TryIt() {
-    return <div>Try It</div>;
+export default function TryItPage() {
+    return <TryIt />;
 }
