@@ -7,8 +7,6 @@ import { Param, SectionType } from "@/api-schema/schema.types";
 import { CallActionType, useCalls, useCallsDispatch } from "@/components/try-it/CallContext";
 import { createApiUrl, ParamInput } from "@/components/try-it/url-selector/url-utilities";
 
-// FIXME 2023/03/02 - Finish this component.
-// - Query Params
 export default function UrlSelector() {
     const state = useCalls();
     const dispatch = useCallsDispatch();
@@ -16,6 +14,7 @@ export default function UrlSelector() {
     const [section, setSection] = useState<SectionType | "">("");
     const [selections, setSelections] = useState<string[]>([]);
     const [id, setId] = useState<string>("");
+    const [comment, setComment] = useState<string>("TornAPI");
     const [selectedParams, setSelectedParams] = useState<{ [key: string]: string }>({});
 
     const [possibleParams, setPossibleParams] = useState<Param[]>([]);
@@ -26,10 +25,10 @@ export default function UrlSelector() {
             .filter(([, value]) => value !== "")
             .map(([param, value]) => ({ param, value } as ParamInput));
 
-        const url = createApiUrl(state.key, section, id, selections, params);
+        const url = createApiUrl(state.key, section, id, selections, comment, params);
 
         dispatch({ type: CallActionType.SET_URL, url });
-    }, [state.key, dispatch, section, selections, id, selectedParams, possibleParams]);
+    }, [state.key, dispatch, section, selections, id, selectedParams, possibleParams, comment]);
     useEffect(() => {
         setPossibleParams(getPossibleParams(section, selections));
     }, [section, selections]);
@@ -54,6 +53,12 @@ export default function UrlSelector() {
                     <label className="input-group">
                         <span>ID</span>
                         <input className="input input-bordered" value={id} onChange={(event) => setId(event.target.value)} />
+                    </label>
+                </div>
+                <div className="form-control">
+                    <label className="input-group">
+                        <span>Comment</span>
+                        <input className="input input-bordered" value={comment} onChange={(event) => setComment(event.target.value)} />
                     </label>
                 </div>
             </div>
