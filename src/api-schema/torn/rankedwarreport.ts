@@ -96,7 +96,6 @@ const schema: Schema = {
 };
 
 const RankedWarReportSelection: Selection = {
-    section: "torn",
     name: "rankedwarreport",
     description: "View a specific ranked war report.",
     access: "public",
