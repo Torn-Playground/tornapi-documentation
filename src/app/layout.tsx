@@ -46,6 +46,9 @@ export const metadata: Partial<Metadata> = {
     },
     creator: "DeKleineKobini",
     publisher: "DeKleineKobini",
+    icons: {
+        icon: "/favicon-playground.svg",
+    },
     robots: {
         index: true,
         follow: true,
