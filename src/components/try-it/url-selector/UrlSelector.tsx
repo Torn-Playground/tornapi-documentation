@@ -1,11 +1,11 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { schema } from "@/api-schema/data";
+import { getPossibleParams, schema } from "@/api-schema/data";
 import SelectionSelector from "@/components/try-it/url-selector/SelectionSelector";
-import { SectionType } from "@/api-schema/schema.types";
+import { Param, SectionType } from "@/api-schema/schema.types";
 import { CallActionType, useCalls, useCallsDispatch } from "@/components/try-it/CallContext";
-import { createApiUrl } from "@/components/try-it/url-selector/url-utilities";
+import { createApiUrl, ParamInput } from "@/components/try-it/url-selector/url-utilities";
 
 // FIXME 2023/03/02 - Finish this component.
 // - Query Params
@@ -16,12 +16,23 @@ export default function UrlSelector() {
     const [section, setSection] = useState<SectionType | "">("");
     const [selections, setSelections] = useState<string[]>([]);
     const [id, setId] = useState<string>("");
+    const [selectedParams, setSelectedParams] = useState<{ [key: string]: string }>({});
+
+    const [possibleParams, setPossibleParams] = useState<Param[]>([]);
 
     useEffect(() => {
-        const url = createApiUrl(state.key, section, id, selections);
+        const params = Object.entries(selectedParams)
+            .filter(([param]) => possibleParams.find((p) => p.name === param))
+            .filter(([, value]) => value !== "")
+            .map(([param, value]) => ({ param, value } as ParamInput));
+
+        const url = createApiUrl(state.key, section, id, selections, params);
 
         dispatch({ type: CallActionType.SET_URL, url });
-    }, [state.key, dispatch, section, selections, id]);
+    }, [state.key, dispatch, section, selections, id, selectedParams, possibleParams]);
+    useEffect(() => {
+        setPossibleParams(getPossibleParams(section, selections));
+    }, [section, selections]);
 
     return (
         <section className="mt-3">
@@ -46,6 +57,27 @@ export default function UrlSelector() {
                     </label>
                 </div>
             </div>
+            {possibleParams.length > 0 && (
+                <div className="flex gap-2 flex-wrap mt-2">
+                    {possibleParams.map((param) => (
+                        <div key={param.name} className="form-control">
+                            <label className="input-group">
+                                <span>{param.name}</span>
+                                <input
+                                    className="input input-bordered"
+                                    value={selectedParams[param.name]}
+                                    onChange={(event) =>
+                                        setSelectedParams((p) => ({
+                                            ...p,
+                                            [param.name]: event.target.value,
+                                        }))
+                                    }
+                                />
+                            </label>
+                        </div>
+                    ))}
+                </div>
+            )}
 
             {section && <SelectionSelector section={section} onSelectionsChange={setSelections} />}
         </section>

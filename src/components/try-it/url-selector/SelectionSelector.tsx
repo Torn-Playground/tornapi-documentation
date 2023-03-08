@@ -13,7 +13,9 @@ export default function SelectionSelector(props: SelectionSelectorProps) {
 
     useEffect(() => {
         setPossibleSelections(schema[props.section].selections.map((selection) => selection.name));
-    }, [props.section]);
+        setSelectedSelections([]);
+        props.onSelectionsChange([]);
+    }, [props.section, props.onSelectionsChange]);
 
     const selectSelection = (event: MouseEvent<HTMLSpanElement>) => {
         const selection = event.currentTarget.dataset.selection!;

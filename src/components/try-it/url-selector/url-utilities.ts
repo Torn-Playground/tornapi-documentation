@@ -12,7 +12,7 @@ function hasValidParts(key: string, section: SectionType | "", selections: strin
 }
 
 // eslint-disable-next-line import/prefer-default-export
-export function createApiUrl(key: string, section: SectionType | "", id: string, selections: string[]): string {
+export function createApiUrl(key: string, section: SectionType | "", id: string, selections: string[], params: ParamInput[]): string {
     if (!hasValidParts(key, section, selections)) {
         return "";
     }
@@ -20,9 +20,15 @@ export function createApiUrl(key: string, section: SectionType | "", id: string,
     const url = new URL(`https://api.torn.com/${section}/${id}`);
     const { searchParams } = url;
     if (selections.length > 0) searchParams.append("selections", selections.join(","));
+    params.forEach((p) => searchParams.append(p.param, p.value));
     // FIXME 2023/03/03 - Don't hardcode this comment.
     searchParams.append("comment", "TornAPI");
     searchParams.append("key", key);
 
     return url.toString();
 }
+
+export type ParamInput = {
+    param: string;
+    value: string;
+};
