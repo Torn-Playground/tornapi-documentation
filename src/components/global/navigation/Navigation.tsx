@@ -17,8 +17,8 @@ const Menu = () => {
             <li>
                 <Link href="/user">User</Link>
             </li>
-            <li className="disabled">
-                <span>Property</span>
+            <li>
+                <Link href="/property">Property</Link>
             </li>
             <li className="disabled">
                 <span>Faction</span>
