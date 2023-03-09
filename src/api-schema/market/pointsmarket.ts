@@ -17,7 +17,7 @@ const pointsStructure: Structure = {
         "<some id>": fromStructure(pointStructure),
     },
 };
-const structures = [pointsStructure];
+const structures = [pointsStructure, pointStructure];
 
 const schema: Schema = {
     pointsmarket: fromStructure(pointsStructure),
