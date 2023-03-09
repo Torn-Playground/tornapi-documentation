@@ -182,7 +182,7 @@ const schema: Schema = {
     player_id: { type: Integer },
     name: { type: String },
     property_id: { type: Integer },
-    competition: fromStructure(competitionStructure, { nullable: true }),
+    competition: fromStructure(competitionStructure, { nullable: true, array: false }),
     revivable: { type: NumberBoolean, description: "Status whether you (the key owner) can revive this player." },
     life: fromStructure(bar),
     status: fromStructure(statusStructure),
