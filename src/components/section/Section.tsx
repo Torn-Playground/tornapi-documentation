@@ -16,8 +16,8 @@ export default function Section(props: SectionProps) {
             <h2 className="text-3xl font-bold capitalize mt-1">{props.section}</h2>
             {props.idDescription && <p className="text-xs mb-4">{props.idDescription}</p>}
 
-            <span>Selections:</span>
-            <div className="inline-flex ml-2 space-x-1.5">
+            <div className="flex flex-wrap gap-1">
+                <span>Selections:</span>
                 {props.selections
                     .sort((a, b) => a.name.localeCompare(b.name))
                     .map((selection) => {
