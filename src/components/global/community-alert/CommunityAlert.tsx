@@ -23,7 +23,7 @@ export default function CommunityAlert() {
     }
 
     return (
-        <div className="fixed bottom-10 z-40 flex items-center w-full px-3">
+        <div className="fixed bottom-10 z-40 flex items-center w-full px-3 absolute">
             <div className="alert alert-info shadow-lg">
                 <div>
                     <InfoIcon size={24} />
