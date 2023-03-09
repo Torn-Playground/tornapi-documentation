@@ -7,15 +7,15 @@ type SelectionSelectorProps = {
     onSelectionsChange: (selections: string[]) => void;
 };
 
-export default function SelectionSelector(props: SelectionSelectorProps) {
+export default function SelectionSelector({ onSelectionsChange, section }: SelectionSelectorProps) {
     const [possibleSelections, setPossibleSelections] = useState<string[]>([]);
     const [selectedSelections, setSelectedSelections] = useState<string[]>([]);
 
     useEffect(() => {
-        setPossibleSelections(schema[props.section].selections.map((selection) => selection.name));
+        setPossibleSelections(schema[section].selections.map((selection) => selection.name));
         setSelectedSelections([]);
-        props.onSelectionsChange([]);
-    }, [props.section, props.onSelectionsChange]);
+        onSelectionsChange([]);
+    }, [section, onSelectionsChange]);
 
     const selectSelection = (event: MouseEvent<HTMLSpanElement>) => {
         const selection = event.currentTarget.dataset.selection!;
@@ -31,7 +31,7 @@ export default function SelectionSelector(props: SelectionSelectorProps) {
             newSelections = [selection];
         }
         setSelectedSelections(newSelections);
-        props.onSelectionsChange(newSelections);
+        onSelectionsChange(newSelections);
     };
 
     return (
