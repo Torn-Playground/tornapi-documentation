@@ -1,8 +1,9 @@
 import { Section, Selection } from "@/api-schema/schema.types";
 import AttacksSelection from "@/api-schema/user/attacks";
 import ProfileSelection from "@/api-schema/user/profile";
+import { LookupSelection, TimestampSelection } from "@/api-schema/common-selections";
 
-const selections: Selection[] = [AttacksSelection, ProfileSelection];
+const selections: Selection[] = [LookupSelection, TimestampSelection, AttacksSelection, ProfileSelection];
 
 const UserSection: Section = {
     selections,
