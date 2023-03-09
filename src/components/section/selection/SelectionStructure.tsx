@@ -11,8 +11,40 @@ export default function SelectionStructure(props: SelectionStructureProps) {
     const hasDescription = Object.values(props.schema)
         .filter(isField)
         .some((f) => f.description);
-
     const buildRow = (field: string, schema: SchemaField | FieldStructure) => {
+        let fields;
+        if (isField(schema)) {
+            fields = (
+                <>
+                    <td>{schema.type}</td>
+                    {hasDescription && <td>{schema.description}</td>}
+                </>
+            );
+        } else if (isFieldStructure(schema)) {
+            const link = (
+                <ExtendedLink className="link link-info" href={{ hash: schema.structure.id }} prefetch={false}>
+                    {schema.structure.name}
+                </ExtendedLink>
+            );
+
+            fields = (
+                <>
+                    <td>
+                        {schema.array ? (
+                            <>Array of {link} </>
+                        ) : (
+                            <>
+                                {link} {schema.structure.type}
+                            </>
+                        )}
+                    </td>
+                    {hasDescription && <td></td>}
+                </>
+            );
+        } else {
+            fields = <td>something went wrong</td>;
+        }
+
         return (
             <tr key={field}>
                 <td>
@@ -20,35 +52,7 @@ export default function SelectionStructure(props: SelectionStructureProps) {
                     {schema.nullable && <NullableIndicator tooltip={schema.extra} />}
                     {schema.extra && !schema.nullable && <ExtraInformation tooltip={schema.extra} />}
                 </td>
-                {isField(schema) && (
-                    <>
-                        <td>{schema.type}</td>
-                        {hasDescription && <td>{schema.description}</td>}
-                    </>
-                )}
-
-                {isFieldStructure(schema) && (
-                    <>
-                        <td>
-                            {schema.array ? (
-                                <>
-                                    Array of{" "}
-                                    <ExtendedLink className="link link-primary link-hover" href={{ hash: schema.structure.id }} prefetch={false}>
-                                        {schema.structure.name}
-                                    </ExtendedLink>{" "}
-                                </>
-                            ) : (
-                                <>
-                                    <ExtendedLink className="link link-primary link-hover" href={{ hash: schema.structure.id }} prefetch={false}>
-                                        {schema.structure.name}
-                                    </ExtendedLink>{" "}
-                                    {schema.structure.type}
-                                </>
-                            )}
-                        </td>
-                        {hasDescription && <td></td>}
-                    </>
-                )}
+                {fields}
             </tr>
         );
     };
