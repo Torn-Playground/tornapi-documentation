@@ -22,7 +22,6 @@ const schema: Schema = {
 };
 
 const PropertySelection: Selection = {
-    section: "property",
     name: "property",
     description: "View a specific ranked war report.",
     access: "public",
