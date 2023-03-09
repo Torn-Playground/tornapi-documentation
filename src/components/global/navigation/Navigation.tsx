@@ -46,7 +46,7 @@ export default function Navigation(props: PropsWithChildren) {
     return (
         <div className="drawer drawer-mobile">
             <input id="navigation-drawer" type="checkbox" className="drawer-toggle hidden" />
-            <div className="drawer-content">{props.children}</div>
+            <div className="drawer-content relative">{props.children}</div>
             <nav className="drawer-side">
                 <label htmlFor="navigation-drawer" className="drawer-overlay"></label>
                 <Menu />
