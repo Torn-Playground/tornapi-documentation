@@ -21,7 +21,7 @@ export function createApiUrl(key: string, section: SectionType | "", id: string,
     const { searchParams } = url;
     if (selections.length > 0) searchParams.append("selections", selections.join(","));
     params.forEach((p) => searchParams.append(p.param, p.value));
-    searchParams.append("comment", comment);
+    if (comment !== "") searchParams.append("comment", comment);
     searchParams.append("key", key);
 
     return url.toString();
