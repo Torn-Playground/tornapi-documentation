@@ -30,10 +30,21 @@ export default function SelectionStructure(props: SelectionStructureProps) {
                 {isFieldStructure(schema) && (
                     <>
                         <td>
-                            <ExtendedLink className="link link-primary link-hover" href={{ hash: schema.structure.id }} prefetch={false}>
-                                {schema.structure.name}
-                            </ExtendedLink>{" "}
-                            {schema.structure.type}
+                            {schema.array ? (
+                                <>
+                                    Array of{" "}
+                                    <ExtendedLink className="link link-primary link-hover" href={{ hash: schema.structure.id }} prefetch={false}>
+                                        {schema.structure.name}
+                                    </ExtendedLink>{" "}
+                                </>
+                            ) : (
+                                <>
+                                    <ExtendedLink className="link link-primary link-hover" href={{ hash: schema.structure.id }} prefetch={false}>
+                                        {schema.structure.name}
+                                    </ExtendedLink>{" "}
+                                    {schema.structure.type}
+                                </>
+                            )}
                         </td>
                         {hasDescription && <td></td>}
                     </>

@@ -31,7 +31,7 @@ export interface SchemaField {
     nullable?: true;
 }
 
-type StructureType = "object" | "enum";
+type StructureType = "object" | "enum" | "array";
 
 export type FieldStructure = {
     structure: {
@@ -41,6 +41,7 @@ export type FieldStructure = {
     };
     extra?: string;
     nullable: boolean;
+    array: boolean;
 };
 
 export function isField(object: SchemaField | FieldStructure): object is SchemaField {
@@ -69,7 +70,15 @@ export type StructureEnum<T> = {
     type: string;
 };
 
-export function fromStructure(structure: Structure | StructureEnum<any>, options: { nullable: boolean } = { nullable: false }): FieldStructure {
+export type StructureOptions = { nullable: boolean; array: boolean };
+
+export function fromStructure(
+    structure: Structure | StructureEnum<any>,
+    options: StructureOptions = {
+        nullable: false,
+        array: false,
+    },
+): FieldStructure {
     let type: StructureType;
     if ("schema" in structure) type = "object";
     else if ("values" in structure) type = "enum";
@@ -82,6 +91,7 @@ export function fromStructure(structure: Structure | StructureEnum<any>, options
             type,
         },
         nullable: options.nullable,
+        array: options.array,
     };
 }
 
