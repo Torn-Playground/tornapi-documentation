@@ -10,7 +10,6 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@next/font": "^13.2.3",
     "@tippyjs/react": "^4.2.6",
     "daisyui": "^2.51.3",
     "next": "^13.2.3",
