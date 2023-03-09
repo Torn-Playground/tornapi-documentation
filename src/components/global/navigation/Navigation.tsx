@@ -20,14 +20,14 @@ const Menu = () => {
             <li>
                 <Link href="/property">Property</Link>
             </li>
-            <li className="disabled">
-                <span>Faction</span>
+            <li>
+                <Link href="/faction">Faction</Link>
             </li>
-            <li className="disabled">
-                <span>Company</span>
+            <li>
+                <Link href="/company">Company</Link>
             </li>
-            <li className="disabled">
-                <span>Market</span>
+            <li>
+                <Link href="/market">Market</Link>
             </li>
             <li>
                 <Link href="/torn">Torn</Link>
