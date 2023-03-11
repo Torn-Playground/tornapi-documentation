@@ -19,6 +19,9 @@ import PokerTablesSelection from "@/api-schema/torn/pokertables";
 import PropertiesSelection from "@/api-schema/torn/properties";
 import RacketsSelection from "@/api-schema/torn/rackets";
 import RaidsSelection from "@/api-schema/torn/raids";
+import StocksSelection from "@/api-schema/torn/stocks";
+import RankedWarsSelection from "@/api-schema/torn/rankedwars";
+import StatsSelection from "@/api-schema/torn/stats";
 
 const selections: Selection[] = [
     BankSelection,
@@ -44,7 +47,10 @@ const selections: Selection[] = [
     RacketsSelection,
     RaidsSelection,
     RankedWarReportSelection,
-    // rankedwars ... territorywars
+    RankedWarsSelection,
+    StatsSelection,
+    StocksSelection,
+    // territory ... territorywars
     TimestampSelection,
 ];
 
