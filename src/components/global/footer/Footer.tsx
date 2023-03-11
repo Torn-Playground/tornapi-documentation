@@ -11,7 +11,7 @@ function DiscordLink(props: PropsWithChildren) {
 
 export default function Footer() {
     return (
-        <footer className="fixed bottom-0 bg-base-300 available-width text-center p-1">
+        <footer className="fixed bottom-0 bg-base-300 available-width text-center p-1 z-40">
             <span className="text-primary-content">
                 Brought to you by <DiscordLink>the TornAPI Discord</DiscordLink>.
             </span>
