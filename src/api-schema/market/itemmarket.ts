@@ -13,7 +13,7 @@ const itemStructure: Structure = {
 const structures = [itemStructure];
 
 const schema: Schema = {
-    property: fromStructure(itemStructure, { array: true, nullable: false }),
+    property: fromStructure(itemStructure, { array: true }),
 };
 
 const ItemMarketSelection: Selection = {

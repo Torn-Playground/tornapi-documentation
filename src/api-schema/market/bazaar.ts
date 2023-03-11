@@ -13,7 +13,7 @@ const itemStructure: Structure = {
 const structures = [itemStructure];
 
 const schema: Schema = {
-    bazaar: fromStructure(itemStructure, { array: true, nullable: false }),
+    bazaar: fromStructure(itemStructure, { array: true }),
 };
 
 const BazaarSelection: Selection = {

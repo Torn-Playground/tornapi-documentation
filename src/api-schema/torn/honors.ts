@@ -16,7 +16,7 @@ const honorStructure: Structure = {
         type: { type: Integer },
         circulation: { type: Integer, extra: "Will be null for default honors.", nullable: true },
         equipped: { type: String, extra: "Will be null for default honors.", nullable: true },
-        rarity: fromStructure(rarityEnum, { nullable: true, array: false }),
+        rarity: fromStructure(rarityEnum, { nullable: true }),
     },
 };
 const honorsStructure: Structure = {
