@@ -22,11 +22,16 @@ import RaidsSelection from "@/api-schema/torn/raids";
 import StocksSelection from "@/api-schema/torn/stocks";
 import RankedWarsSelection from "@/api-schema/torn/rankedwars";
 import StatsSelection from "@/api-schema/torn/stats";
+import ItemDetailsSelection from "@/api-schema/torn/itemdetails";
+import ItemStatsSelection from "@/api-schema/torn/itemstats";
+import TerritoryWarsSelection from "@/api-schema/torn/territorywars";
+import TerritorySelection from "@/api-schema/torn/territory";
+import ChainReportSelection from "@/api-schema/torn/chainreport";
 
 const selections: Selection[] = [
     BankSelection,
     CardsSelection,
-    // chainreport
+    ChainReportSelection,
     CityShopsSelection,
     CompaniesSelection,
     // competition
@@ -34,8 +39,9 @@ const selections: Selection[] = [
     FactionTreeSelection,
     GymsSelection,
     HonorsSelection,
+    ItemDetailsSelection,
     ItemsSelection,
-    // itemstats
+    ItemStatsSelection,
     LogCategoriesSelection,
     LogTypesSelection,
     LookupSelection,
@@ -50,7 +56,8 @@ const selections: Selection[] = [
     RankedWarsSelection,
     StatsSelection,
     StocksSelection,
-    // territory ... territorywars
+    TerritorySelection,
+    TerritoryWarsSelection,
     TimestampSelection,
 ];
 

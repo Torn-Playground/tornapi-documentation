@@ -5,6 +5,7 @@ export const IntegerAndEmptyString = "Integer + (empty) String";
 export const IntegerOrNumber = "Integer or Number (with floating point)";
 export const Number = "Number (with floating point)";
 export const NumberBoolean = "NumberBoolean (0 for false, 1 for true)";
+export const Boolean = "Boolean";
 export const ArrayString = "Array of strings";
 export const ArrayInteger = "Array of integers";
 export const EpochSeconds = "Epoch timestamp (in seconds)";
