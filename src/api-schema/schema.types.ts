@@ -70,15 +70,9 @@ export type StructureEnum<T> = {
     type: string;
 };
 
-export type StructureOptions = { nullable: boolean; array: boolean };
+export type StructureOptions = { nullable?: boolean; extra?: string; array?: boolean };
 
-export function fromStructure(
-    structure: Structure | StructureEnum<any>,
-    options: StructureOptions = {
-        nullable: false,
-        array: false,
-    },
-): FieldStructure {
+export function fromStructure(structure: Structure | StructureEnum<any>, options: StructureOptions = {}): FieldStructure {
     let type: StructureType;
     if ("schema" in structure) type = "object";
     else if ("values" in structure) type = "enum";
@@ -90,8 +84,9 @@ export function fromStructure(
             name: structure.name,
             type,
         },
-        nullable: options.nullable,
-        array: options.array,
+        nullable: options.nullable ?? false,
+        extra: options.extra,
+        array: options.array ?? false,
     };
 }
 

@@ -21,7 +21,7 @@ const propertyStructure: Structure = {
         upkeep: { type: Integer },
         upgrades: { type: ArrayString },
         staff: { type: ArrayString },
-        rented: fromStructure(rentedStructure, { nullable: true, array: false }),
+        rented: fromStructure(rentedStructure, { nullable: true }),
         users_living: { type: IntegerAndString, nullable: true },
     },
 };

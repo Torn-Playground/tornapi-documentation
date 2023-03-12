@@ -33,7 +33,7 @@ const itemStructure: Structure = {
         market_value: { type: Integer },
         circulation: { type: Integer },
         image: { type: String },
-        coverage: fromStructure(coverageStructure, { nullable: true, array: false }),
+        coverage: fromStructure(coverageStructure, { nullable: true }),
     },
 };
 const itemsStructure: Structure = {

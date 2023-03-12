@@ -23,7 +23,7 @@ const shopStructure: Structure = {
     name: "Shop",
     schema: {
         name: { type: String },
-        inventory: fromStructure(inventoryStructure, { nullable: true, array: false }),
+        inventory: fromStructure(inventoryStructure, { nullable: true }),
     },
 };
 const cityShopsStructure: Structure = {
