@@ -27,6 +27,7 @@ import ItemStatsSelection from "@/api-schema/torn/itemstats";
 import TerritoryWarsSelection from "@/api-schema/torn/territorywars";
 import TerritorySelection from "@/api-schema/torn/territory";
 import ChainReportSelection from "@/api-schema/torn/chainreport";
+import CompetitionSelection from "@/api-schema/torn/competition";
 
 const selections: Selection[] = [
     BankSelection,
@@ -34,7 +35,7 @@ const selections: Selection[] = [
     ChainReportSelection,
     CityShopsSelection,
     CompaniesSelection,
-    // competition
+    CompetitionSelection,
     EducationSelection,
     FactionTreeSelection,
     GymsSelection,
