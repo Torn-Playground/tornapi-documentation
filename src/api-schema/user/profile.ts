@@ -196,7 +196,7 @@ const schema: Schema = {
 
 const ProfileSelection: Selection = {
     name: "profile",
-    description: "Get some information about an user.",
+    description: "Get some information about a user.",
     access: "public",
     schema,
     structures,
