@@ -2,7 +2,7 @@
 
 import { CallActionType, useCalls, useCallsDispatch } from "@/components/try-it/CallContext";
 import { useState } from "react";
-import KeyIcon from "@/components/global/icons/KeyIcon";
+import { SpinningCircles } from "react-loading-icons";
 
 export default function TryItButton() {
     const [executing, setExecuting] = useState(false);
@@ -21,8 +21,7 @@ export default function TryItButton() {
 
     return (
         <button className="btn" disabled={!calls.url || executing} onClick={executeCall}>
-            {/* FIXME 2023/03/03 - Show loading icon. */}
-            {executing ? <KeyIcon size={12} /> : "Try It"}
+            {executing ? <SpinningCircles width={24} height={24} fill="currentColor" /> : "Try It"}
         </button>
     );
 }

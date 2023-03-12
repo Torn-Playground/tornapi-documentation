@@ -6,7 +6,6 @@ import UrlSelector from "@/components/try-it/url-selector/UrlSelector";
 import TryItButton from "@/components/try-it/TryItButton";
 import CallResponse from "@/components/try-it/call-response/CallResponse";
 
-// FIXME 2023/02/17 - Implement try it page.
 export default function TryIt() {
     return (
         <CallProvider>
