@@ -28,7 +28,7 @@ export default function SelectionStructures(props: SelectionStructuresProps) {
                             </span>
 
                             {"schema" in structure && <SelectionStructure schema={structure.schema} />}
-                            {"values" in structure && <SelectionEnum type={structure.type} values={structure.values} />}
+                            {"values" in structure && <SelectionEnum type={structure.type} values={structure.values} incomplete={structure.incomplete} />}
                         </div>
                     ))}
             </div>
