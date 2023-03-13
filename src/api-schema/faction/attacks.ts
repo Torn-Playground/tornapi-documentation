@@ -1,8 +1,8 @@
 import { fromStructure, Schema, Selection } from "@/api-schema/schema.types";
-import { LIMIT, TIME_FROM, TIME_TO } from "@/api-schema/common-params";
 import { attackResultEnum, attacksStructure, attackStructure, modifiersStructure } from "@/api-schema/shared/attacks";
+import { LIMIT, TIME_FROM, TIME_TO } from "@/api-schema/common-params";
 
-const structures = [attacksStructure, attackStructure, modifiersStructure, attackResultEnum];
+const structures = [attacksStructure, attackStructure, attackResultEnum, modifiersStructure];
 
 const schema: Schema = {
     attacks: fromStructure(attacksStructure),
@@ -10,7 +10,7 @@ const schema: Schema = {
 
 const AttacksSelection: Selection = {
     name: "attacks",
-    description: "Retrieves the last 100 attacks.",
+    description: "List 100 attacks and defends from the faction. Only available with faction API Access.",
     access: "limited",
     schema,
     structures,

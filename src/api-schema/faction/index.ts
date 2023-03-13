@@ -1,5 +1,7 @@
 import { Section, Selection } from "@/api-schema/schema.types";
 import { LookupSelection, TimestampSelection } from "@/api-schema/common-selections";
+import AttacksSelection from "@/api-schema/faction/attacks";
+import AttacksFullSelection from "@/api-schema/faction/attacksfull";
 import BasicSelection from "@/api-schema/faction/basic";
 
 const selections: Selection[] = [
@@ -7,8 +9,8 @@ const selections: Selection[] = [
     //  armor
     //  armorynews
     //  attacknews
-    //  attacks
-    //  attacksfull
+    AttacksSelection,
+    AttacksFullSelection,
     BasicSelection,
     //  boosters
     //  cesium
