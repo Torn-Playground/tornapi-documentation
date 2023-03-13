@@ -1,6 +1,8 @@
 import { bar } from "@/api-schema/user/user-structures";
 import { fromStructure, Schema, Selection, Structure, StructureEnum } from "@/api-schema/schema.types";
 import { EpochSeconds, Integer, IntegerAndEmptyString, NumberBoolean, String } from "@/api-schema/common-types";
+import { lastActionStatusEnum, lastActionStructure } from "@/api-schema/shared/last-action";
+import { statusColorEnum, statusStateEnum, statusStructure } from "@/api-schema/shared/status";
 
 const competitionTypeEnum: StructureEnum<string> = {
     id: "competition_type",
@@ -52,29 +54,10 @@ const competitionStructure: Structure = {
         },
     },
 };
-
 const roleEnum: StructureEnum<string> = {
     id: "role",
     name: "Role",
     values: ["Civilian", "Reporter", "Wiki Contributor", "Wiki Editor", "Committee", "Helper", "Moderator", "Officer", "Admin", "NPC"],
-    type: String,
-};
-const statusStateEnum: StructureEnum<string> = {
-    id: "status_state",
-    name: "Status State",
-    values: ["Okay", "Traveling", "Abroad", "Hospital", "Jail", "Fallen", "Federal"],
-    type: String,
-};
-const statusColorEnum: StructureEnum<string> = {
-    id: "status_color",
-    name: "Status Color",
-    values: ["green", "blue", "red"],
-    type: String,
-};
-const lastActionStatusEnum: StructureEnum<string> = {
-    id: "last_action_status",
-    name: "Last Action Status",
-    values: ["Online", "Idle", "Offline"],
     type: String,
 };
 const genderEnum: StructureEnum<string> = {
@@ -82,17 +65,6 @@ const genderEnum: StructureEnum<string> = {
     name: "Gender",
     values: ["Male", "Female", "Enby"],
     type: String,
-};
-export const statusStructure: Structure = {
-    id: "status",
-    name: "Status",
-    schema: {
-        description: { type: String },
-        details: { type: String },
-        state: fromStructure(statusStateEnum),
-        color: fromStructure(statusColorEnum),
-        until: { type: EpochSeconds, extra: "Will be 0 when not applicable." },
-    },
 };
 const jobStructure: Structure = {
     id: "job",
@@ -135,15 +107,6 @@ const statesStructure: Structure = {
     schema: {
         hospital_timestamp: { type: EpochSeconds, extra: "Will be 0 when not hospitalized." },
         jail_timestamp: { type: EpochSeconds, extra: "Will be 0 when not in jail." },
-    },
-};
-export const lastActionStructure: Structure = {
-    id: "last_action",
-    name: "Last Action",
-    schema: {
-        status: fromStructure(lastActionStatusEnum),
-        timestamp: { type: EpochSeconds, nullable: true },
-        relative: { type: String, extra: "Will be 'No Last Action' when there is no last action." },
     },
 };
 

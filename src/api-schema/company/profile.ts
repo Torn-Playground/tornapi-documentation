@@ -1,6 +1,7 @@
 import { fromStructure, Schema, Selection, Structure } from "@/api-schema/schema.types";
 import { Integer, String } from "@/api-schema/common-types";
-import { lastActionStructure, statusStructure } from "@/api-schema/user/profile";
+import { lastActionStructure } from "@/api-schema/shared/last-action";
+import { statusStructure } from "@/api-schema/shared/status";
 
 const employeeStructure: Structure = {
     id: "employee",
