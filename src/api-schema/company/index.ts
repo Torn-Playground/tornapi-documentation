@@ -3,17 +3,24 @@ import { LookupSelection, TimestampSelection } from "@/api-schema/common-selecti
 import ProfileSelection from "@/api-schema/company/profile";
 import EmployeesSelection from "@/api-schema/company/employees";
 import CompaniesSelection from "@/api-schema/company/companies";
+import ApplicationsSelection from "@/api-schema/company/applications";
+import DetailedSelection from "@/api-schema/company/detailed";
+import NewsSelection from "@/api-schema/company/news";
+import NewsFullSelection from "@/api-schema/company/newsfull";
+import StocksSelection from "@/api-schema/torn/stocks";
+
+// https://www.torn.com/preferences.php#tab=api?step=addNewKey&title=TornAPI&company=applications,detailed,news,newsfull,stock
 
 const selections: Selection[] = [
-    // applications (director only)
+    ApplicationsSelection,
     CompaniesSelection,
-    // detailed (director only)
+    DetailedSelection,
     EmployeesSelection,
     LookupSelection,
-    // news (director only)
-    // newsfull (director only)
+    NewsSelection,
+    NewsFullSelection,
     ProfileSelection,
-    // stock (director only)
+    StocksSelection,
     TimestampSelection,
 ];
 
