@@ -6,10 +6,7 @@ type AccessSelection = { name: string; access: KeyAccess };
 
 export default function AccessLevels() {
     const selections: AccessSelection[][] = Object.values(schema).map((section) =>
-        section.selections.sort().map((selection) => ({
-            name: selection.name,
-            access: selection.access,
-        })),
+        section.selections.sort((a, b) => a.name.localeCompare(b.name)).map(({ name, access }) => ({ name, access })),
     );
     const rows: (AccessSelection | null)[][] = _.zip(...selections) as (AccessSelection | null)[][];
 
