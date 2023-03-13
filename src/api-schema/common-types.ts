@@ -12,3 +12,5 @@ export const EpochSeconds = "Epoch timestamp (in seconds)";
 
 // TODO 2023/03/08 - Handle bug report types.
 export const BugReportPending = "Bug report pending, type uncertain.";
+// FIXME 2023/03/13 - Handle unknown types.
+export const Unknown = "Unknown, let us know what it looks like.";
