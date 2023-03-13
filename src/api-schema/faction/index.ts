@@ -4,6 +4,7 @@ import AttacksSelection from "@/api-schema/faction/attacks";
 import AttacksFullSelection from "@/api-schema/faction/attacksfull";
 import BasicSelection from "@/api-schema/faction/basic";
 import ChainSelection from "@/api-schema/faction/chain";
+import TerritorySelection from "@/api-schema/faction/territory";
 
 const selections: Selection[] = [
     //  applications
@@ -35,7 +36,7 @@ const selections: Selection[] = [
     //  revivesfull
     //  stats
     //  temporary
-    //  territory
+    TerritorySelection,
     //  territorynews
     TimestampSelection,
     //  upgrades
