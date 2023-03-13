@@ -3,6 +3,7 @@ import { LookupSelection, TimestampSelection } from "@/api-schema/common-selecti
 import AttacksSelection from "@/api-schema/faction/attacks";
 import AttacksFullSelection from "@/api-schema/faction/attacksfull";
 import BasicSelection from "@/api-schema/faction/basic";
+import ChainSelection from "@/api-schema/faction/chain";
 
 const selections: Selection[] = [
     //  applications
@@ -14,7 +15,7 @@ const selections: Selection[] = [
     BasicSelection,
     //  boosters
     //  cesium
-    //  chain
+    ChainSelection,
     //  chainreport
     //  chains
     //  contributors
