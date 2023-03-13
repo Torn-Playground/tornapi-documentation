@@ -1,28 +1,51 @@
-import { fromStructure, Schema, Selection, Structure } from "@/api-schema/schema.types";
+import { fromStructure, Schema, Selection, Structure, StructureEnum } from "@/api-schema/schema.types";
+import { EpochSeconds, Integer, String } from "@/api-schema/common-types";
 
-const yStructure: Structure = {
-    id: "",
-    name: "",
-    schema: {},
+const statusEnum: StructureEnum<string> = {
+    id: "status",
+    name: "Status",
+    values: ["active", "declined"],
+    type: String,
+    incomplete: { missing: "Missing values for expired and accepted applications." },
 };
-const xStructure: Structure = {
-    id: "",
-    name: "",
+const statsStructure: Structure = {
+    id: "stats",
+    name: "Stats",
     schema: {
-        "<id>": fromStructure(yStructure),
+        intelligence: { type: Integer },
+        endurance: { type: Integer },
+        manual_labor: { type: Integer },
     },
 };
-const structures = [xStructure, yStructure];
+const applicationStructure: Structure = {
+    id: "application",
+    name: "Application",
+    schema: {
+        userID: { type: Integer },
+        name: { type: String },
+        level: { type: Integer },
+        stats: fromStructure(statsStructure),
+        message: { type: String },
+        expires: { type: EpochSeconds },
+        status: fromStructure(statusEnum),
+    },
+};
+const applicationsStructure: Structure = {
+    id: "applications",
+    name: "Applications",
+    schema: {
+        "<id>": fromStructure(applicationStructure),
+    },
+};
+const structures = [applicationsStructure, applicationStructure, statsStructure, statusEnum];
 
 const schema: Schema = {
-    // FIXME - Map endpoint.
-    cards: fromStructure(xStructure),
+    applications: fromStructure(applicationsStructure),
 };
 
 const ApplicationsSelection: Selection = {
     name: "applications",
-    // FIXME - Verify description.
-    description: "List all (open) applications. Only available for directors.",
+    description: "List company applications. Only available for directors.",
     access: "limited",
     schema,
     structures,

@@ -14,22 +14,21 @@ const stockItemStructure: Structure = {
         sold_worth: { type: Integer },
     },
 };
-const xStructure: Structure = {
-    id: "",
-    name: "",
+const stockStructure: Structure = {
+    id: "stock",
+    name: "Stock",
     schema: {
-        "<id>": fromStructure(stockItemStructure),
+        "<stock item name>": fromStructure(stockItemStructure),
     },
 };
-const structures = [xStructure, stockItemStructure];
+const structures = [stockStructure, stockItemStructure];
 
 const schema: Schema = {
-    cards: fromStructure(xStructure),
+    company_stock: fromStructure(stockStructure),
 };
 
-const SomeSelection: Selection = {
+const StockSelection: Selection = {
     name: "stock",
-    // FIXME - Verify description.
     description: "Show the current stock of the company. Only available for directors.",
     access: "limited",
     schema,
@@ -39,4 +38,4 @@ const SomeSelection: Selection = {
     },
 };
 
-export default SomeSelection;
+export default StockSelection;

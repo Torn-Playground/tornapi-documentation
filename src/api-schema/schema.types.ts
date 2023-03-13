@@ -68,6 +68,7 @@ export type StructureEnum<T> = {
     name: string;
     values: Array<T>;
     type: string;
+    incomplete?: { missing: string };
 };
 
 export type StructureOptions = { nullable?: boolean; extra?: string; array?: boolean };

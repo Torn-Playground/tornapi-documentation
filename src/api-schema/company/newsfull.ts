@@ -1,28 +1,13 @@
-import { fromStructure, Schema, Selection, Structure } from "@/api-schema/schema.types";
+import { fromStructure, Schema, Selection } from "@/api-schema/schema.types";
+import { newsMapStructure, newsStructure } from "@/api-schema/shared/news";
 
-const yStructure: Structure = {
-    id: "",
-    name: "",
-    schema: {},
-};
-const xStructure: Structure = {
-    id: "",
-    name: "",
-    schema: {
-        "<id>": fromStructure(yStructure),
-    },
-};
-const structures = [xStructure, yStructure];
+const structures = [newsMapStructure, newsStructure];
 
-const schema: Schema = {
-    // FIXME - Map endpoint.
-    cards: fromStructure(xStructure),
-};
+const schema: Schema = { news: fromStructure(newsMapStructure) };
 
 const NewsFullSelection: Selection = {
     name: "newsfull",
-    // FIXME - Verify description.
-    description: "Get more news entries, with less data. Only available for directors.",
+    description: "Get more news entries. Only available for directors.",
     access: "limited",
     schema,
     structures,

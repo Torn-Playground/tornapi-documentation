@@ -14,8 +14,8 @@ const upgradesStructure: Structure = {
 const structures = [upgradesStructure];
 
 const schema: Schema = {
-    // FIXME - Verify mapping.
     ID: { type: Integer },
+    company_funds: { type: Integer },
     company_bank: { type: Integer },
     popularity: { type: Integer },
     efficiency: { type: Integer },
@@ -23,11 +23,11 @@ const schema: Schema = {
     trains_available: { type: Integer },
     advertising_budget: { type: Integer },
     upgrades: fromStructure(upgradesStructure),
+    value: { type: Integer },
 };
 
 const DetailedSelection: Selection = {
     name: "detailed",
-    // FIXME - Verify description.
     description: "Detailed information about the company. Only available for directors.",
     access: "limited",
     schema,

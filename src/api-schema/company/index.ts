@@ -7,9 +7,7 @@ import ApplicationsSelection from "@/api-schema/company/applications";
 import DetailedSelection from "@/api-schema/company/detailed";
 import NewsSelection from "@/api-schema/company/news";
 import NewsFullSelection from "@/api-schema/company/newsfull";
-import StocksSelection from "@/api-schema/torn/stocks";
-
-// https://www.torn.com/preferences.php#tab=api?step=addNewKey&title=TornAPI&company=applications,detailed,news,newsfull,stock
+import StockSelection from "@/api-schema/company/stock";
 
 const selections: Selection[] = [
     ApplicationsSelection,
@@ -20,7 +18,7 @@ const selections: Selection[] = [
     NewsSelection,
     NewsFullSelection,
     ProfileSelection,
-    StocksSelection,
+    StockSelection,
     TimestampSelection,
 ];
 
