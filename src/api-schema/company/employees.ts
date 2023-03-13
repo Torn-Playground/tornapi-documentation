@@ -1,19 +1,16 @@
 import { fromStructure, Schema, Selection, Structure } from "@/api-schema/schema.types";
 import { Integer, String } from "@/api-schema/common-types";
-import { lastActionStructure, statusStructure } from "@/api-schema/user/profile";
+import { lastActionStructure } from "@/api-schema/shared/last-action";
+import { statusStructure } from "@/api-schema/shared/status";
 
 const effectivenessStructure: Structure = {
     id: "effectiveness",
     name: "Effectiveness",
-    // FIXME - Validate fields.
-    // - book
-    // - not settled in
-    // - no education
     schema: {
         working_stats: { type: Integer },
-        settled_in: { type: Integer },
+        settled_in: { type: Integer, nullable: true },
         merits: { type: Integer, nullable: true },
-        director_education: { type: Integer },
+        director_education: { type: Integer, nullable: true },
         addiction: { type: Integer, nullable: true },
         total: { type: Integer },
     },
@@ -25,8 +22,7 @@ const employeeStructure: Structure = {
         name: { type: String },
         position: { type: String },
         days_in_company: { type: Integer },
-        // FIXME - Validate for directors.
-        wage: { type: Integer, nullable: true, extra: "Only present for yourself." },
+        wage: { type: Integer, nullable: true, extra: "Only present for yourself or the director." },
         manual_labor: {
             type: Integer,
             nullable: true,
@@ -38,7 +34,6 @@ const employeeStructure: Structure = {
             extra: "Only present when requesting this for your own company.",
         },
         endurance: { type: Integer, nullable: true, extra: "Only present when requesting this for your own company." },
-        // FIXME - Validate for new employee.
         effectiveness: fromStructure(effectivenessStructure, {
             nullable: true,
             extra: "Only present when requesting this for your own company.",
