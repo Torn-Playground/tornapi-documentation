@@ -83,7 +83,7 @@ const genderEnum: StructureEnum<string> = {
     values: ["Male", "Female", "Enby"],
     type: String,
 };
-const statusStructure: Structure = {
+export const statusStructure: Structure = {
     id: "status",
     name: "Status",
     schema: {
@@ -137,7 +137,7 @@ const statesStructure: Structure = {
         jail_timestamp: { type: EpochSeconds, extra: "Will be 0 when not in jail." },
     },
 };
-const lastActionStructure: Structure = {
+export const lastActionStructure: Structure = {
     id: "last_action",
     name: "Last Action",
     schema: {
