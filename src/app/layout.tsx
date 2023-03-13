@@ -6,7 +6,6 @@ import Header from "@/components/global/header/Header";
 import { Metadata } from "next/dist/lib/metadata/types/metadata-interface";
 import { ServerThemeProvider, ThemeProvider } from "next-themes";
 import { ALL_THEMES, DEFAULT_THEME, STORAGE_KEY } from "@/components/global/theme-selector/theme-utilities";
-import CommunityAlert from "@/components/global/community-alert/CommunityAlert";
 import DevelopmentAlert from "@/components/global/community-alert/DevelopmentAlert";
 
 // noinspection JSUnusedGlobalSymbols
@@ -23,7 +22,6 @@ export default function RootLayout({ children }: PropsWithChildren) {
                                 <DevelopmentAlert />
                                 {children}
                             </main>
-                            <CommunityAlert />
 
                             <Footer />
                         </Navigation>
