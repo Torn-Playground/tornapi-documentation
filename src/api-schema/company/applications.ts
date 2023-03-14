@@ -4,7 +4,7 @@ import { EpochSeconds, Integer, String } from "@/api-schema/common-types";
 const statusEnum: StructureEnum<string> = {
     id: "status",
     name: "Status",
-    values: ["active", "declined"],
+    values: ["active", "declined", "withdrawn"],
     type: String,
     incomplete: { missing: "Missing values for expired and accepted applications." },
 };
@@ -24,7 +24,7 @@ const applicationStructure: Structure = {
         userID: { type: Integer },
         name: { type: String },
         level: { type: Integer },
-        stats: fromStructure(statsStructure),
+        stats: fromStructure(statsStructure, { nullable: true }),
         message: { type: String },
         expires: { type: EpochSeconds },
         status: fromStructure(statusEnum),
