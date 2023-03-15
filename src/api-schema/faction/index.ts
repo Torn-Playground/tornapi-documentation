@@ -1,20 +1,26 @@
 import { Section, Selection } from "@/api-schema/schema.types";
 import { LookupSelection, TimestampSelection } from "@/api-schema/common-selections";
+import ArmorSelection from "@/api-schema/faction/armor";
 import AttacksSelection from "@/api-schema/faction/attacks";
 import AttacksFullSelection from "@/api-schema/faction/attacksfull";
 import BasicSelection from "@/api-schema/faction/basic";
+import BoostersSelection from "@/api-schema/faction/boosters";
 import ChainSelection from "@/api-schema/faction/chain";
+import DrugsSelection from "@/api-schema/faction/drugs";
+import MedicalSelection from "@/api-schema/faction/medical";
+import TemporarySelection from "@/api-schema/faction/temporary";
 import TerritorySelection from "@/api-schema/faction/territory";
+import WeaponsSelection from "@/api-schema/faction/weapons";
 
 const selections: Selection[] = [
     //  applications
-    //  armor
+    ArmorSelection,
     //  armorynews
     //  attacknews
     AttacksSelection,
     AttacksFullSelection,
     BasicSelection,
-    //  boosters
+    BoostersSelection,
     //  cesium
     ChainSelection,
     //  chainreport
@@ -24,23 +30,23 @@ const selections: Selection[] = [
     //  crimes
     //  currency
     //  donations
-    //  drugs
+    DrugsSelection,
     //  fundsnews
     LookupSelection,
     //  mainnews
-    //  medical
+    MedicalSelection,
     //  membershipnews
     //  positions
     //  reports
     //  revives
     //  revivesfull
     //  stats
-    //  temporary
+    TemporarySelection,
     TerritorySelection,
     //  territorynews
     TimestampSelection,
     //  upgrades
-    //  weapons
+    WeaponsSelection,
 ];
 
 const FactionSection: Section = {
