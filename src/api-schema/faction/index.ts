@@ -18,6 +18,7 @@ import MembershipNewsSelection from "@/api-schema/faction/membershipnews";
 import TemporarySelection from "@/api-schema/faction/temporary";
 import TerritorySelection from "@/api-schema/faction/territory";
 import TerritoryNewsSelection from "@/api-schema/faction/territorynews";
+import UpgradesSelection from "@/api-schema/faction/upgrades";
 import WeaponsSelection from "@/api-schema/faction/weapons";
 
 const selections: Selection[] = [
@@ -53,7 +54,7 @@ const selections: Selection[] = [
     TerritorySelection,
     TerritoryNewsSelection,
     TimestampSelection,
-    //  upgrades
+    UpgradesSelection,
     WeaponsSelection,
 ];
 
