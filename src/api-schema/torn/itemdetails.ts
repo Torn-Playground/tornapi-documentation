@@ -1,20 +1,18 @@
 import { fromStructure, Schema, Selection, Structure, StructureEnum } from "@/api-schema/schema.types";
-import { BugReportPending, Integer, Number, String } from "@/api-schema/common-types";
+import { Integer, Number, String } from "@/api-schema/common-types";
 
 const rarityEnum: StructureEnum<string> = {
     id: "rarity",
     name: "Rarity",
-    values: ["Yellow", "Orange", "Red"],
+    values: ["None", "Yellow", "Orange", "Red"],
     type: String,
 };
 const bonusStructure: Structure = {
     id: "bonus",
     name: "Bonus",
     schema: {
-        desc: { type: String },
-        title: { type: String },
-        hoverover: { type: String },
-        icon: { type: String },
+        bonus: { type: String },
+        description: { type: String },
     },
 };
 const bonusesStructure: Structure = {
@@ -33,27 +31,17 @@ const itemDetailStructure: Structure = {
         name: { type: String },
         type: { type: String },
         rarity: fromStructure(rarityEnum),
-        damage: { type: Number },
-        accuracy: { type: Number },
+        damage: { type: Number, nullable: true },
+        accuracy: { type: Number, nullable: true },
+        armor: { type: Number, nullable: true },
         quality: { type: Number },
-        bonuses: fromStructure(bonusesStructure),
+        bonuses: fromStructure(bonusesStructure, { nullable: true }),
     },
 };
-const itemDetailsStructure: Structure = {
-    id: "item_details",
-    name: "Item Details",
-    schema: {
-        ignore: {
-            type: BugReportPending,
-            description: "Not an actual field, but this selection has not been working so can't actually verify the schema.",
-        },
-        "<id>": fromStructure(itemDetailStructure),
-    },
-};
-const structures = [itemDetailsStructure, itemDetailStructure, bonusesStructure, bonusStructure];
+const structures = [itemDetailStructure, bonusesStructure, bonusStructure];
 
 const schema: Schema = {
-    itemdetails: fromStructure(itemDetailsStructure),
+    itemdetails: fromStructure(itemDetailStructure),
 };
 
 const ItemDetailsSelection: Selection = {
