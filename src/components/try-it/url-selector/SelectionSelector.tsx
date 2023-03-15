@@ -35,7 +35,7 @@ export default function SelectionSelector({ onSelectionsChange, section }: Selec
     };
 
     return (
-        <div className="mt-2 space-x-1">
+        <div className="mt-2 flex flex-wrap gap-1">
             {possibleSelections.map((selection) => (
                 <span
                     key={selection}
