@@ -35,7 +35,7 @@ const schema: Schema = {
 
 const ChainReportSelection: Selection = {
     name: "chainreport",
-    description: "View chain report of the last chain. Might only be available with faction API Access.",
+    description: "View chain report of the last chain. Only available with faction API Access.",
     access: "public",
     schema,
     structures,

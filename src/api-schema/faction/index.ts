@@ -9,6 +9,7 @@ import BasicSelection from "@/api-schema/faction/basic";
 import BoostersSelection from "@/api-schema/faction/boosters";
 import ChainSelection from "@/api-schema/faction/chain";
 import ChainReportSelection from "@/api-schema/faction/chainreport";
+import ChainsSelection from "@/api-schema/faction/chains";
 import CrimeNewsSelection from "@/api-schema/faction/crimenews";
 import DrugsSelection from "@/api-schema/faction/drugs";
 import FundsNewsSelection from "@/api-schema/faction/fundsnews";
@@ -33,7 +34,7 @@ const selections: Selection[] = [
     //  cesium
     ChainSelection,
     ChainReportSelection,
-    //  chains
+    ChainsSelection,
     //  contributors
     CrimeNewsSelection,
     //  crimes
