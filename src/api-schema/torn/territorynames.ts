@@ -1,0 +1,19 @@
+import { Schema, Selection } from "@/api-schema/schema.types";
+import { ArrayString } from "@/api-schema/common-types";
+
+const schema: Schema = {
+    territoryNames: { type: ArrayString },
+};
+
+const TerritoryNamesSelection: Selection = {
+    name: "territorynames",
+    description: "List all territory names.",
+    access: "public",
+    schema,
+    structures: [],
+    id: {
+        optional: false,
+    },
+};
+
+export default TerritoryNamesSelection;
