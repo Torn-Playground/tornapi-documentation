@@ -8,10 +8,14 @@ const TIME_TO: Param = {
     name: "to",
     description: "Limits results to have their timestamp before or on this timestamp.",
 };
+const TIME_TO_WITH_FROM: Param = {
+    name: "to",
+    description: "Limits results to have their timestamp before or on this timestamp. Only available when also using 'from'.",
+};
 
 const LIMIT: Param = {
     name: "limit",
     description: "Limits amount of results. Amount can't be above the default amount, will use default amount otherwise.",
 };
 
-export { TIME_FROM, TIME_TO, LIMIT };
+export { TIME_FROM, TIME_TO, TIME_TO_WITH_FROM, LIMIT };
