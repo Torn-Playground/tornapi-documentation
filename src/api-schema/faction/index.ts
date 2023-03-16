@@ -13,6 +13,7 @@ import ChainsSelection from "@/api-schema/faction/chains";
 import ContributorsSelection from "@/api-schema/faction/contributors";
 import CrimeNewsSelection from "@/api-schema/faction/crimenews";
 import CrimesSelection from "@/api-schema/faction/crimes";
+import CurrencySelection from "@/api-schema/faction/currency";
 import DrugsSelection from "@/api-schema/faction/drugs";
 import FundsNewsSelection from "@/api-schema/faction/fundsnews";
 import MainNewsSelection from "@/api-schema/faction/mainnews";
@@ -41,7 +42,7 @@ const selections: Selection[] = [
     ContributorsSelection,
     CrimeNewsSelection,
     CrimesSelection,
-    //  currency
+    CurrencySelection,
     //  donations
     DrugsSelection,
     FundsNewsSelection,
