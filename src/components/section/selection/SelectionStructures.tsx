@@ -1,7 +1,7 @@
 import { Structure, StructureEnum } from "@/api-schema/schema.types";
-import SelectionStructure from "@/components/section/selection/SelectionStructure";
 import ExtendedLink from "@/components/global/extended-link/ExtendedLink";
 import SelectionEnum from "@/components/section/selection/SelectionEnum";
+import SelectionStructure from "@/components/section/selection/SelectionStructure";
 
 interface SelectionStructuresProps {
     structures: Array<Structure | StructureEnum<any>>;

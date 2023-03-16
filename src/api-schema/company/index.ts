@@ -1,13 +1,13 @@
-import { Section, Selection } from "@/api-schema/schema.types";
 import { LookupSelection, TimestampSelection } from "@/api-schema/common-selections";
-import ProfileSelection from "@/api-schema/company/profile";
-import EmployeesSelection from "@/api-schema/company/employees";
-import CompaniesSelection from "@/api-schema/company/companies";
 import ApplicationsSelection from "@/api-schema/company/applications";
+import CompaniesSelection from "@/api-schema/company/companies";
 import DetailedSelection from "@/api-schema/company/detailed";
+import EmployeesSelection from "@/api-schema/company/employees";
 import NewsSelection from "@/api-schema/company/news";
 import NewsFullSelection from "@/api-schema/company/newsfull";
+import ProfileSelection from "@/api-schema/company/profile";
 import StockSelection from "@/api-schema/company/stock";
+import { Section, Selection } from "@/api-schema/schema.types";
 
 const selections: Selection[] = [
     ApplicationsSelection,

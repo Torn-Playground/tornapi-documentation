@@ -1,5 +1,5 @@
-import { getActiveSelections, isSection, schema } from "@/api-schema/data";
 import { redirect } from "next/navigation";
+import { getActiveSelections, isSection, schema } from "@/api-schema/data";
 import Selection from "@/components/section/selection/Selection";
 
 // noinspection JSUnusedGlobalSymbols

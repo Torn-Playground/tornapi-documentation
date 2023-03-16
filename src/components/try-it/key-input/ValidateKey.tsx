@@ -1,8 +1,8 @@
 "use client";
 
-import { InfoResponse } from "@/components/try-it/try-it";
-import { useCalls } from "@/components/try-it/CallContext";
 import { useEffect, useState } from "react";
+import { useCalls } from "@/components/try-it/CallContext";
+import { InfoResponse } from "@/components/try-it/try-it";
 
 export default function ValidateKey() {
     const [colorClass, setColorClass] = useState("");

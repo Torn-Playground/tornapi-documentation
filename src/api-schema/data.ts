@@ -3,9 +3,9 @@ import faction from "@/api-schema/faction";
 import key from "@/api-schema/key";
 import market from "@/api-schema/market";
 import property from "@/api-schema/property";
+import { Param, Section, SectionType, Selection } from "@/api-schema/schema.types";
 import torn from "@/api-schema/torn";
 import user from "@/api-schema/user";
-import { Param, Section, SectionType, Selection } from "@/api-schema/schema.types";
 
 const schema: { [key in SectionType]: Section } = {
     user,

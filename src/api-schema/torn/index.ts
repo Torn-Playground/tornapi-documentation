@@ -1,34 +1,34 @@
-import { Section, Selection } from "@/api-schema/schema.types";
-import RankedWarReportSelection from "@/api-schema/torn/rankedwarreport";
 import { LookupSelection, TimestampSelection } from "@/api-schema/common-selections";
+import { Section, Selection } from "@/api-schema/schema.types";
 import BankSelection from "@/api-schema/torn/bank";
 import CardsSelection from "@/api-schema/torn/cards";
+import ChainReportSelection from "@/api-schema/torn/chainreport";
 import CityShopsSelection from "@/api-schema/torn/cityshop";
 import CompaniesSelection from "@/api-schema/torn/companies";
+import CompetitionSelection from "@/api-schema/torn/competition";
 import EducationSelection from "@/api-schema/torn/education";
 import FactionTreeSelection from "@/api-schema/torn/factiontree";
 import GymsSelection from "@/api-schema/torn/gyms";
 import HonorsSelection from "@/api-schema/torn/honors";
-import MedalsSelection from "@/api-schema/torn/medals";
+import ItemDetailsSelection from "@/api-schema/torn/itemdetails";
 import ItemsSelection from "@/api-schema/torn/items";
+import ItemStatsSelection from "@/api-schema/torn/itemstats";
 import LogCategoriesSelection from "@/api-schema/torn/logcategories";
 import LogTypesSelection from "@/api-schema/torn/logtypes";
+import MedalsSelection from "@/api-schema/torn/medals";
 import OrganisedCrimesSelection from "@/api-schema/torn/organisedcrimes";
 import PawnShopSelection from "@/api-schema/torn/pawnshop";
 import PokerTablesSelection from "@/api-schema/torn/pokertables";
 import PropertiesSelection from "@/api-schema/torn/properties";
 import RacketsSelection from "@/api-schema/torn/rackets";
 import RaidsSelection from "@/api-schema/torn/raids";
-import StocksSelection from "@/api-schema/torn/stocks";
+import RankedWarReportSelection from "@/api-schema/torn/rankedwarreport";
 import RankedWarsSelection from "@/api-schema/torn/rankedwars";
 import StatsSelection from "@/api-schema/torn/stats";
-import ItemDetailsSelection from "@/api-schema/torn/itemdetails";
-import ItemStatsSelection from "@/api-schema/torn/itemstats";
-import TerritoryWarsSelection from "@/api-schema/torn/territorywars";
+import StocksSelection from "@/api-schema/torn/stocks";
 import TerritorySelection from "@/api-schema/torn/territory";
-import ChainReportSelection from "@/api-schema/torn/chainreport";
-import CompetitionSelection from "@/api-schema/torn/competition";
 import TerritoryNamesSelection from "@/api-schema/torn/territorynames";
+import TerritoryWarsSelection from "@/api-schema/torn/territorywars";
 
 const selections: Selection[] = [
     BankSelection,

@@ -1,7 +1,7 @@
 import { FieldStructure, isField, isFieldStructure, Schema, SchemaField } from "@/api-schema/schema.types";
 import ExtendedLink from "@/components/global/extended-link/ExtendedLink";
-import NullableIndicator from "@/components/section/selection/NullableIndicator";
 import ExtraInformation from "@/components/section/selection/ExtraInformation";
+import NullableIndicator from "@/components/section/selection/NullableIndicator";
 
 interface SelectionStructureProps {
     schema: Schema;

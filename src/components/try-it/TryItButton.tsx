@@ -1,8 +1,8 @@
 "use client";
 
-import { CallActionType, useCalls, useCallsDispatch } from "@/components/try-it/CallContext";
 import { useState } from "react";
 import { SpinningCircles } from "react-loading-icons";
+import { CallActionType, useCalls, useCallsDispatch } from "@/components/try-it/CallContext";
 
 export default function TryItButton() {
     const [executing, setExecuting] = useState(false);
