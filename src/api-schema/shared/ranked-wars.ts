@@ -1,5 +1,5 @@
-import { fromStructure, Structure } from "@/api-schema/schema.types";
 import { EpochSeconds, Integer, Number, String } from "@/api-schema/common-types";
+import { fromStructure, Structure } from "@/api-schema/schema.types";
 
 export const warStructure: Structure = {
     id: "war",

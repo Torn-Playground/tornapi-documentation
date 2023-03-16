@@ -1,6 +1,6 @@
+import { LIMIT, TIME_FROM, TIME_TO } from "@/api-schema/common-params";
 import { fromStructure, Schema, Selection } from "@/api-schema/schema.types";
 import { attackResultEnum, attacksStructure, attackStructure, modifiersStructure } from "@/api-schema/shared/attacks";
-import { LIMIT, TIME_FROM, TIME_TO } from "@/api-schema/common-params";
 
 const structures = [attacksStructure, attackStructure, attackResultEnum, modifiersStructure];
 

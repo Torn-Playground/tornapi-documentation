@@ -1,4 +1,3 @@
-import { Section, Selection } from "@/api-schema/schema.types";
 import { LookupSelection, TimestampSelection } from "@/api-schema/common-selections";
 import ArmorSelection from "@/api-schema/faction/armor";
 import ArmoryNewsSelection from "@/api-schema/faction/armorynews";
@@ -25,6 +24,7 @@ import TerritorySelection from "@/api-schema/faction/territory";
 import TerritoryNewsSelection from "@/api-schema/faction/territorynews";
 import UpgradesSelection from "@/api-schema/faction/upgrades";
 import WeaponsSelection from "@/api-schema/faction/weapons";
+import { Section, Selection } from "@/api-schema/schema.types";
 
 const selections: Selection[] = [
     //  applications

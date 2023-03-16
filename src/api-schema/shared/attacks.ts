@@ -1,5 +1,5 @@
-import { fromStructure, Schema, Structure, StructureEnum } from "@/api-schema/schema.types";
 import { EpochSeconds, Integer, IntegerAndEmptyString, Number, NumberBoolean, String } from "@/api-schema/common-types";
+import { fromStructure, Schema, Structure, StructureEnum } from "@/api-schema/schema.types";
 
 export const attackResultEnum: StructureEnum<string> = {
     id: "attack_result",

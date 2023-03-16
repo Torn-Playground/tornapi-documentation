@@ -1,7 +1,7 @@
-import { fromStructure, Schema, Selection, Structure } from "@/api-schema/schema.types";
-import { EpochSeconds, Integer, NumberBoolean, String } from "@/api-schema/common-types";
-import { statusColorEnum, statusStateEnum, statusStructure } from "@/api-schema/shared/status";
 import { LIMIT, TIME_FROM, TIME_TO } from "@/api-schema/common-params";
+import { EpochSeconds, Integer, NumberBoolean, String } from "@/api-schema/common-types";
+import { fromStructure, Schema, Selection, Structure } from "@/api-schema/schema.types";
+import { statusColorEnum, statusStateEnum, statusStructure } from "@/api-schema/shared/status";
 
 const membersStructure: Structure = {
     id: "members",

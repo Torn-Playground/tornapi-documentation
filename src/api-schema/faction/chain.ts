@@ -1,5 +1,5 @@
-import { fromStructure, Schema, Selection, Structure } from "@/api-schema/schema.types";
 import { EpochSeconds, Integer, Number } from "@/api-schema/common-types";
+import { fromStructure, Schema, Selection, Structure } from "@/api-schema/schema.types";
 
 const chainStructure: Structure = {
     id: "chain",

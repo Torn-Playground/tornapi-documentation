@@ -1,6 +1,6 @@
+import { TIME_FROM, TIME_TO_WITH_FROM } from "@/api-schema/common-params";
 import { fromStructure, Schema, Selection } from "@/api-schema/schema.types";
 import { newsMapStructure, newsStructure } from "@/api-schema/shared/news";
-import { TIME_FROM, TIME_TO_WITH_FROM } from "@/api-schema/common-params";
 
 const structures = [newsMapStructure, newsStructure];
 

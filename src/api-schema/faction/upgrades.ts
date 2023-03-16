@@ -1,5 +1,5 @@
-import { fromStructure, Schema, Selection, Structure, StructureEnum } from "@/api-schema/schema.types";
 import { EpochSeconds, Integer, String } from "@/api-schema/common-types";
+import { fromStructure, Schema, Selection, Structure, StructureEnum } from "@/api-schema/schema.types";
 import { branchEnum } from "@/api-schema/shared/faction-upgrade";
 
 const upgradeStructure: Structure = {

@@ -1,5 +1,5 @@
-import { fromStructure, Structure } from "@/api-schema/schema.types";
 import { Integer, Number } from "@/api-schema/common-types";
+import { fromStructure, Structure } from "@/api-schema/schema.types";
 
 export const bonusStructure: Structure = {
     id: "bonus_hit",

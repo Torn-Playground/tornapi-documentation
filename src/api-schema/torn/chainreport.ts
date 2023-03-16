@@ -1,5 +1,5 @@
-import { fromStructure, Schema, Selection, Structure } from "@/api-schema/schema.types";
 import { BugReportPending, EpochSeconds, Integer, Number } from "@/api-schema/common-types";
+import { fromStructure, Schema, Selection, Structure } from "@/api-schema/schema.types";
 import { bonusStructure, membersStructure, memberStructure } from "@/api-schema/shared/chain-report";
 
 const chainReportStructure: Structure = {

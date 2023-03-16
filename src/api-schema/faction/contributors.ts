@@ -1,5 +1,5 @@
-import { fromStructure, Param, Schema, Selection, Structure } from "@/api-schema/schema.types";
 import { Integer, NumberBoolean } from "@/api-schema/common-types";
+import { fromStructure, Param, Schema, Selection, Structure } from "@/api-schema/schema.types";
 
 const memberContributorStructure: Structure = {
     id: "member_contributor",
