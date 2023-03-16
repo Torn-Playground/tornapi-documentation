@@ -24,7 +24,7 @@ export function createApiUrl(key: string, section: SectionType | "", id: string,
     if (comment !== "") searchParams.append("comment", comment);
     searchParams.append("key", key);
 
-    return url.toString();
+    return decodeURIComponent(url.toString());
 }
 
 export type ParamInput = {
