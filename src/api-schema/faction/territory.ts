@@ -35,7 +35,7 @@ const TerritorySelection: Selection = {
     schema,
     structures,
     id: {
-        optional: false,
+        optional: true,
     },
 };
 
