@@ -16,7 +16,7 @@ export default function CallResponse() {
                         .map((response) => (
                             <div key={response.timestamp} className="collapse collapse-arrow odd:bg-base-300 even:bg-base-200">
                                 <input type="checkbox" id={`response-${response.timestamp}`} defaultChecked={true} />
-                                <label className="collapse-title text-xl font-medium" htmlFor={`response-${response.timestamp}`}>
+                                <label className="collapse-title text-xl font-medium break-all break-words" htmlFor={`response-${response.timestamp}`}>
                                     {response.url}
                                 </label>
                                 <div className="collapse-content prose max-w-none">
