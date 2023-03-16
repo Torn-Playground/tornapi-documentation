@@ -6,6 +6,7 @@ const reportTypeEnum: StructureEnum<string> = {
     name: "Report Type",
     values: ["stats"],
     type: String,
+    incomplete: { missing: "Unknown what's missing." },
 };
 const reportDataStructure: Structure = {
     id: "report_data",
