@@ -19,6 +19,8 @@ import FundsNewsSelection from "@/api-schema/faction/fundsnews";
 import MainNewsSelection from "@/api-schema/faction/mainnews";
 import MedicalSelection from "@/api-schema/faction/medical";
 import MembershipNewsSelection from "@/api-schema/faction/membershipnews";
+import RevivesSelection from "@/api-schema/faction/revives";
+import RevivesFullSelection from "@/api-schema/faction/revivesfull";
 import StatsSelection from "@/api-schema/faction/stats";
 import TemporarySelection from "@/api-schema/faction/temporary";
 import TerritorySelection from "@/api-schema/faction/territory";
@@ -53,8 +55,8 @@ const selections: Selection[] = [
     MembershipNewsSelection,
     //  positions
     //  reports
-    //  revives
-    //  revivesfull
+    RevivesSelection,
+    RevivesFullSelection,
     StatsSelection,
     TemporarySelection,
     TerritorySelection,
