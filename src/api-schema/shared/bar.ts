@@ -1,7 +1,8 @@
 import { Integer } from "@/api-schema/common-types";
 import { Structure } from "@/api-schema/schema.types";
 
-const bar: Structure = {
+// eslint-disable-next-line import/prefer-default-export
+export const bar: Structure = {
     id: "bar",
     name: "Bar",
     schema: {
@@ -13,6 +14,3 @@ const bar: Structure = {
         fulltime: { type: Integer, description: "Seconds till the life is full.", extra: "Will be 0 if already full." },
     },
 };
-
-// eslint-disable-next-line import/prefer-default-export
-export { bar };

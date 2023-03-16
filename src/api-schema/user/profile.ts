@@ -1,8 +1,8 @@
 import { EpochSeconds, Integer, IntegerAndEmptyString, NumberBoolean, String } from "@/api-schema/common-types";
 import { fromStructure, Schema, Selection, Structure, StructureEnum } from "@/api-schema/schema.types";
+import { bar } from "@/api-schema/shared/bar";
 import { lastActionStatusEnum, lastActionStructure } from "@/api-schema/shared/last-action";
 import { statusColorEnum, statusStateEnum, statusStructure } from "@/api-schema/shared/status";
-import { bar } from "@/api-schema/user/user-structures";
 
 const competitionTypeEnum: StructureEnum<string> = {
     id: "competition_type",
