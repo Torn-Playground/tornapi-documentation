@@ -33,12 +33,13 @@ export default function AccessLevels() {
             </p>
 
             <p className="mt-1">
-                It&apos;s also possible to create an API key with custom access, using <code>https://www.torn.com/preferences.php#tab=api?step=addNewKey</code>{" "}
-                with query parameters. These parameters are title and the separate sections, like user, where the value is a comma-separated list of selections.
+                It&apos;s also possible to create an API key with custom access, using{" "}
+                <code className="break-words">https://www.torn.com/preferences.php#tab=api?step=addNewKey</code> with query parameters. These parameters are
+                title and the separate sections, like user, where the value is a comma-separated list of selections.
                 <br />
                 Example:&nbsp;
                 <a
-                    className="link"
+                    className="link break-words"
                     target="_blank"
                     href="https://www.torn.com/preferences.php#tab=api?step=addNewKey&title=TornAPI&user=basic,bars,cooldowns,notifications&faction=basic,contributors&torn=bank"
                     rel="noreferrer"
