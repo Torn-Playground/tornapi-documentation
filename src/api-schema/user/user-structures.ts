@@ -1,5 +1,5 @@
-import { Structure } from "@/api-schema/schema.types";
 import { Integer } from "@/api-schema/common-types";
+import { Structure } from "@/api-schema/schema.types";
 
 const bar: Structure = {
     id: "bar",

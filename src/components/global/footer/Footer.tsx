@@ -1,5 +1,5 @@
-import { PropsWithChildren } from "react";
 import Link from "next/link";
+import { PropsWithChildren } from "react";
 
 function DiscordLink(props: PropsWithChildren) {
     return (

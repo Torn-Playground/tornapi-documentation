@@ -1,5 +1,5 @@
-import MenuIcon from "@/components/global/icons/MenuIcon";
 import styles from "@/components/global/header/Header.module.css";
+import MenuIcon from "@/components/global/icons/MenuIcon";
 
 export default function Header() {
     return (

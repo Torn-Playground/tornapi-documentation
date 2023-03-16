@@ -1,6 +1,6 @@
-import { SectionType } from "@/api-schema/schema.types";
-import { schema } from "@/api-schema/data";
 import { MouseEvent, useEffect, useState } from "react";
+import { schema } from "@/api-schema/data";
+import { SectionType } from "@/api-schema/schema.types";
 
 type SelectionSelectorProps = {
     section: SectionType;

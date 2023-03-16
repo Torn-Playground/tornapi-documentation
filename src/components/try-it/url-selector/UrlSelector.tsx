@@ -2,9 +2,9 @@
 
 import { useEffect, useState } from "react";
 import { getPossibleParams, schema } from "@/api-schema/data";
-import SelectionSelector from "@/components/try-it/url-selector/SelectionSelector";
 import { Param, SectionType } from "@/api-schema/schema.types";
 import { CallActionType, useCalls, useCallsDispatch } from "@/components/try-it/CallContext";
+import SelectionSelector from "@/components/try-it/url-selector/SelectionSelector";
 import { createApiUrl, ParamInput } from "@/components/try-it/url-selector/url-utilities";
 
 export default function UrlSelector() {

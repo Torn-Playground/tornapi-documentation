@@ -1,7 +1,7 @@
+import { redirect } from "next/navigation";
+import { PropsWithChildren } from "react";
 import { isSection, schema } from "@/api-schema/data";
 import Section from "@/components/section/Section";
-import { PropsWithChildren } from "react";
-import { redirect } from "next/navigation";
 
 // noinspection JSUnusedGlobalSymbols
 export default function SectionLayout({ children, params }: PropsWithChildren<{ params: { section: string } }>) {

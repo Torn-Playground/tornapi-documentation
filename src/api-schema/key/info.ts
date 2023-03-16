@@ -1,5 +1,5 @@
-import { fromStructure, Schema, Selection, Structure, StructureEnum } from "@/api-schema/schema.types";
 import { ArrayString, Integer, String } from "@/api-schema/common-types";
+import { fromStructure, Schema, Selection, Structure, StructureEnum } from "@/api-schema/schema.types";
 
 const accessLevelEnum: StructureEnum<number> = {
     id: "access_level",

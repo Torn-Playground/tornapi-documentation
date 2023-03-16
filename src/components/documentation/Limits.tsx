@@ -1,5 +1,5 @@
-import ExtendedLink from "@/components/global/extended-link/ExtendedLink";
 import { PropsWithChildren } from "react";
+import ExtendedLink from "@/components/global/extended-link/ExtendedLink";
 
 interface LimitTitleProps extends PropsWithChildren {
     id: string;

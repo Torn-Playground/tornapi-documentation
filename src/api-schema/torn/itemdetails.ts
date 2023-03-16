@@ -1,5 +1,5 @@
-import { fromStructure, Schema, Selection, Structure, StructureEnum } from "@/api-schema/schema.types";
 import { Integer, Number, String } from "@/api-schema/common-types";
+import { fromStructure, Schema, Selection, Structure, StructureEnum } from "@/api-schema/schema.types";
 
 const rarityEnum: StructureEnum<string> = {
     id: "rarity",

@@ -1,5 +1,5 @@
-import { fromStructure, Schema, Selection, Structure } from "@/api-schema/schema.types";
 import { Integer, String } from "@/api-schema/common-types";
+import { fromStructure, Schema, Selection, Structure } from "@/api-schema/schema.types";
 import { lastActionStructure } from "@/api-schema/shared/last-action";
 import { statusStructure } from "@/api-schema/shared/status";
 

@@ -2,8 +2,8 @@
 
 import { ChangeEvent, useEffect, useState } from "react";
 import { CallActionType, useCalls, useCallsDispatch } from "@/components/try-it/CallContext";
-import ValidateKey from "@/components/try-it/key-input/ValidateKey";
 import SaveKey from "@/components/try-it/key-input/SaveKey";
+import ValidateKey from "@/components/try-it/key-input/ValidateKey";
 
 export default function KeyInput() {
     const calls = useCalls();

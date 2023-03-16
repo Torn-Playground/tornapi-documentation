@@ -1,7 +1,7 @@
 import { SectionType, Selection } from "@/api-schema/schema.types";
+import PinIcon from "@/components/global/icons/PinIcon";
 import Tooltip from "@/components/global/tooltip/Tooltip";
 import SelectorBadge from "@/components/section/SelectorBadge";
-import PinIcon from "@/components/global/icons/PinIcon";
 
 interface SectionProps {
     section: SectionType;

@@ -1,7 +1,7 @@
 import { Selection as SelectionType } from "@/api-schema/schema.types";
+import QueryParams from "@/components/section/selection/QueryParams";
 import SelectionId from "@/components/section/selection/SelectionId";
 import SelectionPermission from "@/components/section/selection/SelectionPermission";
-import QueryParams from "@/components/section/selection/QueryParams";
 import SelectionSchema from "@/components/section/selection/SelectionSchema";
 import SelectionStructures from "@/components/section/selection/SelectionStructures";
 
