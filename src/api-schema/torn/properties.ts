@@ -1,5 +1,5 @@
-import { fromStructure, Schema, Selection, Structure } from "@/api-schema/schema.types";
 import { ArrayString, Integer, IntegerAndEmptyString, String } from "@/api-schema/common-types";
+import { fromStructure, Schema, Selection, Structure } from "@/api-schema/schema.types";
 
 const propertyStructure: Structure = {
     id: "property",

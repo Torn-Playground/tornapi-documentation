@@ -1,10 +1,10 @@
 "use client";
 
-import KeyInput from "@/components/try-it/key-input/KeyInput";
-import { CallProvider } from "@/components/try-it/CallContext";
-import UrlSelector from "@/components/try-it/url-selector/UrlSelector";
-import TryItButton from "@/components/try-it/TryItButton";
 import CallResponse from "@/components/try-it/call-response/CallResponse";
+import { CallProvider } from "@/components/try-it/CallContext";
+import KeyInput from "@/components/try-it/key-input/KeyInput";
+import TryItButton from "@/components/try-it/TryItButton";
+import UrlSelector from "@/components/try-it/url-selector/UrlSelector";
 
 export default function TryIt() {
     return (

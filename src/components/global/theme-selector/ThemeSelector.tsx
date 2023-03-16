@@ -1,10 +1,10 @@
 "use client";
 
-import SunIcon from "@/components/global/icons/SunIcon";
-import MoonIcon from "@/components/global/icons/MoonIcon";
-import { ChangeEvent } from "react";
-import { THEME_DARK, THEME_LIGHT } from "@/components/global/theme-selector/theme-utilities";
 import { useTheme } from "next-themes";
+import { ChangeEvent } from "react";
+import MoonIcon from "@/components/global/icons/MoonIcon";
+import SunIcon from "@/components/global/icons/SunIcon";
+import { THEME_DARK, THEME_LIGHT } from "@/components/global/theme-selector/theme-utilities";
 
 export default function ThemeSelector() {
     const { theme, setTheme } = useTheme();

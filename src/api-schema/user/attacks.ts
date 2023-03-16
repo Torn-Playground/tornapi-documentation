@@ -1,6 +1,6 @@
-import { fromStructure, Schema, Selection, Structure, StructureEnum } from "@/api-schema/schema.types";
-import { EpochSeconds, Integer, IntegerAndEmptyString, Number, NumberBoolean, String } from "@/api-schema/common-types";
 import { LIMIT, TIME_FROM, TIME_TO } from "@/api-schema/common-params";
+import { EpochSeconds, Integer, IntegerAndEmptyString, Number, NumberBoolean, String } from "@/api-schema/common-types";
+import { fromStructure, Schema, Selection, Structure, StructureEnum } from "@/api-schema/schema.types";
 
 const attackResultEnum: StructureEnum<string> = {
     id: "attack_result",

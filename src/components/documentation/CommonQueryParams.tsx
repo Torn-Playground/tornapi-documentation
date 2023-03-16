@@ -1,5 +1,5 @@
-import { Param } from "@/api-schema/schema.types";
 import { LIMIT, TIME_FROM, TIME_TO } from "@/api-schema/common-params";
+import { Param } from "@/api-schema/schema.types";
 import ExtendedLink from "@/components/global/extended-link/ExtendedLink";
 
 type CommonParam = {

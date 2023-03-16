@@ -1,5 +1,5 @@
-import KeyIcon from "@/components/global/icons/KeyIcon";
 import { KeyAccess } from "@/api-schema/schema.types";
+import KeyIcon from "@/components/global/icons/KeyIcon";
 import Tooltip from "@/components/global/tooltip/Tooltip";
 
 interface SelectionPermissionProps {

@@ -1,5 +1,5 @@
-import { SectionType } from "@/api-schema/schema.types";
 import { schema } from "@/api-schema/data";
+import { SectionType } from "@/api-schema/schema.types";
 
 function hasValidParts(key: string, section: SectionType | "", selections: string[]): boolean {
     if (!key) return false;
