@@ -1,7 +1,7 @@
 import { Integer, String } from "@/api-schema/common-types";
 import { fromStructure, Schema, Selection, Structure } from "@/api-schema/schema.types";
-import { lastActionStructure } from "@/api-schema/shared/last-action";
-import { statusStructure } from "@/api-schema/shared/status";
+import { lastActionStatusEnum, lastActionStructure } from "@/api-schema/shared/last-action";
+import { statusColorEnum, statusStateEnum, statusStructure } from "@/api-schema/shared/status";
 
 const employeeStructure: Structure = {
     id: "employee",
@@ -40,7 +40,16 @@ const companyStructure: Structure = {
         employees: fromStructure(employeesStructure),
     },
 };
-const structures = [companyStructure, employeesStructure, employeeStructure];
+const structures = [
+    companyStructure,
+    employeesStructure,
+    employeeStructure,
+    lastActionStructure,
+    lastActionStatusEnum,
+    statusStructure,
+    statusColorEnum,
+    statusStateEnum,
+];
 
 const schema: Schema = {
     company: fromStructure(companyStructure),

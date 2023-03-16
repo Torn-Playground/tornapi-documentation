@@ -1,12 +1,7 @@
 import { Integer, String } from "@/api-schema/common-types";
-import { fromStructure, Schema, Selection, Structure, StructureEnum } from "@/api-schema/schema.types";
+import { fromStructure, Schema, Selection, Structure } from "@/api-schema/schema.types";
+import { branchEnum } from "@/api-schema/shared/faction-upgrade";
 
-const branchEnum: StructureEnum<string> = {
-    id: "Branch",
-    name: "Branch",
-    values: ["Core", "Criminality", "Fortitude", "Voracity", "Toleration", "Excursion", "Steadfast", "Aggression", "Suppression"],
-    type: String,
-};
 const levelStructure: Structure = {
     id: "level",
     name: "Level",

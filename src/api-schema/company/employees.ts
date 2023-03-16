@@ -1,7 +1,7 @@
 import { Integer, String } from "@/api-schema/common-types";
 import { fromStructure, Schema, Selection, Structure } from "@/api-schema/schema.types";
-import { lastActionStructure } from "@/api-schema/shared/last-action";
-import { statusStructure } from "@/api-schema/shared/status";
+import { lastActionStatusEnum, lastActionStructure } from "@/api-schema/shared/last-action";
+import { statusColorEnum, statusStateEnum, statusStructure } from "@/api-schema/shared/status";
 
 const effectivenessStructure: Structure = {
     id: "effectiveness",
@@ -49,7 +49,16 @@ const employeesStructure: Structure = {
         "<user id>": fromStructure(employeeStructure),
     },
 };
-const structures = [employeesStructure, employeeStructure, effectivenessStructure];
+const structures = [
+    employeesStructure,
+    employeeStructure,
+    effectivenessStructure,
+    statusStructure,
+    statusColorEnum,
+    statusStateEnum,
+    lastActionStructure,
+    lastActionStatusEnum,
+];
 
 const schema: Schema = {
     company_employees: fromStructure(employeesStructure),
