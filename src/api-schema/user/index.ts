@@ -1,10 +1,11 @@
 import { LookupSelection, TimestampSelection } from "@/api-schema/common-selections";
 import { Section, Selection } from "@/api-schema/schema.types";
+import AmmoSelection from "@/api-schema/user/ammo";
 import AttacksSelection from "@/api-schema/user/attacks";
 import ProfileSelection from "@/api-schema/user/profile";
 
 const selections: Selection[] = [
-    //  ammo
+    AmmoSelection,
     AttacksSelection,
     //  attacksfull
     //  bars
