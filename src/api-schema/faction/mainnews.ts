@@ -10,7 +10,7 @@ const schema: Schema = {
 
 const MainNewsSelection: Selection = {
     name: "mainnews",
-    description: "List last 100 main news entries. Only available with faction API Access.",
+    description: "List last 100, or 1000 when providing time parameters, main news entries. Only available with faction API Access.",
     access: "minimal",
     schema,
     structures,
