@@ -1,4 +1,4 @@
-import { EpochSeconds, Integer, IntegerAndEmptyString, NumberBoolean, String } from "@/api-schema/common-types";
+import { EpochSeconds, Integer, IntegerOrNumber, NumberBoolean, String } from "@/api-schema/common-types";
 import { fromStructure, Schema, Selection, Structure, StructureEnum } from "@/api-schema/schema.types";
 import { lastActionStatusEnum, lastActionStructure } from "@/api-schema/shared/last-action";
 import { statusColorEnum, statusStateEnum, statusStructure } from "@/api-schema/shared/status";
@@ -32,7 +32,7 @@ const competitionStructure: Structure = {
             extra: "Only present during Elimination.",
         },
         score: {
-            type: IntegerAndEmptyString,
+            type: IntegerOrNumber,
             nullable: true,
             description: "Integer score for Easter Egg Hunt or Dog Tags. Number score for Mr & Ms Torn.",
             extra: "Only present during Easter Egg Hunt, Dog Tags or Mr & Ms Torn. Null if no eggs found during Easter event.",
@@ -41,6 +41,11 @@ const competitionStructure: Structure = {
             type: String,
             nullable: true,
             extra: "Only present during Mr & Ms Torn, when the user is not participating.",
+        },
+        total: {
+            type: Integer,
+            nullable: true,
+            extra: "Only present during Easter Egg Hunt. Score accumulated over the years.",
         },
         votes: {
             type: Integer,
