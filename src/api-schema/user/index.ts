@@ -6,6 +6,7 @@ import AttacksFullSelection from "@/api-schema/user/attacksfull";
 import BarsSelection from "@/api-schema/user/bars";
 import BasicSelection from "@/api-schema/user/basic";
 import BattleStatsSelection from "@/api-schema/user/battlestats";
+import BazaarSelection from "@/api-schema/user/bazaar";
 import ProfileSelection from "@/api-schema/user/profile";
 
 const selections: Selection[] = [
@@ -15,7 +16,7 @@ const selections: Selection[] = [
     BarsSelection,
     BasicSelection,
     BattleStatsSelection,
-    //  bazaar
+    BazaarSelection,
     //  cooldowns
     //  crimes
     //  discord
