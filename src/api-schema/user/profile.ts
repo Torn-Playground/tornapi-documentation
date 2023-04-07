@@ -1,6 +1,7 @@
 import { EpochSeconds, Integer, IntegerAndEmptyString, NumberBoolean, String } from "@/api-schema/common-types";
 import { fromStructure, Schema, Selection, Structure, StructureEnum } from "@/api-schema/schema.types";
 import { bar } from "@/api-schema/shared/bar";
+import { genderEnum } from "@/api-schema/shared/gender";
 import { lastActionStatusEnum, lastActionStructure } from "@/api-schema/shared/last-action";
 import { statusColorEnum, statusStateEnum, statusStructure } from "@/api-schema/shared/status";
 
@@ -58,12 +59,6 @@ const roleEnum: StructureEnum<string> = {
     id: "role",
     name: "Role",
     values: ["Civilian", "Reporter", "Wiki Contributor", "Wiki Editor", "Committee", "Helper", "Moderator", "Officer", "Admin", "NPC"],
-    type: String,
-};
-const genderEnum: StructureEnum<string> = {
-    id: "gender",
-    name: "Gender",
-    values: ["Male", "Female", "Enby"],
     type: String,
 };
 const jobStructure: Structure = {

@@ -3,14 +3,16 @@ import { Section, Selection } from "@/api-schema/schema.types";
 import AmmoSelection from "@/api-schema/user/ammo";
 import AttacksSelection from "@/api-schema/user/attacks";
 import AttacksFullSelection from "@/api-schema/user/attacksfull";
+import BarsSelection from "@/api-schema/user/bars";
+import BasicSelection from "@/api-schema/user/basic";
 import ProfileSelection from "@/api-schema/user/profile";
 
 const selections: Selection[] = [
     AmmoSelection,
     AttacksSelection,
     AttacksFullSelection,
-    //  bars
-    //  basic
+    BarsSelection,
+    BasicSelection,
     //  battlestats
     //  bazaar
     //  cooldowns
