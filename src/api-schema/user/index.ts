@@ -8,6 +8,7 @@ import BasicSelection from "@/api-schema/user/basic";
 import BattleStatsSelection from "@/api-schema/user/battlestats";
 import BazaarSelection from "@/api-schema/user/bazaar";
 import CooldownsSelection from "@/api-schema/user/cooldowns";
+import CrimesSelection from "@/api-schema/user/crimes";
 import ProfileSelection from "@/api-schema/user/profile";
 
 const selections: Selection[] = [
@@ -19,7 +20,7 @@ const selections: Selection[] = [
     BattleStatsSelection,
     BazaarSelection,
     CooldownsSelection,
-    //  crimes
+    CrimesSelection,
     //  discord
     //  display
     //  education
