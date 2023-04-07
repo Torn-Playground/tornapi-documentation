@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "@tippyjs/react": "^4.2.6",
-    "daisyui": "^2.51.3",
+    "daisyui": "^2.51.5",
     "next": "^13.2.3",
     "next-themes": "npm:@wits/next-themes@^0.2.16",
     "react": "^18.2.0",
@@ -23,20 +23,20 @@
   "devDependencies": {
     "@tailwindcss/forms": "^0.5.3",
     "@tailwindcss/typography": "^0.5.9",
-    "@types/node": "^18.14.6",
-    "@types/react": "^18.0.28",
+    "@types/node": "^18.15.11",
+    "@types/react": "^18.0.33",
     "@types/react-dom": "^18.0.11",
     "@types/underscore": "^1.11.4",
-    "autoprefixer": "^10.4.13",
-    "eslint": "^8.35.0",
+    "autoprefixer": "^10.4.14",
+    "eslint": "^8.38.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-config-airbnb-typescript": "^17.0.0",
-    "eslint-config-next": "^13.2.3",
-    "eslint-config-prettier": "^8.7.0",
+    "eslint-config-next": "^13.3.0",
+    "eslint-config-prettier": "^8.8.0",
     "eslint-plugin-import": "^2.27.5",
     "eslint-plugin-prettier": "^4.2.1",
     "postcss": "^8.4.21",
-    "tailwindcss": "^3.2.7"
+    "tailwindcss": "^3.3.1"
   },
   "browserslist": [
     "last 2 versions, not dead, > 0.2%"
