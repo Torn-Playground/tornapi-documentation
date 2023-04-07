@@ -9,6 +9,7 @@ export type Section = {
 export interface Selection {
     name: string;
     description: string;
+    warning?: string;
     access: KeyAccess;
     schema: Schema;
     structures: Array<Structure | StructureEnum<any>>;
