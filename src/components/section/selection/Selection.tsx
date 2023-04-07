@@ -1,4 +1,6 @@
 import { Selection as SelectionType } from "@/api-schema/schema.types";
+import ExclamationIcon from "@/components/global/icons/ExclamationIcon";
+import ExtraInformation from "@/components/section/selection/ExtraInformation";
 import QueryParams from "@/components/section/selection/QueryParams";
 import SelectionId from "@/components/section/selection/SelectionId";
 import SelectionPermission from "@/components/section/selection/SelectionPermission";
@@ -16,6 +18,7 @@ export default function Selection(props: SelectionProps) {
 
             <div className="flex items-center space-x-2">
                 <h4 className="text-xl font-semibold capitalize">{props.selection.name}</h4>
+                {props.selection.warning && <ExtraInformation tooltip={props.selection.warning} color="warning" iconElement={<ExclamationIcon size={20} />} />}
 
                 <SelectionId id={props.selection.id} />
                 <SelectionPermission access={props.selection.access} />
