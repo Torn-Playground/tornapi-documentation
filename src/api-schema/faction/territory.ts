@@ -25,7 +25,7 @@ const territoriesStructure: Structure = {
 const structures = [territoriesStructure, territoryStructure];
 
 const schema: Schema = {
-    territory: fromStructure(territoryStructure, { extra: "Empty array when there is no territory." }),
+    territory: fromStructure(territoryStructure),
 };
 
 const TerritorySelection: Selection = {

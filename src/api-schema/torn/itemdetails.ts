@@ -13,6 +13,7 @@ const bonusStructure: Structure = {
     schema: {
         bonus: { type: String },
         description: { type: String },
+        value: { type: Integer, description: "Chance of triggering the bonus." },
     },
 };
 const bonusesStructure: Structure = {

@@ -1,4 +1,4 @@
-import { BugReportPending, EpochSeconds, Integer, Number } from "@/api-schema/common-types";
+import { EpochSeconds, Integer, Number, String } from "@/api-schema/common-types";
 import { fromStructure, Schema, Selection, Structure } from "@/api-schema/schema.types";
 import { bonusStructure, membersStructure, memberStructure } from "@/api-schema/shared/chain-report";
 
@@ -6,8 +6,8 @@ const chainReportStructure: Structure = {
     id: "chain_report",
     name: "Chain Report",
     schema: {
-        success: { type: BugReportPending, nullable: true, extra: "Only present if the id is correct." },
-        msg: { type: BugReportPending, nullable: true, extra: "Only present if the id is correct." },
+        code: { type: Integer, nullable: true, extra: "Only present if the id is incorrect." },
+        error: { type: String, nullable: true, extra: "Only present if the id is incorrect." },
         factionID: { type: Integer, nullable: true },
         chain: { type: Integer, nullable: true },
         start: { type: EpochSeconds, nullable: true },
@@ -38,6 +38,7 @@ const schema: Schema = {
 const ChainReportSelection: Selection = {
     name: "chainreport",
     description: "View a chain report.",
+    warning: "Does not follow the usual error structure for not providing an id.",
     access: "public",
     schema,
     structures,

@@ -10,7 +10,7 @@ const schema: Schema = {
 
 const AttackNewsSelection: Selection = {
     name: "attacknews",
-    description: "List last 100 attack news entries. Only available with faction API Access.",
+    description: "List last 100, or 1000 when providing time parameters, attack news entries. Only available with faction API Access.",
     access: "limited",
     schema,
     structures,
