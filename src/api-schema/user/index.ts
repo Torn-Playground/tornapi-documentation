@@ -20,6 +20,7 @@ import InventorySelection from "@/api-schema/user/inventory";
 import JobPointsSelection from "@/api-schema/user/jobpoints";
 import MedalsSelection from "@/api-schema/user/medals";
 import MeritsSelection from "@/api-schema/user/merits";
+import MissionsSelection from "@/api-schema/user/missions";
 import PersonalStatsSelection from "@/api-schema/user/personalstats";
 import ProfileSelection from "@/api-schema/user/profile";
 import PropertiesSelection from "@/api-schema/user/properties";
@@ -48,7 +49,7 @@ const selections: Selection[] = [
     MedalsSelection,
     MeritsSelection,
     //  messages
-    //  missions
+    MissionsSelection,
     //  money
     //  networth
     //  newevents
