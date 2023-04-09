@@ -26,6 +26,7 @@ import PerksSelection from "@/api-schema/user/perks";
 import PersonalStatsSelection from "@/api-schema/user/personalstats";
 import ProfileSelection from "@/api-schema/user/profile";
 import PropertiesSelection from "@/api-schema/user/properties";
+import RefillsSelection from "@/api-schema/user/refills";
 
 const selections: Selection[] = [
     AmmoSelection,
@@ -62,7 +63,7 @@ const selections: Selection[] = [
     ProfileSelection,
     PropertiesSelection,
     //  receivedevents
-    //  refills
+    RefillsSelection,
     //  reports
     //  revives
     //  revivesfull
