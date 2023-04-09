@@ -26,7 +26,7 @@ const schema: Schema = {
 const HonorsSelection: Selection = {
     name: "honors",
     description: "List your awarded honors.",
-    access: "limited",
+    access: "minimal",
     schema,
     structures,
     id: { optional: false },
