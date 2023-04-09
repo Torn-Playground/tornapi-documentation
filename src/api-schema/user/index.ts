@@ -19,6 +19,7 @@ import IconsSelection from "@/api-schema/user/icons";
 import InventorySelection from "@/api-schema/user/inventory";
 import JobPointsSelection from "@/api-schema/user/jobpoints";
 import MedalsSelection from "@/api-schema/user/medals";
+import MeritsSelection from "@/api-schema/user/merits";
 import PersonalStatsSelection from "@/api-schema/user/personalstats";
 import ProfileSelection from "@/api-schema/user/profile";
 import PropertiesSelection from "@/api-schema/user/properties";
@@ -45,7 +46,7 @@ const selections: Selection[] = [
     //  log
     LookupSelection,
     MedalsSelection,
-    //  merits
+    MeritsSelection,
     //  messages
     //  missions
     //  money
