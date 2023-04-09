@@ -12,6 +12,7 @@ import CrimesSelection from "@/api-schema/user/crimes";
 import DiscordSelection from "@/api-schema/user/discord";
 import DisplaySelection from "@/api-schema/user/display";
 import EducationSelection from "@/api-schema/user/education";
+import EventsSelection from "@/api-schema/user/events";
 import ProfileSelection from "@/api-schema/user/profile";
 
 const selections: Selection[] = [
@@ -27,7 +28,7 @@ const selections: Selection[] = [
     DiscordSelection,
     DisplaySelection,
     EducationSelection,
-    //  events
+    EventsSelection,
     //  gym
     //  hof
     //  honors
