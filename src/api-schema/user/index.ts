@@ -29,6 +29,7 @@ import PropertiesSelection from "@/api-schema/user/properties";
 import RefillsSelection from "@/api-schema/user/refills";
 import RevivesSelection from "@/api-schema/user/revives";
 import RevivesFullSelection from "@/api-schema/user/revivesfull";
+import SkillsSelection from "@/api-schema/user/skills";
 
 const selections: Selection[] = [
     AmmoSelection,
@@ -69,7 +70,7 @@ const selections: Selection[] = [
     //  reports
     RevivesSelection,
     RevivesFullSelection,
-    //  skills
+    SkillsSelection,
     //  stocks
     TimestampSelection,
     //  travel
