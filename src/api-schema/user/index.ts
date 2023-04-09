@@ -13,6 +13,7 @@ import DiscordSelection from "@/api-schema/user/discord";
 import DisplaySelection from "@/api-schema/user/display";
 import EducationSelection from "@/api-schema/user/education";
 import EventsSelection from "@/api-schema/user/events";
+import GymSelection from "@/api-schema/user/gym";
 import ProfileSelection from "@/api-schema/user/profile";
 
 const selections: Selection[] = [
@@ -29,7 +30,7 @@ const selections: Selection[] = [
     DisplaySelection,
     EducationSelection,
     EventsSelection,
-    //  gym
+    GymSelection,
     //  hof
     //  honors
     //  icons
