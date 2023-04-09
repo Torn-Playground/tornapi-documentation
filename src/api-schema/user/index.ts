@@ -30,6 +30,7 @@ import RefillsSelection from "@/api-schema/user/refills";
 import RevivesSelection from "@/api-schema/user/revives";
 import RevivesFullSelection from "@/api-schema/user/revivesfull";
 import SkillsSelection from "@/api-schema/user/skills";
+import TravelSelection from "@/api-schema/user/travel";
 
 const selections: Selection[] = [
     AmmoSelection,
@@ -73,7 +74,7 @@ const selections: Selection[] = [
     SkillsSelection,
     //  stocks
     TimestampSelection,
-    //  travel
+    TravelSelection,
     //  weaponexp
     //  workstats
 ];
