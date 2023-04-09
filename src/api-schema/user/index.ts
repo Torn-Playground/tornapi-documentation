@@ -21,6 +21,7 @@ import JobPointsSelection from "@/api-schema/user/jobpoints";
 import MedalsSelection from "@/api-schema/user/medals";
 import PersonalStatsSelection from "@/api-schema/user/personalstats";
 import ProfileSelection from "@/api-schema/user/profile";
+import PropertiesSelection from "@/api-schema/user/properties";
 
 const selections: Selection[] = [
     AmmoSelection,
@@ -55,7 +56,7 @@ const selections: Selection[] = [
     //  perks
     PersonalStatsSelection,
     ProfileSelection,
-    //  properties
+    PropertiesSelection,
     //  receivedevents
     //  refills
     //  reports
