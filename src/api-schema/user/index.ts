@@ -31,6 +31,7 @@ import RevivesSelection from "@/api-schema/user/revives";
 import RevivesFullSelection from "@/api-schema/user/revivesfull";
 import SkillsSelection from "@/api-schema/user/skills";
 import TravelSelection from "@/api-schema/user/travel";
+import WeaponExpSelection from "@/api-schema/user/weaponexp";
 
 const selections: Selection[] = [
     AmmoSelection,
@@ -75,7 +76,7 @@ const selections: Selection[] = [
     //  stocks
     TimestampSelection,
     TravelSelection,
-    //  weaponexp
+    WeaponExpSelection,
     //  workstats
 ];
 
