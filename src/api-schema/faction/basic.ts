@@ -47,6 +47,13 @@ const membersStructure: Structure = {
         "<user id>": fromStructure(memberStructure),
     },
 };
+const peaceStructure: Structure = {
+    id: "peace",
+    name: "Peace Treaties",
+    schema: {
+        "<faction id>": { type: EpochSeconds },
+    },
+};
 const rankEnum: StructureEnum<string> = {
     id: "rank",
     name: "Rank",
@@ -87,8 +94,9 @@ const factionStructure: Structure = {
             array: true,
             extra: "Empty object when there is no raid.",
         }),
-        // FIXME - Map field correctly.
-        peace: { type: Unknown },
+        peace: fromStructure(peaceStructure, {
+            extra: "Empty object when there are no peace treaties.",
+        }),
         rank: fromStructure(rankStructure),
         members: fromStructure(membersStructure),
     },
@@ -111,6 +119,7 @@ const structures = [
     warStructure,
     territoryWarStructure,
     raidStructure,
+    peaceStructure,
 ];
 
 const schema: Schema = {
