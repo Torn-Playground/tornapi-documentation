@@ -1,4 +1,4 @@
-import { EpochSeconds, Integer, String, Unknown } from "@/api-schema/common-types";
+import { EpochSeconds, Integer, String } from "@/api-schema/common-types";
 import { fromStructure, Schema, Selection, Structure, StructureEnum } from "@/api-schema/schema.types";
 import { lastActionStatusEnum, lastActionStructure } from "@/api-schema/shared/last-action";
 import { factionsStructure, rankedWarFactionStructure, rankedWarsStructure, rankedWarStructure, warStructure } from "@/api-schema/shared/ranked-wars";
