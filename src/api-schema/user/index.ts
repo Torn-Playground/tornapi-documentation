@@ -34,6 +34,7 @@ import ReportsSelection from "@/api-schema/user/reports";
 import RevivesSelection from "@/api-schema/user/revives";
 import RevivesFullSelection from "@/api-schema/user/revivesfull";
 import SkillsSelection from "@/api-schema/user/skills";
+import StocksSelection from "@/api-schema/user/stocks";
 import TravelSelection from "@/api-schema/user/travel";
 import WeaponExpSelection from "@/api-schema/user/weaponexp";
 import WorkStatsSelection from "@/api-schema/user/workstats";
@@ -78,7 +79,7 @@ const selections: Selection[] = [
     RevivesSelection,
     RevivesFullSelection,
     SkillsSelection,
-    //  stocks
+    StocksSelection,
     TimestampSelection,
     TravelSelection,
     WeaponExpSelection,
