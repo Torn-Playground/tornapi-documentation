@@ -8,9 +8,7 @@ interface SelectionStructureProps {
 }
 
 export default function SelectionStructure(props: SelectionStructureProps) {
-    const hasDescription = Object.values(props.schema)
-        .filter(isField)
-        .some((f) => f.description);
+    const hasDescription = Object.values(props.schema).some((f) => !!f.description);
     const buildRow = (field: string, schema: SchemaField | FieldStructure) => {
         let fields;
         if (isField(schema)) {
@@ -38,7 +36,7 @@ export default function SelectionStructure(props: SelectionStructureProps) {
                             </>
                         )}
                     </td>
-                    {hasDescription && <td></td>}
+                    {hasDescription && <td>{schema.description}</td>}
                 </>
             );
         } else {
