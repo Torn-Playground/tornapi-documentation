@@ -3,7 +3,7 @@ import { reportSchema, reportStructures } from "@/api-schema/shared/reports";
 
 const ReportsSelection: Selection = {
     name: "reports",
-    description: "List last 100 reports. Only available with faction API Access.",
+    description: "List last 100 reports.",
     access: "limited",
     schema: reportSchema,
     structures: reportStructures,
