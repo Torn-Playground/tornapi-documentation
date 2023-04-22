@@ -43,6 +43,7 @@ export type FieldStructure = {
     extra?: string;
     nullable: boolean;
     array: boolean;
+    description?: string;
 };
 
 export function isField(object: SchemaField | FieldStructure): object is SchemaField {
@@ -72,7 +73,7 @@ export type StructureEnum<T> = {
     incomplete?: { missing: string };
 };
 
-export type StructureOptions = { nullable?: boolean; extra?: string; array?: boolean };
+export type StructureOptions = { nullable?: boolean; extra?: string; array?: boolean; description?: string };
 
 export function fromStructure(structure: Structure | StructureEnum<any>, options: StructureOptions = {}): FieldStructure {
     let type: StructureType;
@@ -89,6 +90,7 @@ export function fromStructure(structure: Structure | StructureEnum<any>, options
         nullable: options.nullable ?? false,
         extra: options.extra,
         array: options.array ?? false,
+        description: options.description,
     };
 }
 

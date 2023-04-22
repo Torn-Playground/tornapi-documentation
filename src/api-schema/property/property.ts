@@ -1,16 +1,7 @@
 import { ArrayString, Integer, IntegerAndString } from "@/api-schema/common-types";
 import { fromStructure, Schema, Selection, Structure } from "@/api-schema/schema.types";
+import { rentedStructure } from "@/api-schema/shared/rented";
 
-const rentedStructure: Structure = {
-    id: "rented",
-    name: "Rented",
-    schema: {
-        user_id: { type: Integer },
-        days_left: { type: Integer },
-        total_cost: { type: Integer },
-        cost_per_day: { type: Integer },
-    },
-};
 const propertyStructure: Structure = {
     id: "property",
     name: "Property",
