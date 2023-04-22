@@ -25,6 +25,7 @@ import MissionsSelection from "@/api-schema/user/missions";
 import MoneySelection from "@/api-schema/user/money";
 import NetworthSelection from "@/api-schema/user/networth";
 import NewEventsSelection from "@/api-schema/user/newevents";
+import NewMessagesSelection from "@/api-schema/user/newmessages";
 import NotificationsSelection from "@/api-schema/user/notifications";
 import PerksSelection from "@/api-schema/user/perks";
 import PersonalStatsSelection from "@/api-schema/user/personalstats";
@@ -69,7 +70,7 @@ const selections: Selection[] = [
     MoneySelection,
     NetworthSelection,
     NewEventsSelection,
-    //  newmessages
+    NewMessagesSelection,
     NotificationsSelection,
     PerksSelection,
     PersonalStatsSelection,
