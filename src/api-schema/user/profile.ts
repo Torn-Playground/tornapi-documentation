@@ -3,6 +3,7 @@ import { fromStructure, Schema, Selection, Structure, StructureEnum } from "@/ap
 import { bar } from "@/api-schema/shared/bar";
 import { genderEnum } from "@/api-schema/shared/gender";
 import { lastActionStatusEnum, lastActionStructure } from "@/api-schema/shared/last-action";
+import { roleEnum } from "@/api-schema/shared/role";
 import { statusColorEnum, statusStateEnum, statusStructure } from "@/api-schema/shared/status";
 
 const competitionTypeEnum: StructureEnum<string> = {
@@ -59,12 +60,6 @@ const competitionStructure: Structure = {
             extra: "Only present during Mr & Ms Torn.",
         },
     },
-};
-const roleEnum: StructureEnum<string> = {
-    id: "role",
-    name: "Role",
-    values: ["Civilian", "Reporter", "Wiki Contributor", "Wiki Editor", "Committee", "Helper", "Moderator", "Officer", "Admin", "NPC"],
-    type: String,
 };
 const jobStructure: Structure = {
     id: "job",
