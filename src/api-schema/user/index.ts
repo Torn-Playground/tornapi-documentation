@@ -18,6 +18,7 @@ import HOFSelection from "@/api-schema/user/hof";
 import IconsSelection from "@/api-schema/user/icons";
 import InventorySelection from "@/api-schema/user/inventory";
 import JobPointsSelection from "@/api-schema/user/jobpoints";
+import LogSelection from "@/api-schema/user/log";
 import MedalsSelection from "@/api-schema/user/medals";
 import MeritsSelection from "@/api-schema/user/merits";
 import MessagesSelection from "@/api-schema/user/messages";
@@ -61,7 +62,7 @@ const selections: Selection[] = [
     IconsSelection,
     InventorySelection,
     JobPointsSelection,
-    //  log
+    LogSelection,
     LookupSelection,
     MedalsSelection,
     MeritsSelection,
