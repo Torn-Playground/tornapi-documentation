@@ -18,13 +18,13 @@ const referenceStructure: Structure = {
         left: { type: String, description: "Date ('dd-MM-yyyy') or 'Present' when they joined." },
     },
 };
-const warantStructure: Structure = {
+const warrantStructure: Structure = {
     id: "warrant",
     name: "Warrant",
     schema: {
         user_id: { type: Integer },
         name: { type: String },
-        warrant: { type: Integer, description: "Amount of the warant on the user." },
+        warrant: { type: Integer, description: "Amount of the warrant on the user." },
     },
 };
 const friendFoeUserStructure: Structure = {
@@ -75,12 +75,12 @@ const reportDataStructure: Structure = {
             nullable: true,
             extra: "Only present in friend or foe reports.",
         }),
-        toplist: fromStructure(warantStructure, {
+        toplist: fromStructure(warrantStructure, {
             array: true,
             nullable: true,
             extra: "Only present in mostwanted reports.",
         }),
-        otherlist: fromStructure(warantStructure, {
+        otherlist: fromStructure(warrantStructure, {
             array: true,
             nullable: true,
             extra: "Only present in mostwanted reports.",
@@ -115,7 +115,7 @@ export const reportStructures: Array<Structure | StructureEnum<any>> = [
     reportDataStructure,
     reportTypeEnum,
     friendFoeUserStructure,
-    warantStructure,
+    warrantStructure,
 ];
 
 export const reportSchema: Schema = { reports: fromStructure(reportStructure) };
