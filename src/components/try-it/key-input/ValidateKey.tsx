@@ -28,7 +28,7 @@ export default function ValidateKey() {
     useEffect(() => {
         setColorClass("");
         setLevelText("");
-    }, [state]);
+    }, [state.key]);
 
     return (
         <button className={`btn ${colorClass}`} onClick={validate} disabled={!state.key}>
