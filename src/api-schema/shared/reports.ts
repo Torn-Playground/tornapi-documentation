@@ -4,9 +4,18 @@ import { fromStructure, Schema, Structure, StructureEnum } from "@/api-schema/sc
 const reportTypeEnum: StructureEnum<string> = {
     id: "report_type",
     name: "Report Type",
-    values: ["stats", "money", "friendorfoe"],
+    values: ["stats", "money", "friendorfoe", "mostwanted"],
     type: String,
-    incomplete: { missing: "anonymousbounties - mostwanted - references - truelevel - investment" },
+    incomplete: { missing: "anonymousbounties - references - truelevel - investment" },
+};
+const warantStructure: Structure = {
+    id: "warrant",
+    name: "Warrant",
+    schema: {
+        user_id: { type: Integer },
+        name: { type: String },
+        warrant: { type: Integer, description: "Amount of the warant on the user." },
+    },
 };
 const friendFoeUserDataStructure: Structure = {
     id: "friend_foe_user",
@@ -56,6 +65,16 @@ const reportDataStructure: Structure = {
             nullable: true,
             extra: "Only present in friend or foe reports.",
         }),
+        toplist: fromStructure(warantStructure, {
+            array: true,
+            nullable: true,
+            extra: "Only present in mostwanted reports.",
+        }),
+        otherlist: fromStructure(warantStructure, {
+            array: true,
+            nullable: true,
+            extra: "Only present in mostwanted reports.",
+        }),
     },
 };
 const reportStructure: Structure = {
@@ -70,6 +89,12 @@ const reportStructure: Structure = {
         timestamp: { type: EpochSeconds },
     },
 };
-export const reportStructures: Array<Structure | StructureEnum<any>> = [reportStructure, reportDataStructure, reportTypeEnum, friendFoeUserDataStructure];
+export const reportStructures: Array<Structure | StructureEnum<any>> = [
+    reportStructure,
+    reportDataStructure,
+    reportTypeEnum,
+    friendFoeUserDataStructure,
+    warantStructure,
+];
 
 export const reportSchema: Schema = { reports: fromStructure(reportStructure) };
