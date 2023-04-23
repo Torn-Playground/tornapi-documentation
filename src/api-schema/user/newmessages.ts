@@ -35,9 +35,9 @@ const schema: Schema = {
 };
 
 const NewMessagesSelection: Selection = {
-    name: "messages",
+    name: "newmessages",
     description: "Get your unread messages.",
-    access: "limited",
+    access: "minimal",
     schema,
     structures,
     id: { optional: false },
