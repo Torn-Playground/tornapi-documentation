@@ -17,7 +17,7 @@ const warantStructure: Structure = {
         warrant: { type: Integer, description: "Amount of the warant on the user." },
     },
 };
-const friendFoeUserDataStructure: Structure = {
+const friendFoeUserStructure: Structure = {
     id: "friend_foe_user",
     name: "Friend or Foe User",
     schema: {
@@ -55,12 +55,12 @@ const reportDataStructure: Structure = {
             extra: "Only present in stat reports, and only when it's included in the stat spy.",
         },
         money: { type: Integer, nullable: true, extra: "Only present in money reports." },
-        friendlist: fromStructure(friendFoeUserDataStructure, {
+        friendlist: fromStructure(friendFoeUserStructure, {
             array: true,
             nullable: true,
             extra: "Only present in friend or foe reports.",
         }),
-        enemylist: fromStructure(friendFoeUserDataStructure, {
+        enemylist: fromStructure(friendFoeUserStructure, {
             array: true,
             nullable: true,
             extra: "Only present in friend or foe reports.",
@@ -93,7 +93,7 @@ export const reportStructures: Array<Structure | StructureEnum<any>> = [
     reportStructure,
     reportDataStructure,
     reportTypeEnum,
-    friendFoeUserDataStructure,
+    friendFoeUserStructure,
     warantStructure,
 ];
 
