@@ -6,9 +6,10 @@ const statsStructure: Structure = {
     id: "stats",
     name: "Stats",
     schema: {
-        intelligence: { type: Integer },
-        endurance: { type: Integer },
-        manual_labor: { type: Integer },
+        strength: { type: Integer },
+        speed: { type: Integer },
+        dexterity: { type: Integer },
+        defense: { type: Integer },
     },
 };
 
@@ -16,7 +17,7 @@ const structures = [applicationsStructure, buildApplicationStructure(statsStruct
 
 const ApplicationsSelection: Selection = {
     name: "applications",
-    description: "List company applications. Only available for directors.",
+    description: "List faction applications. Only available with faction API Access and application permissions.",
     access: "limited",
     schema: applicationsSchema,
     structures,
