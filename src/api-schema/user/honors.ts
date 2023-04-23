@@ -1,19 +1,5 @@
 import { ArrayEpochSeconds, ArrayInteger } from "@/api-schema/common-types";
-import { fromStructure, Schema, Selection, Structure } from "@/api-schema/schema.types";
-
-const childStructure: Structure = {
-    id: "",
-    name: "",
-    schema: {},
-};
-const rootStructure: Structure = {
-    id: "",
-    name: "",
-    schema: {
-        "<id>": fromStructure(childStructure),
-    },
-};
-const structures = [rootStructure, childStructure];
+import { Schema, Selection } from "@/api-schema/schema.types";
 
 const schema: Schema = {
     honors_awarded: { type: ArrayInteger },
@@ -28,7 +14,7 @@ const HonorsSelection: Selection = {
     description: "List your awarded honors.",
     access: "minimal",
     schema,
-    structures,
+    structures: [],
     id: { optional: false },
     params: [],
 };

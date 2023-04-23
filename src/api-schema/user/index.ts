@@ -15,6 +15,7 @@ import EducationSelection from "@/api-schema/user/education";
 import EventsSelection from "@/api-schema/user/events";
 import GymSelection from "@/api-schema/user/gym";
 import HOFSelection from "@/api-schema/user/hof";
+import HonorsSelection from "@/api-schema/user/honors";
 import IconsSelection from "@/api-schema/user/icons";
 import InventorySelection from "@/api-schema/user/inventory";
 import JobPointsSelection from "@/api-schema/user/jobpoints";
@@ -60,6 +61,7 @@ const selections: Selection[] = [
     EventsSelection,
     GymSelection,
     HOFSelection,
+    HonorsSelection,
     IconsSelection,
     InventorySelection,
     JobPointsSelection,
