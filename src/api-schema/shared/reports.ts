@@ -4,7 +4,7 @@ import { fromStructure, Schema, Structure, StructureEnum } from "@/api-schema/sc
 const reportTypeEnum: StructureEnum<string> = {
     id: "report_type",
     name: "Report Type",
-    values: ["stats"],
+    values: ["stats", "money"],
     type: String,
     incomplete: { missing: "anonymousbounties - mostwanted - references - truelevel - friendorfoe - investment" },
 };
@@ -37,6 +37,7 @@ const reportDataStructure: Structure = {
             nullable: true,
             extra: "Only present in stat reports, and only when it's included in the stat spy.",
         },
+        money: { type: Integer, nullable: true, extra: "Only present in money reports." },
     },
 };
 const reportStructure: Structure = {
