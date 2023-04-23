@@ -21,7 +21,10 @@ const territoryWarsStructure: Structure = {
 const structures = [territoryWarsStructure, territoryWarStructure];
 
 const schema: Schema = {
-    territorywars: fromStructure(territoryWarsStructure),
+    territorywars: fromStructure(territoryWarsStructure, {
+        nullable: true,
+        extra: "Null when there are no territory wars going on.",
+    }),
 };
 
 const TerritoryWarsSelection: Selection = {
