@@ -4,9 +4,19 @@ import { fromStructure, Schema, Structure, StructureEnum } from "@/api-schema/sc
 const reportTypeEnum: StructureEnum<string> = {
     id: "report_type",
     name: "Report Type",
-    values: ["stats", "money", "friendorfoe", "mostwanted"],
+    values: ["stats", "money", "friendorfoe", "mostwanted", "references"],
     type: String,
-    incomplete: { missing: "anonymousbounties - references - truelevel - investment" },
+    incomplete: { missing: "anonymousbounties - truelevel - investment" },
+};
+const referenceStructure: Structure = {
+    id: "reference",
+    name: "Reference",
+    schema: {
+        ID: { type: Integer },
+        name: { type: String },
+        joined: { type: String, description: "Date ('dd-MM-yyyy') when they joined." },
+        left: { type: String, description: "Date ('dd-MM-yyyy') or 'Present' when they joined." },
+    },
 };
 const warantStructure: Structure = {
     id: "warrant",
@@ -75,6 +85,16 @@ const reportDataStructure: Structure = {
             nullable: true,
             extra: "Only present in mostwanted reports.",
         }),
+        faction_history: fromStructure(referenceStructure, {
+            array: true,
+            nullable: true,
+            extra: "Only present in references reports.",
+        }),
+        company_history: fromStructure(referenceStructure, {
+            array: true,
+            nullable: true,
+            extra: "Only present in references reports.",
+        }),
     },
 };
 const reportStructure: Structure = {
@@ -90,6 +110,7 @@ const reportStructure: Structure = {
     },
 };
 export const reportStructures: Array<Structure | StructureEnum<any>> = [
+    referenceStructure,
     reportStructure,
     reportDataStructure,
     reportTypeEnum,
