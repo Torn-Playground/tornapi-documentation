@@ -14,7 +14,7 @@ const eventsStructure: Structure = {
     id: "events",
     name: "Events",
     schema: {
-        "<id>": fromStructure(eventStructure),
+        "<event uuid>": fromStructure(eventStructure),
     },
 };
 const structures = [eventsStructure, eventStructure];

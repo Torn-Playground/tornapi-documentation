@@ -1,5 +1,5 @@
 import { LIMIT, TIME_FROM, TIME_TO_WITH_FROM } from "@/api-schema/common-params";
-import { EpochSeconds, NumberBoolean, String } from "@/api-schema/common-types";
+import { EpochSeconds, String } from "@/api-schema/common-types";
 import { fromStructure, Schema, Selection, Structure } from "@/api-schema/schema.types";
 
 const eventStructure: Structure = {
@@ -8,14 +8,13 @@ const eventStructure: Structure = {
     schema: {
         timestamp: { type: EpochSeconds },
         event: { type: String },
-        seen: { type: NumberBoolean },
     },
 };
 const eventsStructure: Structure = {
     id: "events",
     name: "Events",
     schema: {
-        "<id>": fromStructure(eventStructure),
+        "<event uuid>": fromStructure(eventStructure),
     },
 };
 const structures = [eventsStructure, eventStructure];
