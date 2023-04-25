@@ -1,4 +1,5 @@
 import { LookupSelection, TimestampSelection } from "@/api-schema/common-selections";
+import ApplicationsSelection from "@/api-schema/faction/applications";
 import ArmorSelection from "@/api-schema/faction/armor";
 import ArmoryNewsSelection from "@/api-schema/faction/armorynews";
 import AttackNewsSelection from "@/api-schema/faction/attacknews";
@@ -33,7 +34,7 @@ import WeaponsSelection from "@/api-schema/faction/weapons";
 import { Section, Selection } from "@/api-schema/schema.types";
 
 const selections: Selection[] = [
-    //  applications
+    ApplicationsSelection,
     ArmorSelection,
     ArmoryNewsSelection,
     AttackNewsSelection,
