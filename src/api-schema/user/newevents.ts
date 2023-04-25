@@ -26,7 +26,7 @@ const schema: Schema = {
 
 const NewEventsSelection: Selection = {
     name: "newevents",
-    description: "List your unread events.",
+    description: "List your last 100 unread events.",
     access: "minimal",
     schema,
     structures,
