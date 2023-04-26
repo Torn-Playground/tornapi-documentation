@@ -13,7 +13,7 @@ on:
       - main
 
 jobs:
-  run-prettier:
+  code-quality:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
@@ -21,8 +21,17 @@ jobs:
         with:
           # Make sure the actual branch is checked out when running on pull requests.
           ref: ${{ github.head_ref }}
+          # Full git history is needed to get a proper list of changed files within `super-linter`
+          fetch-depth: 0
 
       - name: Prettify code
         uses: creyD/prettier_action@v4.3
         with:
           prettier_options: --write **/*.{ts,tsx}
+          
+      - name: Lint Code Base
+        uses: github/super-linter@v5
+        env:
+          VALIDATE_ALL_CODEBASE: false
+          DEFAULT_BRANCH: main
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
