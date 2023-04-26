@@ -10,7 +10,7 @@ const schema: Schema = {
 const CachesSelection: Selection = {
     name: "caches",
     description: "View all caches available in the faction armory. Only available with faction API Access.",
-    access: "minimal",
+    access: "limited",
     schema,
     structures,
     id: { optional: false },
