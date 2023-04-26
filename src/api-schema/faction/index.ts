@@ -8,6 +8,7 @@ import AttacksFullSelection from "@/api-schema/faction/attacksfull";
 import BasicSelection from "@/api-schema/faction/basic";
 import BoostersSelection from "@/api-schema/faction/boosters";
 import CachesSelection from "@/api-schema/faction/caches";
+import CesiumSelection from "@/api-schema/faction/cesium";
 import ChainSelection from "@/api-schema/faction/chain";
 import ChainReportSelection from "@/api-schema/faction/chainreport";
 import ChainsSelection from "@/api-schema/faction/chains";
@@ -44,7 +45,7 @@ const selections: Selection[] = [
     BasicSelection,
     BoostersSelection,
     CachesSelection,
-    //  cesium
+    CesiumSelection,
     ChainSelection,
     ChainReportSelection,
     ChainsSelection,
