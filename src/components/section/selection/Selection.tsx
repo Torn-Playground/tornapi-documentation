@@ -18,7 +18,9 @@ export default function Selection(props: SelectionProps) {
 
             <div className="flex items-center space-x-2">
                 <h4 className="text-xl font-semibold capitalize">{props.selection.name}</h4>
-                {props.selection.warning && <ExtraInformation tooltip={props.selection.warning} color="warning" iconElement={<ExclamationIcon size={20} />} />}
+                {props.selection.warning && (
+                    <ExtraInformation tooltip={props.selection.warning} color="warning" iconElement={<ExclamationIcon size={20} stroke={0.2} />} />
+                )}
 
                 <SelectionId id={props.selection.id} />
                 <SelectionPermission access={props.selection.access} />

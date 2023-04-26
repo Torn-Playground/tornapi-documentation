@@ -6,3 +6,5 @@ export type DefaultIcon = SizableIcon & ColoredIcon & ClassedIcon;
 
 export type FilledIcon = { filled?: boolean };
 export type SolidIcon = { solid?: boolean };
+
+export type StrokeIcon = { stroke?: number };

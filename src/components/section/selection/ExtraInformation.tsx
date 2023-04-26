@@ -11,11 +11,20 @@ interface ExtraInformationProps {
 }
 
 export default function ExtraInformation(props: ExtraInformationProps) {
-    const colorClass = `badge-${props.color ?? "primary"}`;
+    const getColorClass = () => {
+        switch (props.color) {
+            case "primary":
+                return "badge-primary";
+            case "warning":
+                return "badge-warning";
+            default:
+                return "badge-primary";
+        }
+    };
 
     return (
         <Tooltip tooltip={props.tooltip}>
-            <div className={`badge ${colorClass} ml-1 px-1`}>{props.iconElement ?? <QuestionMarkIcon size={10} />}</div>
+            <div className={`badge ${getColorClass()} ml-1 px-1`}>{props.iconElement ?? <QuestionMarkIcon size={10} />}</div>
         </Tooltip>
     );
 }
