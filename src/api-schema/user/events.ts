@@ -26,7 +26,6 @@ const schema: Schema = {
 const EventsSelection: Selection = {
     name: "events",
     description: "List your last 25 events. Will be 100 when using the 'from' parameter.",
-    warning: "Events that are no longer available in-game are also not available through the API.",
     access: "limited",
     schema,
     structures,
