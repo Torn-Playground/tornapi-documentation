@@ -25,13 +25,10 @@ export default function Limits() {
             you must account for this by removing disabled or invalid keys upon error.
             <LimitTitle id="ip-limit">IP Limit</LimitTitle>
             Alongside the call limit per user, there is also an IP limit of 1,000 calls a minute on a single IP.
-            <LimitTitle id="cloud-limit">Global Cloud Limit</LimitTitle>
-            Some data is stored in the cloud. Endpoints that pull that data have an additional limit of 100,000 rows a day (rolling 24 hours), for a specific
-            category. Looking at the same data in-game will also count towards the same limit, going over the limit will block access through both the api and
-            in-game. The different categories are faction news, activity log and personal stats.
-            <LimitTitle id="cloud-limit">API Daily Limit</LimitTitle>
-            For user events there also is a limit for pulling the data from the cloud. Unlike the global cloud limit, the limit is set lower at a currently
-            unknown amount and does not affect in-game events.
+            <LimitTitle id="cloud-limit">Cloud Limit</LimitTitle>
+            Some data is stored in the cloud. Endpoints that pull that data have an additional limit of 50,000 rows a day (rolling 24 hours), for a specific
+            category. These limits also exist in-game, but they are now separated and reaching the api limit will no longer. The different categories are
+            faction news, events, activity log and personal stats.
             <LimitTitle id="cache">Cache</LimitTitle>
             Calls to the API are cached. This cache lasts 29 seconds, so you can space your calls 30 seconds between them. Changing the section, selection or id
             will have a different cache, but other parameters like to and from won&apos;t. Like always, there are exceptions to this which will be documented on
