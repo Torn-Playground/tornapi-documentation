@@ -11,7 +11,7 @@ const schema: Schema = {
 
 const RevivesSelection: Selection = {
     name: "revives",
-    description: "List 100 latest revives involving faction members. Only available with faction API Access.",
+    description: "List 99 latest revives involving faction members. Only available with faction API Access.",
     access: "minimal",
     schema,
     structures,
