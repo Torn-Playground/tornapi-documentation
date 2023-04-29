@@ -34,7 +34,6 @@ import PersonalStatsSelection from "@/api-schema/user/personalstats";
 import ProfileSelection from "@/api-schema/user/profile";
 import PropertiesSelection from "@/api-schema/user/properties";
 import PublicStatusSelection from "@/api-schema/user/publicstatus";
-import ReceivedEventsSelection from "@/api-schema/user/receivedevents";
 import RefillsSelection from "@/api-schema/user/refills";
 import ReportsSelection from "@/api-schema/user/reports";
 import RevivesSelection from "@/api-schema/user/revives";
@@ -81,7 +80,6 @@ const selections: Selection[] = [
     PublicStatusSelection,
     ProfileSelection,
     PropertiesSelection,
-    ReceivedEventsSelection,
     RefillsSelection,
     ReportsSelection,
     RevivesSelection,
