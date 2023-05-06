@@ -65,6 +65,7 @@ const jobStructure: Structure = {
     id: "job",
     name: "Job",
     schema: {
+        job: { type: String, extra: "Will be 'None' when not in a company or job." },
         position: { type: String, extra: "Will be 'None' when not in a company or job." },
         company_id: { type: Integer, extra: "Will be 0 when not in a company or job." },
         company_name: { type: String, extra: "Will be 'None' when not in a company or job." },
