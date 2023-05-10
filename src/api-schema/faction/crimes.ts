@@ -51,7 +51,7 @@ const schema: Schema = {
 
 const CrimesSelection: Selection = {
     name: "crimes",
-    description: "List 100 most recent crimes. Only available with faction API Access.",
+    description: "List 100 most recent organised crimes. Only available with faction API Access. Cancelled organised crimes are not shown.",
     access: "minimal",
     schema,
     structures,
