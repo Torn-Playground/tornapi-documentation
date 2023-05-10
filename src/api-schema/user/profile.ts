@@ -1,4 +1,4 @@
-import { EpochSeconds, Integer, IntegerOrNumber, NumberBoolean, String } from "@/api-schema/common-types";
+import { EpochSeconds, Integer, IntegerOrNumber, NumberBoolean, String, Unknown } from "@/api-schema/common-types";
 import { fromStructure, Schema, Selection, Structure, StructureEnum } from "@/api-schema/schema.types";
 import { bar } from "@/api-schema/shared/bar";
 import { genderEnum } from "@/api-schema/shared/gender";
@@ -59,6 +59,7 @@ const competitionStructure: Structure = {
             nullable: true,
             extra: "Only present during Mr & Ms Torn.",
         },
+        position: { type: Unknown, nullable: true, extra: "Only present during Dog Tags, and only when there is a position to show." },
     },
 };
 const jobStructure: Structure = {
