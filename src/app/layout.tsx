@@ -2,7 +2,6 @@ import "./globals.css";
 import { Metadata } from "next/dist/lib/metadata/types/metadata-interface";
 import { ServerThemeProvider, ThemeProvider } from "next-themes";
 import { PropsWithChildren } from "react";
-import DevelopmentAlert from "@/components/global/community-alert/DevelopmentAlert";
 import Footer from "@/components/global/footer/Footer";
 import Header from "@/components/global/header/Header";
 import Navigation from "@/components/global/navigation/Navigation";
@@ -18,10 +17,7 @@ export default function RootLayout({ children }: PropsWithChildren) {
                         <Navigation>
                             <Header />
 
-                            <main className="px-2 py-1">
-                                <DevelopmentAlert />
-                                {children}
-                            </main>
+                            <main className="px-2 py-1">{children}</main>
 
                             <Footer />
                         </Navigation>
