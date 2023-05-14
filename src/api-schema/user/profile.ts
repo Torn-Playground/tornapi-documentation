@@ -128,6 +128,7 @@ const structures = [
 const schema: Schema = {
     rank: { type: String },
     level: { type: Integer },
+    honor: { type: Integer },
     gender: fromStructure(genderEnum),
     property: { type: String },
     signup: { type: "Date (yyyy-dd-MM HH:mm:ss)" },
