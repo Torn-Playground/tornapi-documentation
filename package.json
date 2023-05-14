@@ -12,7 +12,7 @@
   "dependencies": {
     "@tippyjs/react": "^4.2.6",
     "daisyui": "^2.51.6",
-    "next": "^13.4.1",
+    "next": "^13.4.2",
     "next-themes": "npm:@wits/next-themes@^0.2.16",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -23,7 +23,7 @@
   "devDependencies": {
     "@tailwindcss/forms": "^0.5.3",
     "@tailwindcss/typography": "^0.5.9",
-    "@types/node": "^20.1.2",
+    "@types/node": "^20.1.4",
     "@types/react": "^18.2.6",
     "@types/react-dom": "^18.2.4",
     "@types/underscore": "^1.11.4",
@@ -31,7 +31,7 @@
     "eslint": "^8.40.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-config-airbnb-typescript": "^17.0.0",
-    "eslint-config-next": "^13.4.1",
+    "eslint-config-next": "^13.4.2",
     "eslint-config-prettier": "^8.8.0",
     "eslint-plugin-import": "^2.27.5",
     "eslint-plugin-prettier": "^4.2.1",
