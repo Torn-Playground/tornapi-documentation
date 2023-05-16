@@ -12,6 +12,7 @@ const effectivenessStructure: Structure = {
         merits: { type: Integer, nullable: true },
         director_education: { type: Integer, nullable: true },
         addiction: { type: Integer, nullable: true },
+        inactivity: { type: Integer, nullable: true },
         total: { type: Integer },
     },
 };
