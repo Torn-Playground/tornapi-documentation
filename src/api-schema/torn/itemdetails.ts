@@ -39,7 +39,7 @@ const itemDetailStructure: Structure = {
         bonuses: fromStructure(bonusesStructure, { nullable: true }),
     },
 };
-const structures = [itemDetailStructure, bonusesStructure, bonusStructure];
+const structures = [itemDetailStructure, bonusesStructure, bonusStructure, rarityEnum];
 
 const schema: Schema = {
     itemdetails: fromStructure(itemDetailStructure),
