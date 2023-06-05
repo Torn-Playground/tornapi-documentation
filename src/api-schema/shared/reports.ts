@@ -1,12 +1,11 @@
-import { EpochSeconds, Integer, String } from "@/api-schema/common-types";
+import { ArrayString, EpochSeconds, Integer, String } from "@/api-schema/common-types";
 import { fromStructure, Schema, Structure, StructureEnum } from "@/api-schema/schema.types";
 
 const reportTypeEnum: StructureEnum<string> = {
     id: "report_type",
     name: "Report Type",
-    values: ["stats", "money", "friendorfoe", "mostwanted", "references", "truelevel", "investment"],
+    values: ["anonymousbounties", "stats", "money", "friendorfoe", "mostwanted", "references", "truelevel", "investment"],
     type: String,
-    incomplete: { missing: "anonymousbounties" },
 };
 const referenceStructure: Structure = {
     id: "reference",
@@ -103,6 +102,12 @@ const reportDataStructure: Structure = {
             extra: "Only present in investment reports.",
             description: "Date of completion as 'HH:mm:ss - dd/MM/yy'.",
         },
+        bounties: {
+            type: ArrayString,
+            nullable: true,
+            extra: "Only present in anonymousbounties reports.",
+            description: "Bounties as 'Username [ID] @ $price'. Blocked reveals will show as 'FIREWALL [BLOCKED]'",
+        },
     },
 };
 const reportStructure: Structure = {
@@ -113,7 +118,7 @@ const reportStructure: Structure = {
         user_id: { type: Integer },
         target: { type: Integer },
         type: fromStructure(reportTypeEnum),
-        report: fromStructure(reportDataStructure),
+        report: fromStructure(reportDataStructure, { extra: "Old reports might not follow this structure, resulting in it breaking." }),
         timestamp: { type: EpochSeconds },
     },
 };
