@@ -1,4 +1,4 @@
-import { LIMIT, TIME_FROM, TIME_TO } from "@/api-schema/common-params";
+import { LIMIT, SORT, TIME_FROM, TIME_TO } from "@/api-schema/common-params";
 import { Param } from "@/api-schema/schema.types";
 import ExtendedLink from "@/components/global/extended-link/ExtendedLink";
 
@@ -42,6 +42,7 @@ export default function CommonQueryParams() {
         { param: TIME_FROM },
         { param: TIME_TO },
         { param: LIMIT },
+        { param: SORT },
     ];
 
     return (

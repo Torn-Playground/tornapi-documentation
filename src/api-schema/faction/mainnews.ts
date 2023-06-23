@@ -1,4 +1,4 @@
-import { TIME_FROM, TIME_TO_WITH_FROM } from "@/api-schema/common-params";
+import { SORT, TIME_FROM, TIME_TO_WITH_FROM } from "@/api-schema/common-params";
 import { fromStructure, Schema, Selection } from "@/api-schema/schema.types";
 import { newsMapStructure, newsStructure } from "@/api-schema/shared/news";
 
@@ -17,7 +17,7 @@ const MainNewsSelection: Selection = {
     id: {
         optional: false,
     },
-    params: [TIME_FROM, TIME_TO_WITH_FROM],
+    params: [TIME_FROM, TIME_TO_WITH_FROM, SORT],
 };
 
 export default MainNewsSelection;

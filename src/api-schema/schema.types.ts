@@ -57,6 +57,9 @@ export function isFieldStructure(object: SchemaField | FieldStructure): object i
 export interface Param {
     name: string;
     description: ReactNode;
+    options?: {
+        values: Array<String>;
+    };
 }
 
 export type Structure = {

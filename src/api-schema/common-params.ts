@@ -18,4 +18,12 @@ const LIMIT: Param = {
     description: "Limits amount of results. Amount can't be above the default amount, will use default amount otherwise.",
 };
 
-export { TIME_FROM, TIME_TO, TIME_TO_WITH_FROM, LIMIT };
+const SORT: Param = {
+    name: "sort",
+    description: "Sort your results. Default will be descending.",
+    options: {
+        values: ["asc", "desc"],
+    },
+};
+
+export { TIME_FROM, TIME_TO, TIME_TO_WITH_FROM, LIMIT, SORT };
