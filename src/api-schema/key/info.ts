@@ -17,13 +17,41 @@ const selectionsStructure: Structure = {
     id: "selections",
     name: "Selections",
     schema: {
-        company: { type: ArrayString },
-        faction: { type: ArrayString },
-        market: { type: ArrayString },
-        property: { type: ArrayString },
-        torn: { type: ArrayString },
-        user: { type: ArrayString },
-        key: { type: ArrayString },
+        company: {
+            type: ArrayString,
+            description:
+                "These are the selections under the company section that can be access using this key. All possible values can be found on the company documentation page.",
+        },
+        faction: {
+            type: ArrayString,
+            description:
+                "These are the selections under the faction section that can be access using this key. All possible values can be found on the faction documentation page.",
+        },
+        market: {
+            type: ArrayString,
+            description:
+                "These are the selections under the market section that can be access using this key. All possible values can be found on the market documentation page.",
+        },
+        property: {
+            type: ArrayString,
+            description:
+                "These are the selections under the property section that can be access using this key. All possible values can be found on the property documentation page.",
+        },
+        torn: {
+            type: ArrayString,
+            description:
+                "These are the selections under the torn section that can be access using this key. All possible values can be found on the company documentation page.",
+        },
+        user: {
+            type: ArrayString,
+            description:
+                "These are the selections under the user section that can be access using this key. All possible values can be found on the company documentation page.",
+        },
+        key: {
+            type: ArrayString,
+            description:
+                "These are the selections under the key section that can be access using this key. All possible values can be found on the key documentation page.",
+        },
     },
 };
 const structures = [selectionsStructure, accessTypeEnum, accessLevelEnum];
