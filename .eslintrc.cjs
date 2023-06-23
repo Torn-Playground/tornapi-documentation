@@ -9,6 +9,7 @@ module.exports = {
         "prettier",
     ],
     rules: {
+        "@typescript-eslint/no-use-before-define": "off",
         "no-underscore-dangle": 0,
         "import/order": [
             1,
@@ -47,5 +48,6 @@ module.exports = {
                 }
             },
         ],
+        "react/react-in-jsx-scope": "off",
     },
 };
