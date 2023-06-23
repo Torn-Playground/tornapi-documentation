@@ -1,11 +1,10 @@
-/* eslint-disable react/destructuring-assignment */
 import { DefaultIcon, StrokeIcon } from "@/components/global/icons/icon.types";
 
-export default function ExclamationIcon(props: DefaultIcon & StrokeIcon) {
-    const width = "size" in props ? props.size : props.width;
-    const height = "size" in props ? props.size : props.height;
-    const fillColor = props.fill ?? "currentColor";
-    const strokeWidth = props.stroke ?? 0.5;
+export default function ExclamationIcon({ fill, stroke, size }: DefaultIcon & StrokeIcon) {
+    const width = size;
+    const height = size;
+    const fillColor = fill ?? "currentColor";
+    const strokeWidth = stroke ?? 0.5;
 
     return (
         <svg viewBox="0 0 14 14" width={width} height={height} stroke={fillColor} fill={fillColor} strokeWidth={strokeWidth}>

@@ -1,10 +1,9 @@
-/* eslint-disable react/destructuring-assignment */
 import { DefaultIcon } from "@/components/global/icons/icon.types";
 
-export default function InfoIcon(props: DefaultIcon) {
-    const width = "size" in props ? props.size : props.width;
-    const height = "size" in props ? props.size : props.height;
-    const fillColor = props.fill ?? "currentColor";
+export default function InfoIcon({ fill, size }: DefaultIcon) {
+    const width = size;
+    const height = size;
+    const fillColor = fill ?? "currentColor";
 
     return (
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke={fillColor} width={width} height={height}>

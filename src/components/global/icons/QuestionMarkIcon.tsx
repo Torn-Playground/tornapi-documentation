@@ -1,10 +1,9 @@
-/* eslint-disable react/destructuring-assignment */
 import { DefaultIcon } from "@/components/global/icons/icon.types";
 
-export default function QuestionMarkIcon(props: DefaultIcon) {
-    const width = "size" in props ? props.size : props.width;
-    const height = "size" in props ? props.size : props.height;
-    const fillColor = props.fill ?? "currentColor";
+export default function QuestionMarkIcon({ fill, size }: DefaultIcon) {
+    const width = size;
+    const height = size;
+    const fillColor = fill ?? "currentColor";
 
     return (
         <svg width={width} height={height} viewBox="0 0 24 24" fill={fillColor}>

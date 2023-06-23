@@ -1,4 +1,4 @@
-type SizableIcon = { height: number; width: number } | { size: number };
+type SizableIcon = { size: number };
 type ColoredIcon = { fill?: string };
 type ClassedIcon = { className?: string };
 
