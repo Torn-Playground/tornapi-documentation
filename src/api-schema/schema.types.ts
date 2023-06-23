@@ -1,4 +1,4 @@
-import { ReactNode } from "react";
+import { ReactElement, ReactNode } from "react";
 
 export type Section = {
     selections: Array<Selection>;
@@ -27,7 +27,7 @@ export interface Schema {
 
 export interface SchemaField {
     type: string;
-    description?: string;
+    description?: string | { text: string; node: () => ReactElement };
     extra?: string;
     nullable?: true;
 }
