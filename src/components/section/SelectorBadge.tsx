@@ -6,10 +6,10 @@ interface SelectorBadgeProps extends PropsWithChildren {
     selection: string;
 }
 
-export default function SelectorBadge(props: SelectorBadgeProps) {
+export default function SelectorBadge({ children, section, selection }: SelectorBadgeProps) {
     return (
-        <ExtendedLink className="badge badge-lg" activeClassName="badge-primary" href={`/${props.section}/${props.selection}`}>
-            {props.children}
+        <ExtendedLink className="badge badge-lg" activeClassName="badge-primary" href={`/${section}/${selection}`}>
+            {children}
         </ExtendedLink>
     );
 }

@@ -8,6 +8,6 @@ interface TooltipProps {
     tooltip: string;
 }
 
-export default function Tooltip(props: TooltipProps) {
-    return <Tippy content={props.tooltip}>{props.children}</Tippy>;
+export default function Tooltip({ children, tooltip }: TooltipProps) {
+    return <Tippy content={tooltip}>{children}</Tippy>;
 }

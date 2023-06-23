@@ -2,7 +2,7 @@ import Link from "next/link";
 import { PropsWithChildren } from "react";
 import ThemeSelector from "@/components/global/theme-selector/ThemeSelector";
 
-const Menu = () => {
+function Menu() {
     return (
         <ul className="menu bg-base-200 w-60">
             <li>
@@ -40,15 +40,15 @@ const Menu = () => {
             </li>
         </ul>
     );
-};
+}
 
-export default function Navigation(props: PropsWithChildren) {
+export default function Navigation({ children }: PropsWithChildren) {
     return (
         <div className="drawer drawer-mobile">
             <input id="navigation-drawer" type="checkbox" className="drawer-toggle hidden" />
-            <div className="drawer-content relative">{props.children}</div>
+            <div className="drawer-content relative">{children}</div>
             <nav className="drawer-side">
-                <label htmlFor="navigation-drawer" className="drawer-overlay"></label>
+                <label htmlFor="navigation-drawer" className="drawer-overlay" />
                 <Menu />
             </nav>
         </div>

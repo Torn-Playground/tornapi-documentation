@@ -4,8 +4,8 @@ interface QueryParamsProps {
     params?: Array<Param>;
 }
 
-export default function QueryParams(props: QueryParamsProps) {
-    if (!props.params?.length) {
+export default function QueryParams({ params }: QueryParamsProps) {
+    if (!params?.length) {
         return null;
     }
 
@@ -22,7 +22,7 @@ export default function QueryParams(props: QueryParamsProps) {
                         </tr>
                     </thead>
                     <tbody>
-                        {props.params.map((param) => (
+                        {params.map((param) => (
                             <tr key={param.name}>
                                 <td>{param.name}</td>
                                 <td>{param.description}</td>

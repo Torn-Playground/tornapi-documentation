@@ -1,10 +1,10 @@
 import Link from "next/link";
 import { PropsWithChildren } from "react";
 
-function DiscordLink(props: PropsWithChildren) {
+function DiscordLink({ children }: PropsWithChildren) {
     return (
         <Link href="https://discord.gg/2wb7GKN" target="_blank" className="text-accent link">
-            {props.children}
+            {children}
         </Link>
     );
 }

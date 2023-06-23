@@ -20,7 +20,7 @@ export default function TryItButton() {
     };
 
     return (
-        <button className="btn" disabled={!calls.url || executing} onClick={executeCall}>
+        <button className="btn" disabled={!calls.url || executing} onClick={executeCall} type="button">
             {executing ? <SpinningCircles width={24} height={24} fill="currentColor" /> : "Try It"}
         </button>
     );

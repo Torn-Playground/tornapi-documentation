@@ -11,25 +11,23 @@ interface SelectionProps {
     selection: SelectionType;
 }
 
-export default function Selection(props: SelectionProps) {
+export default function Selection({ selection: { access, description, id, name, params, schema, structures, warning } }: SelectionProps) {
     return (
         <div className="w-full relative mb-10">
-            <div className="divider"></div>
+            <div className="divider" />
 
             <div className="flex items-center space-x-2">
-                <h4 className="text-xl font-semibold capitalize">{props.selection.name}</h4>
-                {props.selection.warning && (
-                    <ExtraInformation tooltip={props.selection.warning} color="warning" iconElement={<ExclamationIcon size={20} stroke={0.2} />} />
-                )}
+                <h4 className="text-xl font-semibold capitalize">{name}</h4>
+                {warning && <ExtraInformation tooltip={warning} color="warning" iconElement={<ExclamationIcon size={20} stroke={0.2} />} />}
 
-                <SelectionId id={props.selection.id} />
-                <SelectionPermission access={props.selection.access} />
+                <SelectionId id={id} />
+                <SelectionPermission access={access} />
             </div>
 
-            <span>{props.selection.description}</span>
-            <QueryParams params={props.selection.params} />
-            <SelectionSchema schema={props.selection.schema} />
-            <SelectionStructures structures={props.selection.structures} />
+            <span>{description}</span>
+            <QueryParams params={params} />
+            <SelectionSchema schema={schema} />
+            <SelectionStructures structures={structures} />
         </div>
     );
 }

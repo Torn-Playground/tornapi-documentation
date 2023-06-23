@@ -6,12 +6,12 @@ interface SelectionPermissionProps {
     access: KeyAccess;
 }
 
-export default function SelectionPermission(props: SelectionPermissionProps) {
+export default function SelectionPermission({ access }: SelectionPermissionProps) {
     return (
-        <Tooltip tooltip={`Requires an api key with ${props.access} access.`}>
+        <Tooltip tooltip={`Requires an api key with ${access} access.`}>
             <div className="badge">
                 <KeyIcon size={14} solid />
-                <div className="ml-1">{props.access}</div>
+                <div className="ml-1">{access}</div>
             </div>
         </Tooltip>
     );

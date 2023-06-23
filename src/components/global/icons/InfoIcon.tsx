@@ -1,3 +1,4 @@
+/* eslint-disable react/destructuring-assignment */
 import { DefaultIcon } from "@/components/global/icons/icon.types";
 
 export default function InfoIcon(props: DefaultIcon) {

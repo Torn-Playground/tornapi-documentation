@@ -31,7 +31,7 @@ export default function ValidateKey() {
     }, [state.key]);
 
     return (
-        <button className={`btn ${colorClass}`} onClick={validate} disabled={!state.key}>
+        <button className={`btn ${colorClass}`} onClick={validate} disabled={!state.key} type="button">
             {levelText || "Validate"}
         </button>
     );

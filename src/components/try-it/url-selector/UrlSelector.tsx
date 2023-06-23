@@ -40,7 +40,7 @@ export default function UrlSelector() {
                     <label className="input-group">
                         <span>Section</span>
                         <select className="select select-bordered capitalize" value={section} onChange={(event) => setSection(event.target.value as any)}>
-                            <option disabled value=""></option>
+                            <option disabled value="" />
                             {Object.keys(schema).map((s) => (
                                 <option key={s} value={s}>
                                     {s}

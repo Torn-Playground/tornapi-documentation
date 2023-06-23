@@ -7,36 +7,36 @@ interface SelectionStructureProps {
     schema: Schema;
 }
 
-export default function SelectionStructure(props: SelectionStructureProps) {
-    const hasDescription = Object.values(props.schema).some((f) => !!f.description);
-    const buildRow = (field: string, schema: SchemaField | FieldStructure) => {
+export default function SelectionStructure({ schema }: SelectionStructureProps) {
+    const hasDescription = Object.values(schema).some((f) => !!f.description);
+    const buildRow = (fieldName: string, field: SchemaField | FieldStructure) => {
         let fields;
-        if (isField(schema)) {
+        if (isField(field)) {
             fields = (
                 <>
-                    <td>{schema.type}</td>
-                    {hasDescription && <td>{schema.description}</td>}
+                    <td>{field.type}</td>
+                    {hasDescription && <td>{field.description}</td>}
                 </>
             );
-        } else if (isFieldStructure(schema)) {
+        } else if (isFieldStructure(field)) {
             const link = (
-                <ExtendedLink className="link link-info" href={{ hash: schema.structure.id }} prefetch={false}>
-                    {schema.structure.name}
+                <ExtendedLink className="link link-info" href={{ hash: field.structure.id }} prefetch={false}>
+                    {field.structure.name}
                 </ExtendedLink>
             );
 
             fields = (
                 <>
                     <td>
-                        {schema.array ? (
+                        {field.array ? (
                             <>Array of {link} </>
                         ) : (
                             <>
-                                {link} {schema.structure.type}
+                                {link} {field.structure.type}
                             </>
                         )}
                     </td>
-                    {hasDescription && <td>{schema.description}</td>}
+                    {hasDescription && <td>{field.description}</td>}
                 </>
             );
         } else {
@@ -44,11 +44,11 @@ export default function SelectionStructure(props: SelectionStructureProps) {
         }
 
         return (
-            <tr key={field}>
+            <tr key={fieldName}>
                 <td>
-                    {field}
-                    {schema.nullable && <NullableIndicator tooltip={schema.extra} />}
-                    {schema.extra && !schema.nullable && <ExtraInformation tooltip={schema.extra} />}
+                    {fieldName}
+                    {field.nullable && <NullableIndicator tooltip={field.extra} />}
+                    {field.extra && !field.nullable && <ExtraInformation tooltip={field.extra} />}
                 </td>
                 {fields}
             </tr>
@@ -66,9 +66,9 @@ export default function SelectionStructure(props: SelectionStructureProps) {
                     </tr>
                 </thead>
                 <tbody>
-                    {Object.entries(props.schema)
+                    {Object.entries(schema)
                         .sort(([aField], [bField]) => aField.localeCompare(bField))
-                        .map(([field, schema]) => buildRow(field, schema))}
+                        .map(([fieldName, field]) => buildRow(fieldName, field))}
                 </tbody>
             </table>
         </div>

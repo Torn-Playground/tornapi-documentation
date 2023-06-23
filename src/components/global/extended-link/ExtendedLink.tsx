@@ -12,7 +12,7 @@ interface ExtendedLinkProps extends PropsWithChildren {
     prefetch?: boolean;
 }
 
-const ExtendedLink = forwardRef(function ExtendedLink(props: ExtendedLinkProps, ref: ForwardedRef<any>) {
+const ExtendedLink = forwardRef((props: ExtendedLinkProps, ref: ForwardedRef<any>) => {
     const pathname = usePathname();
     const [url, setUrl] = useState<string | UrlObject>("");
 

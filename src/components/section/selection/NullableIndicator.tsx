@@ -5,9 +5,9 @@ interface NullableIndicatorProps {
     tooltip?: string;
 }
 
-export default function NullableIndicator(props: NullableIndicatorProps) {
+export default function NullableIndicator({ tooltip }: NullableIndicatorProps) {
     return (
-        <Tooltip tooltip={props.tooltip ?? "Field can also be null."}>
+        <Tooltip tooltip={tooltip ?? "Field can also be null."}>
             <div className="badge badge-error ml-1 px-1">
                 <TrashIcon size={10} />
             </div>

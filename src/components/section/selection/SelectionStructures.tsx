@@ -7,8 +7,8 @@ interface SelectionStructuresProps {
     structures: Array<Structure | StructureEnum<any>>;
 }
 
-export default function SelectionStructures(props: SelectionStructuresProps) {
-    if (!props.structures.length) {
+export default function SelectionStructures({ structures }: SelectionStructuresProps) {
+    if (!structures.length) {
         return null;
     }
 
@@ -17,7 +17,7 @@ export default function SelectionStructures(props: SelectionStructuresProps) {
             <span className="text-xl capitalize">Structures</span>
 
             <div className="space-y-6">
-                {props.structures
+                {structures
                     .sort((a, b) => a.name.localeCompare(b.name))
                     .map((structure) => (
                         <div key={structure.id}>

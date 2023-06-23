@@ -10,7 +10,7 @@ module.exports = {
     ],
     rules: {
         "@typescript-eslint/no-use-before-define": "off",
-        "no-underscore-dangle": 0,
+        "no-underscore-dangle": "off",
         "import/order": [
             1,
             {
@@ -49,5 +49,11 @@ module.exports = {
             },
         ],
         "react/react-in-jsx-scope": "off",
+        "react/no-array-index-key": "off",
+        "react/require-default-props": "off",
+        "jsx-a11y/control-has-associated-label": "off",
+        "jsx-a11y/label-has-associated-control": "off",
+        "jsx-a11y/no-static-element-interactions": "off",
+        "jsx-a11y/click-events-have-key-events": "off",
     },
 };

@@ -1,3 +1,4 @@
+/* eslint-disable react/destructuring-assignment */
 import { DefaultIcon, StrokeIcon } from "@/components/global/icons/icon.types";
 
 export default function ExclamationIcon(props: DefaultIcon & StrokeIcon) {

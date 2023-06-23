@@ -11,7 +11,7 @@ export default function SaveKey() {
     };
 
     return (
-        <button className="btn" onClick={save}>
+        <button className="btn" onClick={save} type="button">
             Save
         </button>
     );

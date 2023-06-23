@@ -88,7 +88,7 @@ export default function AccessLevels() {
                                             {selection.name}
                                         </td>
                                     ) : (
-                                        <td key={j}></td>
+                                        <td key={j} />
                                     ),
                                 )}
                             </tr>

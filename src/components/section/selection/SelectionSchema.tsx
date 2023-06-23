@@ -5,12 +5,12 @@ interface SelectionSchemaProps {
     schema: Schema;
 }
 
-export default function SelectionSchema(props: SelectionSchemaProps) {
+export default function SelectionSchema({ schema }: SelectionSchemaProps) {
     return (
         <section className="mt-4">
             <span className="text-xl capitalize">Schema</span>
 
-            <SelectionStructure schema={props.schema} />
+            <SelectionStructure schema={schema} />
         </section>
     );
 }

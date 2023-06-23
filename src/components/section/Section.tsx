@@ -10,21 +10,21 @@ interface SectionProps {
     idDescription?: string;
 }
 
-export default function Section(props: SectionProps) {
+export default function Section({ defaultSelection, idDescription, section, selections }: SectionProps) {
     return (
         <div>
-            <h2 className="text-3xl font-bold capitalize mt-1">{props.section}</h2>
-            {props.idDescription && <p className="text-xs mb-4">{props.idDescription}</p>}
+            <h2 className="text-3xl font-bold capitalize mt-1">{section}</h2>
+            {idDescription && <p className="text-xs mb-4">{idDescription}</p>}
 
             <div className="flex flex-wrap gap-1">
                 <span>Selections:</span>
-                {props.selections
+                {selections
                     .sort((a, b) => a.name.localeCompare(b.name))
                     .map((selection) => {
-                        if (props.defaultSelection === selection.name) {
+                        if (defaultSelection === selection.name) {
                             return (
-                                <Tooltip key={selection.name} tooltip={`Default selection of the ${props.section} section.`}>
-                                    <SelectorBadge key={selection.name} section={props.section} selection={selection.name}>
+                                <Tooltip key={selection.name} tooltip={`Default selection of the ${section} section.`}>
+                                    <SelectorBadge key={selection.name} section={section} selection={selection.name}>
                                         <PinIcon size={16} solid />
                                         {selection.name}
                                     </SelectorBadge>
@@ -32,7 +32,7 @@ export default function Section(props: SectionProps) {
                             );
                         }
                         return (
-                            <SelectorBadge key={selection.name} section={props.section} selection={selection.name}>
+                            <SelectorBadge key={selection.name} section={section} selection={selection.name}>
                                 {selection.name}
                             </SelectorBadge>
                         );

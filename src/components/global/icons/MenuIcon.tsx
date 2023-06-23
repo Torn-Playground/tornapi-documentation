@@ -1,3 +1,4 @@
+/* eslint-disable react/destructuring-assignment */
 import { DefaultIcon } from "@/components/global/icons/icon.types";
 
 export default function MenuIcon(props: DefaultIcon) {
@@ -9,7 +10,7 @@ export default function MenuIcon(props: DefaultIcon) {
         <svg viewBox="0,0,256,256" width={width} height={height} className={props.className}>
             <g fill={fillColor}>
                 <g transform="scale(10.66667,10.66667)">
-                    <path d="M2,5v2h20v-2zM2,11v2h20v-2zM2,17v2h20v-2z"></path>
+                    <path d="M2,5v2h20v-2zM2,11v2h20v-2zM2,17v2h20v-2z" />
                 </g>
             </g>
         </svg>

@@ -10,9 +10,9 @@ interface ExtraInformationProps {
     iconElement?: ReactNode;
 }
 
-export default function ExtraInformation(props: ExtraInformationProps) {
+export default function ExtraInformation({ color, iconElement, tooltip }: ExtraInformationProps) {
     const getColorClass = () => {
-        switch (props.color) {
+        switch (color) {
             case "primary":
                 return "badge-primary";
             case "warning":
@@ -23,8 +23,8 @@ export default function ExtraInformation(props: ExtraInformationProps) {
     };
 
     return (
-        <Tooltip tooltip={props.tooltip}>
-            <div className={`badge ${getColorClass()} ml-1 px-1`}>{props.iconElement ?? <QuestionMarkIcon size={10} />}</div>
+        <Tooltip tooltip={tooltip}>
+            <div className={`badge ${getColorClass()} ml-1 px-1`}>{iconElement ?? <QuestionMarkIcon size={10} />}</div>
         </Tooltip>
     );
 }

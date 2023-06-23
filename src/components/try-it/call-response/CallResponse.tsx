@@ -15,7 +15,7 @@ export default function CallResponse() {
                         .sort((a, b) => b.timestamp - a.timestamp)
                         .map((response) => (
                             <div key={response.timestamp} className="collapse collapse-arrow odd:bg-base-300 even:bg-base-200">
-                                <input type="checkbox" id={`response-${response.timestamp}`} defaultChecked={true} />
+                                <input type="checkbox" id={`response-${response.timestamp}`} defaultChecked />
                                 <label className="collapse-title text-xl font-medium break-all break-words" htmlFor={`response-${response.timestamp}`}>
                                     {response.url}
                                 </label>

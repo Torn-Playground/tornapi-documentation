@@ -5,11 +5,11 @@ interface LimitTitleProps extends PropsWithChildren {
     id: string;
 }
 
-function LimitTitle(props: LimitTitleProps) {
+function LimitTitle({ children, id }: LimitTitleProps) {
     return (
-        <h5 className="text-lg underline mt-1" id={props.id}>
-            <ExtendedLink href={{ hash: props.id }} prefetch={false}>
-                {props.children}
+        <h5 className="text-lg underline mt-1" id={id}>
+            <ExtendedLink href={{ hash: id }} prefetch={false}>
+                {children}
             </ExtendedLink>
         </h5>
     );
