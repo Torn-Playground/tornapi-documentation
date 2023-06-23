@@ -15,7 +15,7 @@ export default function SelectionStructure({ schema }: SelectionStructureProps) 
             fields = (
                 <>
                     <td>{field.type}</td>
-                    {hasDescription && (typeof field.description === "string" ? <td>{field.description}</td> : <td>{field.description!.node()}</td>)}
+                    {hasDescription && (typeof field.description === "object" ? <td>{field.description.node()}</td> : <td>{field.description}</td>)}
                 </>
             );
         } else if (isFieldStructure(field)) {
