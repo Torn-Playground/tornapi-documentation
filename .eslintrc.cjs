@@ -4,9 +4,9 @@ module.exports = {
     },
     extends: [
         "next/core-web-vitals",
-        "airbnb-base",
+        "airbnb",
         "airbnb-typescript",
-        "plugin:prettier/recommended",
+        "prettier",
     ],
     rules: {
         "no-underscore-dangle": 0,
