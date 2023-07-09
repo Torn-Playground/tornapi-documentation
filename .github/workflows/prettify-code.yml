@@ -4,10 +4,9 @@
 # You can adjust the behavior by modifying this file.
 # For more information, see:
 # https://github.com/github/super-linter
-name: Lint Code Base
+name: Prettify Code Base
 
 on:
-  pull_request:
   push:
     branches:
       - main
@@ -19,22 +18,12 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
         with:
-          # Make sure the actual branch is checked out when running on pull requests.
-          ref: ${{ github.head_ref }}
-          # Full git history is needed to get a proper list of changed files within `super-linter`
           fetch-depth: 0
+          ref: ${{ github.head_ref }}
+          persist-credentials: false
 
       - name: Prettify code
         uses: creyD/prettier_action@v4.3
         with:
           prettier_options: --write **/*.{ts,tsx}
-          same_commit: true
-          
-      - name: Lint Code Base
-        uses: super-linter/super-linter/slim@v5
-        env:
-          VALIDATE_ALL_CODEBASE: false
-          DEFAULT_BRANCH: main
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          LINTER_RULES_PATH: .
-          TYPESCRIPT_DEFAULT_STYLE: prettier
+          github_token: ${{ secrets.PLAYGROUND_TOKEN }}
