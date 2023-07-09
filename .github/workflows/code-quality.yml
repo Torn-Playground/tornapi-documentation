@@ -1,33 +1,33 @@
 name: Code Quality
 
 on:
-  pull_request:
-  push:
-    branches:
-      - main
+    pull_request:
+    push:
+        branches:
+            - main
 
 jobs:
-  code-quality:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
-        with:
-          ref: ${{ github.head_ref }}
-          fetch-depth: 0
-          ssh-key: ${{secrets.SECRET_KEY}}
+    code-quality:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout code
+              uses: actions/checkout@v3
+              with:
+                  ref: ${{ github.head_ref }}
+                  fetch-depth: 0
+                  ssh-key: ${{secrets.SECRET_KEY}}
 
-      - name: Prettify code
-        uses: creyD/prettier_action@v4.3
-        with:
-          prettier_options: --write **/*.{ts,tsx}
-          same_commit: true
-          
-      - name: Lint Code Base
-        uses: super-linter/super-linter/slim@v5
-        env:
-          VALIDATE_ALL_CODEBASE: false
-          DEFAULT_BRANCH: main
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          LINTER_RULES_PATH: .
-          TYPESCRIPT_DEFAULT_STYLE: prettier
+            - name: Prettify code
+              uses: creyD/prettier_action@v4.3
+              with:
+                  prettier_options: --write **/*.{ts,tsx}
+                  same_commit: true
+
+            - name: Lint Code Base
+              uses: super-linter/super-linter/slim@v5
+              env:
+                  VALIDATE_ALL_CODEBASE: false
+                  DEFAULT_BRANCH: main
+                  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+                  LINTER_RULES_PATH: .
+                  TYPESCRIPT_DEFAULT_STYLE: prettier

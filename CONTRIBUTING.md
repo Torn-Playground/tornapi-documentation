@@ -10,25 +10,25 @@ you would like to solve will get clarity on it and avoid time loss.
 
 ### Technologies
 
-* [Typescript](https://www.typescriptlang.org/)
-* [React](https://reactjs.org/)
-* [Next.js 13 Beta](https://beta.nextjs.org/docs)
-    * [app directory](https://beta.nextjs.org/docs/routing/fundamentals)
-* [TailwindCSS](https://tailwindcss.com/)
-* [DaisyUI](https://daisyui.com/)
-* [Tippy.js](https://github.com/atomiks/tippyjs-react)
+-   [Typescript](https://www.typescriptlang.org/)
+-   [React](https://reactjs.org/)
+-   [Next.js 13 Beta](https://beta.nextjs.org/docs)
+    -   [app directory](https://beta.nextjs.org/docs/routing/fundamentals)
+-   [TailwindCSS](https://tailwindcss.com/)
+-   [DaisyUI](https://daisyui.com/)
+-   [Tippy.js](https://github.com/atomiks/tippyjs-react)
 
 #### Developer Tools
 
-* [eslint](https://eslint.org/)
-* [prettier](https://prettier.io/)
-* [prettier + eslint](https://github.com/prettier/eslint-plugin-prettier)
+-   [eslint](https://eslint.org/)
+-   [prettier](https://prettier.io/)
+-   [prettier + eslint](https://github.com/prettier/eslint-plugin-prettier)
 
 ### Setup you environment
 
-* Fork the [tornapi-documentation repository](https://github.com/Torn-Playground/tornapi-documentation) to your own
-  account and then clone it to your local device.
-* Install the required dependencies using `npm ci`
+-   Fork the [tornapi-documentation repository](https://github.com/Torn-Playground/tornapi-documentation) to your own
+    account and then clone it to your local device.
+-   Install the required dependencies using `npm ci`
 
 ### Run the project
 
@@ -63,7 +63,7 @@ that it displays lint warnings.
 
 This project uses [Prettier](https://prettier.io/) to format the code.
 
-[//]: # (TODO - Setup github actions to run the linter.)
+[//]: # "TODO - Setup github actions to run the linter."
 
 ## License
 

@@ -8,6 +8,7 @@
     --text-color: hsl(var(--pc));
 }
 
-.header span, .header label {
+.header span,
+.header label {
     color: var(--text-color);
 }

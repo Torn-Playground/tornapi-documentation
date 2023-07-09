@@ -1,13 +1,7 @@
 import { Param } from "./schema.types";
 
-const TIME_FROM: Param = {
-    name: "from",
-    description: "Limits results to have their timestamp after or on this timestamp.",
-};
-const TIME_TO: Param = {
-    name: "to",
-    description: "Limits results to have their timestamp before or on this timestamp.",
-};
+const TIME_FROM: Param = { name: "from", description: "Limits results to have their timestamp after or on this timestamp." };
+const TIME_TO: Param = { name: "to", description: "Limits results to have their timestamp before or on this timestamp." };
 const TIME_TO_WITH_FROM: Param = {
     name: "to",
     description: "Limits results to have their timestamp before or on this timestamp. Only available when also using 'from'.",
