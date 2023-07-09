@@ -42,9 +42,7 @@ export default function UrlSelector() {
                         <select className="select select-bordered capitalize" value={section} onChange={(event) => setSection(event.target.value as any)}>
                             <option disabled value="" />
                             {Object.keys(schema).map((s) => (
-                                <option key={s} value={s}>
-                                    {s}
-                                </option>
+                                <option value={s}>{s}</option>
                             ))}
                         </select>
                     </label>
