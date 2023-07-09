@@ -1,6 +1,6 @@
 # TornAPI Documentation
 
-Unofficial, community-driven, documentation for the [torn.com](torn.com) API. Available
+Unofficial, community-driven, documentation for the [torn.com](https://torn.com) API. Available
 at [tornapi.tornplayground.eu](https://tornapi.tornplayground.eu/).
 
 ## API
