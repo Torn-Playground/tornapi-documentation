@@ -53,4 +53,3 @@ jobs:
                     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
                     LINTER_RULES_PATH: .
                     TYPESCRIPT_DEFAULT_STYLE: prettier
-                    VALIDATE_TYPESCRIPT_STANDARD: false
