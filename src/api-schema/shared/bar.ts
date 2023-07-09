@@ -1,7 +1,6 @@
 import { Integer } from "@/api-schema/common-types";
 import { Structure } from "@/api-schema/schema.types";
 
-// eslint-disable-next-line import/prefer-default-export
 export const bar: Structure = {
     id: "bar",
     name: "Bar",
