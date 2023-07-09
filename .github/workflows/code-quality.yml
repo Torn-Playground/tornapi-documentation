@@ -45,6 +45,9 @@ jobs:
                 with:
                     fetch-depth: 0
 
+            -   name: Installing dependencies
+                run: npm i --ignore-scripts
+
             -   name: Lint Code Base
                 uses: super-linter/super-linter/slim@v5
                 env:
