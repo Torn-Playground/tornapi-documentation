@@ -52,4 +52,3 @@ jobs:
                     DEFAULT_BRANCH: main
                     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
                     LINTER_RULES_PATH: .
-                    TYPESCRIPT_DEFAULT_STYLE: prettier
