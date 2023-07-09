@@ -3,11 +3,9 @@ name: Code Quality
 
 on:
     push:
-        branches-ignore:
-            - main
-    pull_request:
         branches:
             - main
+    pull_request:
 
 jobs:
     prettier:
