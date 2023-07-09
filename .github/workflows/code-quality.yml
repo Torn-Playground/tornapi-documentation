@@ -23,6 +23,7 @@ jobs:
           ref: ${{ github.head_ref }}
           # Full git history is needed to get a proper list of changed files within `super-linter`
           fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Prettify code
         uses: creyD/prettier_action@v4.3
