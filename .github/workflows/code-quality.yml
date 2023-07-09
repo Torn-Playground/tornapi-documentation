@@ -1,4 +1,4 @@
-name: Prettify Code Base
+name: Code Quality
 
 on:
   pull_request:
@@ -13,8 +13,8 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
         with:
-          fetch-depth: 0
           ref: ${{ github.head_ref }}
+          fetch-depth: 0
           ssh-key: ${{secrets.SECRET_KEY}}
 
       - name: Prettify code
@@ -22,3 +22,12 @@ jobs:
         with:
           prettier_options: --write **/*.{ts,tsx}
           same_commit: true
+          
+      - name: Lint Code Base
+        uses: super-linter/super-linter/slim@v5
+        env:
+          VALIDATE_ALL_CODEBASE: false
+          DEFAULT_BRANCH: main
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          LINTER_RULES_PATH: .
+          TYPESCRIPT_DEFAULT_STYLE: prettier
