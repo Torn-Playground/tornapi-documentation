@@ -23,7 +23,7 @@ export default function UrlSelector() {
         const params = Object.entries(selectedParams)
             .filter(([param]) => possibleParams.find((p) => p.name === param))
             .filter(([, value]) => value !== "")
-            .map(([param, value]) => ({ param, value } as ParamInput));
+            .map(([param, value]) => ({ param, value }) as ParamInput);
 
         const url = createApiUrl(state.key, section, id, selections, comment, params);
 
