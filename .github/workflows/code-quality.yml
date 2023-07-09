@@ -3,11 +3,9 @@ name: Code Quality
 
 on:
     push:
-        branches-ignore:
-            - main
-    pull_request:
         branches:
             - main
+    pull_request:
 
 jobs:
     prettier:
@@ -31,14 +29,6 @@ jobs:
                     prettier_options: --write **/*.{ts,tsx}
                     same_commit: true
 
-            -   name: Lint Code Base
-                uses: super-linter/super-linter/slim@v5
-                env:
-                    VALIDATE_ALL_CODEBASE: false
-                    DEFAULT_BRANCH: main
-                    GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-                    LINTER_RULES_PATH: .
-                    TYPESCRIPT_DEFAULT_STYLE: prettier
     run-lint:
         needs: prettier
 
@@ -58,6 +48,7 @@ jobs:
             -   name: Lint Code Base
                 uses: super-linter/super-linter/slim@v5
                 env:
+                    VALIDATE_ALL_CODEBASE: false
                     DEFAULT_BRANCH: main
                     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
                     LINTER_RULES_PATH: .
