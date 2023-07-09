@@ -11,7 +11,6 @@ function hasValidParts(key: string, section: SectionType | "", selections: strin
     return hasDefaultSelection || selections.length >= 1;
 }
 
-// eslint-disable-next-line import/prefer-default-export
 export function createApiUrl(key: string, section: SectionType | "", id: string, selections: string[], comment: string, params: ParamInput[]): string {
     if (!hasValidParts(key, section, selections)) {
         return "";

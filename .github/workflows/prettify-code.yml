@@ -1,0 +1,24 @@
+name: Prettify Code Base
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+jobs:
+  code-quality:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+          ref: ${{ github.head_ref }}
+          ssh-key: ${{secrets.SECRET_KEY}}
+
+      - name: Prettify code
+        uses: creyD/prettier_action@v4.3
+        with:
+          prettier_options: --write **/*.{ts,tsx}
+          same_commit: true
