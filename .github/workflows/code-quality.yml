@@ -29,6 +29,7 @@ jobs:
         with:
           prettier_options: --write **/*.{ts,tsx}
           same_commit: true
+          github_token: ${{ secrets.GITHUB_TOKEN }}
           
       - name: Lint Code Base
         uses: github/super-linter/slim@v5
