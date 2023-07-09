@@ -7,6 +7,7 @@
 name: Prettify Code Base
 
 on:
+  pull_request:
   push:
     branches:
       - main
@@ -20,11 +21,9 @@ jobs:
         with:
           fetch-depth: 0
           ref: ${{ github.head_ref }}
-          persist-credentials: false
+          ssh-key: ${{secrets.SECRET_KEY}}
 
       - name: Prettify code
         uses: creyD/prettier_action@v4.3
         with:
           prettier_options: --write **/*.{ts,tsx}
-          github_token: ${{ secrets.PLAYGROUND_TOKEN }}
-          same_commit: true
