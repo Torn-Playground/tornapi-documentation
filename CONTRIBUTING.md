@@ -10,7 +10,7 @@ you would like to solve will get clarity on it and avoid time loss.
 
 ### Technologies
 
--   [Typescript](https://www.typescriptlang.org/)
+-   [TypeScript](https://www.typescriptlang.org/)
 -   [React](https://reactjs.org/)
 -   [Next.js 13 Beta](https://beta.nextjs.org/docs)
     -   [app directory](https://beta.nextjs.org/docs/routing/fundamentals)
@@ -20,9 +20,9 @@ you would like to solve will get clarity on it and avoid time loss.
 
 #### Developer Tools
 
--   [eslint](https://eslint.org/)
--   [prettier](https://prettier.io/)
--   [prettier + eslint](https://github.com/prettier/eslint-plugin-prettier)
+-   [ESLint](https://eslint.org/)
+-   [Prettier](https://prettier.io/)
+-   [Prettier + ESLint](https://github.com/prettier/eslint-config-prettier)
 
 ### Setup you environment
 
