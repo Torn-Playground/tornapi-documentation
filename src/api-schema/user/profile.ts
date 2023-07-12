@@ -1,17 +1,12 @@
 import { EpochSeconds, Integer, IntegerOrNumber, NumberBoolean, String, Unknown } from "@/api-schema/common-types";
-import { fromStructure, Schema, Selection, Structure, StructureEnum } from "@/api-schema/schema.types";
+import { fromStructure, Schema, Selection, Structure } from "@/api-schema/schema.types";
 import { bar } from "@/api-schema/shared/bar";
+import { competitionTypeEnum } from "@/api-schema/shared/competition";
 import { genderEnum } from "@/api-schema/shared/gender";
 import { lastActionStatusEnum, lastActionStructure } from "@/api-schema/shared/last-action";
 import { roleEnum } from "@/api-schema/shared/role";
 import { statusColorEnum, statusStateEnum, statusStructure } from "@/api-schema/shared/status";
 
-const competitionTypeEnum: StructureEnum<string> = {
-    id: "competition_type",
-    name: "Competition Type",
-    values: ["Halloween", "Elimination", "Easter Egg Hunt", "Dog Tags", "Mr & Ms Torn"],
-    type: String,
-};
 const competitionStructure: Structure = {
     id: "competition",
     name: "Competition",
