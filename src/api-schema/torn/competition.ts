@@ -1,6 +1,16 @@
-import { Integer, String } from "@/api-schema/common-types";
+import { Integer, Number, String } from "@/api-schema/common-types";
 import { fromStructure, Schema, Selection, Structure, StructureEnum } from "@/api-schema/schema.types";
+import { competitionTypeEnum } from "@/api-schema/shared/competition";
 
+const leaderboardPositionStructure: Structure = {
+    id: "leaderboard_position",
+    name: "Leaderboard Position",
+    schema: {
+        user_id: { type: Integer },
+        score: { type: Number },
+        position: { type: Integer },
+    },
+};
 const eliminationStatusEnum: StructureEnum<string> = {
     id: "elimination_status",
     name: "Elimination Status",
@@ -28,9 +38,22 @@ const competitionStructure: Structure = {
             nullable: true,
             extra: "Only present during elimination.",
         }),
+        name: fromStructure(competitionTypeEnum),
+        leaderboardmrs: fromStructure(leaderboardPositionStructure, {
+            array: true,
+            nullable: true,
+            extra: "Only present during Mr & Ms Torn.",
+            description: "Leaderboard for the Ms Torn crown.",
+        }),
+        leaderboardmr: fromStructure(leaderboardPositionStructure, {
+            array: true,
+            nullable: true,
+            extra: "Only present during Mr & Ms Torn.",
+            description: "Leaderboard for the Mr Torn crown.",
+        }),
     },
 };
-const structures = [competitionStructure, eliminationTeamStructure, eliminationStatusEnum];
+const structures = [competitionStructure, competitionTypeEnum, eliminationTeamStructure, eliminationStatusEnum, leaderboardPositionStructure];
 
 const schema: Schema = {
     competition: fromStructure(competitionStructure, { nullable: true, extra: "Null when no competition is going on." }),
