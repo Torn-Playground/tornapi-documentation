@@ -32,7 +32,7 @@ export default function Limits() {
             <LimitTitle id="cache">Cache</LimitTitle>
             Calls to the API are cached. This cache lasts 29 seconds, so you can space your calls 30 seconds between them. Changing the section, selection or id
             will have a different cache, but other parameters like to and from won&apos;t. Like always, there are exceptions to this which will be documented on
-            the specific selections.
+            the specific selections. You are <strong>NOT</strong> allowed to bypass the cache by using multiple API keys.
         </>
     );
 }
