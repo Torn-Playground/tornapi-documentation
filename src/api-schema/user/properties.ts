@@ -57,7 +57,7 @@ const propertiesStructure: Structure = {
         "<property id>": fromStructure(propertyStructure),
     },
 };
-const structures = [propertiesStructure, propertyStructure, modificationsStructure, staffStructure];
+const structures = [propertiesStructure, propertyStructure, modificationsStructure, staffStructure, rentedStructure];
 
 const schema: Schema = {
     properties: fromStructure(propertiesStructure),

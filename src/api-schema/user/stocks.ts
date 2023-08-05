@@ -51,7 +51,7 @@ const stocksStructure: Structure = {
         "<stock id>": fromStructure(stockStructure),
     },
 };
-const structures = [stocksStructure, stockStructure, transactionsStructure, transactionStructure];
+const structures = [stocksStructure, stockStructure, transactionsStructure, transactionStructure, bonusStructure];
 
 const schema: Schema = {
     stocks: fromStructure(stocksStructure),
