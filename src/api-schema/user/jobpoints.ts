@@ -33,7 +33,7 @@ const jobPointsStructure: Structure = {
         companies: fromStructure(companiesStructure),
     },
 };
-const structures = [jobPointsStructure, jobsStructure];
+const structures = [jobPointsStructure, jobsStructure, companiesStructure, companyPointsStructure];
 
 const schema: Schema = {
     jobpoints: fromStructure(jobPointsStructure),
