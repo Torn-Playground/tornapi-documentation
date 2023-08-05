@@ -20,9 +20,12 @@ const jobsStructure: Structure = {
     id: "jobs",
     name: "Jobs",
     schema: {
+        army: { type: Integer, nullable: true, extra: "Will be null if there are no job points." },
+        casino: { type: Integer, nullable: true, extra: "Will be null if there are no job points." },
         education: { type: Integer, nullable: true, extra: "Will be null if there are no job points." },
-        law: { type: Integer, nullable: true, extra: "Will be null if there are no job points." },
         grocer: { type: Integer, nullable: true, extra: "Will be null if there are no job points." },
+        law: { type: Integer, nullable: true, extra: "Will be null if there are no job points." },
+        medical: { type: Integer, nullable: true, extra: "Will be null if there are no job points." },
     },
 };
 const jobPointsStructure: Structure = {
