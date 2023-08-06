@@ -48,7 +48,7 @@ const ammoStructure: Structure = {
 const structures = [ammoStructure, ammoSizeEnum, ammoTypeEnum];
 
 const schema: Schema = {
-    ammo: fromStructure(ammoStructure),
+    ammo: fromStructure(ammoStructure, { array: true }),
 };
 
 const AmmoSelection: Selection = {
