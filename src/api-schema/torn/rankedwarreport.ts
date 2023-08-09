@@ -25,23 +25,6 @@ const rewardsStructure: Structure = {
         items: fromStructure(itemsStructure),
     },
 };
-const factionStructure: Structure = {
-    id: "faction",
-    name: "Faction",
-    schema: {
-        name: { type: String },
-        score: { type: Integer },
-        rewards: fromStructure(rewardsStructure),
-    },
-};
-const factionsStructure: Structure = {
-    id: "factions",
-    name: "Factions",
-    schema: {
-        "<faction id 1>": fromStructure(factionStructure),
-        "<faction id 2>": fromStructure(factionStructure),
-    },
-};
 const userStructure: Structure = {
     id: "user",
     name: "User",
@@ -60,6 +43,27 @@ const membersStructure: Structure = {
         "<user id>": fromStructure(userStructure),
     },
 };
+const factionStructure: Structure = {
+    id: "faction",
+    name: "Faction",
+    schema: {
+        name: { type: String },
+        score: { type: Integer },
+        attacks: { type: Integer },
+        rank_before: { type: String },
+        rank_after: { type: String },
+        rewards: fromStructure(rewardsStructure),
+        members: fromStructure(membersStructure),
+    },
+};
+const factionsStructure: Structure = {
+    id: "factions",
+    name: "Factions",
+    schema: {
+        "<faction id 1>": fromStructure(factionStructure),
+        "<faction id 2>": fromStructure(factionStructure),
+    },
+};
 const warStructure: Structure = {
     id: "war",
     name: "War",
@@ -75,7 +79,6 @@ const rankedWarReportStructure: Structure = {
     name: "Ranked War Report",
     schema: {
         factions: fromStructure(factionsStructure),
-        members: fromStructure(membersStructure),
         war: fromStructure(warStructure),
     },
 };
