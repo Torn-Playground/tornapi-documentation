@@ -71,10 +71,28 @@ const rankStructure: Structure = {
         wins: { type: Integer },
     },
 };
-const factionStructure: Structure = {
-    id: "faction",
-    name: "Faction",
-    schema: {
+
+const structures = [
+    rankEnum,
+    rankStructure,
+    membersStructure,
+    memberStructure,
+    lastActionStructure,
+    lastActionStatusEnum,
+    statusStructure,
+    statusColorEnum,
+    statusStateEnum,
+    rankedWarsStructure,
+    rankedWarStructure,
+    factionsStructure,
+    rankedWarFactionStructure,
+    warStructure,
+    territoryWarStructure,
+    raidStructure,
+    peaceStructure,
+];
+
+const schema: Schema = {
         ID: { type: Integer },
         name: { type: String },
         tag: { type: String },
@@ -99,32 +117,7 @@ const factionStructure: Structure = {
         }),
         rank: fromStructure(rankStructure),
         members: fromStructure(membersStructure),
-    },
-};
-const structures = [
-    factionStructure,
-    rankEnum,
-    rankStructure,
-    membersStructure,
-    memberStructure,
-    lastActionStructure,
-    lastActionStatusEnum,
-    statusStructure,
-    statusColorEnum,
-    statusStateEnum,
-    rankedWarsStructure,
-    rankedWarStructure,
-    factionsStructure,
-    rankedWarFactionStructure,
-    warStructure,
-    territoryWarStructure,
-    raidStructure,
-    peaceStructure,
-];
-
-const schema: Schema = {
-    root: fromStructure(factionStructure),
-};
+    };
 
 const BasicSelection: Selection = {
     name: "basic",
