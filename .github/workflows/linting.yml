@@ -1,35 +1,12 @@
 ---
-name: Code Quality
+name: PR Code Quality
 
 on:
-    push:
-        branches:
-            - main
+    pull_request:
     workflow_dispatch:
 
 jobs:
-    prettier:
-        runs-on: ubuntu-latest
-
-        permissions:
-            contents: write
-            packages: read
-
-        steps:
-            -   name: Checkout code
-                uses: actions/checkout@v3
-                with:
-                    fetch-depth: 0
-
-            -   name: Prettify code
-                uses: creyD/prettier_action@v4.3
-                with:
-                    prettier_options: --write **/*.{ts,tsx}
-                    same_commit: true
-
     run-lint:
-        needs: prettier
-
         runs-on: ubuntu-latest
 
         permissions:
@@ -42,6 +19,8 @@ jobs:
                 uses: actions/checkout@v3
                 with:
                     fetch-depth: 0
+                    repository: ${{ github.event.pull_request.head.repo.full_name }}
+                    ref: ${{ github.event.pull_request.head.ref }}
 
             -   name: Installing dependencies
                 run: npm i --ignore-scripts
