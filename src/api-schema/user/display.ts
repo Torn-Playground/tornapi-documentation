@@ -17,7 +17,7 @@ const displayItemStructure: Structure = {
 const structures = [displayItemStructure];
 
 const schema: Schema = {
-    bazaar: fromStructure(displayItemStructure, { array: true }),
+    display: fromStructure(displayItemStructure, { array: true }),
 };
 
 const DisplaySelection: Selection = {
