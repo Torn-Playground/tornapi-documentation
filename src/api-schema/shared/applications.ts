@@ -4,7 +4,7 @@ import { fromStructure, Schema, Structure, StructureEnum } from "@/api-schema/sc
 export const statusEnum: StructureEnum<string> = {
     id: "status",
     name: "Status",
-    values: ["active", "declined", "withdrawn"],
+    values: ["active", "declined", "withdrawn", "accepted"],
     type: String,
     incomplete: { missing: "Missing values for expired and accepted applications." },
 };
