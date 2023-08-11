@@ -1,6 +1,6 @@
 import { Integer } from "@/api-schema/common-types";
 import { Selection, Structure } from "@/api-schema/schema.types";
-import { applicationsSchema, applicationsStructure, buildApplicationStructure, statusEnum } from "@/api-schema/shared/applications";
+import { buildApplicationsSchema, buildApplicationsStructure, buildApplicationStructure, statusEnum } from "@/api-schema/shared/applications";
 
 const statsStructure: Structure = {
     id: "stats",
@@ -12,13 +12,16 @@ const statsStructure: Structure = {
     },
 };
 
-const structures = [applicationsStructure, buildApplicationStructure(statsStructure), statsStructure, statusEnum];
+const applicationStructure = buildApplicationStructure(statsStructure);
+const applicationsStructure = buildApplicationsStructure(applicationStructure);
+
+const structures = [applicationsStructure, applicationStructure, statsStructure, statusEnum];
 
 const ApplicationsSelection: Selection = {
     name: "applications",
     description: "List company applications. Only available for directors.",
     access: "limited",
-    schema: applicationsSchema,
+    schema: buildApplicationsSchema(applicationsStructure),
     structures,
     id: { optional: false },
 };

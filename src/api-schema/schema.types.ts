@@ -32,7 +32,7 @@ export interface SchemaField {
     nullable?: true;
 }
 
-type StructureType = "object" | "enum" | "array";
+type StructureType = "object" | "enum";
 
 export type FieldStructure = {
     structure: {
@@ -78,21 +78,10 @@ export type StructureEnum<T> = {
 
 export type StructureOptions = { nullable?: boolean; extra?: string; array?: boolean; description?: string };
 
-export function fromStructure(
-    structure:
-        | Structure
-        | StructureEnum<any>
-        | {
-              id: string;
-              name: string;
-              type: StructureType;
-          },
-    options: StructureOptions = {},
-): FieldStructure {
+export function fromStructure(structure: Structure | StructureEnum<any>, options: StructureOptions = {}): FieldStructure {
     let type: StructureType;
     if ("schema" in structure) type = "object";
     else if ("values" in structure) type = "enum";
-    else if ("type" in structure) type = structure.type;
     else throw new Error("Unknown type is being used");
 
     return {

@@ -25,12 +25,16 @@ export function buildApplicationStructure(statsStructure: Structure): Structure 
     };
 }
 
-export const applicationsStructure: Structure = {
-    id: "applications",
-    name: "Applications",
-    schema: {
-        "<user id>": fromStructure({ id: "application", name: "Application", type: "object" }),
-    },
-};
+export function buildApplicationsStructure(applicationStructure: Structure): Structure {
+    return {
+        id: "applications",
+        name: "Applications",
+        schema: {
+            "<user id>": fromStructure(applicationStructure),
+        },
+    };
+}
 
-export const applicationsSchema: Schema = { applications: fromStructure(applicationsStructure) };
+export function buildApplicationsSchema(applicationsStructure: Structure): Schema {
+    return { applications: fromStructure(applicationsStructure) };
+}

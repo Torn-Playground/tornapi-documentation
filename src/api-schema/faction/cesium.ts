@@ -1,7 +1,7 @@
-import { fromStructure, Schema, Selection } from "@/api-schema/schema.types";
+import { Schema, Selection } from "@/api-schema/schema.types";
 
 const schema: Schema = {
-    cesium: fromStructure({ id: "unknown", name: "Unknown", type: "array" }, { array: true }),
+    cesium: { type: "unknown" },
 };
 
 const CesiumSelection: Selection = {
