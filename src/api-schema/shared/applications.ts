@@ -6,7 +6,7 @@ export const statusEnum: StructureEnum<string> = {
     name: "Status",
     values: ["active", "declined", "withdrawn", "accepted"],
     type: String,
-    incomplete: { missing: "Missing values for expired applications." },
+    incomplete: { missing: "Missing value for expired applications." },
 };
 
 export function buildApplicationStructure(statsStructure: Structure): Structure {
