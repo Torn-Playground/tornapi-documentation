@@ -39,6 +39,7 @@ export type FieldStructure = {
         id: string;
         name: string;
         type: StructureType;
+        schema: Schema | undefined;
     };
     extra?: string;
     nullable: boolean;
@@ -80,15 +81,20 @@ export type StructureOptions = { nullable?: boolean; extra?: string; array?: boo
 
 export function fromStructure(structure: Structure | StructureEnum<any>, options: StructureOptions = {}): FieldStructure {
     let type: StructureType;
-    if ("schema" in structure) type = "object";
-    else if ("values" in structure) type = "enum";
-    else throw new Error("Unknown type is being used");
+    let schema: Schema | undefined;
+    if ("schema" in structure) {
+        type = "object";
+        schema = structure.schema;
+    } else if ("values" in structure) {
+        type = "enum";
+    } else throw new Error("Unknown type is being used");
 
     return {
         structure: {
             id: structure.id,
             name: structure.name,
             type,
+            schema,
         },
         nullable: options.nullable ?? false,
         extra: options.extra,
