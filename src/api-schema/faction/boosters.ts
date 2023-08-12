@@ -4,7 +4,7 @@ import { armoryItemStructure } from "@/api-schema/shared/armory";
 const structures = [armoryItemStructure];
 
 const schema: Schema = {
-    drugs: fromStructure(armoryItemStructure, { array: true }),
+    boosters: fromStructure(armoryItemStructure, { array: true }),
 };
 
 const BoostersSelection: Selection = {

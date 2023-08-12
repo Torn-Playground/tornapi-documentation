@@ -71,38 +71,8 @@ const rankStructure: Structure = {
         wins: { type: Integer },
     },
 };
-const factionStructure: Structure = {
-    id: "faction",
-    name: "Faction",
-    schema: {
-        ID: { type: Integer },
-        name: { type: String },
-        tag: { type: String },
-        tag_image: { type: String },
-        leader: { type: Integer },
-        "co-leader": { type: Integer, extra: "Will be 0 if there is no co-leader." },
-        respect: { type: Integer },
-        age: { type: Integer },
-        capacity: { type: Integer },
-        best_chain: { type: Integer },
-        ranked_wars: fromStructure(rankedWarsStructure),
-        territory_wars: fromStructure(territoryWarStructure, {
-            array: true,
-            extra: "Empty object when there is no territory war.",
-        }),
-        raid_wars: fromStructure(raidStructure, {
-            array: true,
-            extra: "Empty object when there is no raid.",
-        }),
-        peace: fromStructure(peaceStructure, {
-            extra: "Empty object when there are no peace treaties.",
-        }),
-        rank: fromStructure(rankStructure),
-        members: fromStructure(membersStructure),
-    },
-};
+
 const structures = [
-    factionStructure,
     rankEnum,
     rankStructure,
     membersStructure,
@@ -123,7 +93,30 @@ const structures = [
 ];
 
 const schema: Schema = {
-    root: fromStructure(factionStructure),
+    ID: { type: Integer },
+    name: { type: String },
+    tag: { type: String },
+    tag_image: { type: String },
+    leader: { type: Integer },
+    "co-leader": { type: Integer, extra: "Will be 0 if there is no co-leader." },
+    respect: { type: Integer },
+    age: { type: Integer },
+    capacity: { type: Integer },
+    best_chain: { type: Integer },
+    ranked_wars: fromStructure(rankedWarsStructure),
+    territory_wars: fromStructure(territoryWarStructure, {
+        array: true,
+        extra: "Empty object when there is no territory war.",
+    }),
+    raid_wars: fromStructure(raidStructure, {
+        array: true,
+        extra: "Empty object when there is no raid.",
+    }),
+    peace: fromStructure(peaceStructure, {
+        extra: "Empty object when there are no peace treaties.",
+    }),
+    rank: fromStructure(rankStructure),
+    members: fromStructure(membersStructure),
 };
 
 const BasicSelection: Selection = {
