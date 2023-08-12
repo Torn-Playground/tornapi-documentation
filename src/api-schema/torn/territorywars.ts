@@ -1,16 +1,6 @@
-import { EpochSeconds, Integer } from "@/api-schema/common-types";
 import { fromStructure, Schema, Selection, Structure } from "@/api-schema/schema.types";
+import { territoryWarStructure } from "@/api-schema/shared/territory";
 
-const territoryWarStructure: Structure = {
-    id: "territory_war",
-    name: "Territory War",
-    schema: {
-        assaulting_faction: { type: Integer },
-        defending_faction: { type: Integer },
-        started: { type: EpochSeconds },
-        ends: { type: EpochSeconds },
-    },
-};
 const territoryWarsStructure: Structure = {
     id: "territory_wars",
     name: "Territory Wars",
