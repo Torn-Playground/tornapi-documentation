@@ -7,7 +7,9 @@
         "build": "next build",
         "start": "next start",
         "start:server": "next start -p 3010",
-        "lint": "next lint"
+        "lint": "next lint",
+        "test": "jest --watch",
+        "test:run": "jest"
     },
     "dependencies": {
         "@tippyjs/react": "^4.2.6",
