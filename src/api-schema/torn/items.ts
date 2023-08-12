@@ -2,8 +2,8 @@ import { Integer, Number, String } from "@/api-schema/common-types";
 import { fromStructure, Schema, Selection, Structure } from "@/api-schema/schema.types";
 
 const coverageStructure: Structure = {
-    id: "item",
-    name: "Item",
+    id: "coverage",
+    name: "Coverage",
     schema: {
         "Full Body Coverage": { type: Number },
         "Heart Coverage": { type: Number },

@@ -66,6 +66,9 @@ const companyStructure: Structure = {
         name: { type: String },
         cost: { type: Integer },
         default_employees: { type: Integer },
+        positions: fromStructure(positionsStructure),
+        stock: fromStructure(stocksStructure),
+        specials: fromStructure(specialsStructure),
     },
 };
 const companiesStructure: Structure = {

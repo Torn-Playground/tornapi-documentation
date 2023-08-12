@@ -18,7 +18,7 @@ const cardsStructure: Structure = {
         "<card id>": fromStructure(cardStructure),
     },
 };
-const structures = [cardsStructure];
+const structures = [cardsStructure, cardStructure];
 
 const schema: Schema = {
     cards: fromStructure(cardsStructure),
