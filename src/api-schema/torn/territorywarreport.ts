@@ -1,5 +1,5 @@
-import { EpochSeconds, Integer, Number, NumberBoolean, String } from "@/api-schema/common-types";
-import { fromStructure, Schema, Selection, Structure } from "@/api-schema/schema.types";
+import { EpochSeconds, Integer, Number, String } from "@/api-schema/common-types";
+import { fromStructure, Schema, Selection, Structure, StructureEnum } from "@/api-schema/schema.types";
 
 const itemStructure: Structure = {
     id: "item",
@@ -25,15 +25,22 @@ const rewardsStructure: Structure = {
         items: fromStructure(itemsStructure),
     },
 };
+const factionTypeEnum: StructureEnum<string> = {
+    id: "faction_type",
+    name: "Faction Type",
+    values: ["aggressor", "defender"],
+    type: String,
+};
 const userStructure: Structure = {
     id: "user",
     name: "User",
     schema: {
         name: { type: String },
-        faction_id: { type: Integer },
         level: { type: Integer },
-        attacks: { type: Integer },
-        score: { type: Number },
+        faction_id: { type: Integer },
+        points: { type: Integer },
+        joins: { type: Number },
+        clears: { type: Number },
     },
 };
 const membersStructure: Structure = {
@@ -48,11 +55,10 @@ const factionStructure: Structure = {
     name: "Faction",
     schema: {
         name: { type: String },
+        type: { type: String },
         score: { type: Integer },
-        attacks: { type: Integer },
-        rank_before: { type: String },
-        rank_after: { type: String },
-        rewards: fromStructure(rewardsStructure),
+        joins: { type: Integer },
+        clears: { type: Integer },
         members: fromStructure(membersStructure),
     },
 };
@@ -64,29 +70,46 @@ const factionsStructure: Structure = {
         "<faction id 2>": fromStructure(factionStructure),
     },
 };
+const warResultEnum: StructureEnum<string> = {
+    id: "war_result",
+    name: "War Result",
+    values: ["success_assault", "fail_assault", "end_with_peace_treaty"],
+    type: String,
+};
 const warStructure: Structure = {
     id: "war",
     name: "War",
     schema: {
-        start: { type: EpochSeconds },
         end: { type: EpochSeconds },
+        result: fromStructure(warResultEnum),
+        start: { type: EpochSeconds },
         winner: { type: Integer },
-        forfeit: { type: NumberBoolean },
     },
 };
-const rankedWarReportStructure: Structure = {
-    id: "ranked_war_report",
-    name: "Ranked War Report",
+const territoryStructure: Structure = {
+    id: "territory",
+    name: "Territory",
+    schema: {
+        name: { type: String },
+    },
+};
+const territoryWarReportStructure: Structure = {
+    id: "territory_war_report",
+    name: "Territory War Report",
     schema: {
         factions: fromStructure(factionsStructure),
+        territory: fromStructure(territoryStructure),
         war: fromStructure(warStructure),
     },
 };
 const structures = [
-    rankedWarReportStructure,
+    territoryWarReportStructure,
     warStructure,
+    territoryStructure,
+    warResultEnum,
     membersStructure,
     userStructure,
+    factionTypeEnum,
     factionsStructure,
     factionStructure,
     rewardsStructure,
@@ -95,12 +118,12 @@ const structures = [
 ];
 
 const schema: Schema = {
-    rankedwarreport: fromStructure(rankedWarReportStructure),
+    territorywarreport: fromStructure(territoryWarReportStructure),
 };
 
-const RankedWarReportSelection: Selection = {
-    name: "rankedwarreport",
-    description: "View a specific ranked war report.",
+const TerritoryWarReportSelection: Selection = {
+    name: "territorywarreport",
+    description: "View a specific territory war report.",
     access: "public",
     schema,
     structures,
@@ -109,4 +132,4 @@ const RankedWarReportSelection: Selection = {
     },
 };
 
-export default RankedWarReportSelection;
+export default TerritoryWarReportSelection;
