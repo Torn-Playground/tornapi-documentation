@@ -12,7 +12,7 @@
     "dependencies": {
         "@tippyjs/react": "^4.2.6",
         "daisyui": "^2.52.0",
-        "next": "^13.4.9",
+        "next": "13.4.9",
         "next-themes": "npm:@wits/next-themes@^0.2.16",
         "react": "^18.2.0",
         "react-dom": "^18.2.0",
@@ -21,21 +21,21 @@
         "underscore": "^1.13.6"
     },
     "devDependencies": {
-        "@tailwindcss/forms": "^0.5.3",
+        "@tailwindcss/forms": "^0.5.4",
         "@tailwindcss/typography": "^0.5.9",
-        "@types/node": "^20.4.1",
-        "@types/react": "^18.2.14",
-        "@types/react-dom": "^18.2.6",
-        "@types/underscore": "^1.11.5",
-        "@typescript-eslint/eslint-plugin": "^5.61.0",
+        "@types/node": "^20.4.10",
+        "@types/react": "^18.2.20",
+        "@types/react-dom": "^18.2.7",
+        "@types/underscore": "^1.11.6",
+        "@typescript-eslint/eslint-plugin": "^6.3.0",
         "autoprefixer": "^10.4.14",
-        "eslint": "^8.44.0",
-        "eslint-config-next": "^13.4.9",
-        "eslint-config-prettier": "^8.8.0",
-        "eslint-plugin-import": "^2.27.5",
-        "postcss": "^8.4.25",
-        "prettier": "^2.8.8",
-        "tailwindcss": "^3.3.2"
+        "eslint": "^8.47.0",
+        "eslint-config-next": "^13.4.13",
+        "eslint-config-prettier": "^9.0.0",
+        "eslint-plugin-import": "^2.28.0",
+        "postcss": "^8.4.27",
+        "prettier": "^3.0.1",
+        "tailwindcss": "^3.3.3"
     },
     "browserslist": [
         "last 2 versions, not dead, > 0.2%"
