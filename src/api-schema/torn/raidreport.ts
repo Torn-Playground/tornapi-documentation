@@ -1,21 +1,6 @@
 import { EpochSeconds, Integer, Number, String } from "@/api-schema/common-types";
 import { fromStructure, Schema, Selection, Structure, StructureEnum } from "@/api-schema/schema.types";
 
-const itemStructure: Structure = {
-    id: "item",
-    name: "Item",
-    schema: {
-        name: { type: String },
-        quantity: { type: Integer },
-    },
-};
-const itemsStructure: Structure = {
-    id: "items",
-    name: "Items",
-    schema: {
-        "<item id>": fromStructure(itemStructure),
-    },
-};
 const userStructure: Structure = {
     id: "user",
     name: "User",
@@ -75,17 +60,7 @@ const raidReportStructure: Structure = {
         factions: fromStructure(factionsStructure),
     },
 };
-const structures = [
-    raidReportStructure,
-    raidWarStructure,
-    membersStructure,
-    userStructure,
-    factionsStructure,
-    factionStructure,
-    itemsStructure,
-    itemStructure,
-    raidTypeEnum,
-];
+const structures = [raidReportStructure, raidWarStructure, membersStructure, userStructure, factionsStructure, factionStructure, raidTypeEnum];
 
 const schema: Schema = {
     raidreport: fromStructure(raidReportStructure),
