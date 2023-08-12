@@ -21,6 +21,7 @@ import PawnShopSelection from "@/api-schema/torn/pawnshop";
 import PokerTablesSelection from "@/api-schema/torn/pokertables";
 import PropertiesSelection from "@/api-schema/torn/properties";
 import RacketsSelection from "@/api-schema/torn/rackets";
+import RaidReportSelection from "@/api-schema/torn/raidreport";
 import RaidsSelection from "@/api-schema/torn/raids";
 import RankedWarReportSelection from "@/api-schema/torn/rankedwarreport";
 import RankedWarsSelection from "@/api-schema/torn/rankedwars";
@@ -28,6 +29,7 @@ import StatsSelection from "@/api-schema/torn/stats";
 import StocksSelection from "@/api-schema/torn/stocks";
 import TerritorySelection from "@/api-schema/torn/territory";
 import TerritoryNamesSelection from "@/api-schema/torn/territorynames";
+import TerritoryWarReportSelection from "@/api-schema/torn/territorywarreport";
 import TerritoryWarsSelection from "@/api-schema/torn/territorywars";
 
 const selections: Selection[] = [
@@ -53,6 +55,7 @@ const selections: Selection[] = [
     PokerTablesSelection,
     PropertiesSelection,
     RacketsSelection,
+    RaidReportSelection,
     RaidsSelection,
     RankedWarReportSelection,
     RankedWarsSelection,
@@ -60,6 +63,7 @@ const selections: Selection[] = [
     StocksSelection,
     TerritorySelection,
     TerritoryNamesSelection,
+    TerritoryWarReportSelection,
     TerritoryWarsSelection,
     TimestampSelection,
 ];
