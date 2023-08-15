@@ -52,7 +52,7 @@ function mapField(field: SchemaField | FieldStructure): SchemaFieldDto | FieldSt
 }
 
 function mapStructures(structures: (Structure | StructureEnum<any>)[]): (StructureDto | StructureEnumDto)[] {
-    structures.map((structure) => {
+    return structures.map((structure) => {
         if ("type" in structure) {
             const { id, name, values, type, incomplete } = structure;
             const dto: StructureEnumDto = { id, name, values, type };
@@ -68,8 +68,6 @@ function mapStructures(structures: (Structure | StructureEnum<any>)[]): (Structu
             return { id, name, schema };
         }
     });
-
-    return [];
 }
 
 function mapParams(params?: Param[]): ParamDto[] {
