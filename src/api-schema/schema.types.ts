@@ -58,7 +58,7 @@ export interface Param {
     name: string;
     description: ReactNode;
     options?: {
-        values: Array<String>;
+        values: string[];
     };
 }
 
