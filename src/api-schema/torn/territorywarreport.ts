@@ -1,30 +1,6 @@
 import { EpochSeconds, Integer, Number, String } from "@/api-schema/common-types";
 import { fromStructure, Schema, Selection, Structure, StructureEnum } from "@/api-schema/schema.types";
 
-const itemStructure: Structure = {
-    id: "item",
-    name: "Item",
-    schema: {
-        name: { type: String },
-        quantity: { type: Integer },
-    },
-};
-const itemsStructure: Structure = {
-    id: "items",
-    name: "Items",
-    schema: {
-        "<item id>": fromStructure(itemStructure),
-    },
-};
-const rewardsStructure: Structure = {
-    id: "rewards",
-    name: "Rewards",
-    schema: {
-        respect: { type: Integer },
-        points: { type: Integer },
-        items: fromStructure(itemsStructure),
-    },
-};
 const factionTypeEnum: StructureEnum<string> = {
     id: "faction_type",
     name: "Faction Type",
@@ -55,7 +31,7 @@ const factionStructure: Structure = {
     name: "Faction",
     schema: {
         name: { type: String },
-        type: { type: String },
+        type: fromStructure(factionTypeEnum),
         score: { type: Integer },
         joins: { type: Integer },
         clears: { type: Integer },
@@ -112,9 +88,6 @@ const structures = [
     factionTypeEnum,
     factionsStructure,
     factionStructure,
-    rewardsStructure,
-    itemsStructure,
-    itemStructure,
 ];
 
 const schema: Schema = {

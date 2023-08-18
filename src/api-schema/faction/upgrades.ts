@@ -28,7 +28,7 @@ const stateEnum: StructureEnum<string> = {
     values: ["peace", "war"],
     type: String,
 };
-const structures = [stateEnum, upgradesStructure, upgradeStructure];
+const structures = [stateEnum, upgradesStructure, upgradeStructure, branchEnum];
 
 const schema: Schema = {
     state: fromStructure(stateEnum),

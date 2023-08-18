@@ -1,9 +1,9 @@
 import { Integer, String } from "@/api-schema/common-types";
 import { fromStructure, Schema, Selection } from "@/api-schema/schema.types";
 import { genderEnum } from "@/api-schema/shared/gender";
-import { statusStructure } from "@/api-schema/shared/status";
+import { statusColorEnum, statusStateEnum, statusStructure } from "@/api-schema/shared/status";
 
-const structures = [genderEnum, statusStructure];
+const structures = [genderEnum, statusStructure, statusStateEnum, statusColorEnum];
 
 const schema: Schema = {
     level: { type: Integer },

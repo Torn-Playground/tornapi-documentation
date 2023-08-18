@@ -25,7 +25,7 @@ const territoriesStructure: Structure = {
 const structures = [territoriesStructure, territoryStructure];
 
 const schema: Schema = {
-    territory: fromStructure(territoryStructure),
+    territory: fromStructure(territoriesStructure),
 };
 
 const TerritorySelection: Selection = {
