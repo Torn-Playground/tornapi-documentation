@@ -16,8 +16,8 @@ const schema: Schema = {
 
 const IconsSelection: Selection = {
     name: "icons",
-    description: "View your currently shown icons.",
-    access: "minimal",
+    description: "View your currently shown icons. Will show the basic icons for other players.",
+    access: "public",
     schema,
     structures,
     id: { optional: false },
