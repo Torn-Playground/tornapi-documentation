@@ -19,7 +19,7 @@ const competitionStructure: Structure = {
             extra: "Only present during Halloween week.",
         },
         team: {
-            type: Integer,
+            type: String,
             nullable: true,
             extra: "Only present during Elimination. Null if not on a team.",
         },
@@ -54,7 +54,11 @@ const competitionStructure: Structure = {
             nullable: true,
             extra: "Only present during Mr & Ms Torn.",
         },
-        position: { type: Unknown, nullable: true, extra: "Only present during Dog Tags, and only when there is a position to show." },
+        position: {
+            type: Unknown,
+            nullable: true,
+            extra: "Only present during Dog Tags, and only when there is a position to show.",
+        },
     },
 };
 const jobStructure: Structure = {
