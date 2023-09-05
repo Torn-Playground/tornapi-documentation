@@ -9,7 +9,7 @@ export const territoryWarStructure: Structure = {
         assaulting_faction: { type: Integer },
         defending_faction: { type: Integer },
         score: { type: Integer },
-        score_required: { type: Integer },
+        required_score: { type: Integer },
         started: { type: EpochSeconds },
         ends: { type: EpochSeconds },
     },
