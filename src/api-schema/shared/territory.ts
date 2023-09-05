@@ -5,6 +5,7 @@ export const territoryWarStructure: Structure = {
     id: "territory_war",
     name: "Territory War",
     schema: {
+        territory_war_id: {type: Integer},
         assaulting_faction: { type: Integer },
         defending_faction: { type: Integer },
         score: { type: Integer },
