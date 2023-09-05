@@ -31,8 +31,8 @@ const competitionStructure: Structure = {
         score: {
             type: IntegerOrNumber,
             nullable: true,
-            description: "Integer score for Easter Egg Hunt or Dog Tags. Number score for Mr & Ms Torn.",
-            extra: "Only present during Easter Egg Hunt, Dog Tags or Mr & Ms Torn. Null if no eggs found during Easter event.",
+            description: "Integer score for Easter Egg Hunt, Dog Tags or Elimination. Number score for Mr & Ms Torn.",
+            extra: "Only present during Easter Egg Hunt, Dog Tags, Elimination or Mr & Ms Torn. Null if no eggs found during Easter event.",
         },
         text: {
             type: String,

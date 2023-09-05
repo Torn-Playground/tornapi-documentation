@@ -1,4 +1,4 @@
-import { Integer, Number, String } from "@/api-schema/common-types";
+import { Integer, Number, String, Unknown } from "@/api-schema/common-types";
 import { fromStructure, Schema, Selection, Structure, StructureEnum } from "@/api-schema/schema.types";
 import { competitionTypeEnum } from "@/api-schema/shared/competition";
 
@@ -21,12 +21,15 @@ const eliminationTeamStructure: Structure = {
     id: "elimination_team",
     name: "Elimination Team",
     schema: {
-        name: { type: String },
-        team: { type: String },
-        status: fromStructure(eliminationStatusEnum),
-        wins: { type: Integer },
-        losses: { type: Integer },
+        position: { type: Integer },
         lives: { type: Integer },
+        losses: { type: Integer, extra: "Null before the competition starts." },
+        name: { type: String },
+        score: { type: Integer },
+        status: fromStructure(eliminationStatusEnum),
+        team: { type: String },
+        participants: { type: Unknown, extra: "Null before the competition starts." },
+        wins: { type: Integer, extra: "Null before the competition starts." },
     },
 };
 const competitionStructure: Structure = {
