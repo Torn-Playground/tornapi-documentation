@@ -1,4 +1,4 @@
-import { EpochSeconds, Integer } from "@/api-schema/common-types";
+import {EpochSeconds, Integer, String} from "@/api-schema/common-types";
 import { Structure } from "@/api-schema/schema.types";
 
 export const territoryWarStructure: Structure = {
@@ -12,5 +12,17 @@ export const territoryWarStructure: Structure = {
         required_score: { type: Integer },
         started: { type: EpochSeconds },
         ends: { type: EpochSeconds },
+    },
+};
+
+export const racketStructure: Structure = {
+    id: "territory_racket",
+    name: "Racket",
+    schema: {
+        name: { type: String },
+        level: { type: Integer },
+        reward: { type: String },
+        created: { type: EpochSeconds },
+        changed: { type: EpochSeconds },
     },
 };

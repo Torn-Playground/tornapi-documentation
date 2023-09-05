@@ -1,6 +1,6 @@
 import { ArrayString, Integer, String } from "@/api-schema/common-types";
 import { fromStructure, Schema, Selection, Structure } from "@/api-schema/schema.types";
-import { territoryWarStructure } from "@/api-schema/shared/territory";
+import { racketStructure, territoryWarStructure } from "@/api-schema/shared/territory";
 
 const territoryStructure: Structure = {
     id: "territory",
@@ -15,6 +15,7 @@ const territoryStructure: Structure = {
         coordinate_x: { type: String },
         coordinate_y: { type: String },
         neighbors: { type: ArrayString },
+        racket: fromStructure(racketStructure, { nullable: true, extra: "Only present if there is a racket present." }),
         war: fromStructure(territoryWarStructure, { nullable: true, extra: "Only present if there is war ongoing." }),
     },
 };
@@ -25,7 +26,7 @@ const territoriesStructure: Structure = {
         "<territory>": fromStructure(territoryStructure),
     },
 };
-const structures = [territoriesStructure, territoryStructure, territoryWarStructure];
+const structures = [territoriesStructure, territoryStructure, territoryWarStructure, racketStructure];
 
 const schema: Schema = {
     territory: fromStructure(territoriesStructure, {
