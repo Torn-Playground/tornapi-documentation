@@ -1,4 +1,4 @@
-import { EpochSeconds, Integer, String } from "@/api-schema/common-types";
+import { EpochSeconds, Integer, IntegerAndString, String } from "@/api-schema/common-types";
 import { fromStructure, Schema, Selection, Structure, StructureEnum } from "@/api-schema/schema.types";
 import { lastActionStatusEnum, lastActionStructure } from "@/api-schema/shared/last-action";
 import { factionsStructure, rankedWarFactionStructure, rankedWarsStructure, rankedWarStructure, warStructure } from "@/api-schema/shared/ranked-wars";
@@ -96,7 +96,7 @@ const structures = [
 const schema: Schema = {
     ID: { type: Integer },
     name: { type: String },
-    tag: { type: String },
+    tag: { type: IntegerAndString },
     tag_image: { type: String },
     leader: { type: Integer },
     "co-leader": { type: Integer, extra: "Will be 0 if there is no co-leader." },
