@@ -29,7 +29,7 @@
         "@types/node": "^20.9.1",
         "@types/react": "^18.2.37",
         "@types/react-dom": "^18.2.15",
-        "@types/underscore": "^1.11.6",
+        "@types/underscore": "^1.11.14",
         "@typescript-eslint/eslint-plugin": "^6.11.0",
         "autoprefixer": "^10.4.16",
         "eslint": "^8.54.0",
