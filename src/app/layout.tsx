@@ -1,4 +1,5 @@
 import "./globals.css";
+import { Viewport } from "next";
 import { Metadata } from "next/dist/lib/metadata/types/metadata-interface";
 import { ServerThemeProvider, ThemeProvider } from "next-themes";
 import { PropsWithChildren } from "react";
@@ -29,7 +30,7 @@ export default function RootLayout({ children }: PropsWithChildren) {
 }
 
 // noinspection JSUnusedGlobalSymbols
-export const metadata: Partial<Metadata> = {
+export const metadata: Metadata = {
     title: "TornAPI",
     description: "Documentation for the TornAPI.",
     applicationName: "TornAPI Documentation",
@@ -37,13 +38,6 @@ export const metadata: Partial<Metadata> = {
     generator: "Next.js",
     keywords: ["torn.com", "Torn City", "TornAPI"],
     referrer: "strict-origin-when-cross-origin",
-    themeColor: "blue",
-    colorScheme: "dark light",
-    viewport: {
-        width: "device-width",
-        initialScale: 1,
-        maximumScale: 1,
-    },
     creator: "DeKleineKobini",
     publisher: "DeKleineKobini",
     icons: {
@@ -66,4 +60,13 @@ export const metadata: Partial<Metadata> = {
         description: "Documentation for the TornAPI.",
         title: "TornAPI",
     },
+};
+
+// noinspection JSUnusedGlobalSymbols
+export const viewport: Viewport = {
+    themeColor: "blue",
+    colorScheme: "dark light",
+    width: "device-width",
+    initialScale: 1,
+    maximumScale: 1,
 };
