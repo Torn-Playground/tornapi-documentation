@@ -13,8 +13,8 @@ const upgradeStructure: Structure = {
         level: { type: Integer },
         basecost: { type: Integer },
         ability: { type: String },
-        unlocked: { type: String, extra: "yyyy-MM-dd HH:mm:ss" },
-        can_be_unset: { type: EpochSeconds, nullable: true },
+        unlocked: { type: String, extra: "yyyy-MM-dd HH:mm:ss", description: "When the upgrade was set." },
+        can_be_unset: { type: EpochSeconds, nullable: true, description: "When the upgrade can be unset" },
     },
 };
 const upgradesStructure: Structure = {

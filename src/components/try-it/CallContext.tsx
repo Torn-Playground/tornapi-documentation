@@ -59,8 +59,7 @@ export function CallProvider({ children }: PropsWithChildren) {
     const [calls, dispatch] = useReducer(callsReducer, defaultState);
 
     useEffect(() => {
-        // setKey(localStorage.getItem(STORAGE_KEY) ?? "");
-        const key = localStorage.getItem(API_STORAGE_KEY) ?? "x";
+        const key = localStorage.getItem(API_STORAGE_KEY) ?? "";
 
         dispatch({ type: CallActionType.SET_KEY, key });
     }, []);

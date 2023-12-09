@@ -17,7 +17,7 @@ export function buildApplicationStructure(statsStructure: Structure): Structure 
             userID: { type: Integer },
             name: { type: String },
             level: { type: Integer },
-            stats: fromStructure(statsStructure, { nullable: true }),
+            stats: fromStructure(statsStructure, { nullable: true, extra: "Will be null when stats aren't shared." }),
             message: { type: String },
             expires: { type: EpochSeconds },
             status: fromStructure(statusEnum),
