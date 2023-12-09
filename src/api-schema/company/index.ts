@@ -23,7 +23,7 @@ const selections: Selection[] = [
 const CompanySection: Section = {
     selections,
     defaultSelection: "profile",
-    idDescription: "Can be used with a company id.",
+    idDescription: "Can be used with a company id, except for the 'companies' selection where a company type id is expected.",
 };
 
 export default CompanySection;
