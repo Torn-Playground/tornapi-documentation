@@ -9,7 +9,7 @@ const selections: Selection[] = [LookupSelection, TimestampSelection, BazaarSele
 const MarketSection: Section = {
     selections,
     defaultSelection: "bazaar",
-    idDescription: null,
+    idDescription: "Most sections use an item id. The others don't need any id.",
 };
 
 export default MarketSection;
