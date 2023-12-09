@@ -8,7 +8,6 @@ import Header from "@/components/global/header/Header";
 import Navigation from "@/components/global/navigation/Navigation";
 import { ALL_THEMES, DEFAULT_THEME, STORAGE_KEY } from "@/components/global/theme-selector/theme-utilities";
 
-// noinspection JSUnusedGlobalSymbols
 export default function RootLayout({ children }: PropsWithChildren) {
     return (
         <ServerThemeProvider defaultTheme={DEFAULT_THEME} themes={ALL_THEMES} storageKey={STORAGE_KEY}>
@@ -29,7 +28,6 @@ export default function RootLayout({ children }: PropsWithChildren) {
     );
 }
 
-// noinspection JSUnusedGlobalSymbols
 export const metadata: Metadata = {
     title: "TornAPI",
     description: "Documentation for the TornAPI.",

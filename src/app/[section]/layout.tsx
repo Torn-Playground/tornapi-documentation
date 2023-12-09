@@ -3,7 +3,6 @@ import { PropsWithChildren } from "react";
 import { isSection, schema } from "@/api-schema/data";
 import Section from "@/components/section/Section";
 
-// noinspection JSUnusedGlobalSymbols
 export default function SectionLayout({ children, params }: PropsWithChildren<{ params: { section: string } }>) {
     if (!isSection(params.section)) {
         redirect("/");
