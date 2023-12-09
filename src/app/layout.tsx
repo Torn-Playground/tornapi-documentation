@@ -40,6 +40,7 @@ export const metadata: Metadata = {
     publisher: "DeKleineKobini",
     icons: {
         icon: "/favicon-playground.svg",
+        apple: "/apple-touch-icon.png",
     },
     robots: {
         index: true,
