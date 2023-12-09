@@ -2,7 +2,6 @@ import { redirect } from "next/navigation";
 import { getActiveSelections, isSection, schema } from "@/api-schema/data";
 import Selection from "@/components/section/selection/Selection";
 
-// noinspection JSUnusedGlobalSymbols
 export default function UserSelectionPage({ params: { section, selection } }: { params: { section: string; selection: string } }) {
     if (!isSection(section)) {
         redirect("/");
@@ -17,7 +16,6 @@ export default function UserSelectionPage({ params: { section, selection } }: { 
     return <Selection selection={sl} />;
 }
 
-// noinspection JSUnusedGlobalSymbols
 export async function generateStaticParams() {
     return getActiveSelections().flatMap(([sectionName, section]) =>
         section.selections.map((selection) => ({
@@ -27,5 +25,4 @@ export async function generateStaticParams() {
     );
 }
 
-// noinspection JSUnusedGlobalSymbols
 export const dynamicParams = false;

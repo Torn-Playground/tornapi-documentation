@@ -5,7 +5,6 @@ import ErrorCodes from "@/components/documentation/ErrorCodes";
 import Limits from "@/components/documentation/Limits";
 import Usage from "@/components/documentation/Usage";
 
-// noinspection JSUnusedGlobalSymbols
 export default function Home() {
     return (
         <div className="space-y-2 mb-10">
