@@ -77,7 +77,7 @@ const selections: Selection[] = [
 const FactionSection: Section = {
     selections,
     defaultSelection: "basic",
-    idDescription: null,
+    idDescription: "Can be used with a faction id.",
 };
 
 export default FactionSection;

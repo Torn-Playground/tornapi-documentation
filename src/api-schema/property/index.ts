@@ -7,7 +7,7 @@ const selections: Selection[] = [LookupSelection, TimestampSelection, PropertySe
 const PropertySection: Section = {
     selections,
     defaultSelection: "property",
-    idDescription: null,
+    idDescription: "Can be used with a property id, which can be obtained using the properties endpoint in the user section.",
 };
 
 export default PropertySection;

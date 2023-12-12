@@ -6,7 +6,7 @@ const selections: Selection[] = [InfoSelection];
 const KeySection: Section = {
     selections,
     defaultSelection: null,
-    idDescription: null,
+    idDescription: "No id can be used with this section.",
 };
 
 export default KeySection;
