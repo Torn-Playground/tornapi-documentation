@@ -67,6 +67,7 @@ const errorCodes: Array<ErrorCode> = [
         description: "A selection is being called of which this key does not have permission to access.",
     },
     { code: 17, message: "Backend error occurred, please try again." },
+    { code: 18, message: "API key is paused" },
 ];
 
 export default errorCodes;
