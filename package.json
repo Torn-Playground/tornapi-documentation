@@ -26,11 +26,11 @@
         "@tailwindcss/forms": "^0.5.7",
         "@tailwindcss/typography": "^0.5.10",
         "@types/jest": "^29.5.11",
-        "@types/node": "^20.10.5",
-        "@types/react": "^18.2.45",
+        "@types/node": "^20.10.6",
+        "@types/react": "^18.2.47",
         "@types/react-dom": "^18.2.18",
         "@types/underscore": "^1.11.15",
-        "@typescript-eslint/eslint-plugin": "^6.16.0",
+        "@typescript-eslint/eslint-plugin": "^6.18.0",
         "autoprefixer": "^10.4.16",
         "eslint": "^8.56.0",
         "eslint-config-next": "^14.0.4",
@@ -39,9 +39,9 @@
         "jest": "^29.7.0",
         "jest-environment-jsdom": "^29.7.0",
         "jest-extended": "^4.0.2",
-        "postcss": "^8.4.32",
+        "postcss": "^8.4.33",
         "prettier": "^3.1.1",
-        "tailwindcss": "^3.4.0"
+        "tailwindcss": "^3.4.1"
     },
     "browserslist": [
         "last 2 versions, not dead, > 0.2%"
