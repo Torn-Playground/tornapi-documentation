@@ -65,8 +65,16 @@ const jobStructure: Structure = {
     id: "job",
     name: "Job",
     schema: {
-        job: { type: String, extra: "Will be 'None' when not in a company or job." },
-        position: { type: String, extra: "Will be 'None' when not in a company or job." },
+        job: {
+            type: String,
+            extra: "Will be 'None' when not in a company or job.",
+            description: "For the default jobs, this will be the job name. For companies this will be 'Employee' or 'Director'.",
+        },
+        position: {
+            type: String,
+            extra: "Will be 'None' when not in a company or job.",
+            description: "Position within the job or company. Company directors will be listed as 'Director'.",
+        },
         company_id: { type: Integer, extra: "Will be 0 when not in a company or job." },
         company_name: { type: String, extra: "Will be 'None' when not in a company or job." },
         company_type: { type: Integer, extra: "Will be 0 when not in a company or job." },
