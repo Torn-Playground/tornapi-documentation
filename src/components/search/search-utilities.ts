@@ -3,7 +3,7 @@ import { isField, isFieldStructure, Schema } from "@/api-schema/schema.types";
 
 export type SearchSection = { name: string };
 export type SearchSelection = { name: string };
-export type SearchField = { selection: string; structure: string | undefined; name: string };
+export type SearchField = { selection: string; structure: string | undefined; name: string; keywords: string[] };
 export type SearchResult = {
     section: SearchSection;
     selections: SearchSelection[];
@@ -25,7 +25,7 @@ export function search(term: string): SearchResult[] {
                 ...new Set(
                     section.selections
                         .flatMap((selection) => extractFields(selection.name, selection.schema))
-                        .filter((field) => field.name.toLowerCase().includes(term.toLowerCase()))
+                        .filter((field) => matchField(field, term))
                         .map((field) => JSON.stringify(field)), // Map to JSON to be able to remove duplicates.
                 ),
             ].map((fieldString) => JSON.parse(fieldString) as SearchField);
@@ -48,12 +48,16 @@ function extractFields(selection: string, schema: Schema, parentStructure: strin
 
     for (const [key, value] of Object.entries(schema)) {
         if (isField(value)) {
-            list.push({ selection: selection, structure: parentStructure, name: key });
+            list.push({ selection: selection, structure: parentStructure, name: key, keywords: value.keywords ?? [] });
         } else if (isFieldStructure(value)) {
-            list.push({ selection: selection, structure: parentStructure, name: key });
+            list.push({ selection: selection, structure: parentStructure, name: key, keywords: value.keywords ?? [] });
             if (value.structure.schema) list.push(...extractFields(selection, value.structure.schema, value.structure.id));
         }
     }
 
     return list;
+}
+
+function matchField(field: SearchField, term: string): boolean {
+    return field.name.toLowerCase().includes(term.toLowerCase()) || field.keywords.some((keyword) => keyword.toLowerCase().includes(term.toLowerCase()));
 }
