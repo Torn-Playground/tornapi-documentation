@@ -8,7 +8,7 @@ function ResultSelection({ section, selections }: { section: SearchSection; sele
     return (
         <div>
             <h3 className="font-bold text-lg">Selections</h3>
-            <ul>
+            <ul className="space-y-0.5">
                 {selections.map((selection) => (
                     <li key={selection.name}>
                         <Link href={`/${section.name}/${selection.name}`}>{selection.name}</Link>
@@ -23,7 +23,7 @@ function ResultFields({ section, fields }: { section: SearchSection; fields: Sea
     return (
         <div>
             <h3 className="font-bold text-lg">Fields</h3>
-            <ul>
+            <ul className="space-y-0.5">
                 {fields.map((field) => {
                     if (field.structure) {
                         return (
