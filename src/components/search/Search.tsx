@@ -57,9 +57,9 @@ function ResultSection({ result }: { result: SearchResult }) {
                 </h2>
 
                 <section className="md:grid auto-cols-auto" style={{ gridTemplateColumns: "1fr 3rem 1fr" }}>
-                    {result.selections.length ? <ResultSelection section={result.section} selections={result.selections} /> : <div />}
-                    <div className={`divider md:divider-horizontal ${!result.selections.length ? "hidden md:flex" : ""}`}></div>
                     {result.fields.length ? <ResultFields section={result.section} fields={result.fields} /> : <div />}
+                    <div className={`divider md:divider-horizontal ${!result.fields.length ? "hidden md:flex" : ""}`}></div>
+                    {result.selections.length ? <ResultSelection section={result.section} selections={result.selections} /> : <div />}
                 </section>
             </div>
         </div>
