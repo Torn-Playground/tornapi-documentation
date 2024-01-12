@@ -24,6 +24,7 @@ const hallOfFameStructure: Structure = {
         workstats: fromStructure(rankingStructure),
         level: fromStructure(rankingStructure),
         rank: fromStructure(rankingStructure),
+        awards: fromStructure(rankingStructure),
     },
 };
 const structures = [hallOfFameStructure, rankingStructure];
