@@ -9,6 +9,9 @@ function Menu() {
                 <Link href="/">Documentation</Link>
             </li>
             <li>
+                <Link href="/search">Search</Link>
+            </li>
+            <li>
                 <Link href="/try-it">Try It</Link>
             </li>
             <li className="menu-title">

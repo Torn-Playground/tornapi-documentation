@@ -1,3 +1,4 @@
+import { KEYWORD_REVIVE } from "@/api-schema/common-keywords";
 import { EpochSeconds, Integer, IntegerOrNumber, NumberBoolean, String, Unknown } from "@/api-schema/common-types";
 import { fromStructure, Schema, Selection, Structure } from "@/api-schema/schema.types";
 import { bar } from "@/api-schema/shared/bar";
@@ -151,7 +152,7 @@ const schema: Schema = {
     name: { type: String },
     property_id: { type: Integer },
     competition: fromStructure(competitionStructure, { nullable: true }),
-    revivable: { type: NumberBoolean, description: "Status whether you (the key owner) can revive this player." },
+    revivable: { type: NumberBoolean, description: "Status whether you (the key owner) can revive this player.", keywords: [KEYWORD_REVIVE] },
     life: fromStructure(bar),
     status: fromStructure(statusStructure),
     job: fromStructure(jobStructure),

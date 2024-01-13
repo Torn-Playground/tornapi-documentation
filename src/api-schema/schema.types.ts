@@ -30,6 +30,7 @@ export interface SchemaField {
     description?: string | { text: string; node: () => ReactElement };
     extra?: string;
     nullable?: true;
+    keywords?: string[];
 }
 
 type StructureType = "object" | "enum";
@@ -45,6 +46,7 @@ export type FieldStructure = {
     nullable: boolean;
     array: boolean;
     description?: string;
+    keywords?: string[];
 };
 
 export function isField(object: SchemaField | FieldStructure): object is SchemaField {
