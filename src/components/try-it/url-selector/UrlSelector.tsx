@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import { getPossibleParams, schema } from "@/api-schema/data";
 import { Param, SectionType } from "@/api-schema/schema.types";
-import { performValidations, ValidationResult } from "@/api-schema/validations";
+import { isValidComment, performValidations, ValidationResult } from "@/api-schema/validations";
 import { CallActionType, useCalls, useCallsDispatch } from "@/components/try-it/CallContext";
 import SelectionSelector from "@/components/try-it/url-selector/SelectionSelector";
 import { createApiUrl, ParamInput, SelectedParamMap } from "@/components/try-it/url-selector/url-utilities";
@@ -24,15 +24,26 @@ function ParameterInput({ param, value, updateValue, selectedParams }: Parameter
         setValidation(result);
     }, [param, value, selectedParams]);
 
+    return <ValidatedInput name={param.name} value={value || ""} updateValue={updateValue} validation={validation} />;
+}
+
+type AdditionalInputProps = {
+    name: string;
+    value: string;
+    updateValue: (comment: string) => void;
+    validation: ValidationResult;
+};
+
+function ValidatedInput({ name, value, updateValue, validation }: AdditionalInputProps) {
     return (
-        <div key={param.name} className="form-control">
+        <div className="form-control">
             <label className="input-group">
-                <span>{param.name}</span>
+                <span>{name}</span>
                 <input
                     className={`input input-bordered ${!validation.valid ? "input-error" : ""} ${
                         validation.valid && validation.warning ? "input-warning" : ""
                     }`}
-                    value={value || ""}
+                    value={value}
                     onChange={(event) => updateValue(event.target.value)}
                 />
             </label>
@@ -84,18 +95,8 @@ export default function UrlSelector() {
                         </select>
                     </label>
                 </div>
-                <div className="form-control">
-                    <label className="input-group">
-                        <span>ID</span>
-                        <input className="input input-bordered" value={id} onChange={(event) => setId(event.target.value)} />
-                    </label>
-                </div>
-                <div className="form-control">
-                    <label className="input-group">
-                        <span>Comment</span>
-                        <input className="input input-bordered" value={comment} onChange={(event) => setComment(event.target.value)} />
-                    </label>
-                </div>
+                <ValidatedInput name="ID" value={id} updateValue={setId} validation={{ valid: true }} />
+                <ValidatedInput name="Comment" value={comment} updateValue={setComment} validation={isValidComment(comment)} />
             </div>
             {possibleParams.length > 0 && (
                 <div className="flex gap-2 flex-wrap mt-2 items-start">

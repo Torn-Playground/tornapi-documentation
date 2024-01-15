@@ -107,3 +107,9 @@ export function performValidations(param: Param, value: string | undefined, sele
         { valid: true },
     );
 }
+
+export function isValidComment(comment: string): ValidationResult {
+    if (!comment) return { valid: true };
+    if (comment.length > 10) return { valid: false, reason: "Comment must be 10 characters or less." };
+    return { valid: true };
+}
