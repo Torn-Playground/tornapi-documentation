@@ -1,4 +1,5 @@
 import { ReactElement, ReactNode } from "react";
+import { ValidationFunction } from "@/api-schema/validations";
 
 export type Section = {
     selections: Array<Selection>;
@@ -63,6 +64,7 @@ export interface Param {
     options?: {
         values: string[];
     };
+    validations: ValidationFunction[];
 }
 
 export type Structure = {

@@ -30,3 +30,5 @@ export type ParamInput = {
     param: string;
     value: string;
 };
+
+export type SelectedParamMap = { [key: string]: string };

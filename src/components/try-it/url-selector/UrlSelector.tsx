@@ -3,9 +3,44 @@
 import { useEffect, useState } from "react";
 import { getPossibleParams, schema } from "@/api-schema/data";
 import { Param, SectionType } from "@/api-schema/schema.types";
+import { performValidations, ValidationResult } from "@/api-schema/validations";
 import { CallActionType, useCalls, useCallsDispatch } from "@/components/try-it/CallContext";
 import SelectionSelector from "@/components/try-it/url-selector/SelectionSelector";
-import { createApiUrl, ParamInput } from "@/components/try-it/url-selector/url-utilities";
+import { createApiUrl, ParamInput, SelectedParamMap } from "@/components/try-it/url-selector/url-utilities";
+
+type ParameterInputProps = {
+    param: Param;
+    value: string;
+    updateValue: (value: string) => void;
+    selectedParams: SelectedParamMap;
+};
+
+function ParameterInput({ param, value, updateValue, selectedParams }: ParameterInputProps) {
+    const [validation, setValidation] = useState<ValidationResult>({ valid: true });
+
+    useEffect(() => {
+        const result = performValidations(param, value, selectedParams);
+
+        setValidation(result);
+    }, [param, value, selectedParams]);
+
+    return (
+        <div key={param.name} className="form-control">
+            <label className="input-group">
+                <span>{param.name}</span>
+                <input
+                    className={`input input-bordered ${!validation.valid ? "input-error" : ""} ${
+                        validation.valid && validation.warning ? "input-warning" : ""
+                    }`}
+                    value={value || ""}
+                    onChange={(event) => updateValue(event.target.value)}
+                />
+            </label>
+            {!validation.valid ? <span className="text-error">{validation.reason}</span> : null}
+            {validation.valid && validation.warning ? <span className="text-warning">{validation.warning}</span> : null}
+        </div>
+    );
+}
 
 export default function UrlSelector() {
     const state = useCalls();
@@ -15,7 +50,7 @@ export default function UrlSelector() {
     const [selections, setSelections] = useState<string[]>([]);
     const [id, setId] = useState<string>("");
     const [comment, setComment] = useState<string>("TornAPI");
-    const [selectedParams, setSelectedParams] = useState<{ [key: string]: string }>({});
+    const [selectedParams, setSelectedParams] = useState<SelectedParamMap>({});
 
     const [possibleParams, setPossibleParams] = useState<Param[]>([]);
 
@@ -63,23 +98,20 @@ export default function UrlSelector() {
                 </div>
             </div>
             {possibleParams.length > 0 && (
-                <div className="flex gap-2 flex-wrap mt-2">
+                <div className="flex gap-2 flex-wrap mt-2 items-start">
                     {possibleParams.map((param) => (
-                        <div key={param.name} className="form-control">
-                            <label className="input-group">
-                                <span>{param.name}</span>
-                                <input
-                                    className="input input-bordered"
-                                    value={selectedParams[param.name]}
-                                    onChange={(event) =>
-                                        setSelectedParams((p) => ({
-                                            ...p,
-                                            [param.name]: event.target.value,
-                                        }))
-                                    }
-                                />
-                            </label>
-                        </div>
+                        <ParameterInput
+                            key={param.name}
+                            param={param}
+                            value={selectedParams[param.name]}
+                            updateValue={(value) =>
+                                setSelectedParams((p) => ({
+                                    ...p,
+                                    [param.name]: value,
+                                }))
+                            }
+                            selectedParams={selectedParams}
+                        />
                     ))}
                 </div>
             )}
