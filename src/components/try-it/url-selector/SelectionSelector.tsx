@@ -1,3 +1,4 @@
+import { useSearchParams } from "next/navigation";
 import { MouseEvent, useEffect, useState } from "react";
 import { schema } from "@/api-schema/data";
 import { SectionType } from "@/api-schema/schema.types";
@@ -8,6 +9,8 @@ type SelectionSelectorProps = {
 };
 
 export default function SelectionSelector({ onSelectionsChange, section }: SelectionSelectorProps) {
+    const searchParams = useSearchParams();
+
     const [possibleSelections, setPossibleSelections] = useState<string[]>([]);
     const [selectedSelections, setSelectedSelections] = useState<string[]>([]);
 
@@ -16,6 +19,15 @@ export default function SelectionSelector({ onSelectionsChange, section }: Selec
         setSelectedSelections([]);
         onSelectionsChange([]);
     }, [section, onSelectionsChange]);
+
+    useEffect(() => {
+        const querySelections = searchParams.get("selections");
+        if (querySelections) {
+            const queryS = querySelections.split(",");
+            setSelectedSelections(queryS);
+            onSelectionsChange(queryS);
+        }
+    }, [searchParams, onSelectionsChange]);
 
     const selectSelection = (event: MouseEvent<HTMLSpanElement>) => {
         const selection = event.currentTarget.dataset.selection!;

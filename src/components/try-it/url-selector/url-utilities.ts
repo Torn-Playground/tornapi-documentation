@@ -26,6 +26,22 @@ export function createApiUrl(key: string, section: SectionType | "", id: string,
     return decodeURIComponent(url.toString());
 }
 
+export function createShareUrl(section: SectionType | "", id: string, selections: string[], comment: string, params: ParamInput[]): string {
+    if (!hasValidParts("DUMMY", section, selections)) {
+        return "";
+    }
+
+    const url = new URL(`${location.origin}/try-it`);
+    const { searchParams } = url;
+    searchParams.append("section", section);
+    if (id) searchParams.append("id", id);
+    if (selections.length > 0) searchParams.append("selections", selections.join(","));
+    params.forEach((p) => searchParams.append(p.param, p.value));
+    if (comment !== "") searchParams.append("comment", comment);
+
+    return decodeURIComponent(url.toString());
+}
+
 export type ParamInput = {
     param: string;
     value: string;
