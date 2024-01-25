@@ -2,6 +2,7 @@
 
 import { Integer } from "@/api-schema/common-types";
 import { fromStructure, Param, Schema, Selection, Structure } from "@/api-schema/schema.types";
+import { conditionalRequired, isValidTime, onlySingleValue, withMaximumListLength } from "@/api-schema/validations";
 
 const personalStatsStructure: Structure = {
     id: "personal_stats",
@@ -384,10 +385,12 @@ const schema: Schema = {
 const timestampParam: Param = {
     name: "timestamp",
     description: "Specify which date (in epoch seconds) to get the stats from. Older dates might get combined and return data from another date.",
+    validations: [isValidTime, onlySingleValue],
 };
 const statParam: Param = {
     name: "stat",
     description: "REQUIRED when using timestamp. Which stats you want to see. Uses the keys returned in this call.",
+    validations: [conditionalRequired("timestamp", "Required when providing a timestamp."), withMaximumListLength(10)],
 };
 
 const PersonalStatsSelection: Selection = {

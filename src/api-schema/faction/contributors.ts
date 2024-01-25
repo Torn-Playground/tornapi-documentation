@@ -1,5 +1,6 @@
 import { Integer, NumberBoolean } from "@/api-schema/common-types";
 import { fromStructure, Param, Schema, Selection, Structure } from "@/api-schema/schema.types";
+import { onlySingleValue, requiredParam } from "@/api-schema/validations";
 
 const memberContributorStructure: Structure = {
     id: "member_contributor",
@@ -36,6 +37,7 @@ const schema: Schema = {
 const statParam: Param = {
     name: "stat",
     description: "REQUIRED. Which stat you want to see the contributors for. Uses the keys from the faction/stats selection.",
+    validations: [requiredParam, onlySingleValue],
 };
 
 const ContributorsSelection: Selection = {
