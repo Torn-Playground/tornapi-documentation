@@ -1,6 +1,7 @@
 import { TIME_TO } from "@/api-schema/common-params";
 import { EpochSeconds, Integer, KeyValueMap, String } from "@/api-schema/common-types";
 import { fromStructure, Param, Schema, Selection, Structure } from "@/api-schema/schema.types";
+import { isNumberList, isValidTime, onlySingleValue, withMaximumListLength } from "@/api-schema/validations";
 
 const logStructure: Structure = {
     id: "log",
@@ -31,14 +32,17 @@ const TIME_FROM_LOG: Param = {
     name: "from",
     description:
         "Limits results to have their timestamp after or on this timestamp. Unlike other selections, here it won't give the oldest 100 when including this parameter.",
+    validations: [isValidTime, onlySingleValue],
 };
 const FILTER_TYPE: Param = {
     name: "log",
     description: "Filter based on the log types. Possible values are available in torn/logtypes. Supports up to 10 values, comma-seperated.",
+    validations: [isNumberList, withMaximumListLength(10)],
 };
 const FILTER_CATEGORY: Param = {
     name: "cat",
     description: "Filter based on the log categories. Possible values are available in torn/logcategories. Supports up to 10 values, comma-seperated.",
+    validations: [isNumberList, withMaximumListLength(10)],
 };
 
 const LogSelection: Selection = {

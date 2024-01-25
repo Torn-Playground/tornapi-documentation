@@ -21,6 +21,7 @@ export default function CommonQueryParams() {
                         .
                     </>
                 ),
+                validations: [],
             },
             everywhere: true,
         },
@@ -28,6 +29,7 @@ export default function CommonQueryParams() {
             param: {
                 name: "comment",
                 description: "Message to show in the api usage log. Every character over 10 will not be shown.",
+                validations: [],
             },
             everywhere: true,
         },
@@ -36,6 +38,7 @@ export default function CommonQueryParams() {
                 name: "selections",
                 description:
                     "Select what selections to pull data from. Providing no value will fall back to the default selection, if there is one. Supports multiple values, comma separated.",
+                validations: [],
             },
             everywhere: true,
         },
