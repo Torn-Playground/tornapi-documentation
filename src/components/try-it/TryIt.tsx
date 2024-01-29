@@ -3,6 +3,7 @@
 import CallResponse from "@/components/try-it/call-response/CallResponse";
 import { CallProvider } from "@/components/try-it/CallContext";
 import KeyInput from "@/components/try-it/key-input/KeyInput";
+import ShareButton from "@/components/try-it/ShareButton";
 import TryItButton from "@/components/try-it/TryItButton";
 import UrlSelector from "@/components/try-it/url-selector/UrlSelector";
 
@@ -16,7 +17,10 @@ export default function TryIt() {
                 <div className="divider" />
                 <UrlSelector />
                 <div className="divider" />
-                <TryItButton />
+                <section className="space-x-2">
+                    <TryItButton />
+                    <ShareButton />
+                </section>
                 <div className="divider" />
                 <CallResponse />
             </div>

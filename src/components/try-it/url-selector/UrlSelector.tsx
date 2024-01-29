@@ -1,12 +1,13 @@
 "use client";
 
+import { useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
 import { getPossibleParams, schema } from "@/api-schema/data";
 import { Param, SectionType } from "@/api-schema/schema.types";
 import { isValidComment, performValidations, ValidationResult } from "@/api-schema/validations";
 import { CallActionType, useCalls, useCallsDispatch } from "@/components/try-it/CallContext";
 import SelectionSelector from "@/components/try-it/url-selector/SelectionSelector";
-import { createApiUrl, ParamInput, SelectedParamMap } from "@/components/try-it/url-selector/url-utilities";
+import { createApiUrl, createShareUrl, ParamInput, SelectedParamMap } from "@/components/try-it/url-selector/url-utilities";
 
 type ParameterInputProps = {
     param: Param;
@@ -56,6 +57,7 @@ function ValidatedInput({ name, value, updateValue, validation }: AdditionalInpu
 export default function UrlSelector() {
     const state = useCalls();
     const dispatch = useCallsDispatch();
+    const searchParams = useSearchParams();
 
     const [section, setSection] = useState<SectionType | "">("");
     const [selections, setSelections] = useState<string[]>([]);
@@ -72,12 +74,30 @@ export default function UrlSelector() {
             .map(([param, value]) => ({ param, value }) as ParamInput);
 
         const url = createApiUrl(state.key, section, id, selections, comment, params);
+        const share = createShareUrl(section, id, selections, comment, params);
 
         dispatch({ type: CallActionType.SET_URL, url });
+        dispatch({ type: CallActionType.SET_SHARE, share });
     }, [state.key, dispatch, section, selections, id, selectedParams, possibleParams, comment]);
     useEffect(() => {
         setPossibleParams(getPossibleParams(section, selections));
+        console.log("DKK possible", section, selections, getPossibleParams(section, selections));
     }, [section, selections]);
+    useEffect(() => {
+        const querySection = searchParams.get("section") as SectionType | "" | null;
+        if (querySection) setSection(querySection);
+
+        const queryId = searchParams.get("id");
+        if (queryId) setId(queryId);
+
+        const queryComment = searchParams.get("comment");
+        if (queryComment) setComment(queryComment);
+
+        const otherParams = [...searchParams.entries()]
+            .filter(([key]) => !["section", "id", "selections", "comment"].includes(key))
+            .reduce((acc, [key, value]) => ({ ...acc, [key]: value }), {} as { [key: string]: string });
+        if (otherParams && Object.keys(otherParams).length > 0) setSelectedParams(otherParams);
+    }, [searchParams]);
 
     return (
         <section className="mt-3">

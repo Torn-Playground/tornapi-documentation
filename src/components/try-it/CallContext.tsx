@@ -4,12 +4,14 @@ import { CallResponse } from "@/components/try-it/try-it";
 type CallState = {
     key: string;
     url: string;
+    share: string;
     responses: CallResponse[];
 };
 
 const defaultState: CallState = {
     key: "",
     url: "",
+    share: "",
     responses: [],
 };
 
@@ -19,12 +21,14 @@ const CallDispatchContext = createContext<Dispatch<CallAction>>(() => {});
 export enum CallActionType {
     SET_KEY = "SET_KEY",
     SET_URL = "SET_URL",
+    SET_SHARE = "SET_SHARE",
     EXECUTE_CALL = "EXECUTE_CALL",
 }
 
 type CallAction =
     | { type: CallActionType.SET_KEY; key: string }
     | { type: CallActionType.SET_URL; url: string }
+    | { type: CallActionType.SET_SHARE; share: string }
     | { type: CallActionType.EXECUTE_CALL; url: string; data: any; timestamp: number };
 
 function callsReducer(state: CallState, action: CallAction): CallState {
@@ -39,6 +43,12 @@ function callsReducer(state: CallState, action: CallAction): CallState {
             return {
                 ...state,
                 url: action.url,
+            };
+        }
+        case CallActionType.SET_SHARE: {
+            return {
+                ...state,
+                share: action.share,
             };
         }
         case CallActionType.EXECUTE_CALL: {
