@@ -1,6 +1,9 @@
 "use client";
 
 import { useCalls } from "@/components/try-it/CallContext";
+import CopyButton from "@/components/try-it/copy-button/CopyButton";
+
+import ReactJson from '@microlink/react-json-view'
 
 export default function CallResponse() {
     const calls = useCalls();
@@ -20,7 +23,8 @@ export default function CallResponse() {
                                     {response.url}
                                 </label>
                                 <div className="collapse-content prose max-w-none">
-                                    <pre>{JSON.stringify(response.data, null, 4)}</pre>
+                                    <CopyButton></CopyButton>
+                                    <ReactJson src={response.data} name={false} theme="ocean" iconStyle="circle" />
                                 </div>
                             </div>
                         ))}
