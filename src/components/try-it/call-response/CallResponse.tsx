@@ -1,12 +1,15 @@
 "use client";
 
+import { useTheme } from "next-themes";
 import { useCalls } from "@/components/try-it/CallContext";
 import CopyButton from "@/components/try-it/copy-button/CopyButton";
+import { THEME_DARK, THEME_LIGHT } from "@/components/global/theme-selector/theme-utilities";
 
 import ReactJson from '@microlink/react-json-view'
 
 export default function CallResponse() {
     const calls = useCalls();
+    const { theme, setTheme } = useTheme();
 
     return (
         <div>
@@ -24,7 +27,7 @@ export default function CallResponse() {
                                 </label>
                                 <div className="collapse-content prose max-w-none">
                                     <CopyButton></CopyButton>
-                                    <ReactJson src={response.data} name={false} theme="ocean" iconStyle="circle" />
+                                    <ReactJson src={response.data} name={false} theme={theme === THEME_DARK ? "ocean" : "monokai"} iconStyle="circle" />
                                 </div>
                             </div>
                         ))}
