@@ -1,14 +1,17 @@
 "use client";
 
+import JsonView from "@uiw/react-json-view";
+import { githubLightTheme } from "@uiw/react-json-view/githubLight";
+import { nordTheme } from "@uiw/react-json-view/nord";
+import { TriangleSolidArrow } from "@uiw/react-json-view/triangle-solid-arrow";
+
 import { useTheme } from "next-themes";
+import { THEME_DARK, THEME_LIGHT } from "@/components/global/theme-selector/theme-utilities";
 import { useCalls } from "@/components/try-it/CallContext";
 import CopyButton from "@/components/try-it/copy-button/CopyButton";
-import { THEME_DARK, THEME_LIGHT } from "@/components/global/theme-selector/theme-utilities";
 
-import JsonView from '@uiw/react-json-view';
-import { nordTheme } from '@uiw/react-json-view/nord';
-import { githubLightTheme } from '@uiw/react-json-view/githubLight';
-import { TriangleSolidArrow } from '@uiw/react-json-view/triangle-solid-arrow';
+nordTheme.fontSize = "1rem";
+githubLightTheme.fontSize = "1rem";
 
 export default function CallResponse() {
     const calls = useCalls();
@@ -29,8 +32,8 @@ export default function CallResponse() {
                                     {response.url}
                                 </label>
                                 <div className="collapse-content prose max-w-none text-l">
-                                    <CopyButton></CopyButton>
-                                    <JsonView value={response.data} style={{...(theme === THEME_DARK ? nordTheme : githubLightTheme), ...{ "font-size": "1rem" }}} indentWidth={25} >
+                                    <CopyButton url={response.url} />
+                                    <JsonView value={response.data} style={theme === THEME_DARK ? nordTheme : githubLightTheme} indentWidth={25}>
                                         <JsonView.Arrow>
                                             <TriangleSolidArrow />
                                         </JsonView.Arrow>
