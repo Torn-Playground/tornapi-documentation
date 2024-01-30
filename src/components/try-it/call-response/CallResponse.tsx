@@ -33,7 +33,7 @@ export default function CallResponse() {
                                 </label>
                                 <div className="collapse-content prose max-w-none text-l">
                                     <CopyButton url={response.url} />
-                                    <JsonView value={response.data} style={theme === THEME_DARK ? nordTheme : githubLightTheme} indentWidth={25}>
+                                    <JsonView value={response.data} style={theme === THEME_DARK ? nordTheme : githubLightTheme} indentWidth={25} displayDataTypes={false}>
                                         <JsonView.Arrow>
                                             <TriangleSolidArrow />
                                         </JsonView.Arrow>
