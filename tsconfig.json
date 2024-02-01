@@ -21,10 +21,8 @@
         ],
         "baseUrl": ".",
         "paths": {
-            "@/*": ["./src/*"],
-            "@uiw/react-json-view/githubLight": ["node_modules/@uiw/react-json-view/cjs/theme/github.light.d.ts"],
-            "@uiw/react-json-view/nord": ["node_modules/@uiw/react-json-view/cjs/theme/nord.d.ts"],
-        },
+            "@/*": ["./src/*"]
+        }
     },
     "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "*.cjs"],
     "exclude": ["node_modules"]
