@@ -16,8 +16,12 @@ export default function CallResponse() {
                         .map((response) => (
                             <div key={response.timestamp} className="collapse collapse-arrow odd:bg-base-300 even:bg-base-200">
                                 <input type="checkbox" id={`response-${response.timestamp}`} defaultChecked />
-                                <label className="collapse-title text-xl font-medium break-all break-words" htmlFor={`response-${response.timestamp}`}>
+                                <label
+                                    className="collapse-title text-xl font-medium break-all break-words flex items-center gap-1.5"
+                                    htmlFor={`response-${response.timestamp}`}
+                                >
                                     {response.url}
+                                    <CopyRequestUrl url={response.url} />
                                 </label>
                                 <div className="collapse-content prose max-w-none">
                                     <pre>{JSON.stringify(response.data, null, 4)}</pre>
@@ -29,5 +33,21 @@ export default function CallResponse() {
                 "You haven't made any calls yet."
             )}
         </div>
+    );
+}
+
+type CopyRequestUrlProps = {
+    url: string;
+};
+
+function CopyRequestUrl({ url }: CopyRequestUrlProps) {
+    function copyRequestURL() {
+        void navigator.clipboard.writeText(url);
+    }
+
+    return (
+        <button className="btn btn-accent btn-xs" onClick={copyRequestURL} type="button">
+            Copy URL
+        </button>
     );
 }
