@@ -46,7 +46,7 @@ function CopyRequestUrl({ url }: CopyRequestUrlProps) {
     }
 
     return (
-        <button className="btn btn-accent btn-xs" onClick={copyRequestURL} type="button">
+        <button className="btn btn-outline btn-xs" onClick={copyRequestURL} type="button">
             Copy URL
         </button>
     );
