@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { SpinningCircles } from "react-loading-icons";
+import { TailSpin } from "react-loading-icons";
 import { CallActionType, useCalls, useCallsDispatch } from "@/components/try-it/CallContext";
 
 export default function TryItButton() {
@@ -21,7 +21,7 @@ export default function TryItButton() {
 
     return (
         <button className="btn" disabled={!calls.url || executing} onClick={executeCall} type="button">
-            {executing ? <SpinningCircles width={24} height={24} fill="currentColor" /> : "Try It"}
+            {executing ? <TailSpin width={12} height={12} fill="currentColor" /> : "Try It"}
         </button>
     );
 }
