@@ -16,18 +16,18 @@ jobs:
             packages: read
 
         steps:
-            -   name: Checkout code
-                uses: actions/checkout@v3
-                with:
-                    fetch-depth: 0
-                    ref: ${{ github.head_ref }}
-                    ssh-key: ${{secrets.SECRET_KEY}}
+            - name: Checkout code
+              uses: actions/checkout@v3
+              with:
+                  fetch-depth: 0
+                  ref: ${{ github.head_ref }}
+                  ssh-key: ${{secrets.SECRET_KEY}}
 
-            -   name: Prettify code
-                uses: creyD/prettier_action@v4.3
-                with:
-                    prettier_options: --write **/*.{ts,tsx}
-                    same_commit: true
+            - name: Prettify code
+              uses: creyD/prettier_action@v4.3
+              with:
+                  prettier_options: --write **/*.{ts,tsx}
+                  same_commit: true
 
     run-lint:
         needs: prettier
@@ -40,21 +40,21 @@ jobs:
             statuses: write
 
         steps:
-            -   name: Checkout code
-                uses: actions/checkout@v3
-                with:
-                    fetch-depth: 0
+            - name: Checkout code
+              uses: actions/checkout@v3
+              with:
+                  fetch-depth: 0
 
-            -   name: Installing dependencies
-                run: npm i --ignore-scripts
+            - name: Installing dependencies
+              run: npm i --ignore-scripts
 
-            -   name: Lint Code Base
-                uses: super-linter/super-linter/slim@v5
-                env:
-                    VALIDATE_ALL_CODEBASE: false
-                    DEFAULT_BRANCH: main
-                    GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-                    LINTER_RULES_PATH: .
-                    TYPESCRIPT_DEFAULT_STYLE: prettier
-                    TYPESCRIPT_ES_CONFIG_FILE: .eslintrc.cjs
-                    VALIDATE_TYPESCRIPT_STANDARD: false
+            - name: Lint Code Base
+              uses: super-linter/super-linter/slim@v5
+              env:
+                  VALIDATE_ALL_CODEBASE: false
+                  DEFAULT_BRANCH: main
+                  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+                  LINTER_RULES_PATH: .
+                  TYPESCRIPT_DEFAULT_STYLE: prettier
+                  TYPESCRIPT_ES_CONFIG_FILE: .eslintrc.cjs
+                  VALIDATE_TYPESCRIPT_STANDARD: false
