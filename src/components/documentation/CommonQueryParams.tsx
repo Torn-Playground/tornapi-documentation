@@ -2,13 +2,13 @@ import { LIMIT, SORT, TIME_FROM, TIME_TO } from "@/api-schema/common-params";
 import { Param } from "@/api-schema/schema.types";
 import ExtendedLink from "@/components/global/extended-link/ExtendedLink";
 
-type CommonParam = {
+interface CommonParam {
     param: Param;
     everywhere?: boolean;
-};
+}
 
 export default function CommonQueryParams() {
-    const params: Array<CommonParam> = [
+    const params: CommonParam[] = [
         {
             param: {
                 name: "key",

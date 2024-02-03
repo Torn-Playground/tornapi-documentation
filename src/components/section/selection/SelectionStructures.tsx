@@ -4,7 +4,7 @@ import SelectionEnum from "@/components/section/selection/SelectionEnum";
 import SelectionStructure from "@/components/section/selection/SelectionStructure";
 
 interface SelectionStructuresProps {
-    structures: Array<Structure | StructureEnum>;
+    structures: (Structure | StructureEnum)[];
 }
 
 export default function SelectionStructures({ structures }: SelectionStructuresProps) {

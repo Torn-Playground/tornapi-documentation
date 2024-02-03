@@ -1,7 +1,7 @@
 import { Param } from "@/api-schema/schema.types";
 
 interface QueryParamsProps {
-    params?: Array<Param>;
+    params?: Param[];
 }
 
 export default function QueryParams({ params }: QueryParamsProps) {

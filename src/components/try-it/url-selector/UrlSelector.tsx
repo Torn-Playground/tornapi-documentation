@@ -9,12 +9,12 @@ import { CallActionType, useCalls, useCallsDispatch } from "@/components/try-it/
 import SelectionSelector from "@/components/try-it/url-selector/SelectionSelector";
 import { createApiUrl, createShareUrl, ParamInput, SelectedParamMap } from "@/components/try-it/url-selector/url-utilities";
 
-type ParameterInputProps = {
+interface ParameterInputProps {
     param: Param;
     value: string;
     updateValue: (value: string) => void;
     selectedParams: SelectedParamMap;
-};
+}
 
 function ParameterInput({ param, value, updateValue, selectedParams }: ParameterInputProps) {
     const [validation, setValidation] = useState<ValidationResult>({ valid: true });
@@ -28,12 +28,12 @@ function ParameterInput({ param, value, updateValue, selectedParams }: Parameter
     return <ValidatedInput name={param.name} value={value || ""} updateValue={updateValue} validation={validation} />;
 }
 
-type AdditionalInputProps = {
+interface AdditionalInputProps {
     name: string;
     value: string;
     updateValue: (comment: string) => void;
     validation: ValidationResult;
-};
+}
 
 function ValidatedInput({ name, value, updateValue, validation }: AdditionalInputProps) {
     return (
@@ -94,7 +94,7 @@ export default function UrlSelector() {
 
         const otherParams = [...searchParams.entries()]
             .filter(([key]) => !["section", "id", "selections", "comment"].includes(key))
-            .reduce((acc, [key, value]) => ({ ...acc, [key]: value }), {} as { [key: string]: string });
+            .reduce<SelectedParamMap>((acc, [key, value]) => ({ ...acc, [key]: value }), {});
         if (otherParams && Object.keys(otherParams).length > 0) setSelectedParams(otherParams);
     }, [searchParams]);
 

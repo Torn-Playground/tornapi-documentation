@@ -1,13 +1,13 @@
 import { NextResponse } from "next/server";
 
-type CorsOptions = {
+interface CorsOptions {
     allowedMethods: string[];
     allowedOrigins: string[];
     allowedHeaders: string[];
     exposedHeaders: string[];
     maxAge: number;
     credentials: boolean;
-};
+}
 
 const CORS_OPTIONS: CorsOptions = {
     allowedMethods: ["GET", "HEAD", "POST"],

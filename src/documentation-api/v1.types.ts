@@ -1,21 +1,23 @@
 import { Schema } from "@/api-schema/schema.types";
 
-export type SectionsResponse = { sections: string[] };
+export interface SectionsResponse {
+    sections: string[];
+}
 
-export type SchemaParams = { section: string };
+export interface SchemaParams {
+    section: string;
+}
 
-export type SchemaDto = {
-    [id: string]: SchemaFieldDto | FieldStructureDto;
-};
+export type SchemaDto = Record<string, SchemaFieldDto | FieldStructureDto>;
 
-export type SchemaFieldDto = {
+export interface SchemaFieldDto {
     type: string;
     description?: string;
     extra?: string;
     nullable?: true;
-};
+}
 
-export type FieldStructureDto = {
+export interface FieldStructureDto {
     structure: {
         id: string;
         name: string;
@@ -25,33 +27,33 @@ export type FieldStructureDto = {
     nullable: boolean;
     array: boolean;
     description?: string;
-};
+}
 
-export type StructureDto = {
+export interface StructureDto {
     id: string;
     name: string;
     schema: Schema;
-};
+}
 
-export type StructureEnumDto = {
+export interface StructureEnumDto {
     id: string;
     name: string;
     values: unknown[];
     type: string;
     incomplete?: { missing: string };
-};
+}
 
 export type IdDto = { optional: boolean } | { required: true };
 
-export type ParamDto = {
+export interface ParamDto {
     name: string;
     description?: string;
     options?: {
         values: string[];
     };
-};
+}
 
-export type SelectionDto = {
+export interface SelectionDto {
     name: string;
     description: string;
     warning?: string;
@@ -60,12 +62,12 @@ export type SelectionDto = {
     structures: (StructureDto | StructureEnumDto)[];
     id: IdDto;
     params?: ParamDto[];
-};
+}
 
-export type SectionDto = {
+export interface SectionDto {
     selections: SelectionDto[];
     defaultSelection: string | null;
     idDescription: string | null;
-};
+}
 
 export type SchemaResponse = SectionDto | { error: string };

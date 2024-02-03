@@ -1,14 +1,23 @@
 import { getActiveSelections } from "@/api-schema/data";
 import { isField, isFieldStructure, Schema } from "@/api-schema/schema.types";
 
-export type SearchSection = { name: string };
-export type SearchSelection = { name: string };
-export type SearchField = { selection: string; structure: string | undefined; name: string; keywords: string[] };
-export type SearchResult = {
+export interface SearchSection {
+    name: string;
+}
+export interface SearchSelection {
+    name: string;
+}
+export interface SearchField {
+    selection: string;
+    structure: string | undefined;
+    name: string;
+    keywords: string[];
+}
+export interface SearchResult {
     section: SearchSection;
     selections: SearchSelection[];
     fields: SearchField[];
-};
+}
 
 export function search(term: string): SearchResult[] {
     if (!term) {

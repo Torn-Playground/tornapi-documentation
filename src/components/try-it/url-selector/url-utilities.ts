@@ -46,9 +46,9 @@ function extendLink(url: URL, selections: string[], params: ParamInput[], commen
     return decodeURIComponent(url.toString());
 }
 
-export type ParamInput = {
+export interface ParamInput {
     param: string;
     value: string;
-};
+}
 
-export type SelectedParamMap = { [key: string]: string };
+export type SelectedParamMap = Record<string, string>;

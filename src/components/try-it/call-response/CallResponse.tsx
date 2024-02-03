@@ -39,9 +39,9 @@ export default function CallResponse() {
     );
 }
 
-type CopyRequestUrlProps = {
+interface CopyRequestUrlProps {
     url: string;
-};
+}
 
 function CopyRequestUrl({ url }: CopyRequestUrlProps) {
     function copyRequestURL() {
@@ -55,9 +55,9 @@ function CopyRequestUrl({ url }: CopyRequestUrlProps) {
     );
 }
 
-type CopyResponseButtonProps = {
+interface CopyResponseButtonProps {
     json: unknown;
-};
+}
 
 function CopyResponseButton({ json }: CopyResponseButtonProps) {
     const [copied, setCopied] = useState(false);
