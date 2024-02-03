@@ -36,7 +36,7 @@ export type StructureDto = {
 export type StructureEnumDto = {
     id: string;
     name: string;
-    values: any[];
+    values: unknown[];
     type: string;
     incomplete?: { missing: string };
 };

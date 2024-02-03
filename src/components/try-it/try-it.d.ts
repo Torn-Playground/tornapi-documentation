@@ -1,6 +1,6 @@
 export type CallResponse = {
     url: string;
-    data: any;
+    data: unknown;
     timestamp: number;
 };
 

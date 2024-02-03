@@ -29,7 +29,7 @@ type CallAction =
     | { type: CallActionType.SET_KEY; key: string }
     | { type: CallActionType.SET_URL; url: string }
     | { type: CallActionType.SET_SHARE; share: string }
-    | { type: CallActionType.EXECUTE_CALL; url: string; data: any; timestamp: number };
+    | { type: CallActionType.EXECUTE_CALL; url: string; data: unknown; timestamp: number };
 
 function callsReducer(state: CallState, action: CallAction): CallState {
     switch (action.type) {

@@ -81,7 +81,6 @@ export default function UrlSelector() {
     }, [state.key, dispatch, section, selections, id, selectedParams, possibleParams, comment]);
     useEffect(() => {
         setPossibleParams(getPossibleParams(section, selections));
-        console.log("DKK possible", section, selections, getPossibleParams(section, selections));
     }, [section, selections]);
     useEffect(() => {
         const querySection = searchParams.get("section") as SectionType | "" | null;
@@ -105,7 +104,11 @@ export default function UrlSelector() {
                 <div className="form-control">
                     <label className="input-group">
                         <span>Section</span>
-                        <select className="select select-bordered capitalize" value={section} onChange={(event) => setSection(event.target.value as any)}>
+                        <select
+                            className="select select-bordered capitalize"
+                            value={section}
+                            onChange={(event) => setSection(event.target.value as "" | SectionType)}
+                        >
                             <option disabled value="" />
                             {Object.keys(schema).map((s) => (
                                 <option key={s} value={s}>

@@ -2,7 +2,7 @@ import Tooltip from "@/components/global/tooltip/Tooltip";
 
 interface SelectionEnumProps {
     type: string;
-    values: Array<any>;
+    values: string[] | number[];
     incomplete?: { missing: string };
 }
 

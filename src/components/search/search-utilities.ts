@@ -15,7 +15,7 @@ export function search(term: string): SearchResult[] {
         return [];
     }
 
-    const results = getActiveSelections()
+    return getActiveSelections()
         .map<SearchResult>(([sectionName, section]) => {
             const selections = section.selections
                 .filter((selection) => selection.name.toLowerCase().includes(term.toLowerCase()))
@@ -37,10 +37,6 @@ export function search(term: string): SearchResult[] {
             };
         })
         .filter((section) => section.selections.length > 0 || section.fields.length > 0);
-
-    console.log(results);
-
-    return results;
 }
 
 function extractFields(selection: string, schema: Schema, parentStructure: string | undefined = undefined): SearchField[] {
