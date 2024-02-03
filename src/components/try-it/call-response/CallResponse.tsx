@@ -5,6 +5,8 @@ import { useState, useEffect } from "react";
 import { THEME_DARK, THEME_LIGHT } from "@/components/global/theme-selector/theme-utilities";
 import { useCalls } from "@/components/try-it/CallContext";
 
+import CopyIcon from "@/components/global/icons/CopyIcon";
+
 export default function CallResponse() {
     const calls = useCalls();
 
@@ -76,21 +78,13 @@ function CopyResponseButton({ json }: CopyResponseButtonProps) {
 
     return (
         <button
-            className="absolute rounded-lg right-8 top-20 btn btn-ghost"
+            className="absolute right-8 top-20 btn btn-ghost btn-circle"
             onClick={copyResponse}
             type="button"
         >
             {copied
             ? "✔ Copied"
-            : <svg
-                width="24px"
-                height="24px"
-                fill={theme === THEME_DARK ? "#fff" : "#000"}
-                viewBox="0 0 1024 1024"
-            >
-                <path d="M736 768H160V128h576z m-512-64h448V192H224z" />
-                <path d="M864 896H336V736h64v96h400V320h-112v-64h176v640z" />
-            </svg>}
+            : <CopyIcon className="copy-response" size={24} />}
         </button>
     );
 }
