@@ -13,7 +13,7 @@ export interface Selection {
     warning?: string;
     access: KeyAccess;
     schema: Schema;
-    structures: Array<Structure | StructureEnum<any>>;
+    structures: Array<Structure | StructureEnum>;
     id: { optional: boolean } | { required: true };
     params?: Array<Param>;
 }
@@ -73,17 +73,17 @@ export type Structure = {
     schema: Schema;
 };
 
-export type StructureEnum<T> = {
+export type StructureEnum = {
     id: string;
     name: string;
-    values: Array<T>;
+    values: string[] | number[];
     type: string;
     incomplete?: { missing: string };
 };
 
 export type StructureOptions = { nullable?: boolean; extra?: string; array?: boolean; description?: string };
 
-export function fromStructure(structure: Structure | StructureEnum<any>, options: StructureOptions = {}): FieldStructure {
+export function fromStructure(structure: Structure | StructureEnum, options: StructureOptions = {}): FieldStructure {
     let type: StructureType;
     let schema: Schema | undefined;
     if ("schema" in structure) {

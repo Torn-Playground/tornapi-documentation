@@ -1,7 +1,7 @@
 import { ArrayString, EpochSeconds, Integer, String } from "@/api-schema/common-types";
 import { fromStructure, Schema, Structure, StructureEnum } from "@/api-schema/schema.types";
 
-const reportTypeEnum: StructureEnum<string> = {
+const reportTypeEnum: StructureEnum = {
     id: "report_type",
     name: "Report Type",
     values: ["anonymousbounties", "stats", "money", "friendorfoe", "mostwanted", "references", "truelevel", "investment"],
@@ -122,7 +122,7 @@ const reportStructure: Structure = {
         timestamp: { type: EpochSeconds },
     },
 };
-export const reportStructures: Array<Structure | StructureEnum<any>> = [
+export const reportStructures: Array<Structure | StructureEnum> = [
     referenceStructure,
     reportStructure,
     reportDataStructure,

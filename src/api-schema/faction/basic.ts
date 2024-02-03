@@ -55,7 +55,7 @@ const peaceStructure: Structure = {
         "<faction id>": { type: EpochSeconds },
     },
 };
-const rankEnum: StructureEnum<string> = {
+const rankEnum: StructureEnum = {
     id: "rank",
     name: "Rank",
     values: ["Unranked", "Bronze", "Silver", "Gold", "Platinum", "Diamond"],

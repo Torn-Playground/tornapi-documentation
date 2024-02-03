@@ -1,7 +1,7 @@
 import { Integer, IntegerAndEmptyString, String } from "@/api-schema/common-types";
 import { fromStructure, Schema, Selection, Structure, StructureEnum } from "@/api-schema/schema.types";
 
-const specialAbilityEnum: StructureEnum<string> = {
+const specialAbilityEnum: StructureEnum = {
     id: "special_ability",
     name: "Special Ability",
     values: ["None", "Cleaner", "Manager", "Secretary", "Trainer", "Marketer"],

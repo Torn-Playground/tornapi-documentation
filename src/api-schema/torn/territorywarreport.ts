@@ -1,7 +1,7 @@
 import { EpochSeconds, Integer, Number, String } from "@/api-schema/common-types";
 import { fromStructure, Schema, Selection, Structure, StructureEnum } from "@/api-schema/schema.types";
 
-const factionTypeEnum: StructureEnum<string> = {
+const factionTypeEnum: StructureEnum = {
     id: "faction_type",
     name: "Faction Type",
     values: ["aggressor", "defender"],
@@ -46,7 +46,7 @@ const factionsStructure: Structure = {
         "<faction id 2>": fromStructure(factionStructure),
     },
 };
-const warResultEnum: StructureEnum<string> = {
+const warResultEnum: StructureEnum = {
     id: "war_result",
     name: "War Result",
     values: ["success_assault", "fail_assault", "end_with_peace_treaty"],

@@ -19,7 +19,7 @@ const membersStructure: Structure = {
         "<user id>": fromStructure(userStructure),
     },
 };
-const raidTypeEnum: StructureEnum<string> = {
+const raidTypeEnum: StructureEnum = {
     id: "raid_type",
     name: "Raid Type",
     values: ["aggressor", "defender"],

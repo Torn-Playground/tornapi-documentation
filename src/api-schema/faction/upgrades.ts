@@ -22,7 +22,7 @@ const upgradesStructure: Structure = {
     name: "Upgrades",
     schema: { "<id>": fromStructure(upgradeStructure) },
 };
-const stateEnum: StructureEnum<string> = {
+const stateEnum: StructureEnum = {
     id: "state",
     name: "State",
     values: ["peace", "war"],

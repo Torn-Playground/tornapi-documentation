@@ -1,7 +1,7 @@
 import { Integer, Number, String } from "@/api-schema/common-types";
 import { fromStructure, Schema, Selection, Structure, StructureEnum } from "@/api-schema/schema.types";
 
-const rarityEnum: StructureEnum<string> = {
+const rarityEnum: StructureEnum = {
     id: "rarity",
     name: "Rarity",
     values: ["None", "Yellow", "Orange", "Red"],

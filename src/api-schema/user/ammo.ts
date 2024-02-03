@@ -1,7 +1,7 @@
 import { Integer, NumberBoolean, String } from "@/api-schema/common-types";
 import { fromStructure, Schema, Selection, Structure, StructureEnum } from "@/api-schema/schema.types";
 
-const ammoSizeEnum: StructureEnum<string> = {
+const ammoSizeEnum: StructureEnum = {
     id: "ammo_size",
     name: "Ammo Size",
     values: [
@@ -27,7 +27,7 @@ const ammoSizeEnum: StructureEnum<string> = {
     ],
     type: String,
 };
-const ammoTypeEnum: StructureEnum<string> = {
+const ammoTypeEnum: StructureEnum = {
     id: "ammo_type",
     name: "Ammo Type",
     values: ["Standard", "Incendiary", "Tracer", "Piercing", "Hollow Point"],

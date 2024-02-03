@@ -1,7 +1,7 @@
 import { EpochSeconds, Integer, String } from "@/api-schema/common-types";
 import { fromStructure, Schema, Selection, Structure, StructureEnum } from "@/api-schema/schema.types";
 
-const travelMethodStructure: StructureEnum<string> = {
+const travelMethodStructure: StructureEnum = {
     id: "travel_method",
     name: "Travel Method",
     values: ["Standard", "Airstrip", "Private", "Business"],

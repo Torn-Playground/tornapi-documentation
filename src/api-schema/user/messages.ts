@@ -2,7 +2,7 @@ import { LIMIT } from "@/api-schema/common-params";
 import { EpochSeconds, Integer, NumberBoolean, String } from "@/api-schema/common-types";
 import { fromStructure, Schema, Selection, Structure, StructureEnum } from "@/api-schema/schema.types";
 
-const messageTypeStructure: StructureEnum<string> = {
+const messageTypeStructure: StructureEnum = {
     id: "message_type",
     name: "Message Type",
     values: ["User message", "Faction newsletter", "Company newsletter"],
