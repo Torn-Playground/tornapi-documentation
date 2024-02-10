@@ -1,6 +1,6 @@
 import { ErrorCode } from "@/api-schema/schema.types";
 
-const errorCodes: Array<ErrorCode> = [
+const errorCodes: ErrorCode[] = [
     {
         code: 0,
         message: "Unknown error",

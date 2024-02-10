@@ -122,7 +122,7 @@ const reportStructure: Structure = {
         timestamp: { type: EpochSeconds },
     },
 };
-export const reportStructures: Array<Structure | StructureEnum> = [
+export const reportStructures: (Structure | StructureEnum)[] = [
     referenceStructure,
     reportStructure,
     reportDataStructure,

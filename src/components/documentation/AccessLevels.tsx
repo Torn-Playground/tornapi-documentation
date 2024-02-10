@@ -2,7 +2,10 @@ import _ from "underscore";
 import { schema } from "@/api-schema/data";
 import { KeyAccess } from "@/api-schema/schema.types";
 
-type AccessSelection = { name: string; access: KeyAccess };
+interface AccessSelection {
+    name: string;
+    access: KeyAccess;
+}
 
 export default function AccessLevels() {
     const selections: AccessSelection[][] = Object.values(schema).map((section) =>

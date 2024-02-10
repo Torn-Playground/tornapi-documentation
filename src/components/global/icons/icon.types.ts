@@ -1,10 +1,22 @@
-type SizableIcon = { size: number };
-type ColoredIcon = { fill?: string };
-type ClassedIcon = { className?: string };
+interface SizableIcon {
+    size: number;
+}
+interface ColoredIcon {
+    fill?: string;
+}
+interface ClassedIcon {
+    className?: string;
+}
 
 export type DefaultIcon = SizableIcon & ColoredIcon & ClassedIcon;
 
-export type FilledIcon = { filled?: boolean };
-export type SolidIcon = { solid?: boolean };
+export interface FilledIcon {
+    filled?: boolean;
+}
+export interface SolidIcon {
+    solid?: boolean;
+}
 
-export type StrokeIcon = { stroke?: number };
+export interface StrokeIcon {
+    stroke?: number;
+}

@@ -3,10 +3,10 @@ import { MouseEvent, useEffect, useState } from "react";
 import { schema } from "@/api-schema/data";
 import { SectionType } from "@/api-schema/schema.types";
 
-type SelectionSelectorProps = {
+interface SelectionSelectorProps {
     section: SectionType;
     onSelectionsChange: (selections: string[]) => void;
-};
+}
 
 export default function SelectionSelector({ onSelectionsChange, section }: SelectionSelectorProps) {
     const searchParams = useSearchParams();

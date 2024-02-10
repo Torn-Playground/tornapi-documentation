@@ -1,6 +1,12 @@
 module.exports = {
     parserOptions: { project: true, tsconfigRootDir: __dirname },
-    extends: ["eslint:recommended", "plugin:@typescript-eslint/recommended-type-checked", "next/core-web-vitals", "prettier"],
+    extends: [
+        "eslint:recommended",
+        "plugin:@typescript-eslint/recommended-type-checked",
+        "plugin:@typescript-eslint/stylistic-type-checked",
+        "next/core-web-vitals",
+        "prettier",
+    ],
     rules: {
         "import/order": [
             "error",
