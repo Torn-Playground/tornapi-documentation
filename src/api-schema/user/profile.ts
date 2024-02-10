@@ -139,7 +139,7 @@ const schema: Schema = {
     honor: { type: Integer },
     gender: fromStructure(genderEnum),
     property: { type: String },
-    signup: { type: EpochSeconds },
+    signup: { type: "Date (yyyy-dd-MM HH:mm:ss)" },
     awards: { type: Integer },
     friends: { type: Integer },
     enemies: { type: Integer },
