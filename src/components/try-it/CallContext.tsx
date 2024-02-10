@@ -1,12 +1,12 @@
 import { createContext, Dispatch, PropsWithChildren, useContext, useEffect, useReducer } from "react";
 import { CallResponse } from "@/components/try-it/try-it";
 
-type CallState = {
+interface CallState {
     key: string;
     url: string;
     share: string;
     responses: CallResponse[];
-};
+}
 
 const defaultState: CallState = {
     key: "",
@@ -16,6 +16,7 @@ const defaultState: CallState = {
 };
 
 const CallContext = createContext<CallState>(defaultState);
+// eslint-disable-next-line @typescript-eslint/no-empty-function
 const CallDispatchContext = createContext<Dispatch<CallAction>>(() => {});
 
 export enum CallActionType {
@@ -29,7 +30,7 @@ type CallAction =
     | { type: CallActionType.SET_KEY; key: string }
     | { type: CallActionType.SET_URL; url: string }
     | { type: CallActionType.SET_SHARE; share: string }
-    | { type: CallActionType.EXECUTE_CALL; url: string; data: any; timestamp: number };
+    | { type: CallActionType.EXECUTE_CALL; url: string; data: unknown; timestamp: number };
 
 function callsReducer(state: CallState, action: CallAction): CallState {
     switch (action.type) {

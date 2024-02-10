@@ -4,7 +4,7 @@ export default function SectionPage() {
     return undefined;
 }
 
-export async function generateStaticParams() {
+export function generateStaticParams() {
     return getActiveSelections().map(([section]) => ({ section }));
 }
 

@@ -1,11 +1,8 @@
 "use client";
 
-import { useTheme } from "next-themes";
-import { useState, useEffect } from "react";
-import { THEME_DARK, THEME_LIGHT } from "@/components/global/theme-selector/theme-utilities";
-import { useCalls } from "@/components/try-it/CallContext";
-
+import { useEffect, useState } from "react";
 import CopyIcon from "@/components/global/icons/CopyIcon";
+import { useCalls } from "@/components/try-it/CallContext";
 
 export default function CallResponse() {
     const calls = useCalls();
@@ -42,9 +39,9 @@ export default function CallResponse() {
     );
 }
 
-type CopyRequestUrlProps = {
+interface CopyRequestUrlProps {
     url: string;
-};
+}
 
 function CopyRequestUrl({ url }: CopyRequestUrlProps) {
     function copyRequestURL() {
@@ -58,13 +55,12 @@ function CopyRequestUrl({ url }: CopyRequestUrlProps) {
     );
 }
 
-type CopyResponseButtonProps = {
-    json: string;
-};
+interface CopyResponseButtonProps {
+    json: unknown;
+}
 
 function CopyResponseButton({ json }: CopyResponseButtonProps) {
     const [copied, setCopied] = useState(false);
-    const { theme } = useTheme();
 
     useEffect(() => {
         const timeout = setTimeout(() => setCopied(false), 2000);
@@ -73,7 +69,7 @@ function CopyResponseButton({ json }: CopyResponseButtonProps) {
 
     function copyResponse() {
         setCopied(true);
-        navigator.clipboard.writeText(JSON.stringify(json, null, 4));
+        void navigator.clipboard.writeText(JSON.stringify(json, null, 4));
     }
 
     return (

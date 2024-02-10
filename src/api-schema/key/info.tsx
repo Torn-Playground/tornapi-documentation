@@ -17,13 +17,13 @@ function buildSectionDescription(section: SectionType) {
     };
 }
 
-const accessLevelEnum: StructureEnum<number> = {
+const accessLevelEnum: StructureEnum = {
     id: "access_level",
     name: "Access Level",
     values: [0, 1, 2, 3, 4],
     type: Integer,
 };
-const accessTypeEnum: StructureEnum<string> = {
+const accessTypeEnum: StructureEnum = {
     id: "access_type",
     name: "Access Type",
     values: ["Custom", "Public Only", "Minimal Access", "Limited Access", "Full Access"],

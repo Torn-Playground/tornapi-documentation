@@ -22,7 +22,7 @@ const priceStructure: Structure = {
         low: { type: Number },
     },
 };
-const benefitTypeEnum: StructureEnum<string> = {
+const benefitTypeEnum: StructureEnum = {
     id: "benefit_type",
     name: "Benefit Type",
     values: ["active", "passive"],

@@ -1,13 +1,13 @@
 import { NextResponse } from "next/server";
 
-type CorsOptions = {
+interface CorsOptions {
     allowedMethods: string[];
     allowedOrigins: string[];
     allowedHeaders: string[];
     exposedHeaders: string[];
     maxAge: number;
     credentials: boolean;
-};
+}
 
 const CORS_OPTIONS: CorsOptions = {
     allowedMethods: ["GET", "HEAD", "POST"],
@@ -18,7 +18,7 @@ const CORS_OPTIONS: CorsOptions = {
     credentials: true,
 };
 
-export async function middleware() {
+export function middleware() {
     const response = NextResponse.next();
 
     response.headers.set("Access-Control-Allow-Origin", CORS_OPTIONS.allowedOrigins.join(","));

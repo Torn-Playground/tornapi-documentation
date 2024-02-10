@@ -1,21 +1,30 @@
 import { getActiveSelections } from "@/api-schema/data";
 import { isField, isFieldStructure, Schema } from "@/api-schema/schema.types";
 
-export type SearchSection = { name: string };
-export type SearchSelection = { name: string };
-export type SearchField = { selection: string; structure: string | undefined; name: string; keywords: string[] };
-export type SearchResult = {
+export interface SearchSection {
+    name: string;
+}
+export interface SearchSelection {
+    name: string;
+}
+export interface SearchField {
+    selection: string;
+    structure: string | undefined;
+    name: string;
+    keywords: string[];
+}
+export interface SearchResult {
     section: SearchSection;
     selections: SearchSelection[];
     fields: SearchField[];
-};
+}
 
 export function search(term: string): SearchResult[] {
     if (!term) {
         return [];
     }
 
-    const results = getActiveSelections()
+    return getActiveSelections()
         .map<SearchResult>(([sectionName, section]) => {
             const selections = section.selections
                 .filter((selection) => selection.name.toLowerCase().includes(term.toLowerCase()))
@@ -37,10 +46,6 @@ export function search(term: string): SearchResult[] {
             };
         })
         .filter((section) => section.selections.length > 0 || section.fields.length > 0);
-
-    console.log(results);
-
-    return results;
 }
 
 function extractFields(selection: string, schema: Schema, parentStructure: string | undefined = undefined): SearchField[] {

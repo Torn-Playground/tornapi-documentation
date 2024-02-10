@@ -1,11 +1,11 @@
 import { ReactElement, ReactNode } from "react";
 import { ValidationFunction } from "@/api-schema/validations";
 
-export type Section = {
-    selections: Array<Selection>;
+export interface Section {
+    selections: Selection[];
     defaultSelection: string | null;
     idDescription: string | null;
-};
+}
 
 export interface Selection {
     name: string;
@@ -13,18 +13,16 @@ export interface Selection {
     warning?: string;
     access: KeyAccess;
     schema: Schema;
-    structures: Array<Structure | StructureEnum<any>>;
+    structures: (Structure | StructureEnum)[];
     id: { optional: boolean } | { required: true };
-    params?: Array<Param>;
+    params?: Param[];
 }
 
 export type SectionType = "user" | "property" | "faction" | "company" | "market" | "torn" | "key";
 
 export type KeyAccess = "public" | "minimal" | "limited" | "full";
 
-export interface Schema {
-    [id: string]: SchemaField | FieldStructure;
-}
+export type Schema = Record<string, SchemaField | FieldStructure>;
 
 export interface SchemaField {
     type: string;
@@ -36,7 +34,7 @@ export interface SchemaField {
 
 type StructureType = "object" | "enum";
 
-export type FieldStructure = {
+export interface FieldStructure {
     structure: {
         id: string;
         name: string;
@@ -48,7 +46,7 @@ export type FieldStructure = {
     array: boolean;
     description?: string;
     keywords?: string[];
-};
+}
 
 export function isField(object: SchemaField | FieldStructure): object is SchemaField {
     return "type" in object;
@@ -67,23 +65,28 @@ export interface Param {
     validations: ValidationFunction[];
 }
 
-export type Structure = {
+export interface Structure {
     id: string;
     name: string;
     schema: Schema;
-};
+}
 
-export type StructureEnum<T> = {
+export interface StructureEnum {
     id: string;
     name: string;
-    values: Array<T>;
+    values: string[] | number[];
     type: string;
     incomplete?: { missing: string };
-};
+}
 
-export type StructureOptions = { nullable?: boolean; extra?: string; array?: boolean; description?: string };
+export interface StructureOptions {
+    nullable?: boolean;
+    extra?: string;
+    array?: boolean;
+    description?: string;
+}
 
-export function fromStructure(structure: Structure | StructureEnum<any>, options: StructureOptions = {}): FieldStructure {
+export function fromStructure(structure: Structure | StructureEnum, options: StructureOptions = {}): FieldStructure {
     let type: StructureType;
     let schema: Schema | undefined;
     if ("schema" in structure) {
@@ -107,8 +110,8 @@ export function fromStructure(structure: Structure | StructureEnum<any>, options
     };
 }
 
-export type ErrorCode = {
+export interface ErrorCode {
     code: number;
     message: string;
     description?: string;
-};
+}

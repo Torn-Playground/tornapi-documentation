@@ -13,7 +13,7 @@ export default function TryItButton() {
         setExecuting(true);
 
         const data = await fetch(calls.url)
-            .then((response) => response.json())
+            .then<unknown>((response) => response.json())
             .finally(() => setExecuting(false));
 
         dispatch({ type: CallActionType.EXECUTE_CALL, data, timestamp: Date.now(), url: calls.url });

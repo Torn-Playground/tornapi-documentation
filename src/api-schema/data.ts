@@ -52,5 +52,5 @@ function getSelectionsFromNames(section: SectionType | "", selectionNames: strin
 }
 
 export function getPossibleParams(section: SectionType | "", selectionNames: string[]): Param[] {
-    return getSelectionsFromNames(section, selectionNames).flatMap((selection) => selection.params || []);
+    return getSelectionsFromNames(section, selectionNames).flatMap((selection) => selection.params ?? []);
 }

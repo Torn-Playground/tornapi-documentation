@@ -11,7 +11,7 @@ const leaderboardPositionStructure: Structure = {
         position: { type: Integer },
     },
 };
-const eliminationStatusEnum: StructureEnum<string> = {
+const eliminationStatusEnum: StructureEnum = {
     id: "elimination_status",
     name: "Elimination Status",
     values: ["eliminated", "before-eliminated", "<unknown>"],

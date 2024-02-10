@@ -16,7 +16,7 @@ export default function UserSelectionPage({ params: { section, selection } }: { 
     return <Selection selection={sl} />;
 }
 
-export async function generateStaticParams() {
+export function generateStaticParams() {
     return getActiveSelections().flatMap(([sectionName, section]) =>
         section.selections.map((selection) => ({
             section: sectionName,

@@ -18,15 +18,15 @@ jobs:
             statuses: write
 
         steps:
-            -   name: Checkout code
-                uses: actions/checkout@v4
-                with:
-                    fetch-depth: 0
-                    repository: ${{ github.event.pull_request.head.repo.full_name }}
-                    ref: ${{ github.event.pull_request.head.ref }}
+            - name: Checkout code
+              uses: actions/checkout@v4
+              with:
+                  fetch-depth: 0
+                  repository: ${{ github.event.pull_request.head.repo.full_name }}
+                  ref: ${{ github.event.pull_request.head.ref }}
 
-            -   name: Installing dependencies
-                run: npm i --ignore-scripts
+            - name: Installing dependencies
+              run: npm i --ignore-scripts
 
-            -   name: Run Jest
-                run: npm run test:run
+            - name: Run Jest
+              run: npm run test:run

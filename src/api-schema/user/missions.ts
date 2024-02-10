@@ -1,7 +1,7 @@
 import { String } from "@/api-schema/common-types";
 import { fromStructure, Schema, Selection, Structure, StructureEnum } from "@/api-schema/schema.types";
 
-const missionStatusEnum: StructureEnum<string> = {
+const missionStatusEnum: StructureEnum = {
     id: "missionStatus",
     name: "Mission Status",
     values: ["notAccepted", "accepted", "failed", "completed"],
