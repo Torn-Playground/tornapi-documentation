@@ -150,6 +150,7 @@ const schema: Schema = {
     donator: { type: NumberBoolean },
     player_id: { type: Integer },
     name: { type: String },
+    profile_image: { type: String, nullable: true, extra: "Only present if the user has a non-default profile image." },
     property_id: { type: Integer },
     competition: fromStructure(competitionStructure, { nullable: true }),
     revivable: { type: NumberBoolean, description: "Status whether you (the key owner) can revive this player.", keywords: [KEYWORD_REVIVE] },
