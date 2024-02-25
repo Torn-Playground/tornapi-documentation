@@ -1,24 +1,19 @@
-import { Integer, String } from "@/api-schema/common-types";
-import { fromStructure, Schema, Selection, Structure, StructureEnum } from "@/api-schema/schema.types";
+import { Integer } from "@/api-schema/common-types";
+import { fromStructure, Schema, Selection, Structure } from "@/api-schema/schema.types";
+import { rpsStatusEnum } from "@/api-schema/shared/rockpaperscissors";
 
-const rpsTypeEnum: StructureEnum = {
-    id: "rps_type",
-    name: "RPS Type",
-    values: ["rock", "paper", "scissors"],
-    type: String,
-};
 const rpsScoreStructure: Structure = {
     id: "rps_score",
-    name: "RPS Score",
+    name: "Rock, Paper, Scissors Score",
     schema: {
-        type: fromStructure(rpsTypeEnum),
+        type: fromStructure(rpsStatusEnum),
         count: { type: Integer },
     },
 };
-const structures = [rpsScoreStructure, rpsTypeEnum];
+const structures = [rpsScoreStructure, rpsStatusEnum];
 
 const schema: Schema = {
-    rockpaperscissors: fromStructure(rpsScoreStructure, {array: true}),
+    rockpaperscissors: fromStructure(rpsScoreStructure, { array: true }),
 };
 
 const RockPaperScissorsSelection: Selection = {
