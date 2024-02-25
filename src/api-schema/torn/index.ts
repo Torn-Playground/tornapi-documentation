@@ -33,6 +33,7 @@ import TerritorySelection from "@/api-schema/torn/territory";
 import TerritoryNamesSelection from "@/api-schema/torn/territorynames";
 import TerritoryWarReportSelection from "@/api-schema/torn/territorywarreport";
 import TerritoryWarsSelection from "@/api-schema/torn/territorywars";
+import RockPaperScissorsSelection from "@/api-schema/torn/rockpaperscissors";
 
 const selections: Selection[] = [
     BankSelection,
@@ -61,6 +62,7 @@ const selections: Selection[] = [
     RaidsSelection,
     RankedWarReportSelection,
     RankedWarsSelection,
+    RockPaperScissorsSelection,
     SearchForCashSelection,
     ShopliftingSelection,
     StatsSelection,
