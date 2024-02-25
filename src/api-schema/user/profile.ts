@@ -1,19 +1,13 @@
 import { KEYWORD_REVIVE } from "@/api-schema/common-keywords";
 import { EpochSeconds, Integer, IntegerOrNumber, NumberBoolean, String, Unknown } from "@/api-schema/common-types";
-import { fromStructure, Schema, Selection, Structure, StructureEnum } from "@/api-schema/schema.types";
+import { fromStructure, Schema, Selection, Structure } from "@/api-schema/schema.types";
 import { bar } from "@/api-schema/shared/bar";
 import { profileCompetitionTypeEnum } from "@/api-schema/shared/competition";
 import { genderEnum } from "@/api-schema/shared/gender";
 import { lastActionStatusEnum, lastActionStructure } from "@/api-schema/shared/last-action";
+import { rpsStatusEnum } from "@/api-schema/shared/rockpaperscissors";
 import { roleEnum } from "@/api-schema/shared/role";
 import { statusColorEnum, statusStateEnum, statusStructure } from "@/api-schema/shared/status";
-
-export const rpsStatusEnum: StructureEnum = {
-    id: "rock_paper_scissors_status",
-    name: "Rock, Paper, Scissors Status",
-    values: ["rock", "paper", "scissors"],
-    type: String,
-};
 
 const competitionStructure: Structure = {
     id: "competition",

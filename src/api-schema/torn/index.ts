@@ -25,6 +25,7 @@ import RaidReportSelection from "@/api-schema/torn/raidreport";
 import RaidsSelection from "@/api-schema/torn/raids";
 import RankedWarReportSelection from "@/api-schema/torn/rankedwarreport";
 import RankedWarsSelection from "@/api-schema/torn/rankedwars";
+import RockPaperScissorsSelection from "@/api-schema/torn/rockpaperscissors";
 import SearchForCashSelection from "@/api-schema/torn/searchforcash";
 import ShopliftingSelection from "@/api-schema/torn/shoplifting";
 import StatsSelection from "@/api-schema/torn/stats";
@@ -61,6 +62,7 @@ const selections: Selection[] = [
     RaidsSelection,
     RankedWarReportSelection,
     RankedWarsSelection,
+    RockPaperScissorsSelection,
     SearchForCashSelection,
     ShopliftingSelection,
     StatsSelection,
