@@ -25,6 +25,7 @@ import RaidReportSelection from "@/api-schema/torn/raidreport";
 import RaidsSelection from "@/api-schema/torn/raids";
 import RankedWarReportSelection from "@/api-schema/torn/rankedwarreport";
 import RankedWarsSelection from "@/api-schema/torn/rankedwars";
+import RockPaperScissorsSelection from "@/api-schema/torn/rockpaperscissors";
 import SearchForCashSelection from "@/api-schema/torn/searchforcash";
 import ShopliftingSelection from "@/api-schema/torn/shoplifting";
 import StatsSelection from "@/api-schema/torn/stats";
@@ -33,7 +34,6 @@ import TerritorySelection from "@/api-schema/torn/territory";
 import TerritoryNamesSelection from "@/api-schema/torn/territorynames";
 import TerritoryWarReportSelection from "@/api-schema/torn/territorywarreport";
 import TerritoryWarsSelection from "@/api-schema/torn/territorywars";
-import RockPaperScissorsSelection from "@/api-schema/torn/rockpaperscissors";
 
 const selections: Selection[] = [
     BankSelection,
