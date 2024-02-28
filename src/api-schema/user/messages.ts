@@ -1,4 +1,4 @@
-import { LIMIT } from "@/api-schema/common-params";
+import { LIMIT, TIME_FROM, TIME_TO } from "@/api-schema/common-params";
 import { EpochSeconds, Integer, NumberBoolean, String } from "@/api-schema/common-types";
 import { fromStructure, Schema, Selection, Structure, StructureEnum } from "@/api-schema/schema.types";
 
@@ -41,7 +41,7 @@ const MessagesSelection: Selection = {
     schema,
     structures,
     id: { optional: false },
-    params: [LIMIT],
+    params: [TIME_FROM, TIME_TO, LIMIT],
 };
 
 export default MessagesSelection;

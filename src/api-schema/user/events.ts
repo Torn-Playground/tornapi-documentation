@@ -1,4 +1,4 @@
-import { LIMIT, TIME_FROM, TIME_TO_WITH_FROM } from "@/api-schema/common-params";
+import { LIMIT, TIME_FROM, TIME_TO } from "@/api-schema/common-params";
 import { EpochSeconds, String } from "@/api-schema/common-types";
 import { fromStructure, Schema, Selection, Structure } from "@/api-schema/schema.types";
 
@@ -30,7 +30,7 @@ const EventsSelection: Selection = {
     schema,
     structures,
     id: { optional: false },
-    params: [TIME_FROM, TIME_TO_WITH_FROM, LIMIT],
+    params: [TIME_FROM, TIME_TO, LIMIT],
 };
 
 export default EventsSelection;
