@@ -1,4 +1,4 @@
-import { TIME_FROM, TIME_TO } from "@/api-schema/common-params";
+import { LIMIT, TIME_FROM, TIME_TO } from "@/api-schema/common-params";
 import { EpochSeconds, Integer, String } from "@/api-schema/common-types";
 import { fromStructure, Schema, Selection, Structure } from "@/api-schema/schema.types";
 
@@ -34,7 +34,7 @@ const ChainsSelection: Selection = {
     id: {
         optional: false,
     },
-    params: [TIME_FROM, TIME_TO],
+    params: [TIME_FROM, TIME_TO, LIMIT],
 };
 
 export default ChainsSelection;
