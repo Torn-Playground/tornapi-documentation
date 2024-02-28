@@ -1,23 +1,23 @@
 import { Param } from "@/api-schema/schema.types";
 import { hasValidOptions, isValidNumber, isValidTime, onlySingleValue, warnMaximumValue, withMinimumValue } from "@/api-schema/validations";
 
-const TIME_FROM: Param = {
+export const TIME_FROM: Param = {
     name: "from",
     description: "Limits results to have their timestamp after or on this timestamp.",
     validations: [isValidTime, onlySingleValue],
 };
-const TIME_TO: Param = {
+export const TIME_TO: Param = {
     name: "to",
     description: "Limits results to have their timestamp before or on this timestamp.",
     validations: [isValidTime, onlySingleValue],
 };
-const TIME_TO_WITH_FROM: Param = {
+export const TIME_TO_WITH_FROM: Param = {
     name: "to",
     description: "Limits results to have their timestamp before or on this timestamp. Only available when also using 'from'.",
     validations: [isValidTime, onlySingleValue],
 };
 
-const LIMIT: Param = {
+export const LIMIT: Param = {
     name: "limit",
     description: "Limits amount of results. Amount can't be above the default amount, will use default amount otherwise.",
     validations: [
@@ -27,7 +27,7 @@ const LIMIT: Param = {
     ],
 };
 
-const SORT: Param = {
+export const SORT: Param = {
     name: "sort",
     description: "Sort your results. Default will be descending.",
     options: {
@@ -35,5 +35,3 @@ const SORT: Param = {
     },
     validations: [hasValidOptions],
 };
-
-export { TIME_FROM, TIME_TO, TIME_TO_WITH_FROM, LIMIT, SORT };
