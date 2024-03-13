@@ -1,5 +1,6 @@
 "use client";
 
+import { Suspense } from "react";
 import CallResponse from "@/components/try-it/call-response/CallResponse";
 import { CallProvider } from "@/components/try-it/CallContext";
 import KeyInput from "@/components/try-it/key-input/KeyInput";
@@ -15,7 +16,9 @@ export default function TryIt() {
 
                 <KeyInput />
                 <div className="divider" />
-                <UrlSelector />
+                <Suspense>
+                    <UrlSelector />
+                </Suspense>
                 <div className="divider" />
                 <section className="space-x-2">
                     <TryItButton />
