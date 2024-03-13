@@ -61,6 +61,7 @@ export default function UrlSelector() {
 
     const [section, setSection] = useState<SectionType | "">("");
     const [selections, setSelections] = useState<string[]>([]);
+    const [customSelections, setCustomSelections] = useState<string[]>([]);
     const [id, setId] = useState<string>("");
     const [comment, setComment] = useState<string>("TornAPI");
     const [selectedParams, setSelectedParams] = useState<SelectedParamMap>({});
@@ -73,12 +74,12 @@ export default function UrlSelector() {
             .filter(([, value]) => value !== "")
             .map(([param, value]) => ({ param, value }) as ParamInput);
 
-        const url = createApiUrl(state.key, section, id, selections, comment, params);
-        const share = createShareUrl(section, id, selections, comment, params);
+        const url = createApiUrl(state.key, section, id, selections, customSelections, comment, params);
+        const share = createShareUrl(section, id, selections, customSelections, comment, params);
 
         dispatch({ type: CallActionType.SET_URL, url });
         dispatch({ type: CallActionType.SET_SHARE, share });
-    }, [state.key, dispatch, section, selections, id, selectedParams, possibleParams, comment]);
+    }, [state.key, dispatch, section, selections, customSelections, id, selectedParams, possibleParams, comment]);
     useEffect(() => {
         setPossibleParams(getPossibleParams(section, selections));
     }, [section, selections]);
@@ -93,7 +94,7 @@ export default function UrlSelector() {
         if (queryComment) setComment(queryComment);
 
         const otherParams = [...searchParams.entries()]
-            .filter(([key]) => !["section", "id", "selections", "comment"].includes(key))
+            .filter(([key]) => !["section", "id", "selections", "custom-selections", "comment"].includes(key))
             .reduce<SelectedParamMap>((acc, [key, value]) => ({ ...acc, [key]: value }), {});
         if (otherParams && Object.keys(otherParams).length > 0) setSelectedParams(otherParams);
     }, [searchParams]);
@@ -140,7 +141,7 @@ export default function UrlSelector() {
                 </div>
             )}
 
-            {section && <SelectionSelector section={section} onSelectionsChange={setSelections} />}
+            {section && <SelectionSelector section={section} onSelectionsChange={setSelections} onCustomSelectionsChange={setCustomSelections} />}
         </section>
     );
 }

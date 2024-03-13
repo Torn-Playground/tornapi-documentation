@@ -11,8 +11,16 @@ function hasValidParts(key: string, section: SectionType | "", selections: strin
     return hasDefaultSelection || selections.length >= 1;
 }
 
-export function createApiUrl(key: string, section: SectionType | "", id: string, selections: string[], comment: string, params: ParamInput[]): string {
-    if (!hasValidParts(key, section, selections)) {
+export function createApiUrl(
+    key: string,
+    section: SectionType | "",
+    id: string,
+    selections: string[],
+    customSelections: string[],
+    comment: string,
+    params: ParamInput[],
+): string {
+    if (!hasValidParts(key, section, [...selections, ...customSelections])) {
         return "";
     }
 
@@ -20,11 +28,18 @@ export function createApiUrl(key: string, section: SectionType | "", id: string,
     const { searchParams } = url;
     searchParams.append("key", key);
 
-    return extendLink(url, selections, params, comment);
+    return extendLink(url, [...selections, ...customSelections], params, comment);
 }
 
-export function createShareUrl(section: SectionType | "", id: string, selections: string[], comment: string, params: ParamInput[]): string {
-    if (!hasValidParts("DUMMY", section, selections)) {
+export function createShareUrl(
+    section: SectionType | "",
+    id: string,
+    selections: string[],
+    customSelections: string[],
+    comment: string,
+    params: ParamInput[],
+): string {
+    if (!hasValidParts("DUMMY", section, [...selections, ...customSelections])) {
         return "";
     }
 
@@ -33,15 +48,17 @@ export function createShareUrl(section: SectionType | "", id: string, selections
     searchParams.append("section", section);
     if (id) searchParams.append("id", id);
 
+    if (customSelections.length > 0) searchParams.append("custom-selections", customSelections.join(","));
+
     return extendLink(url, selections, params, comment);
 }
 
 function extendLink(url: URL, selections: string[], params: ParamInput[], comment: string): string {
     const { searchParams } = url;
 
-    if (selections.length > 0) searchParams.append("selections", selections.join(","));
     params.forEach((p) => searchParams.append(p.param, p.value));
     if (comment !== "") searchParams.append("comment", comment);
+    if (selections.length > 0) searchParams.append("selections", selections.join(","));
 
     return decodeURIComponent(url.toString());
 }
