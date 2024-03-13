@@ -7,6 +7,7 @@ const schema: Schema = {
     card_skimming: { type: String, nullable: true, extra: "in Number format, Only present for players that migrated to crimes 2.0." },
     cracking: { type: String, nullable: true, extra: "in Number format, Only present for players that migrated to crimes 2.0." },
     disposal: { type: String, nullable: true, extra: "in Number format, Only present for players that migrated to crimes 2.0." },
+    forgery: { type: String, nullable: true, extra: "in Number format, Only present for players that migrated to crimes 2.0." },
     graffiti: { type: String, nullable: true, extra: "in Number format, Only present for players that migrated to crimes 2.0." },
     hustling: { type: String, nullable: true, extra: "in Number format, Only present for players that migrated to crimes 2.0." },
     pickpocketing: { type: String, nullable: true, extra: "in Number format, Only present for players that migrated to crimes 2.0." },
