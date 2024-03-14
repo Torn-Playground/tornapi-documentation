@@ -94,7 +94,7 @@ export default function SelectionSelector({ onSelectionsChange, section, onCusto
                 <span key={`custom-${index}`} className="badge badge-lg badge-accent cursor-pointer">
                     <input
                         type="text"
-                        className="input input-ghost input-xs w-24"
+                        className="input input-ghost input-xs w-24 py-0 bg-transparent focus:outline-none !text-accent-content text-base"
                         value={selection}
                         onChange={(event) => updateCustomSelection(event, index)}
                     />
