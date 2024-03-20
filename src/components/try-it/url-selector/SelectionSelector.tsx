@@ -91,10 +91,13 @@ export default function SelectionSelector({ onSelectionsChange, section, onCusto
                 </span>
             ))}
             {customSelections.map((selection, index) => (
-                <span key={`custom-${index}`} className="badge badge-lg badge-accent cursor-pointer">
+                <span
+                    key={`custom-${index}`}
+                    className="badge badge-lg badge-accent cursor-pointer focus-within:outline focus-within:outline-2 focus-within:outline-blue-500"
+                >
                     <input
                         type="text"
-                        className="input input-ghost input-xs w-24 py-0 bg-transparent focus:outline-none !text-accent-content text-base"
+                        className="input input-ghost input-xs w-24 py-0 bg-transparent focus:outline-none focus:border-none !text-accent-content text-base"
                         value={selection}
                         onChange={(event) => updateCustomSelection(event, index)}
                     />
