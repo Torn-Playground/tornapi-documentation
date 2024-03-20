@@ -20,3 +20,7 @@ export interface SolidIcon {
 export interface StrokeIcon {
     stroke?: number;
 }
+
+export interface ClickableIcon {
+    onClick?: () => void;
+}
