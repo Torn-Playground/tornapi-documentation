@@ -18,8 +18,25 @@ const schema: { [key in SectionType]: Section } = {
 };
 const sections = Object.keys(schema);
 
-export function getActiveSelections(): [string, Section][] {
-    return Object.entries(schema).filter(([, section]) => section.selections.length > 0);
+export function getActiveSelections(): [SectionType, Section][] {
+    return Object.entries(schema)
+        .filter(([, section]) => section.selections.length > 0)
+        .filter<[SectionType, Section]>(isSectionEntry);
+}
+
+export function getSelectableSelections(): [SectionType, string[]][] {
+    return getActiveSelections()
+        .filter(([name]) => name !== "key") // Exclude the 'key' section as it's available by default.
+        .map(([name, section]) => {
+            return [
+                name,
+                section.selections.map((s) => s.name).filter((selection) => selection !== "lookup" && selection !== "timestamp"), // Exclude the 'lookup' and 'timestamp selections as it's available by default.
+            ];
+        });
+}
+
+export function isSectionEntry(entry: [string, Section]): entry is [SectionType, Section] {
+    return isSection(entry[0]);
 }
 
 export { sections, schema };
