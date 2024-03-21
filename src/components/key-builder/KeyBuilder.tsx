@@ -75,18 +75,18 @@ function SelectionSelector({ section, possibleSelections }: SelectionSelectorPro
     };
 
     return (
-        <div className="flex flex-wrap gap-1">
+        <div className="grid lg:grid-cols-5 md:grid-cols-3 grid-cols-2">
             {possibleSelections.map((selection) => (
                 <div key={`${section}-${selection}`}>
                     <div className="form-control">
                         <label className="cursor-pointer space-x-0.5">
-                            <span className="label-text">{selection}</span>
                             <input
                                 type="checkbox"
                                 checked={state.selections[section].includes(selection)}
                                 onChange={() => toggleSelection(selection)}
-                                className="checkbox checkbox-xs"
+                                className="checkbox checkbox-xs mr-1.5"
                             />
+                            <span className="label-text">{selection}</span>
                         </label>
                     </div>
                 </div>
