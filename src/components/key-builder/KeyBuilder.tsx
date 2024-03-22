@@ -1,6 +1,6 @@
 "use client";
 
-import { ChangeEvent, useEffect, useMemo, useState } from "react";
+import { ChangeEvent, CSSProperties, useEffect, useMemo, useState } from "react";
 import { getSelectableSelections } from "@/api-schema/data";
 import { SectionType } from "@/api-schema/schema.types";
 import { buildCustomKeyUrl } from "@/components/key-builder/key-builder";
@@ -85,6 +85,7 @@ function SelectionSelector({ section, possibleSelections }: SelectionSelectorPro
                                 checked={state.selections[section].includes(selection)}
                                 onChange={() => toggleSelection(selection)}
                                 className="checkbox checkbox-xs mr-1.5"
+                                style={{ "--rounded-btn": "0.25rem" } as CSSProperties}
                             />
                             <span className="label-text">{selection}</span>
                         </label>
