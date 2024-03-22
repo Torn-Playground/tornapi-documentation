@@ -84,7 +84,7 @@ function SelectionSelector({ section, possibleSelections }: SelectionSelectorPro
                                 type="checkbox"
                                 checked={state.selections[section].includes(selection)}
                                 onChange={() => toggleSelection(selection)}
-                                className="checkbox checkbox-xs mr-1.5"
+                                className="checkbox checkbox-xs mr-1.5 bg-transparent"
                                 style={{ "--rounded-btn": "0.25rem" } as CSSProperties}
                             />
                             <span className="label-text">{selection}</span>
