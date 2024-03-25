@@ -18,6 +18,7 @@ export const modifiersStructure: Structure = {
         group_attack: { type: Number },
         overseas: { type: "1 or 1.25" },
         chain_bonus: { type: Number },
+        warlord_bonus: { type: String },
     },
 };
 
