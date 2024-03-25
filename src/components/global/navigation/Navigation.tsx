@@ -14,6 +14,9 @@ function Menu() {
             <li>
                 <Link href="/try-it">Try It</Link>
             </li>
+            <li>
+                <Link href="/key-builder">Key Builder</Link>
+            </li>
             <li className="menu-title">
                 <div className="divider m-0">Sections</div>
             </li>
