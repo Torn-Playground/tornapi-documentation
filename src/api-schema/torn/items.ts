@@ -27,7 +27,7 @@ const itemStructure: Structure = {
         effect: { type: String },
         requirement: { type: String },
         type: { type: String },
-        weapon_type: { type: String },
+        weapon_type: { type: String, nullable: true },
         buy_price: { type: Integer },
         sell_price: { type: Integer },
         market_value: { type: Integer },
