@@ -1,4 +1,4 @@
-import { EpochSeconds, Integer, Number, String } from "@/api-schema/common-types";
+import { EpochSeconds, Integer, String } from "@/api-schema/common-types";
 import { fromStructure, Structure } from "@/api-schema/schema.types";
 
 export const warStructure: Structure = {
@@ -8,7 +8,7 @@ export const warStructure: Structure = {
         start: { type: EpochSeconds },
         end: { type: EpochSeconds, extra: "Will be 0 if there the war has yet to finish." },
         target: { type: Integer },
-        winner: { type: Number, extra: "Will be 0 if there is no winner yet." },
+        winner: { type: Integer, extra: "Will be 0 if there is no winner yet." },
     },
 };
 export const rankedWarFactionStructure: Structure = {
