@@ -1,3 +1,4 @@
+import { LIMIT } from "@/api-schema/common-params";
 import { fromStructure, Schema, Selection } from "@/api-schema/schema.types";
 import { factionsStructure, rankedWarFactionStructure, rankedWarsStructure, rankedWarStructure, warStructure } from "@/api-schema/shared/ranked-wars";
 
@@ -16,6 +17,7 @@ const RankedWarsSelection: Selection = {
     id: {
         optional: true,
     },
+    params: [LIMIT],
 };
 
 export default RankedWarsSelection;
