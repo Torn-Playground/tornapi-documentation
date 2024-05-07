@@ -6,6 +6,7 @@ import ChainReportSelection from "@/api-schema/torn/chainreport";
 import CityShopsSelection from "@/api-schema/torn/cityshop";
 import CompaniesSelection from "@/api-schema/torn/companies";
 import CompetitionSelection from "@/api-schema/torn/competition";
+import DirtyBombsSelection from "@/api-schema/torn/dirtybombs";
 import EducationSelection from "@/api-schema/torn/education";
 import FactionTreeSelection from "@/api-schema/torn/factiontree";
 import GymsSelection from "@/api-schema/torn/gyms";
@@ -42,6 +43,7 @@ const selections: Selection[] = [
     CityShopsSelection,
     CompaniesSelection,
     CompetitionSelection,
+    DirtyBombsSelection,
     EducationSelection,
     FactionTreeSelection,
     GymsSelection,
