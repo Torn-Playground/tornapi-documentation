@@ -71,3 +71,13 @@ export interface SectionDto {
 }
 
 export type SchemaResponse = SectionDto | { error: string };
+
+export interface ErrorDto {
+    code: number;
+    message: string;
+    description?: string;
+}
+
+export interface ErrorsResponse {
+    errors: ErrorDto[];
+}
