@@ -5,7 +5,6 @@ const itemStructure: Structure = {
     id: "item",
     name: "Item",
     schema: {
-        ID: { type: Integer },
         cost: { type: Integer },
         quantity: { type: Integer, extra: "Items on the item market are always a single item (1)." },
     },
