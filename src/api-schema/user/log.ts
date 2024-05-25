@@ -1,7 +1,7 @@
 import { TIME_TO } from "@/api-schema/common-params";
 import { EpochSeconds, Integer, KeyValueMap, String } from "@/api-schema/common-types";
 import { fromStructure, Param, Schema, Selection, Structure } from "@/api-schema/schema.types";
-import { isNumberList, isValidTime, onlySingleValue, withMaximumListLength } from "@/api-schema/validations";
+import { isNumberList, isValidNumber, isValidTime, onlySingleValue, withMaximumListLength } from "@/api-schema/validations";
 
 const logStructure: Structure = {
     id: "log",
@@ -41,8 +41,8 @@ const FILTER_TYPE: Param = {
 };
 const FILTER_CATEGORY: Param = {
     name: "cat",
-    description: "Filter based on the log categories. Possible values are available in torn/logcategories. Supports up to 10 values, comma-seperated.",
-    validations: [isNumberList, withMaximumListLength(10)],
+    description: "Filter based on the log categories. Possible values are available in torn/logcategories.",
+    validations: [isValidNumber],
 };
 
 const LogSelection: Selection = {
