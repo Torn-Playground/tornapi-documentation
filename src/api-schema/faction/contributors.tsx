@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Integer, NumberBoolean } from "@/api-schema/common-types";
 import { fromStructure, Param, Schema, Selection, Structure } from "@/api-schema/schema.types";
 import { onlySingleValue, requiredParam } from "@/api-schema/validations";
@@ -37,6 +38,15 @@ const schema: Schema = {
 const statParam: Param = {
     name: "stat",
     description: "REQUIRED. Which stat you want to see the contributors for. Uses the keys from the faction/stats selection.",
+    descriptionNode: (
+        <>
+            <strong>REQUIRED</strong>. Which stat you want to see the contributors for. Uses the keys from the{" "}
+            <Link href="/faction/stats" className="link">
+                faction/stats
+            </Link>{" "}
+            selection.
+        </>
+    ),
     validations: [requiredParam, onlySingleValue],
 };
 
