@@ -73,21 +73,7 @@ function mapStructures(structures: (Structure | StructureEnum)[]): (StructureDto
 function mapParams(params?: Param[]): ParamDto[] {
     if (!params) return [];
 
-    return params.map(({ name, description: descriptionNode, options }) => {
-        let description: string | undefined;
-        switch (typeof descriptionNode) {
-            case "string":
-                description = descriptionNode;
-                break;
-            case "boolean":
-            case "number":
-                description = descriptionNode.toString();
-                break;
-            default:
-                description = undefined;
-                break;
-        }
-
+    return params.map(({ name, description, options }) => {
         const dto: ParamDto = { name, description };
 
         if (options) {
