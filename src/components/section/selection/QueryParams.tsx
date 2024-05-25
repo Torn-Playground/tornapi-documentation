@@ -25,7 +25,7 @@ export default function QueryParams({ params }: QueryParamsProps) {
                         {params.map((param) => (
                             <tr key={param.name}>
                                 <td>{param.name}</td>
-                                <td>{param.description}</td>
+                                <td>{"descriptionNode" in param ? param.descriptionNode : param.description}</td>
                             </tr>
                         ))}
                     </tbody>

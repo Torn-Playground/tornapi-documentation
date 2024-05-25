@@ -12,7 +12,8 @@ export default function CommonQueryParams() {
         {
             param: {
                 name: "key",
-                description: (
+                description: "Required api key. Defines the owner and access level.",
+                descriptionNode: (
                     <>
                         Required api key. Defines the owner and{" "}
                         <ExtendedLink href={{ hash: "access-levels" }} className="link">
@@ -64,7 +65,7 @@ export default function CommonQueryParams() {
                         {params.map((commonParam) => (
                             <tr key={commonParam.param.name}>
                                 <td>{commonParam.param.name}</td>
-                                <td>{commonParam.param.description}</td>
+                                <td>{"descriptionNode" in commonParam.param ? commonParam.param.descriptionNode : commonParam.param.description}</td>
                                 <td>{commonParam.everywhere ? "on every section" : "where listed"}</td>
                             </tr>
                         ))}

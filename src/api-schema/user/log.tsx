@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { TIME_TO } from "@/api-schema/common-params";
 import { EpochSeconds, Integer, KeyValueMap, String } from "@/api-schema/common-types";
 import { fromStructure, Param, Schema, Selection, Structure } from "@/api-schema/schema.types";
@@ -37,11 +38,29 @@ const TIME_FROM_LOG: Param = {
 const FILTER_TYPE: Param = {
     name: "log",
     description: "Filter based on the log types. Possible values are available in torn/logtypes. Supports up to 10 values, comma-seperated.",
+    descriptionNode: (
+        <>
+            Filter based on the log types. Possible values are available in{" "}
+            <Link href="/torn/logtypes" className="link">
+                torn/logtypes
+            </Link>
+            . Supports up to 10 values, comma-seperated.
+        </>
+    ),
     validations: [isNumberList, withMaximumListLength(10)],
 };
 const FILTER_CATEGORY: Param = {
     name: "cat",
     description: "Filter based on the log categories. Possible values are available in torn/logcategories.",
+    descriptionNode: (
+        <>
+            Filter based on the log categories. Possible values are available in{" "}
+            <Link href="/torn/categories" className="link">
+                torn/categories
+            </Link>
+            .
+        </>
+    ),
     validations: [isValidNumber],
 };
 
