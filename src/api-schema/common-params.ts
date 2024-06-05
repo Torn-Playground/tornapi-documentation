@@ -16,6 +16,11 @@ export const TIME_TO_WITH_FROM: Param = {
     description: "Limits results to have their timestamp before or on this timestamp. Only available when also using 'from'.",
     validations: [isValidTime, onlySingleValue],
 };
+export const TIMESTAMP: Param = {
+    name: "timestamp",
+    description: "Specify which date (in epoch seconds) to get the stats from. Older dates might get combined and return data from another date.",
+    validations: [isValidTime, onlySingleValue],
+};
 
 export const LIMIT: Param = {
     name: "limit",
