@@ -1,3 +1,4 @@
+import { TIMESTAMP } from "@/api-schema/common-params";
 import { EpochSeconds, Integer } from "@/api-schema/common-types";
 import { fromStructure, Schema, Selection, Structure } from "@/api-schema/schema.types";
 
@@ -132,6 +133,7 @@ const StatsSelection: Selection = {
     id: {
         optional: false,
     },
+    params: [TIMESTAMP],
 };
 
 export default StatsSelection;
