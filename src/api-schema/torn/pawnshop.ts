@@ -5,7 +5,7 @@ const pawnShopStructure: Structure = {
     id: "pawn_shop",
     name: "Pawn Shop",
     schema: {
-        points_value: { type: Integer },
+        points_value: { type: Integer, description: "No longer used, since points aren't available in the pawn shop anymore. Will always return 0 now." },
         donatorpack_value: { type: Integer },
     },
 };
