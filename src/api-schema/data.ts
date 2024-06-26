@@ -21,7 +21,7 @@ const sections = Object.keys(schema);
 export function getActiveSelections(): [SectionType, Section][] {
     return Object.entries(schema)
         .filter(([, section]) => section.selections.length > 0)
-        .filter<[SectionType, Section]>(isSectionEntry);
+        .filter(isSectionEntry);
 }
 
 export function getSelectableSelections(): [SectionType, string[]][] {
@@ -50,9 +50,7 @@ function getSelectionsFromNames(section: SectionType | "", selectionNames: strin
 
     if (section) {
         if (selectionNames.length) {
-            selections = selectionNames
-                .map((selection) => schema[section].selections.find((s) => s.name === selection))
-                .filter((selection) => !!selection) as Selection[];
+            selections = selectionNames.map((selection) => schema[section].selections.find((s) => s.name === selection)).filter((selection) => !!selection);
         } else {
             const { defaultSelection } = schema[section];
             if (defaultSelection) {
