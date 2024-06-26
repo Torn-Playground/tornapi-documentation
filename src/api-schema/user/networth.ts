@@ -16,6 +16,10 @@ const networthStructure: Structure = {
         items: { type: Integer },
         displaycase: { type: Integer },
         bazaar: { type: Integer },
+        trade: {
+            type: Integer,
+            description: "Value of the items you put in trades.",
+        },
         itemmarket: { type: Integer },
         properties: { type: Integer },
         stockmarket: { type: Integer },
