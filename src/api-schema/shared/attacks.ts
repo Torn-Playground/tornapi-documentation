@@ -46,7 +46,10 @@ export const attackStructure: Structure = {
         attacker_factionname: { type: String, extra: "Will be '' (empty string) when stealthed by the attacker." },
         defender_name: { type: String },
         defender_factionname: { type: String, extra: "Will be '' (empty string) when not in a faction." },
-        chain: { type: Integer, extra: "Will be 0 when stealthed by the attacker." },
+        chain: {
+            type: Integer,
+            description: "Chain counter after this attack. If the attack is not part of a chain (cooldown, lose, stalemate, etc.), this will be 0.",
+        },
         raid: { type: NumberBoolean },
         ranked_war: { type: NumberBoolean },
         respect_gain: { type: Number },
