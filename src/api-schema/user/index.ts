@@ -9,6 +9,7 @@ import BattleStatsSelection from "@/api-schema/user/battlestats";
 import BazaarSelection from "@/api-schema/user/bazaar";
 import CooldownsSelection from "@/api-schema/user/cooldowns";
 import CrimesSelection from "@/api-schema/user/crimes";
+import CriminalRecordSelection from "@/api-schema/user/criminalrecord";
 import DiscordSelection from "@/api-schema/user/discord";
 import DisplaySelection from "@/api-schema/user/display";
 import EducationSelection from "@/api-schema/user/education";
@@ -55,6 +56,7 @@ const selections: Selection[] = [
     BazaarSelection,
     CooldownsSelection,
     CrimesSelection,
+    CriminalRecordSelection,
     DiscordSelection,
     DisplaySelection,
     EducationSelection,
