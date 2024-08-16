@@ -24,15 +24,14 @@ export function getActiveSelections(): [SectionType, Section][] {
         .filter(isSectionEntry);
 }
 
-export function getSelectableSelections(): [SectionType, string[]][] {
+type SelectableSelection = [SectionType, string[]];
+
+export function getSelectableSelections(): SelectableSelection[] {
     return getActiveSelections()
-        .filter(([name]) => name !== "key") // Exclude the 'key' section as it's available by default.
-        .map(([name, section]) => {
-            return [
-                name,
-                section.selections.map((s) => s.name).filter((selection) => selection !== "lookup" && selection !== "timestamp"), // Exclude the 'lookup' and 'timestamp selections as it's available by default.
-            ];
-        });
+        .map<SelectableSelection>(([name, section]) => {
+            return [name, section.selections.filter((selection) => selection.access !== "public").map((s) => s.name)];
+        })
+        .filter(([, selections]) => selections.length > 0);
 }
 
 export function isSectionEntry(entry: [string, Section]): entry is [SectionType, Section] {
