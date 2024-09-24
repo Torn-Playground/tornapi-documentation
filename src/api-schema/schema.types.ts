@@ -10,6 +10,7 @@ export interface Section {
 export interface Selection {
     name: string;
     description: string;
+    cache?: string;
     warning?: string;
     access: KeyAccess;
     schema: Schema;

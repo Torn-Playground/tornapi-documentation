@@ -50,6 +50,7 @@ const schema: Schema = {
 const NetworthSelection: Selection = {
     name: "networth",
     description: "View your live networth values.",
+    cache: "Global cache of 1 hour, not able to be bypassed.",
     access: "limited",
     schema,
     structures,

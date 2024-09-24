@@ -23,6 +23,7 @@ const schema: Schema = {
 const BazaarSelection: Selection = {
     name: "bazaar",
     description: "List all items available from a bazaar, when opened.",
+    cache: "Global cache of 30 seconds, not able to be bypassed. Requesting your own bazaar does not hit this global cache.",
     access: "public",
     schema,
     structures,
