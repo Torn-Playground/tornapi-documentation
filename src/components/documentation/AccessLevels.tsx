@@ -39,8 +39,7 @@ export default function AccessLevels() {
             <p className="mt-1">
                 It&apos;s also possible to create an API key with custom access, using{" "}
                 <code className="break-words">https://www.torn.com/preferences.php#tab=api?step=addNewKey</code> with query parameters. These parameters are
-                title and the separate sections, like user, where the value is a comma-separated list of selections. Custom keys have access to all public
-                selections.
+                title and the separate sections, like user, where the value is a comma-separated list of selections.
                 <br />
                 Example:&nbsp;
                 <a
