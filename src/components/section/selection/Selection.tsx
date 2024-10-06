@@ -11,7 +11,7 @@ interface SelectionProps {
     selection: SelectionType;
 }
 
-export default function Selection({ selection: { access, description, id, name, params, schema, structures, warning } }: SelectionProps) {
+export default function Selection({ selection: { access, description, cache, id, name, params, schema, structures, warning } }: SelectionProps) {
     return (
         <div className="w-full relative mb-10">
             <div className="divider" />
@@ -25,6 +25,13 @@ export default function Selection({ selection: { access, description, id, name, 
             </div>
 
             <span>{description}</span>
+            {cache ? (
+                <>
+                    <div className="pt-2">
+                        <span className="italic">{cache}</span>
+                    </div>
+                </>
+            ) : null}
             <QueryParams params={params} />
             <SelectionSchema schema={schema} />
             <SelectionStructures structures={structures} />
