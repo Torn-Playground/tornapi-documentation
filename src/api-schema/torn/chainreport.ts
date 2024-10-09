@@ -38,7 +38,6 @@ const schema: Schema = {
 const ChainReportSelection: Selection = {
     name: "chainreport",
     description: "View a chain report.",
-    warning: "Does not follow the usual error structure for not providing an id.",
     access: "public",
     schema,
     structures,
