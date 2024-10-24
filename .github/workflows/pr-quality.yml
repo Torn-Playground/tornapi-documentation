@@ -2,39 +2,37 @@
 name: PR Code Quality
 
 on:
-  pull_request:
+    pull_request:
 
 jobs:
-  run-lint:
-    runs-on: ubuntu-latest
+    run-lint:
+        runs-on: ubuntu-latest
 
-    permissions:
-      contents: read
-      packages: read
-      statuses: write
+        permissions:
+            contents: read
+            packages: read
+            statuses: write
 
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-      #                  repository: ${{ github.event.pull_request.head.repo.full_name }}
-      #                  ref: ${{ github.event.pull_request.head.ref }}
+        steps:
+            - name: Checkout code
+              uses: actions/checkout@v4
+              with:
+                  fetch-depth: 0
 
-      - name: Installing dependencies
-        run: npm i --ignore-scripts
+            - name: Installing dependencies
+              run: npm i --ignore-scripts
 
-      - name: Lint Code Base
-        uses: super-linter/super-linter/slim@v7
-        env:
-          VALIDATE_ALL_CODEBASE: false
-          DEFAULT_BRANCH: main
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          LINTER_RULES_PATH: .
-          TYPESCRIPT_ES_CONFIG_FILE: .eslintrc.cjs
-          VALIDATE_JAVASCRIPT_STANDARD: false
-          VALIDATE_TYPESCRIPT_STANDARD: false
-          VALIDATE_JAVASCRIPT_PRETTIER: false
-          VALIDATE_TYPESCRIPT_PRETTIER: false
-          VALIDATE_JSCPD: false
-          VALIDATE_CHECKOV: false
+            - name: Lint Code Base
+              uses: super-linter/super-linter/slim@v7
+              env:
+                  VALIDATE_ALL_CODEBASE: false
+                  DEFAULT_BRANCH: main
+                  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+                  LINTER_RULES_PATH: .
+                  TYPESCRIPT_ES_CONFIG_FILE: .eslintrc.cjs
+                  VALIDATE_JAVASCRIPT_STANDARD: false
+                  VALIDATE_TYPESCRIPT_STANDARD: false
+                  VALIDATE_JAVASCRIPT_PRETTIER: false
+                  VALIDATE_TYPESCRIPT_PRETTIER: false
+                  VALIDATE_JSCPD: false
+                  VALIDATE_CHECKOV: false

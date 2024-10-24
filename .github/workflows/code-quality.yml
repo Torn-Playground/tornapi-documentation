@@ -2,60 +2,60 @@
 name: Code Quality
 
 on:
-  push:
-    branches:
-      - main
-  workflow_dispatch:
+    push:
+        branches:
+            - main
+    workflow_dispatch:
 
 jobs:
-  prettier:
-    runs-on: ubuntu-latest
+    prettier:
+        runs-on: ubuntu-latest
 
-    permissions:
-      contents: write
-      packages: read
+        permissions:
+            contents: write
+            packages: read
 
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-          ref: ${{ github.head_ref }}
-          ssh-key: ${{secrets.SECRET_KEY}}
+        steps:
+            - name: Checkout code
+              uses: actions/checkout@v4
+              with:
+                  fetch-depth: 0
+                  ref: ${{ github.head_ref }}
+                  ssh-key: ${{secrets.SECRET_KEY}}
 
-      - name: Prettify code
-        uses: creyD/prettier_action@v4.3
-        with:
-          prettier_options: --write **/*.{ts,tsx}
-          same_commit: true
+            - name: Prettify code
+              uses: creyD/prettier_action@v4.3
+              with:
+                  prettier_options: --write **/*.{ts,tsx}
+                  same_commit: true
 
-  run-lint:
-    needs: prettier
+    run-lint:
+        needs: prettier
 
-    runs-on: ubuntu-latest
+        runs-on: ubuntu-latest
 
-    permissions:
-      contents: read
-      packages: read
-      statuses: write
+        permissions:
+            contents: read
+            packages: read
+            statuses: write
 
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
+        steps:
+            - name: Checkout code
+              uses: actions/checkout@v4
+              with:
+                  fetch-depth: 0
 
-      - name: Installing dependencies
-        run: npm i --ignore-scripts
+            - name: Installing dependencies
+              run: npm i --ignore-scripts
 
-      - name: Lint Code Base
-        uses: super-linter/super-linter/slim@v7
-        env:
-          VALIDATE_ALL_CODEBASE: false
-          DEFAULT_BRANCH: main
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          LINTER_RULES_PATH: .
-          TYPESCRIPT_ES_CONFIG_FILE: .eslintrc.cjs
-          VALIDATE_TYPESCRIPT_STANDARD: false
-          VALIDATE_JSCPD: false
-          VALIDATE_CHECKOV: false
+            - name: Lint Code Base
+              uses: super-linter/super-linter/slim@v7
+              env:
+                  VALIDATE_ALL_CODEBASE: false
+                  DEFAULT_BRANCH: main
+                  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+                  LINTER_RULES_PATH: .
+                  TYPESCRIPT_ES_CONFIG_FILE: .eslintrc.cjs
+                  VALIDATE_TYPESCRIPT_STANDARD: false
+                  VALIDATE_JSCPD: false
+                  VALIDATE_CHECKOV: false
