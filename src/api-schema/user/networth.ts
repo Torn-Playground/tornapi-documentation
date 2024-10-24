@@ -1,4 +1,4 @@
-import { Integer, Number } from "@/api-schema/common-types";
+import { EpochSeconds, Integer, Number } from "@/api-schema/common-types";
 import { fromStructure, Schema, Selection, Structure } from "@/api-schema/schema.types";
 
 const networthStructure: Structure = {
@@ -37,6 +37,7 @@ const networthStructure: Structure = {
         },
         total: { type: Integer },
         parsetime: { type: Number, description: "Time it took to get this information." },
+        timestamp: { type: EpochSeconds, description: "Time when this data was generated." },
     },
     id: "networth",
     name: "Networth",
