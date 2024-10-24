@@ -25,7 +25,7 @@ jobs:
               run: npm i --ignore-scripts
 
             - name: Lint Code Base
-              uses: super-linter/super-linter/slim@v5
+              uses: super-linter/super-linter/slim@v7
               env:
                   VALIDATE_ALL_CODEBASE: false
                   DEFAULT_BRANCH: main
