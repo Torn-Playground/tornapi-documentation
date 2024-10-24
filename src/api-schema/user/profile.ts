@@ -156,7 +156,12 @@ const schema: Schema = {
     profile_image: { type: String, nullable: true, extra: "Only present if the user has a non-default profile image." },
     property_id: { type: Integer },
     competition: fromStructure(competitionStructure, { nullable: true }),
-    revivable: { type: NumberBoolean, description: "Status whether you (the key owner) can revive this player.", keywords: [KEYWORD_REVIVE] },
+    revivable: {
+        type: NumberBoolean,
+        description:
+            "Status whether you (the key owner) can revive this player. When querying for yourself, it will not check for the revive ability and show 1 when enabled.",
+        keywords: [KEYWORD_REVIVE],
+    },
     life: fromStructure(bar),
     status: fromStructure(statusStructure),
     job: fromStructure(jobStructure),
