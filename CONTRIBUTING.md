@@ -57,7 +57,7 @@ these guidelines when contributing to the project.
 ### Linting
 
 This project uses `ESLint` as our linter tool. It's recommended to configure your preferred development tool in a way
-that it displays lint warnings.
+that it displays linting warnings.
 
 ### Formatting
 
