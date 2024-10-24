@@ -1,8 +1,10 @@
 @import url("tippy.js/dist/tippy.css");
 
+/* stylelint-disable */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+/* stylelint-enable */
 
 * {
     box-sizing: border-box;

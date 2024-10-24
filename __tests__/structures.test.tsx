@@ -21,7 +21,7 @@ function getUsedStructureNames(schema: Schema): string[] {
     const nestedUsedStructureNames = usedStructures
         .map((structure) => structure.structure.schema)
         .filter((schema) => typeof schema !== "undefined")
-        .flatMap((schema) => Array.from(getUsedStructureNames(schema!)));
+        .flatMap((schema) => Array.from(getUsedStructureNames(schema)));
     usedStructureNames.push(...nestedUsedStructureNames);
 
     return Array.from(new Set(usedStructureNames));
