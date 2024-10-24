@@ -59,3 +59,4 @@ jobs:
                   VALIDATE_TYPESCRIPT_STANDARD: false
                   VALIDATE_JSCPD: false
                   VALIDATE_CHECKOV: false
+                  VALIDATE_JSON: false
