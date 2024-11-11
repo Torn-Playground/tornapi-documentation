@@ -3,7 +3,10 @@ import { PropsWithChildren } from "react";
 import { isSection, schema } from "@/api-schema/data";
 import Section from "@/components/section/Section";
 
-export default function SectionLayout({ children, params }: PropsWithChildren<{ params: { section: string } }>) {
+export default async function SectionLayout(props: PropsWithChildren<{ params: Promise<{ section: string }> }>) {
+    const params = await props.params;
+    const { children } = props;
+
     if (!isSection(params.section)) {
         redirect("/");
     }
