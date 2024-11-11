@@ -7,7 +7,7 @@ import { Param, Section, SectionType, Selection } from "@/api-schema/schema.type
 import torn from "@/api-schema/torn";
 import user from "@/api-schema/user";
 
-const schema: { [key in SectionType]: Section } = {
+const schema: Record<SectionType, Section> = {
     user,
     property,
     faction,
