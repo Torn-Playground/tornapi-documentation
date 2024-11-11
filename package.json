@@ -3,7 +3,7 @@
     "version": "0.1.0",
     "private": true,
     "scripts": {
-        "dev": "next dev",
+        "dev": "next dev --turbopack",
         "build": "next build",
         "start": "next start",
         "start:server": "next start -p 3010",
@@ -14,10 +14,10 @@
     "dependencies": {
         "@floating-ui/react": "^0.26.27",
         "daisyui": "^2.52.0",
-        "next": "^14.2.15",
+        "next": "15.0.3",
         "next-themes": "npm:@wits/next-themes@^0.2.16",
-        "react": "^18.3.1",
-        "react-dom": "^18.3.1",
+        "react": "19.0.0-rc-66855b96-20241106",
+        "react-dom": "19.0.0-rc-66855b96-20241106",
         "react-loading-icons": "^1.1.0",
         "typescript": "^5.6.3",
         "underscore": "^1.13.7"
@@ -26,24 +26,30 @@
         "@tailwindcss/forms": "^0.5.9",
         "@tailwindcss/typography": "^0.5.15",
         "@types/jest": "^29.5.14",
-        "@types/node": "^22.8.2",
-        "@types/react": "^18.3.12",
-        "@types/react-dom": "^18.3.1",
+        "@types/node": "^22.9.0",
+        "@types/react": "npm:types-react@19.0.0-rc.1",
+        "@types/react-dom": "npm:types-react-dom@19.0.0-rc.1",
         "@types/underscore": "^1.13.0",
-        "@typescript-eslint/eslint-plugin": "^6.21.0",
+        "@typescript-eslint/eslint-plugin": "^8.13.0",
         "autoprefixer": "^10.4.20",
-        "eslint": "^8.57.1",
-        "eslint-config-next": "^15.0.2",
+        "eslint": "^9.14.0",
+        "eslint-config-next": "15.0.3",
         "eslint-config-prettier": "^9.1.0",
         "eslint-plugin-import": "^2.31.0",
         "jest": "^29.7.0",
         "jest-environment-jsdom": "^29.7.0",
         "jest-extended": "^4.0.2",
-        "postcss": "^8.4.47",
+        "postcss": "^8.4.48",
         "prettier": "^3.3.3",
         "tailwindcss": "^3.4.14"
     },
     "browserslist": [
         "last 2 versions, not dead, > 0.2%"
-    ]
+    ],
+    "overrides": {
+        "react": "19.0.0-rc-66855b96-20241106",
+        "react-dom": "19.0.0-rc-66855b96-20241106",
+        "@types/react": "npm:types-react@19.0.0-rc.1",
+        "@types/react-dom": "npm:types-react-dom@19.0.0-rc.1"
+    }
 }

@@ -81,11 +81,11 @@ export const TooltipTrigger = forwardRef<HTMLElement, HTMLProps<HTMLElement> & {
     if (asChild && isValidElement(children)) {
         return cloneElement(
             children,
-            // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
             context.getReferenceProps({
                 ref,
                 ...props,
-                ...children.props,
+                ...(typeof children.props === "object" ? children.props : {}),
+                // @ts-expect-error test
                 "data-state": context.open ? "open" : "closed",
             }),
         );

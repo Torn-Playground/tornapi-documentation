@@ -2,7 +2,9 @@ import { redirect } from "next/navigation";
 import { getActiveSelections, isSection, schema } from "@/api-schema/data";
 import Selection from "@/components/section/selection/Selection";
 
-export default function UserSelectionPage({ params: { section, selection } }: { params: { section: string; selection: string } }) {
+export default async function UserSelectionPage(props: { params: Promise<{ section: string; selection: string }> }) {
+    const { section, selection } = await props.params;
+
     if (!isSection(section)) {
         redirect("/");
     }
