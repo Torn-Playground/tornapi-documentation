@@ -16,7 +16,7 @@ you would like to solve will get clarity on it and avoid time loss.
   - [app directory](https://beta.nextjs.org/docs/routing/fundamentals)
 - [TailwindCSS](https://tailwindcss.com/)
 - [DaisyUI](https://daisyui.com/)
-- [Tippy.js](https://github.com/atomiks/tippyjs-react)
+- [Floating UI](https://floating-ui.com/)
 
 #### Developer Tools
 

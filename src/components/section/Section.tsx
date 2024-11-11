@@ -1,6 +1,6 @@
 import { SectionType, Selection } from "@/api-schema/schema.types";
 import PinIcon from "@/components/global/icons/PinIcon";
-import Tooltip from "@/components/global/tooltip/Tooltip";
+import SimpleTooltip from "@/components/global/tooltip/SimpleTooltip";
 import SelectorBadge from "@/components/section/SelectorBadge";
 
 interface SectionProps {
@@ -23,12 +23,12 @@ export default function Section({ defaultSelection, idDescription, section, sele
                     .map((selection) => {
                         if (defaultSelection === selection.name) {
                             return (
-                                <Tooltip key={selection.name} tooltip={`Default selection of the ${section} section.`}>
+                                <SimpleTooltip key={selection.name} tooltip={`Default selection of the ${section} section.`}>
                                     <SelectorBadge key={selection.name} section={section} selection={selection.name}>
                                         <PinIcon size={16} solid />
                                         {selection.name}
                                     </SelectorBadge>
-                                </Tooltip>
+                                </SimpleTooltip>
                             );
                         }
                         return (

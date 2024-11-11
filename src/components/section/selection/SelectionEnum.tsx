@@ -1,4 +1,4 @@
-import Tooltip from "@/components/global/tooltip/Tooltip";
+import SimpleTooltip from "@/components/global/tooltip/SimpleTooltip";
 
 interface SelectionEnumProps {
     type: string;
@@ -11,9 +11,9 @@ export default function SelectionEnum({ incomplete, type, values }: SelectionEnu
         <div className="overflow-x-auto mt-1 flex gap-1 flex-wrap items-baseline">
             {incomplete && (
                 <div className="text-error w-full">
-                    <Tooltip tooltip={incomplete.missing}>
+                    <SimpleTooltip tooltip={incomplete.missing}>
                         <span>Please note that is not complete yet. Let us know if you encounter a value that&apos;s not in here.</span>
-                    </Tooltip>
+                    </SimpleTooltip>
                 </div>
             )}
 

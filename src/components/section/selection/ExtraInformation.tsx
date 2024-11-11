@@ -2,7 +2,7 @@
 
 import { ReactNode } from "react";
 import QuestionMarkIcon from "@/components/global/icons/QuestionMarkIcon";
-import Tooltip from "@/components/global/tooltip/Tooltip";
+import SimpleTooltip from "@/components/global/tooltip/SimpleTooltip";
 
 interface ExtraInformationProps {
     tooltip: string;
@@ -23,8 +23,8 @@ export default function ExtraInformation({ color, iconElement, tooltip }: ExtraI
     };
 
     return (
-        <Tooltip tooltip={tooltip}>
+        <SimpleTooltip tooltip={tooltip}>
             <div className={`badge ${getColorClass()} ml-1 px-1`}>{iconElement ?? <QuestionMarkIcon size={10} />}</div>
-        </Tooltip>
+        </SimpleTooltip>
     );
 }
