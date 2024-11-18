@@ -1,4 +1,4 @@
-import { Integer, Number, String } from "@/api-schema/common-types";
+import { Boolean, Integer, Number, String } from "@/api-schema/common-types";
 import { fromStructure, Schema, Selection, Structure } from "@/api-schema/schema.types";
 
 const coverageStructure: Structure = {
@@ -33,6 +33,7 @@ const itemStructure: Structure = {
         market_value: { type: Integer },
         circulation: { type: Integer },
         image: { type: String },
+        tradeable: { type: Boolean },
         coverage: fromStructure(coverageStructure, { nullable: true }),
     },
 };
