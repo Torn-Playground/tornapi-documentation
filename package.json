@@ -16,8 +16,8 @@
         "daisyui": "^2.52.0",
         "next": "15.0.3",
         "next-themes": "npm:@wits/next-themes@^0.2.16",
-        "react": "19.0.0-rc-66855b96-20241106",
-        "react-dom": "19.0.0-rc-66855b96-20241106",
+        "react": "19.0.0-rc.1",
+        "react-dom": "19.0.0-rc.1",
         "react-loading-icons": "^1.1.0",
         "typescript": "^5.7.2",
         "underscore": "^1.13.7"
@@ -47,8 +47,8 @@
         "last 2 versions, not dead, > 0.2%"
     ],
     "overrides": {
-        "react": "19.0.0-rc-66855b96-20241106",
-        "react-dom": "19.0.0-rc-66855b96-20241106",
+        "react": "19.0.0-rc.1",
+        "react-dom": "19.0.0-rc.1",
         "@types/react": "npm:types-react@19.0.0-rc.1",
         "@types/react-dom": "npm:types-react-dom@19.0.0-rc.1"
     }
