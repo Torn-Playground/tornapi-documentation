@@ -1,7 +1,7 @@
 import { Param } from "@/api-schema/schema.types";
 import { SelectedParamMap } from "@/components/try-it/url-selector/url-utilities";
 
-export type ValidationFunction = (param: Param, value: string | undefined, selectedParams: SelectedParamMap) => ValidationResult;
+export type ValidationFunction = (param: Param, value: string | undefined, selectedParams: SelectedParamMap, id: string | null) => ValidationResult;
 
 export type ValidationResult = { valid: true; warning?: string } | { valid: false; reason: string };
 
@@ -93,7 +93,7 @@ function warnSpace(_: Param, value: string | undefined): ValidationResult {
     return { valid: true };
 }
 
-export function performValidations(param: Param, value: string | undefined, selectedParams: SelectedParamMap): ValidationResult {
+export function performValidations(param: Param, value: string | undefined, selectedParams: SelectedParamMap, id: string | null): ValidationResult {
     if (param.validations.length < 1) return { valid: true };
 
     const validations: ValidationFunction[] = [...param.validations, warnSpace];
@@ -102,7 +102,7 @@ export function performValidations(param: Param, value: string | undefined, sele
         (result, validation) => {
             if (!result.valid) return result;
 
-            return { ...result, ...validation(param, value, selectedParams) };
+            return { ...result, ...validation(param, value, selectedParams, id) };
         },
         { valid: true },
     );

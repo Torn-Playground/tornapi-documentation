@@ -5,6 +5,7 @@ interface CallState {
     key: string;
     url: string;
     share: string;
+    id: string | null;
     responses: CallResponse[];
 }
 
@@ -12,6 +13,7 @@ const defaultState: CallState = {
     key: "",
     url: "",
     share: "",
+    id: null,
     responses: [],
 };
 
@@ -22,6 +24,7 @@ const CallDispatchContext = createContext<Dispatch<CallAction>>(() => {});
 export enum CallActionType {
     SET_KEY = "SET_KEY",
     SET_URL = "SET_URL",
+    SET_ID = "SET_ID",
     SET_SHARE = "SET_SHARE",
     EXECUTE_CALL = "EXECUTE_CALL",
 }
@@ -29,6 +32,7 @@ export enum CallActionType {
 type CallAction =
     | { type: CallActionType.SET_KEY; key: string }
     | { type: CallActionType.SET_URL; url: string }
+    | { type: CallActionType.SET_ID; id: string | null }
     | { type: CallActionType.SET_SHARE; share: string }
     | { type: CallActionType.EXECUTE_CALL; url: string; data: unknown; timestamp: number };
 
@@ -50,6 +54,12 @@ function callsReducer(state: CallState, action: CallAction): CallState {
             return {
                 ...state,
                 share: action.share,
+            };
+        }
+        case CallActionType.SET_ID: {
+            return {
+                ...state,
+                id: action.id,
             };
         }
         case CallActionType.EXECUTE_CALL: {

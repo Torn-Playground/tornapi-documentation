@@ -3,7 +3,8 @@
 import { TIMESTAMP } from "@/api-schema/common-params";
 import { Integer } from "@/api-schema/common-types";
 import { fromStructure, Param, Schema, Selection, Structure } from "@/api-schema/schema.types";
-import { conditionalRequired, withMaximumListLength } from "@/api-schema/validations";
+import { onlySingleValue, ValidationResult, withMaximumListLength } from "@/api-schema/validations";
+import { SelectedParamMap } from "@/components/try-it/url-selector/url-utilities";
 
 const personalStatsStructure: Structure = {
     id: "personal_stats",
@@ -383,10 +384,51 @@ const schema: Schema = {
     personalstats: fromStructure(personalStatsStructure),
 };
 
+const possibleCategories = [
+    "attacking",
+    "jobs",
+    "trading",
+    "jail",
+    "hospital",
+    "finishinghits",
+    "communication",
+    "criminaloffenses",
+    "bounties",
+    "items",
+    "travel",
+    "drugs",
+    "missions",
+    "racing",
+    "networth",
+    "other",
+];
+
 const statParam: Param = {
     name: "stat",
-    description: "REQUIRED when using timestamp. Which stats you want to see. Uses the keys returned in this call.",
-    validations: [conditionalRequired("timestamp", "Required when providing a timestamp."), withMaximumListLength(10)],
+    description: "REQUIRED unless for yourself of when 'cat' is present. Which stats you want to see. Uses the keys returned in this call.",
+    validations: [
+        (_: Param, value: string | undefined, selectedParams: SelectedParamMap, id: string | null): ValidationResult => {
+            if (!id || value || selectedParams.cat) return { valid: true };
+
+            return { valid: false, reason: "Required (or 'cat') for other players." };
+        },
+        withMaximumListLength(10),
+    ],
+};
+const catParam: Param = {
+    name: "cat",
+    description: "REQUIRED unless for yourself of when 'stat' is present. Which category of stats you want to see.",
+    options: {
+        values: possibleCategories,
+    },
+    validations: [
+        (_: Param, value: string | undefined, selectedParams: SelectedParamMap, id: string | null): ValidationResult => {
+            if (!id || value || selectedParams.stat) return { valid: true };
+
+            return { valid: false, reason: "Required (or 'stat') for other players." };
+        },
+        onlySingleValue,
+    ],
 };
 
 const PersonalStatsSelection: Selection = {
@@ -396,7 +438,7 @@ const PersonalStatsSelection: Selection = {
     schema,
     structures,
     id: { optional: true },
-    params: [TIMESTAMP, statParam],
+    params: [TIMESTAMP, statParam, catParam],
 };
 
 export default PersonalStatsSelection;
