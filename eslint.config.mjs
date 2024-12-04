@@ -9,7 +9,8 @@ const compat = new FlatCompat({
 
 export default tseslint.config(
     ...compat.extends("next/core-web-vitals", "next/typescript"),
-    { ignores: ["eslint.config.js", "vite.config.ts", "dist/*"] },
+    { files: ["src/*"] },
+    // { ignores: ["eslint.config.js", "vite.config.ts", "dist/*"] },
     // eslint
     eslint.configs.recommended,
     // typescript

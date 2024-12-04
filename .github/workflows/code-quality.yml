@@ -42,21 +42,9 @@ jobs:
         steps:
             - name: Checkout code
               uses: actions/checkout@v4
-              with:
-                  fetch-depth: 0
 
             - name: Installing dependencies
               run: npm i --ignore-scripts
 
-            - name: Lint Code Base
-              uses: super-linter/super-linter/slim@v7
-              env:
-                  VALIDATE_ALL_CODEBASE: false
-                  DEFAULT_BRANCH: main
-                  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-                  LINTER_RULES_PATH: .
-                  TYPESCRIPT_ES_CONFIG_FILE: eslint.config.mjs
-                  VALIDATE_TYPESCRIPT_STANDARD: false
-                  VALIDATE_JSCPD: false
-                  VALIDATE_CHECKOV: false
-                  VALIDATE_JSON: false
+            - name: Run ESLint
+              run: eslint .

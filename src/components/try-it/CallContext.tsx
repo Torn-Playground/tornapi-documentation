@@ -16,7 +16,6 @@ const defaultState: CallState = {
 };
 
 const CallContext = createContext<CallState>(defaultState);
-// eslint-disable-next-line @typescript-eslint/no-empty-function
 const CallDispatchContext = createContext<Dispatch<CallAction>>(() => {});
 
 export enum CallActionType {
