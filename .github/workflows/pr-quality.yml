@@ -1,9 +1,9 @@
 ---
-name: PR Code Quality
+name: Code Quality
 
 on:
     push:
-        branches-ignore:
+        branches:
             - main
     pull_request:
 

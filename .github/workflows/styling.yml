@@ -1,5 +1,5 @@
 ---
-name: Code Quality
+name: Styling
 
 on:
     push:
@@ -28,23 +28,3 @@ jobs:
               with:
                   prettier_options: --write **/*.{ts,tsx}
                   same_commit: true
-
-    run-lint:
-        needs: prettier
-
-        runs-on: ubuntu-latest
-
-        permissions:
-            contents: read
-            packages: read
-            statuses: write
-
-        steps:
-            - name: Checkout code
-              uses: actions/checkout@v4
-
-            - name: Installing dependencies
-              run: npm i --ignore-scripts
-
-            - name: Run ESLint
-              run: npm run lint
