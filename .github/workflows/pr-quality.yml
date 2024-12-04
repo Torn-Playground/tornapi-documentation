@@ -3,7 +3,7 @@ name: PR Code Quality
 
 on:
     push:
-        branches:
+        branches-ignore:
             - main
     pull_request:
 
