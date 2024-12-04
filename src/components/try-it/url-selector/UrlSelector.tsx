@@ -18,12 +18,13 @@ interface ParameterInputProps {
 
 function ParameterInput({ param, value, updateValue, selectedParams }: ParameterInputProps) {
     const [validation, setValidation] = useState<ValidationResult>({ valid: true });
+    const calls = useCalls();
 
     useEffect(() => {
-        const result = performValidations(param, value, selectedParams);
+        const result = performValidations(param, value, selectedParams, calls.id);
 
         setValidation(result);
-    }, [param, value, selectedParams]);
+    }, [param, value, selectedParams, calls.id]);
 
     return <ValidatedInput name={param.name} value={value || ""} updateValue={updateValue} validation={validation} />;
 }
@@ -77,6 +78,7 @@ export default function UrlSelector() {
         const url = createApiUrl(state.key, section, id, selections, customSelections, comment, params);
         const share = createShareUrl(section, id, selections, customSelections, comment, params);
 
+        dispatch({ type: CallActionType.SET_ID, id });
         dispatch({ type: CallActionType.SET_URL, url });
         dispatch({ type: CallActionType.SET_SHARE, share });
     }, [state.key, dispatch, section, selections, customSelections, id, selectedParams, possibleParams, comment]);
