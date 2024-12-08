@@ -14,10 +14,10 @@
     "dependencies": {
         "@floating-ui/react": "^0.27.0",
         "daisyui": "^2.52.0",
-        "next": "15.0.3",
+        "next": "^15.0.4",
         "next-themes": "npm:@wits/next-themes@^0.2.16",
-        "react": "19.0.0-rc.1",
-        "react-dom": "19.0.0-rc.1",
+        "react": "^19.0.0",
+        "react-dom": "^19.0.0",
         "react-loading-icons": "^1.1.0",
         "typescript": "^5.7.2",
         "underscore": "^1.13.7"
@@ -29,8 +29,8 @@
         "@tailwindcss/typography": "^0.5.15",
         "@types/jest": "^29.5.14",
         "@types/node": "^22.10.1",
-        "@types/react": "npm:types-react@19.0.0-rc.1",
-        "@types/react-dom": "npm:types-react-dom@19.0.0-rc.1",
+        "@types/react": "^19.0.1",
+        "@types/react-dom": "^19.0.1",
         "@types/underscore": "^1.13.0",
         "autoprefixer": "^10.4.20",
         "eslint": "^9.16.0",
@@ -48,11 +48,5 @@
     },
     "browserslist": [
         "last 2 versions, not dead, > 0.2%"
-    ],
-    "overrides": {
-        "react": "19.0.0-rc.1",
-        "react-dom": "19.0.0-rc.1",
-        "@types/react": "npm:types-react@19.0.0-rc.1",
-        "@types/react-dom": "npm:types-react-dom@19.0.0-rc.1"
-    }
+    ]
 }
