@@ -12,7 +12,7 @@
         "test:run": "jest"
     },
     "dependencies": {
-        "@floating-ui/react": "^0.26.28",
+        "@floating-ui/react": "^0.27.0",
         "daisyui": "^2.52.0",
         "next": "15.0.3",
         "next-themes": "npm:@wits/next-themes@^0.2.16",
