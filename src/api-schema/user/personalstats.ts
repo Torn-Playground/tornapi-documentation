@@ -3,7 +3,7 @@
 import { TIMESTAMP } from "@/api-schema/common-params";
 import { Integer } from "@/api-schema/common-types";
 import { fromStructure, Param, Schema, Selection, Structure } from "@/api-schema/schema.types";
-import { onlySingleValue, ValidationResult, withMaximumListLength } from "@/api-schema/validations";
+import { onlySingleValue, ValidationResult } from "@/api-schema/validations";
 import { SelectedParamMap } from "@/components/try-it/url-selector/url-utilities";
 
 const personalStatsStructure: Structure = {
@@ -412,7 +412,6 @@ const statParam: Param = {
 
             return { valid: false, reason: "Required (or 'cat') for other players." };
         },
-        withMaximumListLength(10),
     ],
 };
 const catParam: Param = {
