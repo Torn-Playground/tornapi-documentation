@@ -34,7 +34,7 @@
         "@types/underscore": "^1.13.0",
         "autoprefixer": "^10.4.21",
         "eslint": "^9.23.0",
-        "eslint-config-next": "15.2.2",
+        "eslint-config-next": "15.2.3",
         "eslint-config-prettier": "^10.1.1",
         "eslint-import-resolver-typescript": "^4.2.2",
         "eslint-plugin-import": "^2.31.0",
