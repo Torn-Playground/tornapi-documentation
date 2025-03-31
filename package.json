@@ -17,7 +17,7 @@
         "next": "^15.2.3",
         "next-themes": "npm:@wits/next-themes@^0.2.16",
         "react": "^19.0.0",
-        "react-dom": "^19.0.0",
+        "react-dom": "^19.1.0",
         "react-loading-icons": "^1.1.0",
         "typescript": "^5.8.2",
         "underscore": "^1.13.7"
