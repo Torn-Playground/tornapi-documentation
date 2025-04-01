@@ -20,3 +20,6 @@ updates:
           patterns:
             - "@eslint/*"
             - "eslint"
+        react:
+          patterns:
+            - "react*"
