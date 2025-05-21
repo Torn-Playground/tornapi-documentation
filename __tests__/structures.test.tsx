@@ -7,7 +7,7 @@ describe.each(Object.entries(schema))("section %s", (_, section) => {
             const definedStructures = selection.structures.map((s) => s.id);
             const usedStructures: string[] = getUsedStructureNames(selection.schema);
 
-            expect(definedStructures).toContainAllValues(usedStructures);
+            expect(definedStructures).toIncludeAllMembers(usedStructures);
         });
     });
 });
