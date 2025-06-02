@@ -1,6 +1,6 @@
 {
     "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-    "extends": ["config:recommended", ":disableDependencyDashboard", ":automergeMinor"],
+    "extends": ["config:recommended", ":disableDependencyDashboard", ":automergeMinor", ":prHourlyLimit1"],
     "rangeStrategy": "bump",
     "platformAutomerge": true,
     "ignoreDeps": [
