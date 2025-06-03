@@ -4,6 +4,6 @@
     "rangeStrategy": "bump",
     "platformAutomerge": true,
     "ignoreDeps": [
-        "daisyui"
+        "daisyui", "tailwindcss"
     ]
 }
