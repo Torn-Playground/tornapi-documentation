@@ -24,7 +24,7 @@ jobs:
                   ssh-key: ${{secrets.SECRET_KEY}}
 
             - name: Prettify code
-              uses: creyD/prettier_action@v4.5
+              uses: creyD/prettier_action@v4.6
               with:
                   prettier_options: --write **/*.{ts,tsx}
                   same_commit: true
