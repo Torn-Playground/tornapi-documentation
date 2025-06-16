@@ -55,8 +55,8 @@ const FILTER_CATEGORY: Param = {
     descriptionNode: (
         <>
             Filter based on the log categories. Possible values are available in{" "}
-            <Link href="/torn/categories" className="link">
-                torn/categories
+            <Link href="/torn/logcategories" className="link">
+                torn/logcategories
             </Link>
             .
         </>
