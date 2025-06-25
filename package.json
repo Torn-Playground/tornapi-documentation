@@ -38,7 +38,7 @@
         "eslint-config-prettier": "^10.1.5",
         "eslint-import-resolver-typescript": "^4.4.3",
         "eslint-plugin-import": "^2.32.0",
-        "jest": "^30.0.2",
+        "jest": "^30.0.3",
         "jest-environment-jsdom": "^30.0.2",
         "jest-extended": "^6.0.0",
         "postcss": "^8.5.6",
