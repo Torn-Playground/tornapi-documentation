@@ -71,6 +71,9 @@ const errorCodes: ErrorCode[] = [
     { code: 19, message: "Must be migrated to crimes 2.0." },
     { code: 20, message: "Race not yet finished." },
     { code: 21, message: "Incorrect category", description: "Wrong cat value." },
+    { code: 22, message: "This selection is only available in API v1." },
+    { code: 23, message: "This selection is only available in API v2." },
+    { code: 24, message: "Closed temporarily." },
 ];
 
 export default errorCodes;
