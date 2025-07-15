@@ -28,7 +28,7 @@
         "@tailwindcss/forms": "^0.5.10",
         "@tailwindcss/typography": "^0.5.16",
         "@types/jest": "^30.0.0",
-        "@types/node": "^22.16.3",
+        "@types/node": "^22.16.4",
         "@types/react": "^19.1.8",
         "@types/react-dom": "^19.1.6",
         "@types/underscore": "^1.13.0",
