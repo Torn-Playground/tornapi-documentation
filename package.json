@@ -14,7 +14,7 @@
     "dependencies": {
         "@floating-ui/react": "^0.27.13",
         "daisyui": "^2.52.0",
-        "next": "^15.4.2",
+        "next": "^15.4.3",
         "next-themes": "npm:@wits/next-themes@^0.2.16",
         "react": "^19.1.0",
         "react-dom": "^19.1.0",
@@ -34,7 +34,7 @@
         "@types/underscore": "^1.13.0",
         "autoprefixer": "^10.4.21",
         "eslint": "^9.31.0",
-        "eslint-config-next": "15.4.2",
+        "eslint-config-next": "15.4.3",
         "eslint-config-prettier": "^10.1.8",
         "eslint-import-resolver-typescript": "^4.4.4",
         "eslint-plugin-import": "^2.32.0",
