@@ -24,7 +24,7 @@
     },
     "devDependencies": {
         "@eslint/eslintrc": "^3.3.1",
-        "@eslint/js": "^9.35.0",
+        "@eslint/js": "^9.36.0",
         "@tailwindcss/forms": "^0.5.10",
         "@tailwindcss/typography": "^0.5.18",
         "@types/jest": "^30.0.0",
@@ -33,7 +33,7 @@
         "@types/react-dom": "^19.1.9",
         "@types/underscore": "^1.13.0",
         "autoprefixer": "^10.4.21",
-        "eslint": "^9.35.0",
+        "eslint": "^9.36.0",
         "eslint-config-next": "15.5.3",
         "eslint-config-prettier": "^10.1.8",
         "eslint-import-resolver-typescript": "^4.4.4",
