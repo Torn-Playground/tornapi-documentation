@@ -18,7 +18,7 @@ const CORS_OPTIONS: CorsOptions = {
     credentials: true,
 };
 
-export function middleware() {
+export function proxy() {
     const response = NextResponse.next();
 
     response.headers.set("Access-Control-Allow-Origin", CORS_OPTIONS.allowedOrigins.join(","));

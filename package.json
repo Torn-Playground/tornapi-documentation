@@ -3,21 +3,21 @@
     "version": "0.1.0",
     "private": true,
     "scripts": {
-        "dev": "next dev --turbopack",
+        "dev": "next dev",
         "build": "next build",
         "start": "next start",
         "start:server": "next start -p 3010",
-        "lint": "next lint",
+        "lint": "eslint .",
         "test": "jest --watch",
         "test:run": "jest"
     },
     "dependencies": {
         "@floating-ui/react": "^0.27.16",
         "daisyui": "^2.52.0",
-        "next": "^15.5.6",
+        "next": "16.0.0",
         "next-themes": "npm:@wits/next-themes@^0.2.16",
-        "react": "^19.2.0",
-        "react-dom": "^19.2.0",
+        "react": "19.2.0",
+        "react-dom": "19.2.0",
         "react-loading-icons": "^1.1.0",
         "typescript": "^5.9.3",
         "underscore": "^1.13.7"
@@ -29,12 +29,12 @@
         "@tailwindcss/typography": "^0.5.19",
         "@types/jest": "^30.0.0",
         "@types/node": "^22.18.12",
-        "@types/react": "^19.2.2",
-        "@types/react-dom": "^19.2.2",
+        "@types/react": "19.2.2",
+        "@types/react-dom": "19.2.2",
         "@types/underscore": "^1.13.0",
         "autoprefixer": "^10.4.21",
         "eslint": "^9.38.0",
-        "eslint-config-next": "15.5.6",
+        "eslint-config-next": "16.0.0",
         "eslint-config-prettier": "^10.1.8",
         "eslint-import-resolver-typescript": "^4.4.4",
         "eslint-plugin-import": "^2.32.0",
@@ -51,5 +51,9 @@
     ],
     "engines": {
         "node": "22.21.0"
+    },
+    "overrides": {
+        "@types/react": "19.2.2",
+        "@types/react-dom": "19.2.2"
     }
 }
