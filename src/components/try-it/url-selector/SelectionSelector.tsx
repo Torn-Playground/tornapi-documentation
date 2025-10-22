@@ -1,7 +1,7 @@
 import { useSearchParams } from "next/navigation";
-import { ChangeEvent, MouseEvent, useEffect, useState } from "react";
+import { type ChangeEvent, type MouseEvent, useEffect, useState } from "react";
 import { schema } from "@/api-schema/data";
-import { SectionType } from "@/api-schema/schema.types";
+import type { SectionType } from "@/api-schema/schema.types";
 import TrashIcon from "@/components/global/icons/TrashIcon";
 
 interface SelectionSelectorProps {
@@ -40,7 +40,8 @@ export default function SelectionSelector({ onSelectionsChange, section, onCusto
     }, [searchParams, onSelectionsChange, onCustomSelectionsChange]);
 
     const selectSelection = (event: MouseEvent<HTMLSpanElement>) => {
-        const selection = event.currentTarget.dataset.selection!;
+        const selection = event.currentTarget.dataset.selection;
+        if (!selection) return;
 
         let newSelections: string[];
         if (event.ctrlKey) {
@@ -81,6 +82,8 @@ export default function SelectionSelector({ onSelectionsChange, section, onCusto
     return (
         <div className="mt-2 flex flex-wrap gap-1">
             {possibleSelections.map((selection) => (
+                // biome-ignore lint/a11y/noStaticElementInteractions: legacy
+                // biome-ignore lint/a11y/useKeyWithClickEvents: legacy
                 <span
                     key={selection}
                     className={`badge badge-lg ${selectedSelections.includes(selection) ? "badge-primary" : ""} cursor-pointer`}
@@ -92,7 +95,7 @@ export default function SelectionSelector({ onSelectionsChange, section, onCusto
             ))}
             {customSelections.map((selection, index) => (
                 <span
-                    key={`custom-${index}`}
+                    key={`custom-${selection}`}
                     className="badge badge-lg badge-accent cursor-pointer focus-within:outline focus-within:outline-2 focus-within:outline-blue-500"
                 >
                     <input
@@ -104,6 +107,8 @@ export default function SelectionSelector({ onSelectionsChange, section, onCusto
                     <TrashIcon size={12} onClick={() => deleteCustomSelection(index)} />
                 </span>
             ))}
+            {/** biome-ignore lint/a11y/useKeyWithClickEvents: legacy */}
+            {/** biome-ignore lint/a11y/noStaticElementInteractions: legacy */}
             <span className="badge badge-lg badge-accent cursor-pointer" onClick={newCustomSelection}>
                 +
             </span>

@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { Integer, NumberBoolean } from "@/api-schema/common-types";
-import { fromStructure, Param, Schema, Selection, Structure } from "@/api-schema/schema.types";
+import { fromStructure, type Param, type Schema, type Selection, type Structure } from "@/api-schema/schema.types";
 import { onlySingleValue, requiredParam } from "@/api-schema/validations";
 
 const memberContributorStructure: Structure = {

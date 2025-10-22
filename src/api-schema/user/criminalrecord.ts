@@ -1,4 +1,4 @@
-import { Selection } from "@/api-schema/schema.types";
+import type { Selection } from "@/api-schema/schema.types";
 import { schema, structures } from "@/api-schema/shared/crimes";
 
 const CriminalRecordSelection: Selection = {

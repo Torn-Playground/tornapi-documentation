@@ -1,4 +1,4 @@
-import { Selection } from "@/api-schema/schema.types";
+import type { Selection } from "@/api-schema/schema.types";
 import { reportSchema, reportStructures } from "@/api-schema/shared/reports";
 
 const ReportsSelection: Selection = {

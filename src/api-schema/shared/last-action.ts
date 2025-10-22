@@ -1,5 +1,5 @@
 import { EpochSeconds, String } from "@/api-schema/common-types";
-import { fromStructure, Structure, StructureEnum } from "@/api-schema/schema.types";
+import { fromStructure, type Structure, type StructureEnum } from "@/api-schema/schema.types";
 
 export const lastActionStatusEnum: StructureEnum = {
     id: "last_action_status",

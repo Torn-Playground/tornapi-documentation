@@ -34,7 +34,7 @@ import TerritorySelection from "@/api-schema/faction/territory";
 import TerritoryNewsSelection from "@/api-schema/faction/territorynews";
 import UpgradesSelection from "@/api-schema/faction/upgrades";
 import WeaponsSelection from "@/api-schema/faction/weapons";
-import { Section, Selection } from "@/api-schema/schema.types";
+import type { Section, Selection } from "@/api-schema/schema.types";
 
 const selections: Selection[] = [
     ApplicationsSelection,

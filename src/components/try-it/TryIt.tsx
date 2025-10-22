@@ -1,8 +1,8 @@
 "use client";
 
 import { Suspense } from "react";
-import CallResponse from "@/components/try-it/call-response/CallResponse";
 import { CallProvider } from "@/components/try-it/CallContext";
+import CallResponse from "@/components/try-it/call-response/CallResponse";
 import KeyInput from "@/components/try-it/key-input/KeyInput";
 import ShareButton from "@/components/try-it/ShareButton";
 import TryItButton from "@/components/try-it/TryItButton";

@@ -1,6 +1,6 @@
 "use client";
 
-import { ReactNode } from "react";
+import type { ReactNode } from "react";
 import QuestionMarkIcon from "@/components/global/icons/QuestionMarkIcon";
 import SimpleTooltip from "@/components/global/tooltip/SimpleTooltip";
 

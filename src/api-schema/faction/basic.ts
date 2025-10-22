@@ -1,7 +1,7 @@
 import { EpochSeconds, Integer, IntegerAndString, String } from "@/api-schema/common-types";
-import { fromStructure, Schema, Selection, Structure, StructureEnum } from "@/api-schema/schema.types";
+import { fromStructure, type Schema, type Selection, type Structure, type StructureEnum } from "@/api-schema/schema.types";
 import { lastActionStatusEnum, lastActionStructure } from "@/api-schema/shared/last-action";
-import { factionsStructure, rankedWarFactionStructure, rankedWarsStructure, rankedWarStructure, warStructure } from "@/api-schema/shared/ranked-wars";
+import { factionsStructure, rankedWarFactionStructure, rankedWarStructure, rankedWarsStructure, warStructure } from "@/api-schema/shared/ranked-wars";
 import { statusColorEnum, statusStateEnum, statusStructure } from "@/api-schema/shared/status";
 
 const raidStructure: Structure = {

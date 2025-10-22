@@ -1,6 +1,6 @@
 import { EpochSeconds, Integer, Number, String } from "@/api-schema/common-types";
-import { fromStructure, Schema, Selection, Structure } from "@/api-schema/schema.types";
-import { bonusStructure, membersStructure, memberStructure } from "@/api-schema/shared/chain-report";
+import { fromStructure, type Schema, type Selection, type Structure } from "@/api-schema/schema.types";
+import { bonusStructure, memberStructure, membersStructure } from "@/api-schema/shared/chain-report";
 
 const chainReportStructure: Structure = {
     id: "chain_report",

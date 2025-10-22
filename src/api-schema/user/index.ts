@@ -1,5 +1,5 @@
 import { LookupSelection, TimestampSelection } from "@/api-schema/common-selections";
-import { Section, Selection } from "@/api-schema/schema.types";
+import type { Section, Selection } from "@/api-schema/schema.types";
 import AmmoSelection from "@/api-schema/user/ammo";
 import AttacksSelection from "@/api-schema/user/attacks";
 import AttacksFullSelection from "@/api-schema/user/attacksfull";

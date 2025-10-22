@@ -20,9 +20,7 @@ you would like to solve will get clarity on it and avoid time loss.
 
 #### Developer Tools
 
-- [ESLint](https://eslint.org/)
-- [Prettier](https://prettier.io/)
-- [Prettier + ESLint](https://github.com/prettier/eslint-config-prettier)
+- [BiomeJS](https://biomejs.dev)
 
 ### Setup you environment
 
@@ -54,14 +52,10 @@ the `main` branch of this repository.
 In order to maintain consistent and readable code, this project adheres to certain code style guidelines. Please follow
 these guidelines when contributing to the project.
 
-### Linting
+### Linting & Formatting
 
-This project uses `ESLint` as our linter tool. It's recommended to configure your preferred development tool in a way
+This project uses [BiomeJS](https://biomejs.dev) to format the code and as linter. It's recommended to configure your preferred development tool in a way
 that it displays linting warnings.
-
-### Formatting
-
-This project uses [Prettier](https://prettier.io/) to format the code.
 
 ## License
 

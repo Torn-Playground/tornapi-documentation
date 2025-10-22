@@ -1,8 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import { ChangeEvent, useEffect, useState } from "react";
-import { search, SearchField, SearchResult, SearchSection, SearchSelection } from "@/components/search/search-utilities";
+import { type ChangeEvent, useEffect, useState } from "react";
+import { type SearchField, type SearchResult, type SearchSection, type SearchSelection, search } from "@/components/search/search-utilities";
 
 function ResultSelection({ section, selections }: { section: SearchSection; selections: SearchSelection[] }) {
     return (

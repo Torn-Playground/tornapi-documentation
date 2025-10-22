@@ -1,6 +1,6 @@
 import { LIMIT, TIME_FROM, TIME_TO } from "@/api-schema/common-params";
 import { EpochSeconds, Integer, String } from "@/api-schema/common-types";
-import { fromStructure, Schema, Selection, Structure } from "@/api-schema/schema.types";
+import { fromStructure, type Schema, type Selection, type Structure } from "@/api-schema/schema.types";
 
 const chainStructure: Structure = {
     id: "chain",

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { PropsWithChildren } from "react";
+import type { PropsWithChildren } from "react";
 import ThemeSelector from "@/components/global/theme-selector/ThemeSelector";
 
 function Menu() {
@@ -54,6 +54,7 @@ export default function Navigation({ children }: PropsWithChildren) {
             <input id="navigation-drawer" type="checkbox" className="drawer-toggle hidden" />
             <div className="drawer-content relative">{children}</div>
             <nav className="drawer-side">
+                {/** biome-ignore lint/a11y/noLabelWithoutControl: navigation */}
                 <label htmlFor="navigation-drawer" className="drawer-overlay" />
                 <Menu />
             </nav>

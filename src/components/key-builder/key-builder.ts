@@ -1,4 +1,4 @@
-import { SectionType } from "@/api-schema/schema.types";
+import type { SectionType } from "@/api-schema/schema.types";
 
 export function buildCustomKeyUrl(title: string, sections: Record<SectionType, string[]>): string | null {
     if (!title) return null;

@@ -1,5 +1,5 @@
 import { Integer } from "@/api-schema/common-types";
-import { fromStructure, Schema, Selection, Structure } from "@/api-schema/schema.types";
+import { fromStructure, type Schema, type Selection, type Structure } from "@/api-schema/schema.types";
 import { rpsStatusEnum } from "@/api-schema/shared/rockpaperscissors";
 
 const rpsScoreStructure: Structure = {

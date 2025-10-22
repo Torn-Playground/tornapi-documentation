@@ -1,6 +1,6 @@
 import { LIMIT } from "@/api-schema/common-params";
-import { fromStructure, Schema, Selection } from "@/api-schema/schema.types";
-import { factionsStructure, rankedWarFactionStructure, rankedWarsStructure, rankedWarStructure, warStructure } from "@/api-schema/shared/ranked-wars";
+import { fromStructure, type Schema, type Selection } from "@/api-schema/schema.types";
+import { factionsStructure, rankedWarFactionStructure, rankedWarStructure, rankedWarsStructure, warStructure } from "@/api-schema/shared/ranked-wars";
 
 const structures = [rankedWarsStructure, rankedWarStructure, factionsStructure, rankedWarFactionStructure, warStructure];
 

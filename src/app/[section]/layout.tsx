@@ -1,5 +1,5 @@
 import { redirect } from "next/navigation";
-import { PropsWithChildren } from "react";
+import type { PropsWithChildren } from "react";
 import { isSection, schema } from "@/api-schema/data";
 import Section from "@/components/section/Section";
 

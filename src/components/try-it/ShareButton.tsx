@@ -12,6 +12,7 @@ export default function ShareButton() {
         setCopied(true);
     };
 
+    // biome-ignore lint/correctness/useExhaustiveDependencies: reset state
     useEffect(() => {
         setCopied(false);
     }, [calls.share]);

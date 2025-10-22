@@ -1,4 +1,4 @@
-import { Schema } from "@/api-schema/schema.types";
+import type { Schema } from "@/api-schema/schema.types";
 import SelectionStructure from "@/components/section/selection/SelectionStructure";
 
 interface SelectionSchemaProps {

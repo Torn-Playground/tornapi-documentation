@@ -1,5 +1,5 @@
 import { EpochSeconds, Integer, Number, String } from "@/api-schema/common-types";
-import { fromStructure, Schema, Selection, Structure, StructureEnum } from "@/api-schema/schema.types";
+import { fromStructure, type Schema, type Selection, type Structure, type StructureEnum } from "@/api-schema/schema.types";
 
 const factionTypeEnum: StructureEnum = {
     id: "faction_type",

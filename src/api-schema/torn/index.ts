@@ -1,5 +1,5 @@
 import { LookupSelection, TimestampSelection } from "@/api-schema/common-selections";
-import { Section, Selection } from "@/api-schema/schema.types";
+import type { Section, Selection } from "@/api-schema/schema.types";
 import BankSelection from "@/api-schema/torn/bank";
 import CardsSelection from "@/api-schema/torn/cards";
 import ChainReportSelection from "@/api-schema/torn/chainreport";

@@ -1,4 +1,4 @@
-import { Schema, Selection } from "@/api-schema/schema.types";
+import type { Schema, Selection } from "@/api-schema/schema.types";
 
 const schema: Schema = {
     cesium: { type: "unknown" },

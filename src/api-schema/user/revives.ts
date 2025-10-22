@@ -1,7 +1,7 @@
 import { LIMIT, TIME_FROM, TIME_TO_WITH_FROM } from "@/api-schema/common-params";
-import { fromStructure, Schema, Selection } from "@/api-schema/schema.types";
+import { fromStructure, type Schema, type Selection } from "@/api-schema/schema.types";
 import { lastActionStatusEnum } from "@/api-schema/shared/last-action";
-import { reviveLastActionStructure, reviveResultEnum, revivesStructure, reviveStructure } from "@/api-schema/shared/revives";
+import { reviveLastActionStructure, reviveResultEnum, reviveStructure, revivesStructure } from "@/api-schema/shared/revives";
 
 const structures = [revivesStructure, reviveStructure, reviveResultEnum, reviveLastActionStructure, lastActionStatusEnum];
 

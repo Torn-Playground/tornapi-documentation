@@ -2,9 +2,9 @@
 
 import { TIMESTAMP } from "@/api-schema/common-params";
 import { Integer } from "@/api-schema/common-types";
-import { fromStructure, Param, Schema, Selection, Structure } from "@/api-schema/schema.types";
-import { onlySingleValue, ValidationResult } from "@/api-schema/validations";
-import { SelectedParamMap } from "@/components/try-it/url-selector/url-utilities";
+import { fromStructure, type Param, type Schema, type Selection, type Structure } from "@/api-schema/schema.types";
+import { onlySingleValue, type ValidationResult } from "@/api-schema/validations";
+import type { SelectedParamMap } from "@/components/try-it/url-selector/url-utilities";
 
 const personalStatsStructure: Structure = {
     id: "personal_stats",

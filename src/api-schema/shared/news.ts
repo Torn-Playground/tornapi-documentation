@@ -1,5 +1,5 @@
 import { EpochSeconds, String } from "@/api-schema/common-types";
-import { fromStructure, Structure } from "@/api-schema/schema.types";
+import { fromStructure, type Structure } from "@/api-schema/schema.types";
 
 export const newsStructure: Structure = {
     id: "news_entry",

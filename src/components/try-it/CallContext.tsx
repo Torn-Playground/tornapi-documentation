@@ -1,5 +1,5 @@
-import { createContext, Dispatch, PropsWithChildren, useContext, useEffect, useReducer } from "react";
-import { CallResponse } from "@/components/try-it/try-it";
+import { createContext, type Dispatch, type PropsWithChildren, useContext, useEffect, useReducer } from "react";
+import type { CallResponse } from "@/components/try-it/try-it";
 
 interface CallState {
     key: string;
@@ -18,7 +18,6 @@ const defaultState: CallState = {
 };
 
 const CallContext = createContext<CallState>(defaultState);
-// eslint-disable-next-line @typescript-eslint/no-empty-function
 const CallDispatchContext = createContext<Dispatch<CallAction>>(() => {});
 
 export enum CallActionType {

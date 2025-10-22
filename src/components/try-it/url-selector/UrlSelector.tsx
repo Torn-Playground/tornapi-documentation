@@ -3,11 +3,11 @@
 import { useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
 import { getPossibleParams, schema } from "@/api-schema/data";
-import { Param, SectionType } from "@/api-schema/schema.types";
-import { isValidComment, performValidations, ValidationResult } from "@/api-schema/validations";
+import type { Param, SectionType } from "@/api-schema/schema.types";
+import { isValidComment, performValidations, type ValidationResult } from "@/api-schema/validations";
 import { CallActionType, useCalls, useCallsDispatch } from "@/components/try-it/CallContext";
 import SelectionSelector from "@/components/try-it/url-selector/SelectionSelector";
-import { createApiUrl, createShareUrl, ParamInput, SelectedParamMap } from "@/components/try-it/url-selector/url-utilities";
+import { createApiUrl, createShareUrl, type ParamInput, type SelectedParamMap } from "@/components/try-it/url-selector/url-utilities";
 
 interface ParameterInputProps {
     param: Param;
@@ -97,7 +97,10 @@ export default function UrlSelector() {
 
         const otherParams = [...searchParams.entries()]
             .filter(([key]) => !["section", "id", "selections", "custom-selections", "comment"].includes(key))
-            .reduce<SelectedParamMap>((acc, [key, value]) => ({ ...acc, [key]: value }), {});
+            .reduce<SelectedParamMap>((acc, [key, value]) => {
+                acc[key] = value;
+                return acc;
+            }, {});
         if (otherParams && Object.keys(otherParams).length > 0) setSelectedParams(otherParams);
     }, [searchParams]);
 

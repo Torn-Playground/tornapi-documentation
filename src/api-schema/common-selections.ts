@@ -1,5 +1,5 @@
 import { ArrayString, EpochSeconds } from "@/api-schema/common-types";
-import { Selection } from "@/api-schema/schema.types";
+import type { Selection } from "@/api-schema/schema.types";
 
 export const LookupSelection: Selection = {
     name: "lookup",

@@ -1,5 +1,5 @@
 import { Integer, String } from "@/api-schema/common-types";
-import { Schema, Selection } from "@/api-schema/schema.types";
+import type { Schema, Selection } from "@/api-schema/schema.types";
 
 const schema: Schema = {
     bootlegging: { type: String, nullable: true, extra: "in Number format, but it's a string; Only present for players that migrated to crimes 2.0." },

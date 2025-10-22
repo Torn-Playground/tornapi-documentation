@@ -1,5 +1,5 @@
 import { String } from "@/api-schema/common-types";
-import { Schema, Selection } from "@/api-schema/schema.types";
+import type { Schema, Selection } from "@/api-schema/schema.types";
 
 const schema: Schema = {
     inventory: { type: String, description: '"The inventory selection is no longer available"' },

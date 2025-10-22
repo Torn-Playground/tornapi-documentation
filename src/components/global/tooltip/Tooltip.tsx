@@ -1,8 +1,8 @@
 import type { Placement } from "@floating-ui/react";
 import {
     autoUpdate,
-    flip,
     FloatingPortal,
+    flip,
     offset,
     shift,
     useDismiss,
@@ -13,7 +13,7 @@ import {
     useMergeRefs,
     useRole,
 } from "@floating-ui/react";
-import { cloneElement, createContext, forwardRef, HTMLProps, isValidElement, ReactNode, Ref, useContext, useMemo, useState } from "react";
+import { cloneElement, createContext, forwardRef, type HTMLProps, isValidElement, type ReactNode, type Ref, useContext, useMemo, useState } from "react";
 
 interface TooltipOptions {
     initialOpen?: boolean;
@@ -73,7 +73,7 @@ export const TooltipTrigger = forwardRef<HTMLElement, HTMLProps<HTMLElement> & {
     propRef,
 ) {
     const context = useTooltipContext();
-    // eslint-disable-next-line
+    // biome-ignore lint/suspicious/noExplicitAny: legacy
     const childrenRef: Ref<any> = (children as any).ref;
     const ref = useMergeRefs([context.refs.setReference, propRef, childrenRef]);
 

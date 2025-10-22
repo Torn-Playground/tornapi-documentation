@@ -1,4 +1,4 @@
-import { Param } from "@/api-schema/schema.types";
+import type { Param } from "@/api-schema/schema.types";
 import { hasValidOptions, isValidNumber, isValidTime, onlySingleValue, warnMaximumValue, withMinimumValue } from "@/api-schema/validations";
 
 export const TIME_FROM: Param = {

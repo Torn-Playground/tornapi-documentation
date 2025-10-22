@@ -1,5 +1,5 @@
 import { Integer, IntegerAndString, String } from "@/api-schema/common-types";
-import { Schema, Structure } from "@/api-schema/schema.types";
+import type { Schema, Structure } from "@/api-schema/schema.types";
 
 export const armoryItemSchema: Schema = {
     ID: { type: Integer },

@@ -1,5 +1,5 @@
 import { getActiveSelections } from "@/api-schema/data";
-import { isField, isFieldStructure, Schema } from "@/api-schema/schema.types";
+import { isField, isFieldStructure, type Schema } from "@/api-schema/schema.types";
 
 export interface SearchSection {
     name: string;

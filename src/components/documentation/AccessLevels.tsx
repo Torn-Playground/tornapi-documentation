@@ -1,7 +1,7 @@
 import Link from "next/link";
 import _ from "underscore";
 import { schema } from "@/api-schema/data";
-import { KeyAccess } from "@/api-schema/schema.types";
+import type { KeyAccess } from "@/api-schema/schema.types";
 
 interface AccessSelection {
     name: string;
@@ -93,13 +93,16 @@ export default function AccessLevels() {
                     </thead>
                     <tbody>
                         {rows.map((row, i) => (
+                            // biome-ignore lint/suspicious/noArrayIndexKey: legacy
                             <tr key={i}>
                                 {row.map((selection, j) =>
                                     selection ? (
+                                        // biome-ignore lint/suspicious/noArrayIndexKey: legacy
                                         <td key={j} className={getClassName(selection.access)}>
                                             {selection.name}
                                         </td>
                                     ) : (
+                                        // biome-ignore lint/suspicious/noArrayIndexKey: legacy
                                         <td key={j} />
                                     ),
                                 )}

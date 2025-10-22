@@ -1,7 +1,7 @@
 "use client";
 
 import { useTheme } from "next-themes";
-import { ChangeEvent } from "react";
+import type { ChangeEvent } from "react";
 import MoonIcon from "@/components/global/icons/MoonIcon";
 import SunIcon from "@/components/global/icons/SunIcon";
 import { THEME_DARK, THEME_LIGHT } from "@/components/global/theme-selector/theme-utilities";

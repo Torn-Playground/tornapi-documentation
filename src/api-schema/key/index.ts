@@ -1,5 +1,5 @@
 import InfoSelection from "@/api-schema/key/info";
-import { Section, Selection } from "@/api-schema/schema.types";
+import type { Section, Selection } from "@/api-schema/schema.types";
 
 const selections: Selection[] = [InfoSelection];
 
