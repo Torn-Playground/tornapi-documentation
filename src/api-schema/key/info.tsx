@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { ArrayString, Integer, String } from "@/api-schema/common-types";
-import { fromStructure, Schema, SectionType, Selection, Structure, StructureEnum } from "@/api-schema/schema.types";
+import { fromStructure, type Schema, type SectionType, type Selection, type Structure, type StructureEnum } from "@/api-schema/schema.types";
 
 function buildSectionDescription(section: SectionType) {
     return {

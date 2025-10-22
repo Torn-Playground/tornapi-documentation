@@ -1,10 +1,10 @@
 "use client";
 
-import { ChangeEvent, CSSProperties, useEffect, useMemo, useState } from "react";
+import { type ChangeEvent, type CSSProperties, useEffect, useMemo, useState } from "react";
 import { getSelectableSelections } from "@/api-schema/data";
-import { SectionType } from "@/api-schema/schema.types";
-import { buildCustomKeyUrl } from "@/components/key-builder/key-builder";
+import type { SectionType } from "@/api-schema/schema.types";
 import { KeyBuilderActionType, KeyBuilderProvider, useKeyBuilder, useKeyBuilderDispatch } from "@/components/key-builder/KeyBuilderContext";
+import { buildCustomKeyUrl } from "@/components/key-builder/key-builder";
 
 export default function KeyBuilder() {
     return (
@@ -109,6 +109,7 @@ function BuildButton() {
     };
 
     const url = useMemo(() => buildCustomKeyUrl(keyBuilder.title, keyBuilder.selections), [keyBuilder.title, keyBuilder.selections]);
+    // biome-ignore lint/correctness/useExhaustiveDependencies: reset state
     useEffect(() => setCopied(false), [url]);
 
     return (

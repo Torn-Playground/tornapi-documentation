@@ -1,5 +1,5 @@
 import { Integer, IntegerAndString } from "@/api-schema/common-types";
-import { fromStructure, Schema, Selection, Structure } from "@/api-schema/schema.types";
+import { fromStructure, type Schema, type Selection, type Structure } from "@/api-schema/schema.types";
 import { armoryItemSchema } from "@/api-schema/shared/armory";
 
 const armorStructure: Structure = {

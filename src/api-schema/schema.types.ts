@@ -1,5 +1,5 @@
-import { ReactElement, ReactNode } from "react";
-import { ValidationFunction } from "@/api-schema/validations";
+import type { ReactElement, ReactNode } from "react";
+import type { ValidationFunction } from "@/api-schema/validations";
 
 export interface Section {
     selections: Selection[];

@@ -1,5 +1,5 @@
 import { Integer, String } from "@/api-schema/common-types";
-import { fromStructure, Schema, Selection } from "@/api-schema/schema.types";
+import { fromStructure, type Schema, type Selection } from "@/api-schema/schema.types";
 import { genderEnum } from "@/api-schema/shared/gender";
 import { statusColorEnum, statusStateEnum, statusStructure } from "@/api-schema/shared/status";
 

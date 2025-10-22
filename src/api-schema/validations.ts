@@ -1,5 +1,5 @@
-import { Param } from "@/api-schema/schema.types";
-import { SelectedParamMap } from "@/components/try-it/url-selector/url-utilities";
+import type { Param } from "@/api-schema/schema.types";
+import type { SelectedParamMap } from "@/components/try-it/url-selector/url-utilities";
 
 export type ValidationFunction = (param: Param, value: string | undefined, selectedParams: SelectedParamMap, id: string | null) => ValidationResult;
 
@@ -30,7 +30,7 @@ export function isNumberList(_: Param, value: string | undefined): ValidationRes
     if (!value) return { valid: true };
 
     const values = value.split(",").map((v) => v.toLowerCase());
-    if (values.some((v) => isNaN(parseInt(v)))) return { valid: false, reason: "Only numbers are allowed." };
+    if (values.some((v) => Number.isNaN(parseInt(v)))) return { valid: false, reason: "Only numbers are allowed." };
 
     return { valid: true };
 }
@@ -54,7 +54,7 @@ export function withMaximumListLength(max: number): ValidationFunction {
 
 export function isValidNumber(_: Param, value: string | undefined): ValidationResult {
     if (!value) return { valid: true };
-    if (isNaN(parseInt(value))) return { valid: false, reason: "Only numbers are allowed." };
+    if (Number.isNaN(parseInt(value))) return { valid: false, reason: "Only numbers are allowed." };
 
     return { valid: true };
 }
@@ -102,6 +102,7 @@ export function performValidations(param: Param, value: string | undefined, sele
         (result, validation) => {
             if (!result.valid) return result;
 
+            // biome-ignore lint/performance/noAccumulatingSpread: legacy
             return { ...result, ...validation(param, value, selectedParams, id) };
         },
         { valid: true },

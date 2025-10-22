@@ -1,5 +1,5 @@
 import { schema } from "@/api-schema/data";
-import { isFieldStructure, Schema } from "@/api-schema/schema.types";
+import { isFieldStructure, type Schema } from "@/api-schema/schema.types";
 
 describe.each(Object.entries(schema))("section %s", (_, section) => {
     describe.each(section.selections)("selection $name", (selection) => {

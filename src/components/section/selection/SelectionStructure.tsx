@@ -1,4 +1,5 @@
-import { FieldStructure, isField, isFieldStructure, Schema, SchemaField } from "@/api-schema/schema.types";
+import type { ReactElement } from "react";
+import { type FieldStructure, isField, isFieldStructure, type Schema, type SchemaField } from "@/api-schema/schema.types";
 import ExtendedLink from "@/components/global/extended-link/ExtendedLink";
 import ExtraInformation from "@/components/section/selection/ExtraInformation";
 import NullableIndicator from "@/components/section/selection/NullableIndicator";
@@ -10,7 +11,7 @@ interface SelectionStructureProps {
 export default function SelectionStructure({ schema }: SelectionStructureProps) {
     const hasDescription = Object.values(schema).some((f) => !!f.description);
     const buildRow = (fieldName: string, field: SchemaField | FieldStructure) => {
-        let fields;
+        let fields: ReactElement;
         if (isField(field)) {
             fields = (
                 <>

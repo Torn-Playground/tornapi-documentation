@@ -1,6 +1,6 @@
 "use client";
 
-import { ChangeEvent, useEffect, useState } from "react";
+import { type ChangeEvent, useEffect, useState } from "react";
 import { CallActionType, useCalls, useCallsDispatch } from "@/components/try-it/CallContext";
 import SaveKey from "@/components/try-it/key-input/SaveKey";
 import ValidateKey from "@/components/try-it/key-input/ValidateKey";

@@ -1,5 +1,5 @@
 import { ArrayString, Integer, String } from "@/api-schema/common-types";
-import { fromStructure, Schema, Selection, Structure } from "@/api-schema/schema.types";
+import { fromStructure, type Schema, type Selection, type Structure } from "@/api-schema/schema.types";
 import { racketStructure, territoryWarStructure } from "@/api-schema/shared/territory";
 
 const territoryStructure: Structure = {

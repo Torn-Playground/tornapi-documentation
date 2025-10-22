@@ -1,4 +1,4 @@
-import { fromStructure, Schema, Selection } from "@/api-schema/schema.types";
+import { fromStructure, type Schema, type Selection } from "@/api-schema/schema.types";
 import { loanableArmoryItemStructure } from "@/api-schema/shared/armory";
 
 const structures = [loanableArmoryItemStructure];

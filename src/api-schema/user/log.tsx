@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { TIME_TO } from "@/api-schema/common-params";
 import { EpochSeconds, Integer, KeyValueMap, String } from "@/api-schema/common-types";
-import { fromStructure, Param, Schema, Selection, Structure } from "@/api-schema/schema.types";
+import { fromStructure, type Param, type Schema, type Selection, type Structure } from "@/api-schema/schema.types";
 import { isNumberList, isValidNumber, isValidTime, onlySingleValue, withMaximumListLength } from "@/api-schema/validations";
 
 const logStructure: Structure = {

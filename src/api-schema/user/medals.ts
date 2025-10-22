@@ -1,5 +1,5 @@
 import { ArrayEpochSeconds, ArrayInteger } from "@/api-schema/common-types";
-import { Schema, Selection } from "@/api-schema/schema.types";
+import type { Schema, Selection } from "@/api-schema/schema.types";
 
 const schema: Schema = {
     medals_awarded: { type: ArrayInteger },

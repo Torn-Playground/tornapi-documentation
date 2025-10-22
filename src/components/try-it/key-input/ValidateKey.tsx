@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { useCalls } from "@/components/try-it/CallContext";
-import { InfoResponse } from "@/components/try-it/try-it";
+import type { InfoResponse } from "@/components/try-it/try-it";
 
 export default function ValidateKey() {
     const [colorClass, setColorClass] = useState("");
@@ -25,6 +25,7 @@ export default function ValidateKey() {
         }
     };
 
+    // biome-ignore lint/correctness/useExhaustiveDependencies: reset state
     useEffect(() => {
         setColorClass("");
         setLevelText("");

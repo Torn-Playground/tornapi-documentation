@@ -1,5 +1,5 @@
 import { String } from "@/api-schema/common-types";
-import { StructureEnum } from "@/api-schema/schema.types";
+import type { StructureEnum } from "@/api-schema/schema.types";
 
 const HALLOWEEN_EVENT = "Halloween";
 const ELIMINATION_EVENT = "Elimination";

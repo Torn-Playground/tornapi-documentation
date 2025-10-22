@@ -1,4 +1,4 @@
-import { Structure, StructureEnum } from "@/api-schema/schema.types";
+import type { Structure, StructureEnum } from "@/api-schema/schema.types";
 import ExtendedLink from "@/components/global/extended-link/ExtendedLink";
 import SelectionEnum from "@/components/section/selection/SelectionEnum";
 import SelectionStructure from "@/components/section/selection/SelectionStructure";

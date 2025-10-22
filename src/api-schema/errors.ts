@@ -1,4 +1,4 @@
-import { ErrorCode } from "@/api-schema/schema.types";
+import type { ErrorCode } from "@/api-schema/schema.types";
 
 const errorCodes: ErrorCode[] = [
     {

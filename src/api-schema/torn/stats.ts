@@ -1,6 +1,6 @@
 import { TIMESTAMP } from "@/api-schema/common-params";
 import { EpochSeconds, Integer } from "@/api-schema/common-types";
-import { fromStructure, Schema, Selection, Structure } from "@/api-schema/schema.types";
+import { fromStructure, type Schema, type Selection, type Structure } from "@/api-schema/schema.types";
 
 const statsStructure: Structure = {
     id: "stats",

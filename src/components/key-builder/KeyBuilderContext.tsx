@@ -1,6 +1,6 @@
-import { createContext, Dispatch, PropsWithChildren, useContext, useReducer } from "react";
-import { sections } from "@/api-schema/data";
-import { SectionType } from "@/api-schema/schema.types";
+import { createContext, type Dispatch, type PropsWithChildren, useContext, useReducer } from "react";
+import { isSection, sections } from "@/api-schema/data";
+import type { SectionType } from "@/api-schema/schema.types";
 
 interface KeyBuilderState {
     title: string;
@@ -9,11 +9,16 @@ interface KeyBuilderState {
 
 const defaultState: KeyBuilderState = {
     title: "",
-    selections: sections.reduce((acc, section) => ({ ...acc, [section]: [] }), {} as Record<SectionType, string[]>),
+    selections: sections.filter(isSection).reduce(
+        (acc, section) => {
+            acc[section] = [];
+            return acc;
+        },
+        {} as Record<SectionType, string[]>,
+    ),
 };
 
 const KeyBuilderContext = createContext<KeyBuilderState>(defaultState);
-// eslint-disable-next-line @typescript-eslint/no-empty-function
 const KeyBuilderDispatchContext = createContext<Dispatch<KeyBuilderAction>>(() => {});
 
 export enum KeyBuilderActionType {

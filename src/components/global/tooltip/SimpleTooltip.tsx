@@ -1,6 +1,6 @@
 "use client";
 
-import { ReactElement } from "react";
+import type { ReactElement } from "react";
 import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/global/tooltip/Tooltip";
 import styles from "./SimpleTooltip.module.css";
 

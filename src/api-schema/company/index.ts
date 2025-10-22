@@ -6,7 +6,7 @@ import EmployeesSelection from "@/api-schema/company/employees";
 import NewsSelection from "@/api-schema/company/news";
 import ProfileSelection from "@/api-schema/company/profile";
 import StockSelection from "@/api-schema/company/stock";
-import { Section, Selection } from "@/api-schema/schema.types";
+import type { Section, Selection } from "@/api-schema/schema.types";
 
 const selections: Selection[] = [
     ApplicationsSelection,

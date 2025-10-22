@@ -1,5 +1,5 @@
 import { Integer } from "@/api-schema/common-types";
-import { fromStructure, Schema, Structure } from "@/api-schema/schema.types";
+import { fromStructure, type Schema, type Structure } from "@/api-schema/schema.types";
 
 export const criminalrecordStructure: Structure = {
     id: "criminalrecord",

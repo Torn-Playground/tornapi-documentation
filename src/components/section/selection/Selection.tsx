@@ -1,4 +1,4 @@
-import { Selection as SelectionType } from "@/api-schema/schema.types";
+import type { Selection as SelectionType } from "@/api-schema/schema.types";
 import ExclamationIcon from "@/components/global/icons/ExclamationIcon";
 import ExtraInformation from "@/components/section/selection/ExtraInformation";
 import QueryParams from "@/components/section/selection/QueryParams";
@@ -26,11 +26,9 @@ export default function Selection({ selection: { access, description, cache, id,
 
             <span>{description}</span>
             {cache ? (
-                <>
-                    <div className="pt-2">
-                        <span className="italic">{cache}</span>
-                    </div>
-                </>
+                <div className="pt-2">
+                    <span className="italic">{cache}</span>
+                </div>
             ) : null}
             <QueryParams params={params} />
             <SelectionSchema schema={schema} />

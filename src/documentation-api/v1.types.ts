@@ -1,4 +1,4 @@
-import { Schema } from "@/api-schema/schema.types";
+import type { Schema } from "@/api-schema/schema.types";
 
 export interface SectionsResponse {
     sections: string[];

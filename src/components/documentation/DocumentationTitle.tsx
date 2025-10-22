@@ -1,4 +1,4 @@
-import { PropsWithChildren } from "react";
+import type { PropsWithChildren } from "react";
 import ExtendedLink from "@/components/global/extended-link/ExtendedLink";
 
 interface DocumentationTitleProps extends PropsWithChildren {

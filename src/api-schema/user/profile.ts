@@ -1,6 +1,6 @@
 import { KEYWORD_REVIVE } from "@/api-schema/common-keywords";
 import { EpochSeconds, Integer, IntegerOrNumber, NumberBoolean, String, Unknown } from "@/api-schema/common-types";
-import { fromStructure, Schema, Selection, Structure } from "@/api-schema/schema.types";
+import { fromStructure, type Schema, type Selection, type Structure } from "@/api-schema/schema.types";
 import { bar } from "@/api-schema/shared/bar";
 import { profileCompetitionTypeEnum } from "@/api-schema/shared/competition";
 import { genderEnum } from "@/api-schema/shared/gender";

@@ -1,6 +1,15 @@
 import { schema } from "@/api-schema/data";
-import { FieldStructure, Param, Schema, SchemaField, SectionType, Selection, Structure, StructureEnum } from "@/api-schema/schema.types";
-import { FieldStructureDto, ParamDto, SchemaDto, SchemaFieldDto, SectionDto, SelectionDto, StructureDto, StructureEnumDto } from "@/documentation-api/v1.types";
+import type { FieldStructure, Param, Schema, SchemaField, SectionType, Selection, Structure, StructureEnum } from "@/api-schema/schema.types";
+import type {
+    FieldStructureDto,
+    ParamDto,
+    SchemaDto,
+    SchemaFieldDto,
+    SectionDto,
+    SelectionDto,
+    StructureDto,
+    StructureEnumDto,
+} from "@/documentation-api/v1.types";
 
 function map(section: SectionType): SectionDto {
     const { selections, defaultSelection, idDescription } = schema[section];

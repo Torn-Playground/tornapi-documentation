@@ -1,4 +1,4 @@
-import { SectionType, Selection } from "@/api-schema/schema.types";
+import type { SectionType, Selection } from "@/api-schema/schema.types";
 import PinIcon from "@/components/global/icons/PinIcon";
 import SimpleTooltip from "@/components/global/tooltip/SimpleTooltip";
 import SelectorBadge from "@/components/section/SelectorBadge";

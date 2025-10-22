@@ -1,8 +1,8 @@
 import "./globals.css";
-import { Viewport } from "next";
-import { Metadata } from "next/dist/lib/metadata/types/metadata-interface";
+import type { Viewport } from "next";
+import type { Metadata } from "next/dist/lib/metadata/types/metadata-interface";
 import { ServerThemeProvider, ThemeProvider } from "next-themes";
-import { PropsWithChildren } from "react";
+import type { PropsWithChildren } from "react";
 import Footer from "@/components/global/footer/Footer";
 import Header from "@/components/global/header/Header";
 import Navigation from "@/components/global/navigation/Navigation";

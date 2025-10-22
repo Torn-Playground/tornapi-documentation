@@ -1,6 +1,6 @@
 import { Integer } from "@/api-schema/common-types";
-import { Selection, Structure } from "@/api-schema/schema.types";
-import { buildApplicationsSchema, buildApplicationsStructure, buildApplicationStructure, statusEnum } from "@/api-schema/shared/applications";
+import type { Selection, Structure } from "@/api-schema/schema.types";
+import { buildApplicationStructure, buildApplicationsSchema, buildApplicationsStructure, statusEnum } from "@/api-schema/shared/applications";
 
 const statsStructure: Structure = {
     id: "stats",

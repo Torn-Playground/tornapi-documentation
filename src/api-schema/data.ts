@@ -3,7 +3,7 @@ import faction from "@/api-schema/faction";
 import key from "@/api-schema/key";
 import market from "@/api-schema/market";
 import property from "@/api-schema/property";
-import { Param, Section, SectionType, Selection } from "@/api-schema/schema.types";
+import type { Param, Section, SectionType, Selection } from "@/api-schema/schema.types";
 import torn from "@/api-schema/torn";
 import user from "@/api-schema/user";
 
@@ -16,7 +16,7 @@ const schema: Record<SectionType, Section> = {
     torn,
     key,
 };
-const sections = Object.keys(schema);
+const sections: string[] = Object.keys(schema);
 
 export function getActiveSelections(): [SectionType, Section][] {
     return Object.entries(schema)
@@ -30,7 +30,9 @@ export function getSelectableSelections(): [SectionType, string[]][] {
         .map(([name, section]) => {
             return [
                 name,
-                section.selections.map((s) => s.name).filter((selection) => selection !== "lookup" && selection !== "timestamp"), // Exclude the 'lookup' and 'timestamp selections as it's available by default.
+                section.selections
+                    .map((s) => s.name)
+                    .filter((selection) => selection !== "lookup" && selection !== "timestamp"), // Exclude the 'lookup' and 'timestamp selections as it's available by default.
             ];
         });
 }

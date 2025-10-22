@@ -1,9 +1,9 @@
 "use client";
 
+import type { UrlObject } from "node:url";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { ForwardedRef, forwardRef, PropsWithChildren, useEffect, useState } from "react";
-import { UrlObject } from "url";
+import { type ForwardedRef, forwardRef, type PropsWithChildren, useEffect, useState } from "react";
 
 interface ExtendedLinkProps extends PropsWithChildren {
     href: string | UrlObject;

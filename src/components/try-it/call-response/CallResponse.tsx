@@ -62,6 +62,7 @@ interface CopyResponseButtonProps {
 function CopyResponseButton({ json }: CopyResponseButtonProps) {
     const [copied, setCopied] = useState(false);
 
+    // biome-ignore lint/correctness/useExhaustiveDependencies: reset state
     useEffect(() => {
         const timeout = setTimeout(() => setCopied(false), 2000);
         return () => clearTimeout(timeout);

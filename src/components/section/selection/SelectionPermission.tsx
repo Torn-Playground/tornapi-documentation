@@ -1,4 +1,4 @@
-import { KeyAccess } from "@/api-schema/schema.types";
+import type { KeyAccess } from "@/api-schema/schema.types";
 import KeyIcon from "@/components/global/icons/KeyIcon";
 import SimpleTooltip from "@/components/global/tooltip/SimpleTooltip";
 
