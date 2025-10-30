@@ -27,7 +27,7 @@
         "@tailwindcss/forms": "^0.5.10",
         "@tailwindcss/typography": "^0.5.19",
         "@types/jest": "^30.0.0",
-        "@types/node": "^22.18.13",
+        "@types/node": "^24.9.2",
         "@types/react": "19.2.2",
         "@types/react-dom": "19.2.2",
         "@types/underscore": "^1.13.0",
@@ -42,6 +42,6 @@
         "last 2 versions, not dead, > 0.2%"
     ],
     "engines": {
-        "node": "22.21.1"
+        "node": "24.11.0"
     }
 }
