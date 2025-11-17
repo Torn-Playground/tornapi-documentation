@@ -35,6 +35,7 @@ const schema: Schema = {
 const CompaniesSelection: Selection = {
     name: "companies",
     description: "Get all companies for a specific company type.",
+    cache: "Global cache of 60 seconds, not able to be bypassed.",
     access: "public",
     schema,
     structures,
