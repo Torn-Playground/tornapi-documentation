@@ -1,7 +1,6 @@
 import { KEYWORD_REVIVE } from "@/api-schema/common-keywords";
 import { EpochSeconds, Integer, IntegerOrNumber, NumberBoolean, String, Unknown } from "@/api-schema/common-types";
 import { fromStructure, type Schema, type Selection, type Structure } from "@/api-schema/schema.types";
-import { bar } from "@/api-schema/shared/bar";
 import { profileCompetitionTypeEnum } from "@/api-schema/shared/competition";
 import { genderEnum } from "@/api-schema/shared/gender";
 import { lastActionStatusEnum, lastActionStructure } from "@/api-schema/shared/last-action";
@@ -9,6 +8,15 @@ import { rpsStatusEnum } from "@/api-schema/shared/rockpaperscissors";
 import { roleEnum } from "@/api-schema/shared/role";
 import { statusColorEnum, statusStateEnum, statusStructure } from "@/api-schema/shared/status";
 
+const lifeStructure: Structure = {
+    id: "life",
+    name: "Life",
+    schema: {
+        current: { type: Integer },
+        maximum: { type: Integer },
+        increment: { type: Integer },
+    },
+};
 const competitionStructure: Structure = {
     id: "competition",
     name: "Competition",
@@ -118,7 +126,7 @@ const statesStructure: Structure = {
 };
 
 const structures = [
-    bar,
+    lifeStructure,
     statusStructure,
     jobStructure,
     factionStructure,
@@ -162,7 +170,7 @@ const schema: Schema = {
             "Status whether you (the key owner) can revive this player. When querying for yourself, it will not check for the revive ability and show 1 when enabled.",
         keywords: [KEYWORD_REVIVE],
     },
-    life: fromStructure(bar),
+    life: fromStructure(lifeStructure),
     status: fromStructure(statusStructure),
     job: fromStructure(jobStructure),
     faction: fromStructure(factionStructure),

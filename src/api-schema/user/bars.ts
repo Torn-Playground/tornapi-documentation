@@ -1,7 +1,18 @@
 import { EpochSeconds, Integer, Number } from "@/api-schema/common-types";
 import { fromStructure, type Schema, type Selection, type Structure } from "@/api-schema/schema.types";
-import { bar } from "@/api-schema/shared/bar";
 
+const barStructure: Structure = {
+    id: "bar",
+    name: "Bar",
+    schema: {
+        current: { type: Integer },
+        maximum: { type: Integer },
+        increment: { type: Integer },
+        interval: { type: Integer },
+        ticktime: { type: Integer, description: "Seconds till the next life increment." },
+        fulltime: { type: Integer, description: "Seconds till the life is full.", extra: "Will be 0 if already full." },
+    },
+};
 const chainBarStructure: Structure = {
     id: "chain_bar",
     name: "Chain Bar",
@@ -13,14 +24,14 @@ const chainBarStructure: Structure = {
         cooldown: { type: Integer },
     },
 };
-const structures = [bar, chainBarStructure];
+const structures = [barStructure, chainBarStructure];
 
 const schema: Schema = {
     server_time: { type: EpochSeconds },
-    happy: fromStructure(bar),
-    life: fromStructure(bar),
-    energy: fromStructure(bar),
-    nerve: fromStructure(bar),
+    happy: fromStructure(barStructure),
+    life: fromStructure(barStructure),
+    energy: fromStructure(barStructure),
+    nerve: fromStructure(barStructure),
     chain: fromStructure(chainBarStructure),
 };
 
