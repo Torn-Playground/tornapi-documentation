@@ -35,6 +35,7 @@ import TerritoryNewsSelection from "@/api-schema/faction/territorynews";
 import UpgradesSelection from "@/api-schema/faction/upgrades";
 import WeaponsSelection from "@/api-schema/faction/weapons";
 import type { Section, Selection } from "@/api-schema/schema.types";
+import UtilitiesSelection from "@/api-schema/faction/utilities";
 
 const selections: Selection[] = [
     ApplicationsSelection,
@@ -73,6 +74,7 @@ const selections: Selection[] = [
     TerritoryNewsSelection,
     TimestampSelection,
     UpgradesSelection,
+    UtilitiesSelection,
     WeaponsSelection,
 ];
 
