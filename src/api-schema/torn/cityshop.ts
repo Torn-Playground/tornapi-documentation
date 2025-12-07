@@ -2,8 +2,8 @@ import { Integer, String } from "@/api-schema/common-types";
 import { fromStructure, type Schema, type Selection, type Structure } from "@/api-schema/schema.types";
 
 const itemStructure: Structure = {
-    id: "item",
-    name: "Item",
+    id: "shop_item",
+    name: "Shop Item",
     schema: {
         name: { type: String },
         type: { type: String },
@@ -12,8 +12,8 @@ const itemStructure: Structure = {
     },
 };
 const inventoryStructure: Structure = {
-    id: "inventory",
-    name: "Inventory",
+    id: "shop_inventory",
+    name: "Shop Inventory",
     schema: {
         "<item-id>": fromStructure(itemStructure),
     },
