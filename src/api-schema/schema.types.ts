@@ -44,6 +44,7 @@ export interface FieldStructure {
     };
     extra?: string;
     nullable: boolean;
+    optional: boolean;
     array: boolean;
     description?: string;
     keywords?: string[];
@@ -83,6 +84,7 @@ export interface StructureEnum {
 
 export interface StructureOptions {
     nullable?: boolean;
+    optional?: boolean;
     extra?: string;
     array?: boolean;
     description?: string;
@@ -106,6 +108,7 @@ export function fromStructure(structure: Structure | StructureEnum, options: Str
             schema,
         },
         nullable: options.nullable ?? false,
+        optional: options.optional ?? false,
         extra: options.extra,
         array: options.array ?? false,
         description: options.description,

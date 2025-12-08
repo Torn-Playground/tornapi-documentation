@@ -34,7 +34,7 @@ const itemStructure: Structure = {
         circulation: { type: Integer },
         image: { type: String },
         tradeable: { type: Boolean },
-        coverage: fromStructure(coverageStructure, { nullable: true }),
+        coverage: fromStructure(coverageStructure, { optional: true }),
     },
 };
 const itemsStructure: Structure = {
