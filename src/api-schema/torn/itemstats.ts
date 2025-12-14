@@ -2,7 +2,7 @@ import { EpochSeconds, Integer, Number, String } from "@/api-schema/common-types
 import { fromStructure, type Schema, type Selection, type Structure } from "@/api-schema/schema.types";
 
 const statsStructure: Structure = {
-    id: "stats",
+    id: "itemstats",
     name: "Stats",
     schema: {
         damage: { type: Integer, nullable: true, extra: "Only present on weapons." },

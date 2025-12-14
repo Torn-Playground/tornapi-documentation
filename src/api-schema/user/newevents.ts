@@ -2,7 +2,7 @@ import { EpochSeconds, Integer, NumberBoolean, String } from "@/api-schema/commo
 import { fromStructure, type Schema, type Selection, type Structure } from "@/api-schema/schema.types";
 
 const eventStructure: Structure = {
-    id: "event",
+    id: "new_event",
     name: "Event",
     schema: {
         timestamp: { type: EpochSeconds },
@@ -11,7 +11,7 @@ const eventStructure: Structure = {
     },
 };
 const eventsStructure: Structure = {
-    id: "events",
+    id: "new_events",
     name: "Events",
     schema: {
         "<event uuid>": fromStructure(eventStructure),

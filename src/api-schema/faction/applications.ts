@@ -3,7 +3,7 @@ import type { Selection, Structure } from "@/api-schema/schema.types";
 import { buildApplicationStructure, buildApplicationsSchema, buildApplicationsStructure, statusEnum } from "@/api-schema/shared/applications";
 
 const statsStructure: Structure = {
-    id: "stats",
+    id: "battlestats",
     name: "Stats",
     schema: {
         strength: { type: Integer },

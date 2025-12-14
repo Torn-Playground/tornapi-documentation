@@ -2,7 +2,7 @@ import { EpochSeconds, Integer, String } from "@/api-schema/common-types";
 import { fromStructure, type Schema, type Structure, type StructureEnum } from "@/api-schema/schema.types";
 
 export const statusEnum: StructureEnum = {
-    id: "status",
+    id: "application_status",
     name: "Status",
     values: ["active", "declined", "withdrawn", "accepted"],
     type: String,
