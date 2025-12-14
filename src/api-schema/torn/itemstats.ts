@@ -3,7 +3,7 @@ import { fromStructure, type Schema, type Selection, type Structure } from "@/ap
 
 const statsStructure: Structure = {
     id: "itemstats",
-    name: "Stats",
+    name: "Item Stats",
     schema: {
         damage: { type: Integer, nullable: true, extra: "Only present on weapons." },
         rounds_fired: { type: Integer, nullable: true, extra: "Only present on weapons with ammo." },
