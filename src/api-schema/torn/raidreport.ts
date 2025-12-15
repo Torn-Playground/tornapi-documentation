@@ -2,7 +2,7 @@ import { EpochSeconds, Integer, Number, String } from "@/api-schema/common-types
 import { fromStructure, type Schema, type Selection, type Structure, type StructureEnum } from "@/api-schema/schema.types";
 
 const userStructure: Structure = {
-    id: "user",
+    id: "raid_user",
     name: "User",
     schema: {
         name: { type: String },

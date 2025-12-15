@@ -3,7 +3,7 @@ import { fromStructure, type Schema, type Selection, type Structure } from "@/ap
 import { bonusStructure, memberStructure, membersStructure } from "@/api-schema/shared/chain-report";
 
 const chainReportStructure: Structure = {
-    id: "chain_report",
+    id: "faction_chain_report",
     name: "Chain Report",
     schema: {
         factionID: { type: Integer },

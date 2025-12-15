@@ -17,7 +17,7 @@ const effectivenessStructure: Structure = {
     },
 };
 const employeeStructure: Structure = {
-    id: "employee",
+    id: "employee_detail",
     name: "Employee",
     schema: {
         name: { type: String },
@@ -44,7 +44,7 @@ const employeeStructure: Structure = {
     },
 };
 const employeesStructure: Structure = {
-    id: "employees",
+    id: "employee_details",
     name: "Employees",
     schema: {
         "<user id>": fromStructure(employeeStructure),

@@ -2,7 +2,7 @@ import { Integer, Number, String } from "@/api-schema/common-types";
 import { fromStructure, type Schema, type Selection, type Structure, type StructureEnum } from "@/api-schema/schema.types";
 
 const rarityEnum: StructureEnum = {
-    id: "rarity",
+    id: "item_rarity",
     name: "Rarity",
     values: ["None", "Yellow", "Orange", "Red"],
     type: String,

@@ -32,7 +32,7 @@ const stockStructure: Structure = {
     },
 };
 const stocksStructure: Structure = {
-    id: "stocks",
+    id: "company_stocks",
     name: "Stocks",
     schema: {
         "<name>": fromStructure(stockStructure),
@@ -60,7 +60,7 @@ const positionsStructure: Structure = {
     },
 };
 const companyStructure: Structure = {
-    id: "company",
+    id: "company_type",
     name: "Company",
     schema: {
         name: { type: String },

@@ -2,7 +2,7 @@ import { Integer, String } from "@/api-schema/common-types";
 import { fromStructure, type Schema, type Selection, type Structure } from "@/api-schema/schema.types";
 
 const companyStructure: Structure = {
-    id: "company",
+    id: "company_list",
     name: "Company",
     schema: {
         ID: { type: Integer },
@@ -20,7 +20,7 @@ const companyStructure: Structure = {
     },
 };
 const companiesStructure: Structure = {
-    id: "companies",
+    id: "companies_list",
     name: "Companies",
     schema: {
         "<company id>": fromStructure(companyStructure),

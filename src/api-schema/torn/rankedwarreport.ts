@@ -26,7 +26,7 @@ const rewardsStructure: Structure = {
     },
 };
 const userStructure: Structure = {
-    id: "user",
+    id: "ranked_war_user",
     name: "User",
     schema: {
         name: { type: String },

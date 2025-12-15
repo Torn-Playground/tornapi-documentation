@@ -8,7 +8,7 @@ const factionTypeEnum: StructureEnum = {
     type: String,
 };
 const userStructure: Structure = {
-    id: "user",
+    id: "territory_war_user",
     name: "User",
     schema: {
         name: { type: String },
