@@ -24,7 +24,7 @@ const specialsStructure: Structure = {
     },
 };
 const stockStructure: Structure = {
-    id: "stock",
+    id: "company_stock",
     name: "Stock",
     schema: {
         cost: { type: IntegerAndEmptyString },
