@@ -13,7 +13,7 @@ const weaponExperienceStructure: Structure = {
 const structures = [weaponExperienceStructure];
 
 const schema: Schema = {
-    weaponexp: fromStructure(weaponExperienceStructure),
+    weaponexp: fromStructure(weaponExperienceStructure, { array: true }),
 };
 
 const WeaponExpSelection: Selection = {
