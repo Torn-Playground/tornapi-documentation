@@ -74,6 +74,11 @@ const errorCodes: ErrorCode[] = [
     { code: 22, message: "This selection is only available in API v1." },
     { code: 23, message: "This selection is only available in API v2." },
     { code: 24, message: "Closed temporarily." },
+    { code: 25, message: "Invalid stat requested." },
+    { code: 26, message: "Only category or stats can be requested." },
+    { code: 27, message: "Must be migrated to organized crimes 2.0." },
+    { code: 28, message: "Incorrect log ID." },
+    { code: 29, message: "Category selection is not available for interaction logs." },
 ];
 
 export default errorCodes;
