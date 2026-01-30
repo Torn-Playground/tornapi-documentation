@@ -28,7 +28,7 @@
         "@tailwindcss/typography": "^0.5.19",
         "@types/jest": "^30.0.0",
         "@types/node": "^22.19.7",
-        "@types/react": "19.2.9",
+        "@types/react": "19.2.10",
         "@types/react-dom": "19.2.3",
         "@types/underscore": "^1.13.0",
         "autoprefixer": "^10.4.24",
