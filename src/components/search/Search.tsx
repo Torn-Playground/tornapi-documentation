@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { type ChangeEvent, useEffect, useState } from "react";
+import { type InputEvent, useEffect, useState } from "react";
 import { type SearchField, type SearchResult, type SearchSection, type SearchSelection, search } from "@/components/search/search-utilities";
 
 function ResultSelection({ section, selections }: { section: SearchSection; selections: SearchSelection[] }) {
@@ -87,8 +87,8 @@ function SearchResults({ query }: { query: string }) {
 export default function Search() {
     const [query, setQuery] = useState<string>("");
 
-    const updateQuery = (event: ChangeEvent<HTMLInputElement>) => {
-        setQuery(event.target.value);
+    const updateQuery = (event: InputEvent<HTMLInputElement>) => {
+        setQuery((event.target as HTMLInputElement).value);
     };
 
     return (
