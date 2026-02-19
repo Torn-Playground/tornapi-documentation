@@ -20,7 +20,7 @@
         "react-dom": "19.2.4",
         "react-loading-icons": "^1.1.0",
         "typescript": "^5.9.3",
-        "underscore": "^1.13.7"
+        "underscore": "^1.13.8"
     },
     "devDependencies": {
         "@biomejs/biome": "^2.3.5",
