@@ -5,7 +5,7 @@
     "platformAutomerge": true,
     "ignoreDeps": ["daisyui", "tailwindcss"],
     "constraints": {
-        "node": "^22"
+        "node": "^24"
     },
     "packageRules": [
         {
