@@ -30,9 +30,7 @@ export function getSelectableSelections(): [SectionType, string[]][] {
         .map(([name, section]) => {
             return [
                 name,
-                section.selections
-                    .map((s) => s.name)
-                    .filter((selection) => selection !== "lookup" && selection !== "timestamp"), // Exclude the 'lookup' and 'timestamp selections as it's available by default.
+                section.selections.map((s) => s.name).filter((selection) => selection !== "lookup" && selection !== "timestamp"), // Exclude the 'lookup' and 'timestamp selections as it's available by default.
             ];
         });
 }
