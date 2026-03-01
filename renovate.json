@@ -3,7 +3,7 @@
     "extends": ["config:recommended", ":disableDependencyDashboard", ":automergeMinor", ":prHourlyLimit1"],
     "rangeStrategy": "bump",
     "platformAutomerge": true,
-    "ignoreDeps": ["daisyui", "tailwindcss", "@biomejs/biome"],
+    "ignoreDeps": ["daisyui", "tailwindcss"],
     "constraints": {
         "node": "^22"
     },
