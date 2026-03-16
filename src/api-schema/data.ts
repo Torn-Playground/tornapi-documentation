@@ -39,7 +39,7 @@ export function isSectionEntry(entry: [string, Section]): entry is [SectionType,
     return isSection(entry[0]);
 }
 
-export { sections, schema };
+export { schema, sections };
 
 export function isSection(section: string): section is SectionType {
     return sections.includes(section);
