@@ -11,8 +11,8 @@ import { ALL_THEMES, DEFAULT_THEME, STORAGE_KEY } from "@/components/global/them
 export default function RootLayout({ children }: PropsWithChildren) {
     return (
         <ServerThemeProvider defaultTheme={DEFAULT_THEME} themes={ALL_THEMES} storageKey={STORAGE_KEY}>
-            <html lang="en">
-                <body>
+            <html lang="en" key="html">
+                <body key="body">
                     <ThemeProvider defaultTheme={DEFAULT_THEME} themes={ALL_THEMES} storageKey={STORAGE_KEY}>
                         <Navigation>
                             <Header />
