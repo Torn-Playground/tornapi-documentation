@@ -6,11 +6,5 @@
     "ignoreDeps": ["daisyui", "tailwindcss"],
     "constraints": {
         "node": "^24"
-    },
-    "packageRules": [
-        {
-            "matchPackageNames": ["@biomejs/biome"],
-            "automerge": false
-        }
-    ]
+    }
 }
