@@ -19,7 +19,7 @@
         "react": "19.2.5",
         "react-dom": "19.2.5",
         "react-loading-icons": "^1.1.0",
-        "typescript": "^6.0.2",
+        "typescript": "^6.0.3",
         "underscore": "^1.13.8"
     },
     "devDependencies": {
