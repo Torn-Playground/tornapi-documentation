@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { PropsWithChildren } from "react";
+import ExternalLinkIcon from "@/components/global/icons/ExternalLinkIcon";
 import ThemeSelector from "@/components/global/theme-selector/ThemeSelector";
 
 function Menu() {
@@ -42,6 +43,22 @@ function Menu() {
                 <Link href="/key">Key</Link>
             </li>
             <li className="mt-auto">
+                <a href="https://www.torn.com/swagger.php" target="_blank" rel="noreferrer">
+                    <span className="inline-flex items-center gap-2">
+                        API v2
+                        <ExternalLinkIcon size={16} className="shrink-0" />
+                    </span>
+                </a>
+            </li>
+            <li>
+                <a href="https://api-playground.cr-central.com" target="_blank" rel="noreferrer">
+                    <span className="inline-flex items-center gap-2">
+                        Unofficial v2 playground
+                        <ExternalLinkIcon size={16} className="shrink-0" />
+                    </span>
+                </a>
+            </li>
+            <li>
                 <ThemeSelector />
             </li>
         </ul>
