@@ -35,7 +35,7 @@
         "jest": "^30.4.2",
         "jest-environment-jsdom": "^30.4.1",
         "jest-extended": "^7.0.0",
-        "postcss": "^8.5.19",
+        "postcss": "^8.5.20",
         "tailwindcss": "^3.4.17"
     },
     "browserslist": [
