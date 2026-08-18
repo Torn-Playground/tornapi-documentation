@@ -1,4 +1,4 @@
-import { Integer, String } from "@/api-schema/common-types";
+import { Boolean, Integer, Number, String } from "@/api-schema/common-types";
 import { fromStructure, type Schema, type Selection, type Structure } from "@/api-schema/schema.types";
 
 const bazaarItemStructure: Structure = {
@@ -17,6 +17,10 @@ const bazaarItemStructure: Structure = {
 const structures = [bazaarItemStructure];
 
 const schema: Schema = {
+    bazaar_timestamp: { type: Number, optional: true, description: "Only present when requesting the bazaar of another player." },
+    bazaar_delay: { type: Number, optional: true, description: "Only present when requesting the bazaar of another player." },
+    bazaar_is_open: { type: Boolean },
+    bazaar_exists: { type: Boolean },
     bazaar: fromStructure(bazaarItemStructure, { array: true }),
 };
 
