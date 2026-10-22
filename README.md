@@ -6,7 +6,6 @@ at [tornapi.tornplayground.eu](https://tornapi.tornplayground.eu/).
 ## API
 
 We provide the schemas as endpoints.
-
 - `GET https://tornapi.tornplayground.eu/api/sections`
 - `GET https://tornapi.tornplayground.eu/api/schema/{section}`
   - `{section}` is any of the available sections under the `/api/sections`
